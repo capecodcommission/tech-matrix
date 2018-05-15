@@ -67,13 +67,13 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        'sqlsrv' => [
+       'sqlsrv' => [
             'driver' => 'sqlsrv',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('SQLSRV_HOST', 'localhost'),
+            'port' => env('SQLSRV_PORT', '65335'),
+            'database' => env('SQLSRV_DATABASE', 'forge'),
+            'username' => env('SQLSRV_USERNAME', 'forge'),
+            'password' => env('SQLSRV_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
         ],
