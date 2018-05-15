@@ -1,0 +1,1 @@
+select * from technologies where id < 10
