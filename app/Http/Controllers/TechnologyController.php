@@ -104,6 +104,7 @@ class TechnologyController extends Controller
         {
             $item->system_design_considerations()->sync($request->considerations);
         }
+        // dd($item->permitting_agencies);
         if($request->permitting_agencies)
         {
             $item->permitting_agencies()->sync($request->permitting_agencies);
