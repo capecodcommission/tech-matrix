@@ -172,6 +172,23 @@
 								<p><strong>Influent Sources</strong></p>
 								@forelse($influent_sources as $each)
 								
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+		<label class="form-check-label" for="influent_sources_{{$each->id}}">
+			  <input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"> {{$each->influent_source}}
+		</label>
+    </div>
+  </div>
+   <select class="form-control" id="show_in_wmvp" name="show_in_wmvp">
+								  
+									  <option value="0" @if($item->show_in_wmvp == 0) selected @endif>Do Not Show in wMVP</option>
+									  <option value="1" @if($item->show_in_wmvp == 1) selected @endif>Show in wMVP (1)</option>
+									  <option value="2" @if($item->show_in_wmvp == 2) selected @endif>Show in wMVP (2)</option>
+									</select>
+</div>
+
+
 								<div class="form-check">
 									<label class="form-check-label" for="influent_sources_{{$each->id}}">
 										<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}">

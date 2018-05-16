@@ -113,7 +113,11 @@ class TechnologyController extends Controller
         {
             // $pivotData = array_fill(0, count($request->fabric_countries), ['type' => 'fabric']);
 			// $syncData  = array_combine($request->fabric_countries, $pivotData);
-            // $business->countries('fabric')->sync($syncData);
+			// $business->countries('fabric')->sync($syncData);
+			foreach($request->influent_sources as $source)
+			{
+				// $source['influent_concentration_id'] => 
+			}
             
             $item->influent_sources()->sync($request->influent_sources);
         }
