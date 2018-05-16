@@ -7,6 +7,7 @@ use App\Models\TechnologyType;
 use App\Models\SystemDesignConsideration;
 use App\Models\Pollutant;
 use App\Models\InfluentSource;
+use App\Models\InfluentConcentration;
 use App\Models\SitingRequirement;
 use App\Models\PermittingAgency;
 
@@ -61,9 +62,11 @@ class TechnologyController extends Controller
        $considerations = SystemDesignConsideration::all();
        $pollutants = Pollutant::all();
        $influent_sources = InfluentSource::all();
+       $influent_concentrations = InfluentConcentration::all();
        $siting_requirements = SitingRequirement::all();
        $permitting_agencies = PermittingAgency::all();
-        return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies'));
+       
+        return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations'));
     }
     /**
      * Update the specified resource in storage.
@@ -95,7 +98,7 @@ class TechnologyController extends Controller
         $item->disadvantages = $data['disadvantages'];
         $item->show_in_wmvp = $data['show_in_wmvp'];
         $item->save();
-        // dd($item->pollutants());
+
         if($request->pollutants)
         {
             $item->pollutants()->sync($request->pollutants);
@@ -104,7 +107,6 @@ class TechnologyController extends Controller
         {
             $item->system_design_considerations()->sync($request->considerations);
         }
-        // dd($item->permitting_agencies);
         if($request->permitting_agencies)
         {
             $item->permitting_agencies()->sync($request->permitting_agencies);
@@ -116,10 +118,13 @@ class TechnologyController extends Controller
 			// $business->countries('fabric')->sync($syncData);
 			foreach($request->influent_sources as $source)
 			{
-				// $source['influent_concentration_id'] => 
-			}
+                // dd($source);
+                $syncData[$source]['influent_id'] = $source;
+                $syncData[$source]['influent_concentration_id'] = $request->influent_concentration[$source];
+            }
+            // dd($syncData);
             
-            $item->influent_sources()->sync($request->influent_sources);
+            $item->influent_sources()->sync($syncData);
         }
         if($request->siting_requirements)
         {
