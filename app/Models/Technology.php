@@ -58,5 +58,11 @@ class Technology extends Model
     public function ecosystem_services()
     {
         return $this->belongsToMany('App\Models\EcosystemService', 'rel_ecosystem_services_technologies', 'technology_id', 'ecosystem_service_id')->withTimestamps();
-    }
+	}
+
+	public function evaluation_monitoring()
+    {
+        return $this->belongsToMany('App\Models\EvaluationMonitoring', 'rel_evaluation_monitoring_technologies', 'technology_id', 'evaluation_monitoring_id')->withTimestamps();
+	}
+	
 }

@@ -249,6 +249,45 @@
 									No Ecosystem Services Available
 								@endforelse
 							</div>
+							<div class="form-group">
+									<p><strong>Evaluation Monitoring</strong></p>
+									@forelse($evaluation_monitoring as $each)	
+										<div class="form-check">
+											<label class="form-check-label" for="evaluation_monitoring_{{$each->id}}">
+												<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="evaluation_monitoring[]" id="evaluation_monitoring_{{$each->id}}">
+											{{$each->monitoring}}
+											</label>
+										</div>
+									@empty
+										No Evaluation Monitoring Options Available
+									@endforelse
+								</div>
+								<div class="form-group">
+									<p><strong>Longterm O.M. Monitoring</strong></p>
+									@forelse($longterm_monitoring as $each)	
+										<div class="form-check">
+											<label class="form-check-label" for="longterm_monitoring_{{$each->id}}">
+												<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="longterm_monitoring[]" id="longterm_monitoring_{{$each->id}}">
+											{{$each->longterm_o_m_monitoring}}
+											</label>
+										</div>
+									@empty
+										No Evaluation Monitoring Options Available
+									@endforelse
+								</div>	
+							<div class="form-group">
+									<label for="references_notes_assumptions">References, Notes, &amp; Assumptions</label>
+									<textarea name="references_notes_assumptions" id="references_notes_assumptions" name="references_notes_assumptions" class="form-control" rows="10"></textarea>
+								</div>
+								<div class="form-group">
+										<label for="regulatory_comments">Regulatory Comments &amp; Certainty</label>
+										<textarea name="regulatory_comments" id="regulatory_comments" name="regulatory_comments" class="form-control" rows="10">
+										</textarea>
+									</div>
+									<div class="form-group">
+										<label for="public_acceptance">Public Acceptance</label>
+										<textarea name="public_acceptance" id="public_acceptance" name="public_acceptance" class="form-control" rows="5"></textarea>
+									</div>	
 				<div class="form-group">
 					<input type="submit" value="Save Technology">
 				</div>

@@ -11,8 +11,9 @@ use App\Models\InfluentConcentration;
 use App\Models\SitingRequirement;
 use App\Models\PermittingAgency;
 use App\Models\UnitMetric;
-use App\EcosystemService;
-
+use App\Models\EcosystemService;
+use App\Models\EvaluationMonitoring;
+use App\Models\OMMonitoring;
 class TechnologyController extends Controller
 {
     public function index()
@@ -36,8 +37,9 @@ class TechnologyController extends Controller
 		$permitting_agencies = PermittingAgency::all();
         $unit_metrics = UnitMetric::all();
         $ecosystem_services = EcosystemService::all();
-		
-		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services'));
+		$evaluation_monitoring = EvaluationMonitoring::all();
+		$longterm_monitoring = OMMonitoring::all();
+		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring'));
     }
 
     public function store(Request $request)
@@ -100,9 +102,11 @@ class TechnologyController extends Controller
 		$siting_requirements = SitingRequirement::all();
 		$permitting_agencies = PermittingAgency::all();
         $unit_metrics = UnitMetric::all();
-        $ecosystem_services = EcosystemService::all();
+		$ecosystem_services = EcosystemService::all();
+		$evaluation_monitoring = EvaluationMonitoring::all();
+		$longterm_monitoring = OMMonitoring::all();
        
-		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services'));
+		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring'));
     }
     /**
      * Update the specified resource in storage.
