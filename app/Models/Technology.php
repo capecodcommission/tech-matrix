@@ -44,6 +44,16 @@ class Technology extends Model
     public function siting_requirements()
     {
         return $this->belongsToMany('App\Models\SitingRequirement', 'rel_siting_requirements_technologies', 'technology_id', 'siting_requirement_id')->withTimestamps();
+	}
+	
+	public function unit_metrics()
+	{
+		return $this->belongsTo('App\Models\UnitMetric');
+	}
+
+	public function nutrient_reductions()
+    {
+        return $this->belongsToMany('App\Models\Pollutant', 'rel_technology_nutrient_percent_removals', 'technology_id', 'pollutant_id')->withPivot('high_low', 'percent_reduction')->withTimestamps();
     }
     
 }

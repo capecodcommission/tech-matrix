@@ -14,8 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('testing', 'TestController@test');
-Route::resource('technologies', 'TechnologyController');
 Auth::routes();
+
+Route::get('testing', 'TestController@test');
+// need to add /admin to this URL and make sure people are logged in
+Route::resource('technologies', 'TechnologyController');
 
 Route::get('/home', 'HomeController@index')->name('home');

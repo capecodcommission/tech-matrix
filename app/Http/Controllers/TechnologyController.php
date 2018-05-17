@@ -10,6 +10,7 @@ use App\Models\InfluentSource;
 use App\Models\InfluentConcentration;
 use App\Models\SitingRequirement;
 use App\Models\PermittingAgency;
+use App\Models\UnitMetric;
 
 class TechnologyController extends Controller
 {
@@ -25,7 +26,16 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        //
+		$types = TechnologyType::all();
+		$considerations = SystemDesignConsideration::all();
+		$pollutants = Pollutant::all();
+		$influent_sources = InfluentSource::all();
+		$influent_concentrations = InfluentConcentration::all();
+		$siting_requirements = SitingRequirement::all();
+		$permitting_agencies = PermittingAgency::all();
+		$unit_metrics = UnitMetric::all();
+		
+		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics'));
     }
     /**
      * Store a newly created resource in storage.
@@ -36,8 +46,35 @@ class TechnologyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        dd($data);
-    }
+		$item = Technology::create($data);
+		if($data['siting_requirements'])
+		{
+			$item->siting_requirements()->sync([$data['siting_requirements']]);
+		}
+		if($data['permitting_agencies'])
+		{
+			$item->permitting_agencies()->sync([$data['permitting_agencies']]);
+		}
+		if($data['pollutants'])
+		{
+			$item->pollutants()->sync($data['pollutants']);
+		}
+		if($data['considerations'])
+		{
+			$item->considerations()->sync($data['considerations']);
+		}
+		if($request->influent_sources)
+        {
+			foreach($request->influent_sources as $source)
+			{
+                $syncData[$source]['influent_id'] = $source;
+                $syncData[$source]['influent_concentration_id'] = $request->influent_concentration[$source];
+            }            
+            $item->influent_sources()->sync($syncData);
+        }
+		
+		return redirect('technologies');
+	}
     /**
      * Display the specified resource.
      *
@@ -57,16 +94,17 @@ class TechnologyController extends Controller
      */
     public function edit(Technology $technology)
     {
-       $item = $technology;
-       $types = TechnologyType::all();
-       $considerations = SystemDesignConsideration::all();
-       $pollutants = Pollutant::all();
-       $influent_sources = InfluentSource::all();
-       $influent_concentrations = InfluentConcentration::all();
-       $siting_requirements = SitingRequirement::all();
-       $permitting_agencies = PermittingAgency::all();
+		$item = $technology;
+		$types = TechnologyType::all();
+		$considerations = SystemDesignConsideration::all();
+		$pollutants = Pollutant::all();
+		$influent_sources = InfluentSource::all();
+		$influent_concentrations = InfluentConcentration::all();
+		$siting_requirements = SitingRequirement::all();
+		$permitting_agencies = PermittingAgency::all();
+		$unit_metrics = UnitMetric::all();
        
-        return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations'));
+		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics'));
     }
     /**
      * Update the specified resource in storage.
@@ -78,7 +116,6 @@ class TechnologyController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        // dd($data);
         $item = Technology::find($id);
         
         $item->technology_strategy = $data['technology_strategy'];
@@ -113,9 +150,6 @@ class TechnologyController extends Controller
         }
         if($request->influent_sources)
         {
-            // $pivotData = array_fill(0, count($request->fabric_countries), ['type' => 'fabric']);
-			// $syncData  = array_combine($request->fabric_countries, $pivotData);
-			// $business->countries('fabric')->sync($syncData);
 			foreach($request->influent_sources as $source)
 			{
                 // dd($source);
