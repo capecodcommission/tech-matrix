@@ -22,11 +22,7 @@ class TechnologyController extends Controller
 		$list = Technology::all();
 		return view('admin.technologies.list', compact('list'));
 	}
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
 		$types = TechnologyType::all();
@@ -75,23 +71,13 @@ class TechnologyController extends Controller
 		
 		return redirect('technologies');
 	}
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Technology $technology)
     {
         $item = $technology;
         return view('admin.technologies.show', compact('item'));
 	}
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function edit(Technology $technology)
     {
 		$item = $technology;
@@ -179,14 +165,19 @@ class TechnologyController extends Controller
 		}  
       
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+	 
+	public function destroy($id)
     {
-        //
+        $technology = Technology::find($id);
+		$technology->delete($id);
+		alert()->message('Technology Deleted');
+		return Redirect::route('technologies.index');
     }
+
+	public function restore($id)
+	{
+		$technology = Technology::withTrashed()->find($id);
+		$technology->restore();
+		return Redirect::route('technologies.index');
+	}
 }
