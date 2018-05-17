@@ -40,7 +40,6 @@ class Technology extends Model
     {
         return $this->belongsToMany('App\Models\PermittingAgency', 'rel_permitting_agencies_technologies', 'technology_id', 'agency_id')->withTimestamps();
     }
-
     public function siting_requirements()
     {
         return $this->belongsToMany('App\Models\SitingRequirement', 'rel_siting_requirements_technologies', 'technology_id', 'siting_requirement_id')->withTimestamps();
@@ -55,5 +54,9 @@ class Technology extends Model
     {
         return $this->belongsToMany('App\Models\Pollutant', 'rel_technology_nutrient_percent_removals', 'technology_id', 'pollutant_id')->withPivot('high_low', 'percent_reduction')->withTimestamps();
     }
-    
+
+    public function ecosystem_services()
+    {
+        return $this->belongsToMany('App\Models\EcosystemService', 'rel_ecosystem_services_technologies', 'technology_id', 'ecosystem_service_id')->withTimestamps();
+    }
 }

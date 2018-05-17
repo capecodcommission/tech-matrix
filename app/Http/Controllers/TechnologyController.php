@@ -11,6 +11,7 @@ use App\Models\InfluentConcentration;
 use App\Models\SitingRequirement;
 use App\Models\PermittingAgency;
 use App\Models\UnitMetric;
+use App\EcosystemService;
 
 class TechnologyController extends Controller
 {
@@ -33,16 +34,12 @@ class TechnologyController extends Controller
 		$influent_concentrations = InfluentConcentration::all();
 		$siting_requirements = SitingRequirement::all();
 		$permitting_agencies = PermittingAgency::all();
-		$unit_metrics = UnitMetric::all();
+        $unit_metrics = UnitMetric::all();
+        $ecosystem_services = EcosystemService::all();
 		
-		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics'));
+		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services'));
     }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $data = $request->all();
@@ -102,9 +99,10 @@ class TechnologyController extends Controller
 		$influent_concentrations = InfluentConcentration::all();
 		$siting_requirements = SitingRequirement::all();
 		$permitting_agencies = PermittingAgency::all();
-		$unit_metrics = UnitMetric::all();
+        $unit_metrics = UnitMetric::all();
+        $ecosystem_services = EcosystemService::all();
        
-		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics'));
+		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services'));
     }
     /**
      * Update the specified resource in storage.

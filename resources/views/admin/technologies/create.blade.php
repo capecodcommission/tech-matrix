@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+	<div class="row justify-content-center">
+		<div class="col-md-8">
 			<p><a href="{{route('technologies.index')}}">Back to List</a></p>
 			<h2>Create New Technology Strategy</h2>
 			<form action="{{route('technologies.store')}}" method="POST">
@@ -17,15 +17,15 @@
 					<input type="text" class="form-control" id="technology_id" name="technology_id" value="">
 				  </div>
 				  <div class="form-group">
-					  <label for="technology_type_id">Technology Type</label>
-					<select class="form-control" id="technology_type_id" name="technology_type_id">
+						<label for="technology_type_id">Technology Type</label>
+						<select class="form-control" id="technology_type_id" name="technology_type_id">
 							<option>Select Technology Type</option>
 							@forelse($types as $type)
 								<option value="{{$type->id}}">{{$type->technology_type}}</option>
 							@empty	
 								<option value="">No Types available</option>
 							@endforelse
-							</select>
+						</select>
 				  </div>
 				  <div class="form-group">
 					  <label for="technology_system_type"> Technology System Type</label>
@@ -222,26 +222,39 @@
 							@endforelse
 						</div>
 						<div class="form-group">
-								<p><strong>Permitting Agencies</strong></p>
-								@forelse($permitting_agencies as $each)
-								
+							<p><strong>Permitting Agencies</strong></p>
+							@forelse($permitting_agencies as $each)
+							
+								<div class="form-check">
+									<label class="form-check-label" for="permitting_agencies_{{$each->id}}">
+										<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="permitting_agencies[]" id="permitting_agencies_{{$each->id}}">
+									{{$each->potential_agency}}
+									</label>
+								</div>
+							@empty
+								No Agencies Available
+							@endforelse
+
+						</div>
+						<div class="form-group">
+								<p><strong>Ecosystem Services</strong></p>
+								@forelse($ecosystem_services as $each)	
 									<div class="form-check">
-										<label class="form-check-label" for="permitting_agencies_{{$each->id}}">
-											<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="permitting_agencies[]" id="permitting_agencies_{{$each->id}}">
-										{{$each->potential_agency}}
+										<label class="form-check-label" for="ecosystem_service_{{$each->id}}">
+											<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="ecosystem_services[]" id="ecosystem_service_{{$each->id}}">
+										{{$each->ecosystem_service}}
 										</label>
 									</div>
 								@empty
-									No Agencies Available
+									No Ecosystem Services Available
 								@endforelse
-
-						</div>
+							</div>
 				<div class="form-group">
 					<input type="submit" value="Save Technology">
 				</div>
 			</form>
 					
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
 @endsection

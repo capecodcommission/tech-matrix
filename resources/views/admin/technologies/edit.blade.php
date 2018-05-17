@@ -223,6 +223,19 @@
 					@endforelse
 				</div>
 				<div class="form-group">
+						<p><strong>Ecosystem Services</strong></p>
+						@forelse($ecosystem_services as $each)	
+							<div class="form-check">
+								<label class="form-check-label" for="ecosystem_service_{{$each->id}}">
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="ecosystem_services[]" id="ecosystem_service_{{$each->id}}">
+								{{$each->ecosystem_service}}
+								</label>
+							</div>
+						@empty
+							No Ecosystem Services Available
+						@endforelse
+					</div>
+				<div class="form-group">
 					<input type="submit" value="Save Changes">
 				</div>
 			</form>
