@@ -14,6 +14,7 @@ use App\Models\UnitMetric;
 use App\Models\EcosystemService;
 use App\Models\EvaluationMonitoring;
 use App\Models\OMMonitoring;
+use App\Models\PilotingStatus;
 class TechnologyController extends Controller
 {
     public function index()
@@ -105,16 +106,12 @@ class TechnologyController extends Controller
 		$ecosystem_services = EcosystemService::all();
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = OMMonitoring::all();
+		$piloting_statuses = PilotingStatus::all();
        
-		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring'));
+		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses'));
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+	
+	
     public function update(Request $request, $id)
     {
         $data = $request->all();
@@ -135,7 +132,13 @@ class TechnologyController extends Controller
         $item->replacement_cost = $data['replacement_cost'];
         $item->advantages = $data['advantages'];
         $item->disadvantages = $data['disadvantages'];
-        $item->show_in_wmvp = $data['show_in_wmvp'];
+		$item->show_in_wmvp = $data['show_in_wmvp'];
+		$item->references_notes_assumptions = $data['references_notes_assumptions'];
+		$item->public_acceptance = $data['public_acceptance'];
+		$item->regulatory_comments = $data['regulatory_comments'];
+		$item->unit_metric_id = $data['unit_metric_id'];
+		$item->piloting_status_id = $data['piloting_status_id'];
+
         $item->save();
 
         if($request->pollutants)
@@ -154,11 +157,9 @@ class TechnologyController extends Controller
         {
 			foreach($request->influent_sources as $source)
 			{
-                // dd($source);
                 $syncData[$source]['influent_id'] = $source;
                 $syncData[$source]['influent_concentration_id'] = $request->influent_concentration[$source];
             }
-            // dd($syncData);
             
             $item->influent_sources()->sync($syncData);
         }
@@ -166,7 +167,16 @@ class TechnologyController extends Controller
         {
             $item->siting_requirements()->sync($request->siting_requirements);
         }  
-      
+
+		if($request->ecosystem_services)
+        {
+            $item->ecosystem_services()->sync($request->ecosystem_services);
+		}  
+	
+		if($request->longerm_monitoring)
+        {
+            $item->longterm_monitoring()->sync($request->longterm_monitoring);
+		}  
       
     }
     /**

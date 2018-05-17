@@ -257,8 +257,19 @@
 								</label>
 							</div>
 						@empty
-							No Evaluation Monitoring Options Available
+							No Longterm OM Monitoring Options Available
 						@endforelse
+					</div>
+					<div class="form-group">
+						<p><strong>Piloting Status</strong></p>
+						<select name="piloting_status_id" id="piloting_status_id" class="form-control">
+							<option>Select Piloting Status (if applicable)</option>
+							@forelse($piloting_statuses as $each)	
+								<option value="{{$each->id}}" @if($each->id == $item->piloting_status_id) selected @endif>{$each->pilot_status}}</option>
+							@empty
+								No Piloting Statuses Available
+							@endforelse
+						</select>
 					</div>					
 					<div class="form-group">
 						<label for="references_notes_assumptions">References, Notes, &amp; Assumptions</label>
