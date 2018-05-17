@@ -30,7 +30,7 @@
 					</div>
 					<div class="form-group">
 						<label for="technology_system_type"> Technology System Type</label>
-						<input type="text" class="form-control" name="technology_system_type">					
+						<input type="text" class="form-control" name="technology_system_type" value="{{$item->technology_system_type}}">					
 					</div>
 					<div class="form-group">
 						<label for="unit_metric_id">Unit Metric</label>

@@ -104,7 +104,8 @@ class TechnologyController extends Controller
         $item = Technology::find($id);
         
         $item->technology_strategy = $data['technology_strategy'];
-        $item->technology_id = $data['technology_id'];
+		$item->technology_id = $data['technology_id'];
+		$item->technology_type_id = $data['technology_type_id'];
         $item->technology_description = $data['technology_description'];
         $item->current_construction_cost_low = $data['current_construction_cost_low'];
         $item->current_construction_cost_high = $data['current_construction_cost_high'];
