@@ -74,4 +74,9 @@ class Technology extends Model
 	{
 		return $this->belongsTo('App\Models\PilotingStatus');
 	}
+
+	public function time_to_improve_estuary()
+	{
+		return $this->belongsToMany('App\Models\YearGrouping', 'rel_time_to_improve_estuary_water_technologies', 'technology_id', 'year_grouping_id');
+	}
 }

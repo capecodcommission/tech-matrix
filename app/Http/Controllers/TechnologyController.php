@@ -15,6 +15,8 @@ use App\Models\EcosystemService;
 use App\Models\EvaluationMonitoring;
 use App\Models\OMMonitoring;
 use App\Models\PilotingStatus;
+use App\Models\YearGrouping;
+
 class TechnologyController extends Controller
 {
     public function index()
@@ -112,8 +114,9 @@ class TechnologyController extends Controller
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = OMMonitoring::all();
 		$piloting_statuses = PilotingStatus::all();
+		$time_to_improve_estuary = YearGrouping::all();
        
-		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses'));
+		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'time_to_improve_estuary'));
     }
 	
     public function update(Request $request, $id)
@@ -198,6 +201,11 @@ class TechnologyController extends Controller
         {
             $item->longterm_monitoring()->sync($request->longterm_monitoring);
 		}  
+
+		if($request->time_to_improve_estuary)
+		{
+			$item->time_to_improve_estuary()->sync($request->time_to_improve_estuary);
+		}
 		return redirect('technologies');
 	}
 

@@ -114,6 +114,17 @@
 							No Longterm OM Monitoring Options Available
 						@endforelse
 					</div>
+
+					<div class="form-group">
+						<p><strong>Time to Improve Estuary Water (Years)</strong></p>
+						@forelse($time_to_improve_estuary as $time)
+						<div class="form-check">
+							<label class="form-check-label" for="time_to_improve_estuary_{{$time->id}}">
+								<input type="radio" class="form-check-input" id="time_to_improve_estuary_{{$time->id}}" value="{{$time->id}}" name="time_to_improve_estuary" @if($item->time_to_improve_estuary->contains($time->id) selected @endif>
+								{{$time->length_of_time}}
+							</label>
+						</div>
+					</div>
 					<div class="form-group">
 						<input type="submit" value="Save Changes">
 					</div>
