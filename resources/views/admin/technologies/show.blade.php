@@ -32,6 +32,10 @@
 			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
 			<p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
 			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p>
+			<div><p><strong>References, Notes, Assumptions</strong></p> 
+			{!! $item->references_notes_assumptions !!}</div>
+			<div><p><strong>Regulatory Comments and Certainty</strong></p> 
+            {!! $item->regulatory_comments !!}</div>
         </div>
     </div>
 </div>

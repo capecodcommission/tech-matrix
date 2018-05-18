@@ -205,11 +205,7 @@
 	<script type="text/javascript">
 		$(function()
 		{
-			$('textarea.form-control').redactor(
-				 {
-					buttons: ['html', 'format', 'bold', 'italic', 'ul', 'ol', 'link']
-				}
-			);
+			$('textarea.form-control').redactor();
 		});
 	</script>
 @endsection
