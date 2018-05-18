@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="/css/redactor.css" />
-<script src="/js/redactor.js"></script>
+
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
@@ -197,10 +196,16 @@
 			</div>
 		</div>
 	</div>
+	
+@endsection
+
+@section('scripts')
+<link rel="stylesheet" href="/css/redactor.css" />
+<script src="/js/redactor.js"></script>
 	<script type="text/javascript">
 		$(function()
 		{
-			$('textearea').redactor();
+			$('textarea.form-control').redactor();
 		});
 	</script>
 @endsection
