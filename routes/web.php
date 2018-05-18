@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('testing', 'TestController@test');
 // need to add /admin to this URL and make sure people are logged in
+Route::get('technologies/editRelationships/{technology}', 'TechnologyController@editRelationships');
+Route::post('technologies/updateRelationships', 'TechnologyController@updateRelationships');
 Route::resource('technologies', 'TechnologyController');
 
 Route::get('/home', 'HomeController@index')->name('home');

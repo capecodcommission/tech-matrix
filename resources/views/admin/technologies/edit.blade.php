@@ -20,7 +20,7 @@
 					<div class="form-group">
 						<label for="technology_type_id">Technology Type</label>
 						<select class="form-control" id="technology_type_id" name="technology_type_id">
-							<option>Select Technology Type</option>
+							<option></option>
 							@forelse($types as $type)
 								<option value="{{$type->id}}" @if($type->id == $item->technology_type_id) selected @endif>{{$type->technology_type}}</option>
 							@empty	
@@ -142,19 +142,7 @@
 						<label for="disadvantages">Disadvantages</label>
 						<textarea name="disadvantages" id="disadvantages" name="disadvantages" class="form-control" rows="10">{{$item->disadvantages}}</textarea>
 					</div>
-					<div class="form-group">
-						<p><strong>System Design Considerations</strong></p>
-						@forelse($considerations as $each)
-							<div class="form-check">
-								<label class="form-check-label" for="consideration_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="considerations[]" id="consideration_{{$each->id}}">
-									{{$each->infrastructure_to_consider}}
-								</label>
-							</div>
-						@empty
-							No System Design Considerations Available
-						@endforelse
-					</div>
+					
 					<div class="form-group">
 						<label for="show_in_wmvp">Show in wMVP</label>
 						<select class="form-control" id="show_in_wmvp" name="show_in_wmvp">
@@ -171,99 +159,11 @@
 							<option value="1" @if($item->show_on_Matrix == 1) selected @endif>Show in Tech Matrix</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<p><strong>Pollutants Treated</strong></p>
-						@forelse($pollutants as $each)	
-							<div class="form-check">
-								<label class="form-check-label" for="pollutant_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="pollutants[]" id="pollutant_{{$each->id}}">
-								{{$each->pollutant}}
-								</label>
-							</div>
-						@empty
-							No Pollutants Available
-						@endforelse
-					</div>
-					<div class="form-group">
-						<p><strong>Influent Sources</strong></p>
-						@forelse($influent_sources as $each)	
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<label class="form-check-label" for="influent_sources_{{$each->id}}">
-											<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"> {{$each->influent_source}}
-										</label>
-									</div>
-								</div>
-								<select class="form-control" id="influent_concentration_{{$each->id}}" name="influent_concentration[{{$each->id}}]">
-									<option value="">Select concentration of influent source</option>								
-									@forelse($influent_concentrations as $concentration)
-										<option value="{{$concentration->id}}">{{$concentration->influent_concentration}}</option>
-									@empty
-										<option value="">No Concentration levels available</option>
-									@endforelse
-								</select>
-							</div>
-						@empty
-							No Influent Sources Available
-						@endforelse
-					</div>
-					<div class="form-group">
-						<p><strong>Permitting Agencies</strong></p>
-						@forelse($permitting_agencies as $each)
-							<div class="form-check">
-								<label class="form-check-label" for="permitting_agencies_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="permitting_agencies[]" id="permitting_agencies_{{$each->id}}">
-								{{$each->potential_agency}}
-								</label>
-							</div>
-						@empty
-							No Permitting Agencies Available
-						@endforelse
-					</div>
-					<div class="form-group">
-						<p><strong>Ecosystem Services</strong></p>
-						@forelse($ecosystem_services as $each)	
-							<div class="form-check">
-								<label class="form-check-label" for="ecosystem_service_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="ecosystem_services[]" id="ecosystem_service_{{$each->id}}">
-								{{$each->ecosystem_service}}
-								</label>
-							</div>
-						@empty
-							No Ecosystem Services Available
-						@endforelse
-					</div>
-					<div class="form-group">
-						<p><strong>Evaluation Monitoring</strong></p>
-						@forelse($evaluation_monitoring as $each)	
-							<div class="form-check">
-								<label class="form-check-label" for="evaluation_monitoring_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="evaluation_monitoring[]" id="evaluation_monitoring_{{$each->id}}">
-								{{$each->monitoring}}
-								</label>
-							</div>
-						@empty
-							No Evaluation Monitoring Options Available
-						@endforelse
-					</div>
-					<div class="form-group">
-						<p><strong>Longterm O.M. Monitoring</strong></p>
-						@forelse($longterm_monitoring as $each)	
-							<div class="form-check">
-								<label class="form-check-label" for="longterm_monitoring_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="longterm_monitoring[]" id="longterm_monitoring_{{$each->id}}">
-								{{$each->longterm_o_m_monitoring}}
-								</label>
-							</div>
-						@empty
-							No Longterm OM Monitoring Options Available
-						@endforelse
-					</div>
+					
 					<div class="form-group">
 						<p><strong>Piloting Status</strong></p>
 						<select name="piloting_status_id" id="piloting_status_id" class="form-control">
-							<option>Select Piloting Status (if applicable)</option>
+							<option></option>
 							@forelse($piloting_statuses as $each)	
 								<option value="{{$each->id}}" @if($each->id == $item->piloting_status_id) selected @endif>{$each->pilot_status}}</option>
 							@empty
@@ -283,15 +183,14 @@
 						<div class="form-group">
 							<label for="public_acceptance">Public Acceptance</label>
 							<textarea name="public_acceptance" id="public_acceptance" name="public_acceptance" class="form-control" rows="5">{{$item->public_acceptance}}</textarea>
-						</div>					<div class="form-group">
+						</div>					
+					<div class="form-group">
 						<input type="submit" value="Save Changes">
 					</div>
 				</form>
 		
 		
 				<p>{{$item->image}}</p>
-				<p>{{$item->show_on_Matrix}}</p>
-				<p>{{$item->technology_system_type}}</p>
 				<p>{{$item->type_of_cost_spread}}</p>
 			</div>
 		</div>

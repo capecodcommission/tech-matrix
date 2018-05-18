@@ -14,6 +14,7 @@ class Technology extends Model
 	protected $guarded = [
         'id'
 	];
+
     protected $table = 'technologies';
     
     public function technology_type()
@@ -23,7 +24,7 @@ class Technology extends Model
 
     public function system_design_considerations()
     {
-        return $this->belongsTo('App\Models\SystemDesignConsideration', 'rel_system_design_considerations', 'technology_id', 'consideration_id')->withTimestamps();
+        return $this->belongsToMany('App\Models\SystemDesignConsideration', 'rel_system_design_considerations', 'technology_id', 'consideration_id')->withTimestamps();
     }
 
     public function pollutants()
