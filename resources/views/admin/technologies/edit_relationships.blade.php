@@ -102,6 +102,19 @@
 						@endforelse
 					</div>
 					<div class="form-group">
+						<p><strong>Estimated Years of Evaluation Monitoring Required</strong></p>
+						@forelse($years as $time)
+							<div class="form-check">
+								<label class="form-check-label" for="years_of_evaluation_monitoring_{{$time->id}}">
+									<input type="radio" class="form-check-input" id="years_of_evaluation_monitoring_{{$time->id}}" value="{{$time->id}}" name="years_of_evaluation_monitoring" @if($item->years_of_evaluation_monitoring->contains($time->id)) checked="checked" @endif>
+									{{$time->length_of_time}}
+								</label>
+							</div>
+						@empty
+							No Year Groupings available.
+						@endforelse
+					</div>
+					<div class="form-group">
 						<p><strong>Longterm O.M. Monitoring</strong></p>
 						@forelse($longterm_monitoring as $each)	
 							<div class="form-check">
@@ -117,7 +130,7 @@
 
 					<div class="form-group">
 						<p><strong>Time to Improve Estuary Water (Years)</strong></p>
-						@forelse($time_to_improve_estuary as $time)
+						@forelse($years as $time)
 							<div class="form-check">
 								<label class="form-check-label" for="time_to_improve_estuary_{{$time->id}}">
 									<input type="radio" class="form-check-input" id="time_to_improve_estuary_{{$time->id}}" value="{{$time->id}}" name="time_to_improve_estuary" @if($item->time_to_improve_estuary->contains($time->id)) checked="checked" @endif>
@@ -128,6 +141,7 @@
 							No Year Groupings available.
 						@endforelse
 					</div>
+					
 					<div class="form-group">
 						<input type="submit" value="Save Changes">
 					</div>

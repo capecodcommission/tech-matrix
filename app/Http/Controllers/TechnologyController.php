@@ -114,9 +114,9 @@ class TechnologyController extends Controller
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = OMMonitoring::all();
 		$piloting_statuses = PilotingStatus::all();
-		$time_to_improve_estuary = YearGrouping::all();
+		$years = YearGrouping::all();
        
-		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'time_to_improve_estuary'));
+		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years'));
     }
 	
     public function update(Request $request, $id)

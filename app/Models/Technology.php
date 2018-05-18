@@ -79,4 +79,9 @@ class Technology extends Model
 	{
 		return $this->belongsToMany('App\Models\YearGrouping', 'rel_time_to_improve_estuary_technologies', 'technology_id', 'year_grouping_id')->withTimestamps();
 	}
+
+	public function years_of_evaluation_monitoring()
+	{
+		return $this->belongsToMany('App\Models\YearGrouping', 'rel_years_of_evaluation_monitoring_technologies', 'technology_id', 'year_grouping_id')->withTimestamps();
+	}
 }
