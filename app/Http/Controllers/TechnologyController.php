@@ -126,29 +126,6 @@ class TechnologyController extends Controller
 		// $relationships = $data['relationships'];
 		// unset($data['relationships']);
 		$item->fill($data);
-		// dd($item);
-        // $item->technology_strategy = $data['technology_strategy'];
-		// $item->technology_id = $data['technology_id'];
-		// if($data['technology_type_id'] != 'NULL') { $item->technology_type_id = $data['technology_type_id']; }
-        // $item->technology_description = $data['technology_description'];
-        // $item->current_construction_cost_low = $data['current_construction_cost_low'];
-        // $item->current_construction_cost_high = $data['current_construction_cost_high'];
-        // $item->current_construction_cost_percent_labor = $data['current_construction_cost_percent_labor'];
-        // $item->current_project_cost_low = $data['current_project_cost_low'];
-        // $item->current_project_cost_high = $data['current_project_cost_high'];
-        // $item->current_annual_o_m_cost_high = $data['current_annual_o_m_cost_high'];
-        // $item->current_annual_o_m_cost_low = $data['current_annual_o_m_cost_low'];
-        // $item->current_annual_o_m_cost_percent_labor = $data['current_annual_o_m_cost_percent_labor'];
-        // $item->useful_life_years = $data['useful_life_years'];
-        // $item->replacement_cost = $data['replacement_cost'];
-        // $item->advantages = $data['advantages'];
-        // $item->disadvantages = $data['disadvantages'];
-		// $item->show_in_wmvp = $data['show_in_wmvp'];
-		// $item->references_notes_assumptions = $data['references_notes_assumptions'];
-		// $item->public_acceptance = $data['public_acceptance'];
-		// $item->regulatory_comments = $data['regulatory_comments'];
-		// $item->unit_metric_id = $data['unit_metric_id'];
-		// $item->piloting_status_id = $data['piloting_status_id'];
 
         $item->update();
       
@@ -205,6 +182,11 @@ class TechnologyController extends Controller
 		if($request->time_to_improve_estuary)
 		{
 			$item->time_to_improve_estuary()->sync($request->time_to_improve_estuary);
+		}
+		
+		if($request->years_of_evaluation_monitoring)
+		{
+			$item->years_of_evaluation_monitoring()->sync($request->years_of_evaluation_monitoring);
 		}
 		return redirect('technologies');
 	}
