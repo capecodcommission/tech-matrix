@@ -21,5 +21,7 @@ Route::get('testing', 'TestController@test');
 Route::get('technologies/editRelationships/{technology}', 'TechnologyController@editRelationships');
 Route::post('technologies/updateRelationships', 'TechnologyController@updateRelationships');
 Route::resource('technologies', 'TechnologyController');
+Route::resource('inputs', 'InputController');
+Route::resource('input_groups', 'InputGroupController');
 
 Route::get('/home', 'HomeController@index')->name('home');

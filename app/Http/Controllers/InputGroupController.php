@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\InputGroup;
+use App\Models\InputGroup;
 use Illuminate\Http\Request;
+use Redirect;
 
 class InputGroupController extends Controller
 {
@@ -14,7 +15,8 @@ class InputGroupController extends Controller
      */
     public function index()
     {
-        //
+		$list = InputGroup::all();
+        return view('admin.input_groups.list', compact('list'));
     }
 
     /**
@@ -24,7 +26,7 @@ class InputGroupController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.input_groups.create');
     }
 
     /**
@@ -35,7 +37,9 @@ class InputGroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+		$data = $request->all();
+		$input_group = InputGroup::create($data);
+		return redirect('input_groups');
     }
 
     /**
@@ -57,19 +61,16 @@ class InputGroupController extends Controller
      */
     public function edit(InputGroup $inputGroup)
     {
-        //
+		$input_group = $inputGroup;
+        return view('admin.input_groups.edit', compact('input_group'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\InputGroup  $inputGroup
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, InputGroup $inputGroup)
     {
-        //
+		$data = $request->all();
+		$inputGroup->fill($data);
+		$inputGroup->save();
+		return redirect('input_groups');
     }
 
     /**
