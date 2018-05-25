@@ -24,6 +24,15 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ExportController extends Controller
 {
+	public function __construct(\Maatwebsite\Excel\Excel $excel)
+{
+    $this->excel = $excel;
+}
+
+public function exportAll() 
+{
+    return Excel::download(new TechMatrixExport, 'tech_matrix.xlsx');
+}
     public function export()
 	{
 		$list = Technology::all()->with('influent_sources', 'siting_requirements');
