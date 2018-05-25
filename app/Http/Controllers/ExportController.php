@@ -30,11 +30,22 @@ class ExportController extends Controller
     $this->excel = $excel;
 }
 
-public function exportAll() 
-{
-    return Excel::download(new TechMatrixExport, 'tech_matrix.xlsx');
-}
-    public function export()
+	public function exportAll() 
+	{
+		// $list = Technology::all();
+		// $filePath = 'tech_matrix.xlsx';
+		// $list->downloadExcel(
+		// 	$filePath,
+		// 	$writerType = null,
+		// 	$headings = false
+		// );
+
+		Excel::store(new TechMatrixExport(), 'tech_matrix.xlsx');
+		// return $list;
+		// return Excel::download(new TechMatrixExport, 'tech_matrix.xlsx');
+	}
+	
+	public function export()
 	{
 		$list = Technology::all()->with('influent_sources', 'siting_requirements');
 		$data = (object)[];
