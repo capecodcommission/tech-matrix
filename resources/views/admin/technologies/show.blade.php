@@ -109,7 +109,7 @@
 						</ul>
 					</div>
 					<div>
-						<p><strong>Time to Improve Estuary Water (Years)</strong>: {{$item->time_to_improve_estuary->length_of_time}}</p>
+						{{-- <p><strong>Time to Improve Estuary Water (Years)</strong>: {{$item->time_to_improve_estuary->length_of_time}}</p> --}}
 						
 					</div>
         </div>

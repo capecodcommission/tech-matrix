@@ -176,7 +176,7 @@ class TechnologyController extends Controller
 		}  
 		if($request->evaluation_monitoring)
         {
-            $item->longterm_monitoring()->sync($request->longterm_monitoring);
+            $item->evaluation_monitoring()->sync($request->evaluation_monitoring);
 		}  
 
 		if($request->time_to_improve_estuary)
