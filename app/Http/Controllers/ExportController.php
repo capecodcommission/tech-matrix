@@ -20,6 +20,7 @@ use App\Models\PilotingStatus;
 use App\Models\YearGrouping;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\TechMatrixExport;
 
 
 class ExportController extends Controller
