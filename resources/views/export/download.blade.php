@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Technology Matrix v2.0</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="Content-Type" content="application/vnd.ms-excel; charset=utf-8" /> 
 	<link rel="stylesheet" href="css/xls.css" />
 </head>
 <body>
