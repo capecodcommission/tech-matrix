@@ -36,8 +36,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-						<li class="nav-item"><a href="{{route('technologies.index')}}">Technologies</a></li>
-						<li class="nav-item"><a href="{{route('inputs.index')}}">Inputs/Settings</a></li>
+						<li class="nav-item"><a href="{{route('technologies.index')}}" class="nav-link">Technologies</a></li>
+						<li class="nav-item"><a href="{{route('inputs.index')}}" class="nav-link">Inputs/Settings</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
