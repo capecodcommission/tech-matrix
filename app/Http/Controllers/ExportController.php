@@ -41,6 +41,7 @@ class ExportController extends Controller
 		// );
 
 		Excel::store(new TechMatrixExport(), 'tech_matrix.xlsx');
+		echo asset('storage/tech_matrix.xlsx');
 		// return $list;
 		// return Excel::download(new TechMatrixExport, 'tech_matrix.xlsx');
 	}
