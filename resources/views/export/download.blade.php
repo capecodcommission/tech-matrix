@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>{{$data->title}}</title>
+	<title>Technology Matrix v2.0</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<link rel="stylesheet" href="css/xls.css" />
 </head>
@@ -16,7 +16,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		@forelse($data->list as $item)
+		@forelse($list as $item)
 			<tr>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
@@ -28,7 +28,7 @@
 			</tr>
 		@endforelse
 		
-		<tr><td colspan="4">Exported on {{$data->timestamp}}</td></tr>
+		<tr><td colspan="4">Exported on : (date)</td></tr>
 	</tbody>
 </table>
 </body>
