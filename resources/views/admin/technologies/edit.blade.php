@@ -200,8 +200,8 @@
 @endsection
 
 @section('scripts')
-<link rel="stylesheet" href="/css/redactor.css" />
-<script src="/js/redactor.js"></script>
+<link rel="stylesheet" href="/tech_matrix_v2/css/redactor.css" />
+<script src="/tech_matrix_v2/js/redactor.js"></script>
 	<script type="text/javascript">
 		$(function()
 		{

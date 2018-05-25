@@ -41,7 +41,7 @@
 					<div class="form-group">
 						<p><strong>Influent Sources</strong></p>
 						@forelse($influent_sources as $each)	
-							<div class="input-group">
+							<div class="form-check">
 								<label class="form-check-label" for="influent_sources_{{$each->id}}">
 									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"  @if($item->influent_sources->contains($each->id)) checked='checked' @endif> {{$each->influent_source}}
 								</label>

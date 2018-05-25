@@ -109,7 +109,17 @@
 						</ul>
 					</div>
 					<div>
-						{{-- <p><strong>Time to Improve Estuary Water (Years)</strong>: {{$item->time_to_improve_estuary->length_of_time}}</p> --}}
+						<p><strong>Time to Improve Estuary Water (Years)</strong>
+						</p>
+						<ul>
+							@forelse($item->time_to_improve_estuary as $each)
+								<li>{{$each->length_of_time}}</li>
+							@empty
+								<li>
+									No Time to Improve Estuary Water range assigned.
+								</li>
+							@endforelse
+						</ul> 
 						
 					</div>
         </div>

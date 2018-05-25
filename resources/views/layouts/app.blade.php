@@ -13,7 +13,7 @@
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" ></script> --}}
 
-	<script src="{{ asset('js/bootstrap.js') }}" ></script>
+	<script src="/tech_matrix_v2/js/bootstrap.js" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
