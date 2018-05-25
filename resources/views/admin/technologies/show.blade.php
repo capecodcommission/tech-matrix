@@ -35,7 +35,83 @@
 			<div><p><strong>References, Notes, Assumptions</strong></p> 
 			{!! $item->references_notes_assumptions !!}</div>
 			<div><p><strong>Regulatory Comments and Certainty</strong></p> 
-            {!! $item->regulatory_comments !!}</div>
+			{!! $item->regulatory_comments !!}</div>
+			<div>
+				<p><strong>Evaluation Monitoring</strong></p>
+				<ul>
+					@forelse($item->evaluation_monitoring as $each)
+						<li>{{$each->monitoring}}</li>
+					@empty
+						<li>No Evaluation Monitoring Assigned yet.</li>
+					@endforelse
+				</ul>
+			</div>
+			<div>
+				<p><strong>Longterm Monitoring</strong></p>
+				<ul>
+					@forelse($item->longterm_monitoring as $each)
+						<li>{{$each->longterm_o_m_monitoring}}</li>
+					@empty
+						<li>No Long Term Monitoring Assigned yet.</li>
+					@endforelse
+				</ul>
+			</div>
+			<div>
+				<p><strong>EcoSystem Services</strong></p>
+				<ul>
+					@forelse($item->ecosystem_services as $each)
+						<li>{{$each->ecosystem_service}}</li>
+					@empty
+						<li>No Ecosystem Services Assigned.</li>
+					@endforelse
+			</div>
+			<div>
+				<p><strong>Permitting Agencies</strong></p>
+				<ul>
+					@forelse($item->permitting_agencies as $each)
+						<li>{{$each->potential_agency}}</li>
+					@empty	
+						<li>No Permitting Agencies Assigned.</li>
+					@endforelse
+				</ul>
+			</div>
+			<div>
+				<p><strong>Influent Sources</strong></p>
+				<ul>
+					@forelse($item->influent_sources as $each)
+						<li>{{$each->influent_source}}</li>
+					@empty
+						<li>No Influent Sources Assigned.</li>
+					@endforelse
+				</ul>
+			</div>
+
+			<div>
+				<p><strong>Pollutants Treated</strong></p>
+				<ul>
+					@forelse($item->pollutants as $each)
+						<li>{{$each->pollutant}}</li>
+					@empty
+						<li>No Pollutants Assigned.</li>
+					@endforelse				
+				</ul>						
+			</div>
+			<div class="form-group">
+						<p><strong>System Design Considerations</strong></p>
+						<ul>
+							@forelse($item->system_design_considerations as $each)
+								<li>{{$each->infrastructure_to_consider}}</li>
+							@empty
+								<li>
+									No System Design Considerations Assigned.
+								</li>
+							@endforelse
+						</ul>
+					</div>
+					<div>
+						<p><strong>Time to Improve Estuary Water (Years)</strong>: {{$item->time_to_improve_estuary->length_of_time}}</p>
+						
+					</div>
         </div>
     </div>
 </div>

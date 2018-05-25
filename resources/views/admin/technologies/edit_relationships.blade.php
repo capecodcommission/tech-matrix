@@ -42,21 +42,9 @@
 						<p><strong>Influent Sources</strong></p>
 						@forelse($influent_sources as $each)	
 							<div class="input-group">
-								{{-- <div class="input-group-prepend"> --}}
-									{{-- <div class="input-group-text"> --}}
-										<label class="form-check-label" for="influent_sources_{{$each->id}}">
-											<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"  @if($item->influent_sources->contains($each->id)) checked='checked' @endif> {{$each->influent_source}}
-										</label>
-									{{-- </div> --}}
-								{{-- </div> --}}
-								{{-- <select class="form-control" id="influent_concentration_{{$each->id}}" name="influent_concentration[{{$each->id}}]">
-									<option value="">Select concentration of influent source</option>								
-									@forelse($influent_concentrations as $concentration)
-										<option value="{{$concentration->id}}" @if($item->influent_sources->contains($each->id)) @if(  $each->pivot->influent_concentration_id == $concentration->id) selected @endif @endif>{{$concentration->influent_concentration}}</option>
-									@empty
-										<option value="">No Concentration levels available</option>
-									@endforelse
-								</select> --}}
+								<label class="form-check-label" for="influent_sources_{{$each->id}}">
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"  @if($item->influent_sources->contains($each->id)) checked='checked' @endif> {{$each->influent_source}}
+								</label>
 							</div>
 						@empty
 							No Influent Sources Available
