@@ -11,18 +11,35 @@
 			<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
 			<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
 			<div><strong>Technology Description</strong><br />{!! $item->technology_description !!}</div>
-			<p><strong>Current Construction Cost (low)</strong>: {{$item->current_construction_cost_low}}</p>
-            <p><strong>Current Construction Cost (high)</strong>: {{$item->current_construction_cost_high}}</p>
-            <p><strong>Current Construction Cost (avg)</strong>: {{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</p>
-			<p><strong>Current Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor}}</p>
-			<p><strong>Current Project Cost (low)</strong>: {{$item->current_project_cost_low}}</p>
-			<p><strong>Current Project Cost (high)</strong>: {{$item->current_project_cost_high}}</p>
-			<p><strong>Current Annual OM Cost (low)</strong>: {{$item->current_annual_o_m_cost_low}}</p>
-            <p><strong>Current Annual OM Cost (high)</strong>: {{$item->current_annual_o_m_cost_high}}</p>
-            <p><strong>Current Annual OM Cost (avg)</strong>: {{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</p>
-			<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
-			<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
-			<p><strong>Replacement Cost</strong>: {{$item->replacement_cost}}</p>
+			<div class="accordion" id="accordionExample">
+				<div class="card">
+					<div class="card-header" id="headingCosts">
+					<h5 class="mb-0">
+						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#costData" aria-expanded="false" aria-controls="costData">
+						Cost Data
+						</button>
+					</h5>
+					</div>
+
+					<div id="costData" class="collapse show" aria-labelledby="headingCosts" data-parent="#accordionExample">
+					<div class="card-body">
+						<p><strong>Current Construction Cost (low)</strong>: {{$item->current_construction_cost_low}}</p>
+						<p><strong>Current Construction Cost (high)</strong>: {{$item->current_construction_cost_high}}</p>
+						<p><strong>Current Construction Cost (avg)</strong>: {{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</p>
+						<p><strong>Current Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor}}</p>
+						<p><strong>Current Project Cost (low)</strong>: {{$item->current_project_cost_low}}</p>
+						<p><strong>Current Project Cost (high)</strong>: {{$item->current_project_cost_high}}</p>
+						<p><strong>Current Annual OM Cost (low)</strong>: {{$item->current_annual_o_m_cost_low}}</p>
+						<p><strong>Current Annual OM Cost (high)</strong>: {{$item->current_annual_o_m_cost_high}}</p>
+						<p><strong>Current Annual OM Cost (avg)</strong>: {{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</p>
+						<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
+						<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
+						<p><strong>Replacement Cost</strong>: {{$item->replacement_cost}}</p>
+					</div>
+					</div>
+				</div>
+			</div>
+			
             <div><p><strong>Advantages</strong></p>
             {!! $item->advantages !!}</div>
             <div><p><strong>Disadvantages</strong></p> 
