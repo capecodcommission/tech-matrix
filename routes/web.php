@@ -24,6 +24,6 @@ Route::resource('technologies', 'TechnologyController');
 Route::resource('inputs', 'InputController');
 Route::resource('input_groups', 'InputGroupController');
 
-Route::get('export', 'ExportController@exportAll');
+Route::get('export', 'ExportController@exportAll')->name('export');
 
 Route::get('/home', 'HomeController@index')->name('home');

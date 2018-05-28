@@ -32,7 +32,7 @@
 			<tr>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
-				<td>{!! $item->technology_description !!}</td>
+				<td>description goes here</td>
 				<td>{{$item->current_construction_cost_low}}</td>
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>

@@ -6,7 +6,7 @@
         <div class="col-md-8">
                 <p><a href="{{route('technologies.index')}}">Back to List</a></p>
 
-			<h2>{{$item->technology_strategy}} <span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a></span></h2>
+			<h2>{{$item->technology_strategy}} <span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span></h2>
 			
 			<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
 			<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
