@@ -21,7 +21,7 @@
 							</button>
 						</h5>
 					</div>
-					<div id="description" class="collapse show" aria-labelledby="headingDescription" data-parent="#accordion">
+					<div id="description" class="collapse " aria-labelledby="headingDescription" data-parent="#accordion">
 						<div class="card-body">
 							<div>
 								<p><strong>Description</strong></p>
@@ -40,7 +40,7 @@
 						</h5>
 					</div>
 
-					<div id="costData" class="collapse show" aria-labelledby="headingCosts" data-parent="#accordion">
+					<div id="costData" class="collapse " aria-labelledby="headingCosts" data-parent="#accordion">
 						<div class="card-body">
 							<p><strong>Current Construction Cost (low)</strong>: {{$item->current_construction_cost_low}}</p>
 							<p><strong>Current Construction Cost (high)</strong>: {{$item->current_construction_cost_high}}</p>
@@ -66,7 +66,7 @@
 						</h5>
 					</div>
 
-					<div id="advData" class="collapse show" aria-labelledby="headingAdvantages" data-parent="#accordion">
+					<div id="advData" class="collapse " aria-labelledby="headingAdvantages" data-parent="#accordion">
 						<div class="card-body">
 							<div>
 								<p><strong>Advantages</strong></p>
@@ -87,7 +87,7 @@
 							</button>
 						</h5>
 					</div>
-					<div class="collapse show" id="referencesData" data-parent="#accordion">
+					<div class="collapse " id="referencesData" data-parent="#accordion">
 						<div class="card-body">
 							<div>
 								<p><strong>References, Notes, Assumptions</strong></p>
@@ -105,7 +105,7 @@
 								</button>
 							</h5>
 						</div>
-						<div class="collapse show" id="regulatoryData" data-parent="#accordion">
+						<div class="collapse " id="regulatoryData" data-parent="#accordion">
 							<div class="card-body">
 								<div>
 									<p><strong>Regulatory Comments and Certainty</strong></p>
@@ -123,7 +123,7 @@
 						</h5>
 					</div>
 
-					<div id="monitoring" class="collapse show" aria-labelledby="headingMonitoring" data-parent="#accordion">
+					<div id="monitoring" class="collapse " aria-labelledby="headingMonitoring" data-parent="#accordion">
 						<div class="card-body">
 							 <div>
 								<p><strong>Evaluation Monitoring</strong></p>
