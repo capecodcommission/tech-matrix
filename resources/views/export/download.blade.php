@@ -14,11 +14,17 @@
 	<thead>
 		<tr>
 			<th><strong>Technology Strategy</strong></th>
-			<th><strong>Technology ID</strong></th>
+			<th><strong>Technology<br /> ID</strong></th>
 			<th><strong>Technology Description</strong></th>
-			<th><strong>Current Construction Cost (low)</strong></th>
-			<th><strong>Current Construction Cost (high)</strong></th>
-			<th><strong>Current Construction Cost (avg)</strong></th>
+			<th><strong>Influent Sources</strong></th>
+			<th><strong>Influent Concentration</strong></th>
+			<th><strong>Pollutants Treated</strong></th>
+			<th><strong>Potential Permitting Agencies</strong></th>
+			<th><strong>Siting Requirements</strong></th>
+			<th><strong>Unit Metric</strong></th>
+			<th><strong>Current Construction <br />Cost (low)</strong></th>
+			<th><strong>Current Construction<br /> Cost (high)</strong></th>
+			<th><strong>Current Construction<br /> Cost (avg)</strong></th>
 			<th><strong>Current Construction Cost Percent Labor</strong></th>
 			<th><strong>Current Project Cost (low)</strong></th>
 			<th><strong>Current Project Cost (high)</strong></th>
@@ -28,6 +34,7 @@
 			<th><strong>Current Annual OM Cost Percent Labor</strong></th>
 			<th><strong>Useful Life (Years)</strong></th>
 			<th><strong>Replacement Cost</strong></th>
+			<th><strong>Evaluation Monitoring</strong></th>
 			<th><strong>Longterm Monitoring</strong></th>
 		</tr>
 	</thead>
@@ -37,6 +44,32 @@
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
 				<td>{{ $item->technology_description }}</td>
+				<td>@forelse($item->influent_sources as $each)
+						{{$each->influent_source}}<br />
+					@empty
+						No Influent Sources Identified.
+					@endforelse
+				</td>
+				<td>(Influent Concentration here)</td>
+				<td>@forelse($item->pollutants as $each)
+						{{$each->pollutant}}<br />
+					@empty
+						No pollutants identified.
+					@endforelse
+				</td>
+				<td>@forelse($item->permitting_agencies as $each)
+					{{$each->potential_agency}}<br />
+					@empty
+						No permitting agencies identified.
+					@endforelse
+				</td>
+				<td>@forelse($item->siting_requirements as $each)
+					{{$each->siting_requirement}}<br />
+					@empty
+						No siting requirements identified.
+					@endforelse
+				</td>
+				<td>{{$item->unit_metric->unit_metric}}</td>
 				<td>{{$item->current_construction_cost_low}}</td>
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
@@ -49,6 +82,12 @@
 				<td>{{$item->current_annual_o_m_cost_percent_labor}}</td>
 				<td>{{$item->useful_life_years}}</td>
 				<td>{{number_format($item->replacement_cost)}}</td>
+				<td class="text">@forelse($item->evaluation_monitoring as $each)
+						* {{$each->monitoring }}<br />
+					@empty
+						No Evaluation Monitoring Assigned yet.
+					@endforelse
+				</td>
 				<td class="text">@forelse($item->longterm_monitoring as $each)
 						* {{$each->monitoring }}<br />
 					@empty

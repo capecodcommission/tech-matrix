@@ -108,7 +108,7 @@
 							<div class="form-check">
 								<label class="form-check-label" for="longterm_monitoring_{{$each->id}}">
 									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="longterm_monitoring[]" id="longterm_monitoring_{{$each->id}}"  @if($item->longterm_monitoring->contains($each->id)) checked='checked' @endif>
-								{{$each->longterm_o_m_monitoring}}
+								{{$each->monitoring}}
 								</label>
 							</div>
 						@empty
@@ -127,6 +127,19 @@
 							</div>
 						@empty
 							No Year Groupings available.
+						@endforelse
+					</div>
+					<div class="form-group">
+						<p><strong>Siting Requirements</strong></p>
+						@forelse($siting_requirements as $each)
+							<div class="form-check">
+								<label class="form-check-label" for="siting_requirements_{{$each->id}}">
+									<input type="checkbox" class="form-check-input" id="siting_requirements_{{$each->id}}" value="{{$each->id}}" name="siting_requirements[]" @if($item->siting_requirements->contains($each->id)) checked="checked" @endif>
+									{{$each->siting_requirement}}
+								</label>
+							</div>
+						@empty
+							No Siting Requirements available.
 						@endforelse
 					</div>
 					

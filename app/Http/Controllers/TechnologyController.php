@@ -37,7 +37,7 @@ class TechnologyController extends Controller
         $unit_metrics = UnitMetric::all();
         $ecosystem_services = EcosystemService::all();
 		$evaluation_monitoring = EvaluationMonitoring::all();
-		$longterm_monitoring = OMMonitoring::all();
+		$longterm_monitoring = EvaluationMonitoring::all();
 		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring'));
     }
 
@@ -93,7 +93,7 @@ class TechnologyController extends Controller
         $unit_metrics = UnitMetric::all();
 		$ecosystem_services = EcosystemService::all();
 		$evaluation_monitoring = EvaluationMonitoring::all();
-		$longterm_monitoring = OMMonitoring::all();
+		$longterm_monitoring = EvaluationMonitoring::all();
 		$piloting_statuses = PilotingStatus::all();
        
 		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses'));
@@ -112,7 +112,7 @@ class TechnologyController extends Controller
         $unit_metrics = UnitMetric::all();
 		$ecosystem_services = EcosystemService::all();
 		$evaluation_monitoring = EvaluationMonitoring::all();
-		$longterm_monitoring = OMMonitoring::all();
+		$longterm_monitoring = EvaluationMonitoring::all();
 		$piloting_statuses = PilotingStatus::all();
 		$years = YearGrouping::all();
        

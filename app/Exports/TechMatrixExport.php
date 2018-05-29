@@ -55,13 +55,20 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
 	{
 		return [
 			AfterSheet::class => function(AfterSheet $event) {
-				$event->sheet->getStyle('P3:P78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('R3:R78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('Q3:Q78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('C3:C78')->getAlignment()->setWrapText(true);
-				$event->sheet->getColumnDimension('A')->setWidth(90);
+				$event->sheet->getStyle('D3:D78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('F3:G78')->getAlignment()->setWrapText(true);
+				$event->sheet->getColumnDimension('A')->setWidth(70);
 				$event->sheet->getColumnDimension('C')->setWidth(90);
-				$event->sheet->getColumnDimension('P')->setWidth(90);
-				$event->sheet->getStyle('D3:F78')->getNumberFormat()->setFormatCode('$#,##0');
-				$event->sheet->getStyle('H3:J78')->getNumberFormat()->setFormatCode('$#,##0');
+				$event->sheet->getColumnDimension('D')->setWidth(40);
+				$event->sheet->getColumnDimension('F')->setWidth(20);
+				$event->sheet->getColumnDimension('G')->setWidth(30);
+				$event->sheet->getColumnDimension('Q')->setWidth(90);
+				$event->sheet->getColumnDimension('R')->setWidth(90);
+				$event->sheet->getStyle('E3:G78')->getNumberFormat()->setFormatCode('$#,##0');
+				$event->sheet->getStyle('I3:K78')->getNumberFormat()->setFormatCode('$#,##0');
 
 				// $event->sheet->styleCells(
 				//     'B2:G8',

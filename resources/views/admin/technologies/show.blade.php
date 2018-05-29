@@ -177,6 +177,15 @@
 					@endforelse
 				</ul>
 			</div>
+			<div><p><strong>Siting Requirements</strong></p>
+				<ul>
+					@forelse($item->siting_requirements as $each)
+					<li>{{$each->siting_requirement}}</li>
+					@empty
+						No siting requirements identified.
+					@endforelse
+				</ul>
+			</div>
 			<div>
 				<p><strong>Influent Sources</strong></p>
 				<ul>
