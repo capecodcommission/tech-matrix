@@ -16,7 +16,7 @@
 				<div class="card">
 					<div class="card-header" id="headingDescription">
 						<h5 class="mb-0">
-							<button class="btn btn-link" data-toggle="collapse" data-target="#description" aria-expanded="false" aria-controls="description">
+							<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#description" aria-expanded="false" aria-controls="description">
 								Technology Description
 							</button>
 						</h5>
@@ -34,7 +34,7 @@
 				<div class="card">
 					<div class="card-header" id="headingCosts">
 						<h5 class="mb-0">
-							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#costData" aria-expanded="false" aria-controls="costData">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#costData" aria-expanded="false" aria-controls="costData">
 								Cost Data
 							</button>
 						</h5>
@@ -60,7 +60,7 @@
 				<div class="card">
 					<div class="card-header" id="headingAdvantages">
 						<h5 class="mb-0">
-							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#advData" aria-expanded="false" aria-controls="advData">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#advData" aria-expanded="false" aria-controls="advData">
 							Advantages &amp; Disadvantages
 							</button>
 						</h5>
@@ -82,7 +82,7 @@
 				<div class="card">
 					<div class="card-header" id="headingReferences">
 						<h5 class="mb-0">
-							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#referencesData" aria-expanded="false" aria-controls="referencesData">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#referencesData" aria-expanded="false" aria-controls="referencesData">
 								References, Notes, &amp; Assumptions
 							</button>
 						</h5>
@@ -100,7 +100,7 @@
 				<div class="card">
 						<div class="card-header" id="headingRegulatory">
 							<h5 class="mb-0">
-								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#regulatoryData" aria-expanded="false" aria-controls="regulatoryData">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#regulatoryData" aria-expanded="false" aria-controls="regulatoryData">
 									Regulatory Comments and Certainty
 								</button>
 							</h5>
@@ -117,7 +117,7 @@
 					<div class="card">
 						<div class="card-header" id="headingMonitoring">
 						<h5 class="mb-0">
-							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#monitoring" aria-expanded="false" aria-controls="monitoring">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#monitoring" aria-expanded="false" aria-controls="monitoring">
 								Monitoring
 							</button>
 						</h5>
