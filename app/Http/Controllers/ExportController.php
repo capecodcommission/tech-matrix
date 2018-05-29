@@ -44,11 +44,13 @@ class ExportController extends Controller
 		// echo asset('storage/tech_matrix.xlsx');
 		// return $list;
 		return Excel::download(new TechMatrixExport, 'tech_matrix.xlsx');
+
+
 	}
 	
 	public function export()
 	{
-		$list = Technology::all()->with('influent_sources', 'siting_requirements');
+		$list = Technology::all();
 		$data = (object)[];
 		$timestamp = date('Y-m-d_H-i');
 		$filename = 'TechMatrix_' . $timestamp;
@@ -56,7 +58,7 @@ class ExportController extends Controller
 		$data->list = $list;
 		$data->timestamp = $timestamp;
 
-		$file = Excel::create($filename, function($excel) use($data) 
+		$file = Excel::download($filename, function($excel) use($data) 
 		{
 			$data->title = 'Tech Matrix v2.0';
 			$excel->sheet($data->title, function($sheet) use($data){
