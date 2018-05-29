@@ -66,7 +66,7 @@ class Technology extends Model
 	}
 	public function longterm_monitoring()
     {
-        return $this->belongsToMany('App\Models\OMMonitoring', 'rel_longterm_o_m_monitoring_technologies', 'technology_id', 'longterm_o_m_monitoring_id')->withTimestamps();
+        return $this->belongsToMany('App\Models\EvaluationMonitoring', 'rel_longterm_o_m_monitoring_technologies', 'technology_id', 'longterm_o_m_monitoring_id')->withTimestamps();
 	}
 
 	public function piloting_status()
