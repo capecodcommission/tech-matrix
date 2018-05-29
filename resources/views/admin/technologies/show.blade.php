@@ -4,24 +4,38 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-                <p><a href="{{route('technologies.index')}}">Back to List</a></p>
+            <p><a href="{{route('technologies.index')}}">Back to List</a></p>
 
-			<h2>{{$item->technology_strategy}} <span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span></h2>
+			<h2>{{$item->technology_strategy}} 
+				<span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span>
+			</h2>
 			
 			<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
 			<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
-			<div><strong>Technology Description</strong><br />{!! $item->technology_description !!}</div>
-			<div class="accordion" id="accordionExample">
+			<div class="accordion" id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingDescription">
+						<h5 class="mb-0">
+							<button class="btn btn-link" data-toggle="collapse" data-target="#description" aria-expanded="false" aria-controls="description">
+								Technology Description
+							</button>
+						</h5>
+					</div>
+					<div id="description" class="collapse show" aria-labelledby="headingDescription" data-parent="#accordion">
+						{!! $item->technology_description !!}
+					</div>
+				</div>
+			
 				<div class="card">
 					<div class="card-header" id="headingCosts">
-					<h5 class="mb-0">
-						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#costData" aria-expanded="false" aria-controls="costData">
-						Cost Data
-						</button>
-					</h5>
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#costData" aria-expanded="false" aria-controls="costData">
+								Cost Data
+							</button>
+						</h5>
 					</div>
 
-					<div id="costData" class="collapse show" aria-labelledby="headingCosts" data-parent="#accordionExample">
+					<div id="costData" class="collapse show" aria-labelledby="headingCosts" data-parent="#accordion">
 						<div class="card-body">
 							<p><strong>Current Construction Cost (low)</strong>: {{$item->current_construction_cost_low}}</p>
 							<p><strong>Current Construction Cost (high)</strong>: {{$item->current_construction_cost_high}}</p>
@@ -47,7 +61,7 @@
 						</h5>
 					</div>
 
-					<div id="advData" class="collapse show" aria-labelledby="headingAdvantages" data-parent="#accordionExample">
+					<div id="advData" class="collapse show" aria-labelledby="headingAdvantages" data-parent="#accordion">
 						<div class="card-body">
 							<div>
 								<p><strong>Advantages</strong></p>
@@ -68,8 +82,10 @@
 							</button>
 						</h5>
 					</div>
-					<div class="collapse show" id="referencesData" data-parent="#accordionExample">
-						{!! $item->references_notes_assumptions !!}
+					<div class="collapse show" id="referencesData" data-parent="#accordion">
+						<div>
+							{!! $item->references_notes_assumptions !!}
+						</div>
 
 					</div>
 				</div>
@@ -81,21 +97,24 @@
 								</button>
 							</h5>
 						</div>
-						<div class="collapse show" id="regulatoryData" data-parent="#accordionExample">
-							{!! $item->regulatory_comments !!}
-	
+						<div class="collapse show" id="regulatoryData" data-parent="#accordion">
+							<div>
+								{!! $item->regulatory_comments !!}
+							</div>
 						</div>
 					</div>
-			</div>
-			
-            
-			<p>{{$item->image}}</p>
-			<p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p>
-			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
-			<p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
-			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p>
-			
-			 <div>
+					<div class="card">
+						<div class="card-header" id="headingMonitoring">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#monitoring" aria-expanded="false" aria-controls="monitoring">
+								Monitoring
+							</button>
+						</h5>
+					</div>
+
+					<div id="monitoring" class="collapse show" aria-labelledby="headingMonitoring" data-parent="#accordion">
+						<div class="card-body">
+							 <div>
 				<p><strong>Evaluation Monitoring</strong></p>
 				<ul>
 					@forelse($item->evaluation_monitoring as $each)
@@ -115,6 +134,19 @@
 					@endforelse
 				</ul>
 			</div> 
+						</div>
+					</div>
+					</div>
+			</div>
+			
+            
+			<p>{{$item->image}}</p>
+			<p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p>
+			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
+			<p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
+			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p>
+			
+			
 			<div>
 				<p><strong>EcoSystem Services</strong></p>
 				<ul>
