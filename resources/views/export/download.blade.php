@@ -46,9 +46,9 @@
 				<td>{{$item->useful_life_years}}</td>
 				<td>{{number_format($item->replacement_cost)}}</td>
 				<td>@forelse($item->longterm_monitoring as $each)
-						<li>{{$each->monitoring}}</li>
+						* {{$each->monitoring}}<br />
 					@empty
-						<li>No Long Term Monitoring Assigned yet.</li>
+						No Long Term Monitoring Assigned yet.
 					@endforelse
 				</td>
 			</tr>
