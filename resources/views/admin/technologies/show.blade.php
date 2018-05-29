@@ -22,35 +22,65 @@
 					</div>
 
 					<div id="costData" class="collapse show" aria-labelledby="headingCosts" data-parent="#accordionExample">
-					<div class="card-body">
-						<p><strong>Current Construction Cost (low)</strong>: {{$item->current_construction_cost_low}}</p>
-						<p><strong>Current Construction Cost (high)</strong>: {{$item->current_construction_cost_high}}</p>
-						<p><strong>Current Construction Cost (avg)</strong>: {{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</p>
-						<p><strong>Current Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor}}</p>
-						<p><strong>Current Project Cost (low)</strong>: {{$item->current_project_cost_low}}</p>
-						<p><strong>Current Project Cost (high)</strong>: {{$item->current_project_cost_high}}</p>
-						<p><strong>Current Annual OM Cost (low)</strong>: {{$item->current_annual_o_m_cost_low}}</p>
-						<p><strong>Current Annual OM Cost (high)</strong>: {{$item->current_annual_o_m_cost_high}}</p>
-						<p><strong>Current Annual OM Cost (avg)</strong>: {{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</p>
-						<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
-						<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
-						<p><strong>Replacement Cost</strong>: {{$item->replacement_cost}}</p>
+						<div class="card-body">
+							<p><strong>Current Construction Cost (low)</strong>: {{$item->current_construction_cost_low}}</p>
+							<p><strong>Current Construction Cost (high)</strong>: {{$item->current_construction_cost_high}}</p>
+							<p><strong>Current Construction Cost (avg)</strong>: {{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</p>
+							<p><strong>Current Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor}}</p>
+							<p><strong>Current Project Cost (low)</strong>: {{$item->current_project_cost_low}}</p>
+							<p><strong>Current Project Cost (high)</strong>: {{$item->current_project_cost_high}}</p>
+							<p><strong>Current Annual OM Cost (low)</strong>: {{$item->current_annual_o_m_cost_low}}</p>
+							<p><strong>Current Annual OM Cost (high)</strong>: {{$item->current_annual_o_m_cost_high}}</p>
+							<p><strong>Current Annual OM Cost (avg)</strong>: {{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</p>
+							<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
+							<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
+							<p><strong>Replacement Cost</strong>: {{$item->replacement_cost}}</p>
+						</div>
 					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingAdvantages">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#advData" aria-expanded="false" aria-controls="advData">
+							Advantages &amp; Disadvantages
+							</button>
+						</h5>
+					</div>
+
+					<div id="advData" class="collapse show" aria-labelledby="headingAdvantages" data-parent="#accordionExample">
+						<div class="card-body">
+							<div>
+								<p><strong>Advantages</strong></p>
+								{!! $item->advantages !!}
+							</div>
+							<div>
+								<p><strong>Disadvantages</strong></p> 
+								{!! $item->disadvantages!!}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingReferences">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#referencesData" aria-expanded="false" aria-controls="referencesData">
+								References, Notes, &amp; Assumptions
+							</button>
+						</h5>
+					</div>
+					<div class="collapse show" id="referencesData" data-parent="#accordionExample">
+						{!! $item->references_notes_assumptions !!}
+
 					</div>
 				</div>
 			</div>
 			
-            <div><p><strong>Advantages</strong></p>
-            {!! $item->advantages !!}</div>
-            <div><p><strong>Disadvantages</strong></p> 
-            {!! $item->disadvantages!!}</div>
+            
 			<p>{{$item->image}}</p>
 			<p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p>
 			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
 			<p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
 			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p>
-			<div><p><strong>References, Notes, Assumptions</strong></p> 
-			{!! $item->references_notes_assumptions !!}</div>
 			<div><p><strong>Regulatory Comments and Certainty</strong></p> 
 			{!! $item->regulatory_comments !!}</div>
 			<div>
