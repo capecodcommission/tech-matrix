@@ -35,7 +35,7 @@ class TechMatrixExport implements FromView
 	public function view(): View
     {
         return view('export.download', [
-            'list' => Technology::with('longterm_monitoring')->all()
+            'list' => Technology::all()
         ]);
     }
 }
