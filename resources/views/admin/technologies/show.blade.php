@@ -73,6 +73,19 @@
 
 					</div>
 				</div>
+				<div class="card">
+						<div class="card-header" id="headingRegulatory">
+							<h5 class="mb-0">
+								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#regulatoryData" aria-expanded="false" aria-controls="regulatoryData">
+									Regulatory Comments and Certainty
+								</button>
+							</h5>
+						</div>
+						<div class="collapse show" id="regulatoryData" data-parent="#accordionExample">
+							{!! $item->regulatory_comments !!}
+	
+						</div>
+					</div>
 			</div>
 			
             
@@ -81,9 +94,8 @@
 			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
 			<p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
 			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p>
-			<div><p><strong>Regulatory Comments and Certainty</strong></p> 
-			{!! $item->regulatory_comments !!}</div>
-			<div>
+			
+			{{-- <div>
 				<p><strong>Evaluation Monitoring</strong></p>
 				<ul>
 					@forelse($item->evaluation_monitoring as $each)
@@ -92,8 +104,8 @@
 						<li>No Evaluation Monitoring Assigned yet.</li>
 					@endforelse
 				</ul>
-			</div>
-			<div>
+			</div> --}}
+			{{-- <div>
 				<p><strong>Longterm Monitoring</strong></p>
 				<ul>
 					@forelse($item->longterm_monitoring as $each)
@@ -102,7 +114,7 @@
 						<li>No Long Term Monitoring Assigned yet.</li>
 					@endforelse
 				</ul>
-			</div>
+			</div> --}}
 			<div>
 				<p><strong>EcoSystem Services</strong></p>
 				<ul>
