@@ -11,4 +11,9 @@ class Note extends Model
 	use SoftDeletes;
 	protected $guarded = ['id'];
 	protected $table = 'notes';
+
+	public function user()
+	{
+		return $this->belongsTo('App\Models\User');
+	}
 }
