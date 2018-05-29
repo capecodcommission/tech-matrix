@@ -23,6 +23,7 @@ Route::post('technologies/updateRelationships', 'TechnologyController@updateRela
 Route::resource('technologies', 'TechnologyController');
 Route::resource('inputs', 'InputController');
 Route::resource('input_groups', 'InputGroupController');
+Route::resource('notes', 'NoteController');
 
 Route::get('export', 'ExportController@exportAll')->name('export');
 

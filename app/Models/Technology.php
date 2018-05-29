@@ -5,8 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
-
 class Technology extends Model
 {
 	use SoftDeletes;
@@ -83,4 +81,14 @@ class Technology extends Model
 	{
 		return $this->belongsToMany('App\Models\YearGrouping', 'rel_years_of_evaluation_monitoring_technologies', 'technology_id', 'year_grouping_id')->withTimestamps();
 	}
+
+	public function category()
+	{
+		return $this->belongsTo('App\Models\Category');
+	}
+
+	public function notes()
+    {
+        return $this->morphToMany('App\Models\Note', 'notable');
+    }
 }

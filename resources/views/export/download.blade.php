@@ -13,6 +13,7 @@
 <table class="users admin table">
 	<thead>
 		<tr>
+			<th><strong>Technology Type</strong></th>
 			<th><strong>Technology Strategy</strong></th>
 			<th><strong>Technology<br /> ID</strong></th>
 			<th><strong>Technology Description</strong></th>
@@ -41,6 +42,7 @@
 	<tbody>
 		@forelse($list as $item)
 			<tr>
+				<td>{{$item->technology_type->technology_type}}</td>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
 				<td>{{ $item->technology_description }}</td>
