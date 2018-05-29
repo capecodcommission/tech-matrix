@@ -16,6 +16,7 @@ use App\Models\EvaluationMonitoring;
 use App\Models\OMMonitoring;
 use App\Models\PilotingStatus;
 use App\Models\YearGrouping;
+use App\Models\Category;
 
 class TechnologyController extends Controller
 {
@@ -38,7 +39,8 @@ class TechnologyController extends Controller
         $ecosystem_services = EcosystemService::all();
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = EvaluationMonitoring::all();
-		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring'));
+		$categories = Category::all();
+		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'categories'));
     }
 
     public function store(Request $request)
@@ -95,8 +97,9 @@ class TechnologyController extends Controller
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = EvaluationMonitoring::all();
 		$piloting_statuses = PilotingStatus::all();
+		$categories = Category::all();
        
-		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses'));
+		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'categories'));
     }
 	
     public function editRelationships(Technology $technology)
