@@ -95,7 +95,7 @@
 			<p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
 			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p>
 			
-			{{-- <div>
+			 <div>
 				<p><strong>Evaluation Monitoring</strong></p>
 				<ul>
 					@forelse($item->evaluation_monitoring as $each)
@@ -104,17 +104,17 @@
 						<li>No Evaluation Monitoring Assigned yet.</li>
 					@endforelse
 				</ul>
-			</div> --}}
-			{{-- <div>
+			</div> 
+			 <div>
 				<p><strong>Longterm Monitoring</strong></p>
 				<ul>
 					@forelse($item->longterm_monitoring as $each)
-						<li>{{$each->longterm_o_m_monitoring}}</li>
+						<li>{{$each->monitoring}}</li>
 					@empty
 						<li>No Long Term Monitoring Assigned yet.</li>
 					@endforelse
 				</ul>
-			</div> --}}
+			</div> 
 			<div>
 				<p><strong>EcoSystem Services</strong></p>
 				<ul>
