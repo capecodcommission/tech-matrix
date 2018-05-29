@@ -22,7 +22,12 @@
 						</h5>
 					</div>
 					<div id="description" class="collapse show" aria-labelledby="headingDescription" data-parent="#accordion">
-						{!! $item->technology_description !!}
+						<div class="card-body">
+							<div>
+								<p><strong>Description</strong></p>
+									{!! $item->technology_description !!}
+							</div>
+						</div>
 					</div>
 				</div>
 			
@@ -83,8 +88,11 @@
 						</h5>
 					</div>
 					<div class="collapse show" id="referencesData" data-parent="#accordion">
-						<div>
-							{!! $item->references_notes_assumptions !!}
+						<div class="card-body">
+							<div>
+								<p><strong>References, Notes, Assumptions</strong></p>
+								{!! $item->references_notes_assumptions !!}
+							</div>
 						</div>
 
 					</div>
@@ -98,8 +106,11 @@
 							</h5>
 						</div>
 						<div class="collapse show" id="regulatoryData" data-parent="#accordion">
-							<div>
-								{!! $item->regulatory_comments !!}
+							<div class="card-body">
+								<div>
+									<p><strong>Regulatory Comments and Certainty</strong></p>
+									{!! $item->regulatory_comments !!}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -115,28 +126,28 @@
 					<div id="monitoring" class="collapse show" aria-labelledby="headingMonitoring" data-parent="#accordion">
 						<div class="card-body">
 							 <div>
-				<p><strong>Evaluation Monitoring</strong></p>
-				<ul>
-					@forelse($item->evaluation_monitoring as $each)
-						<li>{{$each->monitoring}}</li>
-					@empty
-						<li>No Evaluation Monitoring Assigned yet.</li>
-					@endforelse
-				</ul>
-			</div> 
-			 <div>
-				<p><strong>Longterm Monitoring</strong></p>
-				<ul>
-					@forelse($item->longterm_monitoring as $each)
-						<li>{{$each->monitoring}}</li>
-					@empty
-						<li>No Long Term Monitoring Assigned yet.</li>
-					@endforelse
-				</ul>
-			</div> 
+								<p><strong>Evaluation Monitoring</strong></p>
+								<ul>
+									@forelse($item->evaluation_monitoring as $each)
+										<li>{{$each->monitoring}}</li>
+									@empty
+										<li>No Evaluation Monitoring Assigned yet.</li>
+									@endforelse
+								</ul>
+							</div> 
+							<div>
+								<p><strong>Longterm Monitoring</strong></p>
+								<ul>
+									@forelse($item->longterm_monitoring as $each)
+										<li>{{$each->monitoring}}</li>
+									@empty
+										<li>No Long Term Monitoring Assigned yet.</li>
+									@endforelse
+								</ul>
+							</div> 
 						</div>
 					</div>
-					</div>
+				</div>
 			</div>
 			
             
