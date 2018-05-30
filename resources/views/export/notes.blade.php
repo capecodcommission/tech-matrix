@@ -23,6 +23,12 @@
 				<td>{{$item->id}}</td>
 				<td>{{$item->note}}</td>
 			</tr>
+		@empty
+		<tr>
+			<td></td>
+			<td>No Notes</td>
+		</tr>
+		@endforelse
 	</tbody>
 </table>
 </body>

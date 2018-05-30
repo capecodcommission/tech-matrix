@@ -18,7 +18,7 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 
 
-class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
+class TechnologiesSheet implements FromView, WithEvents
 {
 
 	public function view(): View

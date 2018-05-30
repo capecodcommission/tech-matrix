@@ -10,7 +10,8 @@ use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-use App\Models\Technology;
+use App\Models\Note;
+
 use Maatwebsite\Excel\Concerns\WithEvents;
 
 use Maatwebsite\Excel\Events\AfterSheet;
