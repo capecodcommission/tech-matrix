@@ -73,20 +73,24 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getColumnDimension('H')->setWidth(30);
 				$event->sheet->getColumnDimension('I')->setWidth(30);
 				$event->sheet->getColumnDimension('K')->setWidth(15);
-				$event->sheet->getColumnDimension('AF')->setWidth(15);
-				$event->sheet->getColumnDimension('Z')->setWidth(15);
-				$event->sheet->getColumnDimension('AA')->setWidth(15);
-				$event->sheet->getColumnDimension('AB')->setWidth(15);
-				$event->sheet->getColumnDimension('AC')->setWidth(15);
-				$event->sheet->getColumnDimension('AD')->setWidth(15);
-				$event->sheet->getColumnDimension('AE')->setWidth(15);
 				$event->sheet->getColumnDimension('W')->setWidth(40);
-				$event->sheet->getColumnDimension('X')->setWidth(40);
-				$event->sheet->getColumnDimension('Y')->setWidth(40);
+				$event->sheet->getColumnDimension('X')->setWidth(60);
+				$event->sheet->getColumnDimension('Y')->setWidth(60);
+				$event->sheet->getColumnDimension('Z')->setWidth(40);
+				$event->sheet->getColumnDimension('AA')->setWidth(40);
+				$event->sheet->getColumnDimension('AB')->setWidth(40);
+				$event->sheet->getColumnDimension('AC')->setWidth(40);
+				$event->sheet->getColumnDimension('AD')->setWidth(40);
+				$event->sheet->getColumnDimension('AE')->setWidth(40);
+				$event->sheet->getColumnDimension('AF')->setWidth(40);
 
 				$event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				$event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				$event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
+
+				// add formulas to cells
+				
+				$event->sheet->setCellValue('AF5','=K5*0.4536');
 
 
 				// $event->sheet->styleCells(
