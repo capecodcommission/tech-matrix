@@ -60,7 +60,8 @@ class NoteController extends Controller
      */
     public function edit(Note $note)
     {
-        //
+		$item = $note;
+		return view('admin.notes.edit', compact('item'));
     }
 
     /**
@@ -72,7 +73,9 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        //
+		$note->fill($request->all());
+		$note->save();
+		return redirect('notes');
     }
 
     /**
