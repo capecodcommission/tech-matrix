@@ -49,7 +49,7 @@
 	<tbody>
 		@forelse($list as $item)
 			<tr>
-				<td>{{$item->technology_type->technology_type}}</td>
+				<td>@if($item->technology_type_id != NULL){{$item->technology_type->technology_type}}@endif</td>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
 				<td>{{ $item->technology_description }}</td>
