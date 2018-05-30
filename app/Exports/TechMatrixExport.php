@@ -33,7 +33,7 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 
 
-class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, ShouldAutoSize
+class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
 {
 	// public function collection()
 	// {
@@ -66,6 +66,7 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, Sh
 				$event->sheet->getStyle('W3:AF78')->getAlignment()->setWrapText(true);
 				$event->sheet->getColumnDimension('A')->setWidth(70);
 				$event->sheet->getColumnDimension('B')->setWidth(90);
+				$event->sheet->getColumnDimension('D')->setWidth(90);
 				$event->sheet->getColumnDimension('E')->setWidth(22);
 				$event->sheet->getColumnDimension('F')->setWidth(20);
 				$event->sheet->getColumnDimension('G')->setWidth(30);
