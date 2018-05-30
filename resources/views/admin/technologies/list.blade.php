@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-lg-12">
 			<h2>Technologies</h2> (<a href="{{route('export')}}" target="_blank">Download the full list</a>)
 			<table class="table">
 				<thead>

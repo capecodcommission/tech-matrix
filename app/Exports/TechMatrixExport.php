@@ -11,6 +11,7 @@ use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
 use App\Models\Technology;
+use App\Models\Note;
 // use App\Models\EcoSystemService;
 // use App\Models\EvaluationMonitoring;
 // use App\Models\InfluentConcentration;
@@ -41,6 +42,7 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
 		return view('export.download', [
 			'list' => Technology::all()
 		]);
+		// TODO: add a new sheet with all Notes
 	}
 
 	public function columnFormats(): array
