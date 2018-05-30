@@ -51,21 +51,21 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, Wi
 
 	public function sheets(): array
     {
-        $sheets = [];
+        // $sheets = [];
 
         
-        $sheets[] = view('export.technologies', [
-			'list' => Technology::all()
-		]);
+        // $sheets[] = view('export.technologies', [
+		// 	'list' => Technology::all()
+		// ]);
 		// $sheets[] = view('export.inputs', [
 		// 	'list' => Input::all()
 		// ]);
-		$sheets[] = view('export.notes', [
-			'list' => Input::all()
-		]);
+		// $sheets[] = view('export.notes', [
+		// 	'list' => Input::all()
+		// ]);
         
 
-        return $sheets;
+        // return $sheets;
     }
 
 	public function columnFormats(): array
