@@ -14,7 +14,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-		$list = Note::all();
+		$list = Note::withTrashed()->get();
 		return view('admin.notes.list', compact('list'));
     }
 
@@ -86,6 +86,7 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
-        //
+		$note->delete();
+		return redirect('notes');
     }
 }

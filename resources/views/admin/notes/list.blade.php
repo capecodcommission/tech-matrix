@@ -12,7 +12,7 @@
 						<th>Note</th>
 						<th>Last Updated</th>
 						<th>Edit</th>
-						{{-- <th>Delete</th> --}}
+						<th>Delete</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -22,7 +22,12 @@
 							<td>{{$item->note}}</td>
 							<td>{{$item->updated_at}}</td>
 							<td><a href="{{route('notes.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
-							{{-- <td><a href="{{url('notes.delete', $item->id)}}"><i class="fa fa-trash"></i> Delete</a></td> --}}
+							<td>{!! Form::open(['route' => ['notes.destroy',$item->id], 
+                                        'method'    => 'delete',
+                                        'class'     =>'delete_form'
+                                        ])  !!}
+                             <button class="is-danger button is-inverted"><span class="icon"><i class="fa fa-trash"></i></span> delete</button>           
+            {!! Form::close() !!}</td>
 
 						</tr>
 					@empty
