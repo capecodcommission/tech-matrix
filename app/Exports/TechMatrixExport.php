@@ -11,6 +11,7 @@ use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
 use App\Models\Technology;
+use App\Models\Input;
 use App\Models\Note;
 // use App\Models\EcoSystemService;
 // use App\Models\EvaluationMonitoring;
@@ -29,11 +30,11 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 
 use Maatwebsite\Excel\Events\AfterSheet;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
 
 
-
-class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
+class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, WithMultipleSheets
 {
 	// public function collection()
 	// {
@@ -45,7 +46,27 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
 			'list' => Technology::all()
 		]);
 		// TODO: add a new sheet with all Notes
+
 	}
+
+	public function sheets(): array
+    {
+        $sheets = [];
+
+        
+        $sheets[] = view('export.technologies', [
+			'list' => Technology::all()
+		]);
+		// $sheets[] = view('export.inputs', [
+		// 	'list' => Input::all()
+		// ]);
+		$sheets[] = view('export.notes', [
+			'list' => Input::all()
+		]);
+        
+
+        return $sheets;
+    }
 
 	public function columnFormats(): array
 	{
