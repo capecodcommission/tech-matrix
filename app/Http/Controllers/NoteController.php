@@ -14,7 +14,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+		$list = Note::all();
+		return view('admin.notes.list', compact('list'));
     }
 
     /**
