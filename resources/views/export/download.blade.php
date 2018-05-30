@@ -78,7 +78,7 @@
 						No siting requirements identified.
 					@endforelse
 				</td>
-				<td>{{$item->unit_metric->unit_metric}}</td>
+				<td>@if($item->unit_metric_id != NULL){{$item->unit_metric->unit_metric}}@endif</td>
 				<td>{{$item->current_construction_cost_low}}</td>
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
@@ -114,7 +114,7 @@
 						No Long Term Monitoring Assigned yet.
 					@endforelse
 				</td>
-				<td>{{$item->piloting_status->pilot_status}}</td>
+				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
 				<td>{{$item->pilot_study_findings}}</td>
 				<td class="text">{{$item->public_acceptance}}</td>
 				
