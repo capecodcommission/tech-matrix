@@ -28,10 +28,12 @@ use App\Models\Note;
 use Maatwebsite\Excel\Concerns\WithEvents;
 
 use Maatwebsite\Excel\Events\AfterSheet;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 
 
-class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
+
+class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, ShouldAutoSize
 {
 	// public function collection()
 	// {
@@ -70,16 +72,16 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getColumnDimension('H')->setWidth(30);
 				$event->sheet->getColumnDimension('I')->setWidth(30);
 				$event->sheet->getColumnDimension('K')->setWidth(15);
-				$event->sheet->getColumnDimension('L')->setWidth(15);
-				$event->sheet->getColumnDimension('M')->setWidth(15);
-				$event->sheet->getColumnDimension('O')->setWidth(15);
-				$event->sheet->getColumnDimension('P')->setWidth(15);
-				$event->sheet->getColumnDimension('S')->setWidth(15);
-				$event->sheet->getColumnDimension('Q')->setWidth(15);
-				$event->sheet->getColumnDimension('R')->setWidth(15);
+				$event->sheet->getColumnDimension('AF')->setWidth(15);
+				$event->sheet->getColumnDimension('Z')->setWidth(15);
+				$event->sheet->getColumnDimension('AA')->setWidth(15);
+				$event->sheet->getColumnDimension('AB')->setWidth(15);
+				$event->sheet->getColumnDimension('AC')->setWidth(15);
+				$event->sheet->getColumnDimension('AD')->setWidth(15);
+				$event->sheet->getColumnDimension('AE')->setWidth(15);
 				$event->sheet->getColumnDimension('W')->setWidth(40);
 				$event->sheet->getColumnDimension('X')->setWidth(40);
-				$event->sheet->getColumnDimension('Y:AF')->setWidth(40);
+				$event->sheet->getColumnDimension('Y')->setWidth(40);
 
 				$event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				$event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
