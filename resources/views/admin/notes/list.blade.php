@@ -12,22 +12,20 @@
 						<th>Note</th>
 						<th>Last Updated</th>
 						<th>Edit</th>
-						<th>Delete</th>
+						<th>Delete/Restore</th>
 					</tr>
 				</thead>
 				<tbody>
 					@forelse($list as $item)
 						<tr>
 							<td><a href="{{route('notes.show', $item->id)}}">{{$item->id}}</a></td>
-							<td>{{$item->note}}</td>
+							<td>@if($item->trashed())<s>{{$item->note}}</s> @else {{$item->note}} @endif</td>
 							<td>{{$item->updated_at}}</td>
 							<td><a href="{{route('notes.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
-							<td>{!! Form::open(['route' => ['notes.destroy',$item->id], 
-                                        'method'    => 'delete',
-                                        'class'     =>'delete_form'
-                                        ])  !!}
-                             <button class="is-danger button is-inverted"><span class="icon"><i class="fa fa-trash"></i></span> delete</button>           
-            {!! Form::close() !!}</td>
+							<td>@if($item->trashed())
+									<a href="{{url('notes/restore', $item->id)}}"> Restore</a> @else <form method="POST" action="{{route('notes.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form"><input name="_method" type="hidden" value="DELETE"> @csrf
+								<button class="is-danger button is-inverted"><span class="icon"><i class="fa fa-trash"></i></span> delete</button>           
+			   </form>@endif</td>
 
 						</tr>
 					@empty

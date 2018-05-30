@@ -86,7 +86,17 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
+		// dd($note);
 		$note->delete();
+		return redirect('notes');
+	}
+	
+	public function restore($id)
+    {
+		$note = Note::withTrashed()
+        ->where('id', $id)
+        ->first();
+		$note->restore();
 		return redirect('notes');
     }
 }
