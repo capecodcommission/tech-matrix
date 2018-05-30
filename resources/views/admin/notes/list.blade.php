@@ -18,19 +18,31 @@
 				<tbody>
 					@forelse($list as $item)
 						<tr>
-							<td><a href="{{route('notes.show', $item->id)}}">{{$item->id}}</a></td>
-							<td>@if($item->trashed())<s>{{$item->note}}</s> @else {{$item->note}} @endif</td>
-							<td>{{$item->updated_at}}</td>
-							<td><a href="{{route('notes.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
-							<td>@if($item->trashed())
-									<a href="{{url('notes/restore', $item->id)}}"> Restore</a> @else <form method="POST" action="{{route('notes.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form"><input name="_method" type="hidden" value="DELETE"> @csrf
-								<button class="is-danger button is-inverted"><span class="icon"><i class="fa fa-trash"></i></span> delete</button>           
-			   </form>@endif</td>
+							@if($item->trashed())
+								<td>{{$item->id}}</td>
+								<td><s>{{$item->note}}</s></td>
+								<td>Del: {{$item->deleted_at}}</td>
+								<td>--</td>
+								<td>
+									<a href="{{url('notes/restore', $item->id)}}"> Restore</a>
+								</td>
+							@else
+								<td><a href="{{route('notes.show', $item->id)}}">{{$item->id}}</a></td>
+								<td>{{$item->note}}</td>
+								<td>{{$item->updated_at}}</td>
+								<td><a href="{{route('notes.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
+								<td>
+									<form method="POST" action="{{route('notes.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form">
+										<input name="_method" type="hidden" value="DELETE"> 
+										@csrf
+										<button class="is-danger button is-inverted"><span class="icon"><i class="fa fa-trash"></i></span> delete</button> 
+									</form>
+							@endif
 
 						</tr>
 					@empty
 						<tr>
-							<td colspan="3">No Notes Exist</td>
+							<td colspan="5">No Notes Exist</td>
 						</tr>
 					@endforelse
 				</tbody>
