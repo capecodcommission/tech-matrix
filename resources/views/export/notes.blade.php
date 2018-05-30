@@ -15,18 +15,21 @@
 		<tr>
 			<th><strong></strong></th>
 			<th><strong>Note</strong></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 		@forelse($list as $item)
 			<tr>
 				<td>{{$item->id}}</td>
-				<td>@if($item->trashed())<s>{{$item->note}}</s> @else {{$item->note}} @endif</td>
+				<td>{{$item->note}} </td>
+				<td>@if($item->trashed()) Deleted: {{$item->deleted_at}} @endif</td>
 			</tr>
 		@empty
 		<tr>
 			<td></td>
 			<td>No Notes</td>
+			<td></td>
 		</tr>
 		@endforelse
 	</tbody>
