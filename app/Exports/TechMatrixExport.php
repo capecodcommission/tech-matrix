@@ -49,8 +49,8 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, Wi
 
 	}
 
-	public function sheets(): array
-    {
+	// public function sheets(): array
+    // {
         // $sheets = [];
 
         
@@ -66,7 +66,7 @@ class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, Wi
         
 
         // return $sheets;
-    }
+    // }
 
 	public function columnFormats(): array
 	{
