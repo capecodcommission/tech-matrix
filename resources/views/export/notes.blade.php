@@ -21,7 +21,7 @@
 		@forelse($list as $item)
 			<tr>
 				<td>{{$item->id}}</td>
-				<td>{{$item->note}}</td>
+				<td>@if($item->trashed())<s>{{$item->note}}</s> @else {{$item->note}} @endif</td>
 			</tr>
 		@empty
 		<tr>

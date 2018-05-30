@@ -19,13 +19,23 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 
 
-class NotesSheet implements FromView
+class NotesSheet implements FromView, WithEvents
 {
 
 	public function view(): View
 	{
 		return view('export.notes', [
-			'list' => Note::all()
+			'list' => Note::withTrashed()->get()
 		]);
+	}
+
+	public function registerEvents(): array
+	{
+		return [
+			AfterSheet::class => function(AfterSheet $event) {
+				$event->sheet->getStyle('B3:B200')->getAlignment()->setWrapText(true);
+				$event->sheet->getColumnDimension('B')->setWidth(100);
+			},
+		];
 	}
 }
