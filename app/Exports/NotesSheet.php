@@ -10,28 +10,21 @@ use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
+use App\Models\Technology;
 use Maatwebsite\Excel\Concerns\WithEvents;
 
 use Maatwebsite\Excel\Events\AfterSheet;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
-use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
 
 
-class TechMatrixExport implements FromView, WithEvents, WithMultipleSheets
+class NotesSheet implements FromView
 {
 
-
-	public function sheets(): array
-    {
-        $sheets = [];
-
-        
-			$sheets[] = new TechnologiesSheet();
-			$sheets[] = new NotesSheet();
-
-        return $sheets;
-    }
-
-	
+	public function view(): View
+	{
+		return view('export.notes', [
+			'list' => Note::all()
+		]);
+	}
 }
