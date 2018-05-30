@@ -231,7 +231,9 @@
 								</li>
 							@endforelse
 						</ul> 
-						
+					</div>
+					<div><p><strong>Pilot Study Findings</strong></p>
+						<div>{!! $item->pilot_study_findings !!}</div>
 					</div>
         </div>
     </div>

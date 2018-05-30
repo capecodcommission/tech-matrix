@@ -35,8 +35,15 @@
 			<th><strong>Current Annual OM Cost Percent Labor</strong></th>
 			<th><strong>Useful Life (Years)</strong></th>
 			<th><strong>Replacement Cost</strong></th>
+			<th><strong>System Design Considerations</strong></th>
+			<th><strong>Advantages</strong></th>
+			<th><strong>Disadvantages</strong></th>
+			<th><strong>Eco Services</strong></th>
 			<th><strong>Evaluation Monitoring</strong></th>
 			<th><strong>Longterm Monitoring</strong></th>
+			<th><strong>Piloting Status <br />DEP Approval</strong></th>
+			<th><strong>Pilot Study Findings</strong></th>
+			<th><strong>Public Acceptance</strong></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -84,6 +91,17 @@
 				<td>{{$item->current_annual_o_m_cost_percent_labor}}</td>
 				<td>{{$item->useful_life_years}}</td>
 				<td>{{number_format($item->replacement_cost)}}</td>
+				<td>@forelse($item->system_design_considerations as $each)
+						{{$each->infrastructure_to_consider}}<br />
+					@empty No system design considerations identified.
+					@endforelse</td>
+				<td class="text">{{$item->advantages}}</td>
+				<td class="text">{{$item->disadvantages}}</td>	
+				<td>@forelse($item->ecosystem_services as $each)
+						{{$each->ecosystem_service}}<br />
+					@empty No ecosystem services identified.
+					@endforelse
+				</td>
 				<td class="text">@forelse($item->evaluation_monitoring as $each)
 						* {{$each->monitoring }}<br />
 					@empty
@@ -96,6 +114,10 @@
 						No Long Term Monitoring Assigned yet.
 					@endforelse
 				</td>
+				<td>{{$item->piloting_status->pilot_status}}</td>
+				<td>{{$item->pilot_study_findings}}</td>
+				<td class="text">{{$item->public_acceptance}}</td>
+				
 			</tr>
 		@empty
 			<tr>

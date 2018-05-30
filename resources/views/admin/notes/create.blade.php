@@ -8,11 +8,10 @@
 			<h2>Create New Note</h2>
 			<form action="{{route('notes.store')}}" method="POST">
 					@csrf
-				
-				  <div class="form-group">
+				<div class="form-group">
 					<label for="note">Notes</label>
 					<textarea class="form-control" id="note" name="note" rows="10" ></textarea>
-				  </div>
+				</div>
 				  
 				<div class="form-group">
 					<input type="submit" value="Save Note">

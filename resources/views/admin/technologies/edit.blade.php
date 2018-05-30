@@ -171,7 +171,12 @@
 								No Piloting Statuses Available
 							@endforelse
 						</select>
-					</div>					
+					</div>		
+					<div class="form-group">
+						<label for="pilot_study_findings">Pilot Study Findings</label>
+						<textarea name="pilot_study_findings" id="pilot_study_findings" name="pilot_study_findings" class="form-control" rows="10">{{$item->pilot_study_findings}}</textarea>
+						
+					</div>			
 					<div class="form-group">
 						<label for="references_notes_assumptions">References, Notes, &amp; Assumptions</label>
 						<textarea name="references_notes_assumptions" id="references_notes_assumptions" name="references_notes_assumptions" class="form-control" rows="10">{{$item->references_notes_assumptions}}</textarea>
