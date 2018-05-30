@@ -34,7 +34,7 @@ use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
 
 
-class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents, WithMultipleSheets
+class TechMatrixExport implements FromView, WithColumnFormatting, WithEvents
 {
 	// public function collection()
 	// {
