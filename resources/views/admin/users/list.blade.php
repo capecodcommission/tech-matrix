@@ -32,7 +32,21 @@
 						</tr>
 					@empty
 						<tr>
-							<td colspan="3">No Users Exist</td>
+							<td colspan="5">No Users Exist</td>
+						</tr>
+					@endforelse
+					@forelse($deleted as $item)
+						<tr>
+							<td><s><a href="{{route('users.show', $item->id)}}">{{$item->name}}</a></s></td>
+							<td>{{$item->email}}</td>
+							<td> </td>
+							<td><a href="{{route('users.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
+							<td> <a href="{{url('users/restore', $item->id)}}"> Restore</a> </td>
+
+						</tr>
+					@empty
+						<tr>
+							<td colspan="5">No Users have been deleted.</td>
 						</tr>
 					@endforelse
 				</tbody>

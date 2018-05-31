@@ -29,4 +29,19 @@ class UserController extends Controller
 	{
 		return view('admin.users.edit', compact('user'));
 	}
+
+	public function destroy(User $user)
+	{
+		$user->delete();
+		return redirect('users');
+	}
+
+	public function restore($id)
+	{
+		$user = User::withTrashed()
+        ->where('id', $id)
+        ->first();
+		$user->restore();
+		return redirect('users');
+	}
 }

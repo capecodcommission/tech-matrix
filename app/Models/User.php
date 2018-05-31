@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class User extends Authenticatable
 {
 	use Notifiable;
 	use HasRoles;
+	use SoftDeletes;
 
 	protected $table = 'db_owner.users';
 
