@@ -26,6 +26,8 @@ Route::resource('input_groups', 'InputGroupController');
 Route::get('notes/restore/{note}', 'NoteController@restore');
 Route::resource('notes', 'NoteController');
 
+Route::resource('users', 'UserController');
+
 Route::get('export', 'ExportController@exportAll')->name('export');
 
 Route::get('/home', 'HomeController@index')->name('home');
