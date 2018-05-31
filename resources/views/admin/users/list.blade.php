@@ -10,7 +10,7 @@
 					<tr>
 						<th>Name</th>
 						<th>Email</th>
-						<th>Permissions</th>
+						<th>Role</th>
 						<th>Edit</th>
 						<th>Delete</th>
 					</tr>
@@ -20,7 +20,7 @@
 						<tr>
 							<td><a href="{{route('users.show', $item->id)}}">{{$item->name}}</a></td>
 							<td>{{$item->email}}</td>
-							<td> </td>
+							<td>{{$item->role->display_name}}</td>
 							<td><a href="{{route('users.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
 							<td> 
 								<form method="POST" action="{{route('users.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form">
