@@ -13,6 +13,7 @@ class UserController extends Controller
     {
 		$list = User::all();
 		$deleted = User::onlyTrashed()->get();
+		
 		return view('admin.users.list', compact('list', 'deleted'));
     }
 
@@ -22,6 +23,14 @@ class UserController extends Controller
 		$roles = Role::all();
         return view('admin.users.create', compact('roles'));
 	}
+
+	public function store(Request $request)
+	{
+		$data = $request->all();
+		$user = User::create($data);
+		$user->assignRole($data['roles']);
+		return redirect('users');
+	}
 	
 	public function show(User $user)
 	{
@@ -30,7 +39,18 @@ class UserController extends Controller
 
 	public function edit(User $user)
 	{
-		return view('admin.users.edit', compact('user'));
+		$roles = Role::all();
+		return view('admin.users.edit', compact('user', 'roles'));
+	}
+
+	public function update(Request $request, $id)
+	{
+		$user = User::find($id);
+		$data = $request->all();
+		$user->fill($data);
+		$user->save();
+		$user->syncRoles($data['roles']);
+		return redirect('users');
 	}
 
 	public function destroy(User $user)
@@ -47,4 +67,6 @@ class UserController extends Controller
 		$user->restore();
 		return redirect('users');
 	}
+
+	
 }

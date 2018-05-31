@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-12">
 			<h2>Users</h2> 
+			<p><a href="{{route('users.create')}}" class="btn btn-primary">Create new User</a></p>
 			<table class="table">
 				<thead>
 					<tr>
@@ -20,7 +21,7 @@
 						<tr>
 							<td><a href="{{route('users.show', $item->id)}}">{{$item->name}}</a></td>
 							<td>{{$item->email}}</td>
-							<td>{{$item->role->display_name}}</td>
+							<td>@forelse($item->getRoleNames() as $each) {{$each}}<br /> @empty -- @endforelse</td>
 							<td><a href="{{route('users.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
 							<td> 
 								<form method="POST" action="{{route('users.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form">

@@ -17,16 +17,18 @@
 					<input type="text" class="form-control" id="email" name="email" value="">
 				  </div>
 				  <div class="form-group">
-						<label for="role_id">User Role</label>
-						<select class="form-control" id="role_id" name="role_id">
-							<option>Select User Role</option>
-							@forelse($roles as $role)
-								<option value="{{$role->id}}">{{$role->display_name}}</option>
-							@empty	
-								<option value="">No Roles available</option>
-							@endforelse
-						</select>
-				  </div>
+					<p><strong>User Roles</strong></p>
+					@forelse($roles as $each)
+						<div class="form-check">
+							<label class="form-check-label" for="role_{{$each->id}}">
+								<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="roles[]" id="role_{{$each->id}}">
+								{{$each->name}}
+							</label>
+						</div>
+					@empty
+						No Roles Available
+					@endforelse
+				</div>
 				  	
 				<div class="form-group">
 					<input type="submit" value="Save User">
