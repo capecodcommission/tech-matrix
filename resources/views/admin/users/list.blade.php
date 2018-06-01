@@ -13,7 +13,7 @@
 						<th>Email</th>
 						<th>Role</th>
 						<th>Edit</th>
-						<th>Delete</th>
+						<th>Delete<br />/Restore</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,7 +27,7 @@
 								<form method="POST" action="{{route('users.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form">
 										<input name="_method" type="hidden" value="DELETE"> 
 										@csrf
-										<span class="icon is-danger"><i class="fal fa-trash-alt"></i></span>
+										<button><span class="icon is-danger"><i class="fal fa-trash-alt" title="Restore User"></i></span></button>
 									</form></td>
 
 						</tr>
@@ -42,7 +42,7 @@
 							<td>{{$item->email}}</td>
 							<td> </td>
 							<td><a href="{{route('users.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
-							<td> <a href="{{url('users/restore', $item->id)}}"> Restore</a> </td>
+							<td> <a href="{{url('users/restore', $item->id)}}"><span class="icon"><i class="fal fa-undo"></i></span></a> </td>
 
 						</tr>
 					@empty
