@@ -23,7 +23,7 @@
 							<tr>
 								<td><a href="{{route('inputs.show', $item->id)}}">{{$item->input_label}}</a></td>
 								<td>{{$item->input_value}}</td>
-								<td><a href="{{route('inputs.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
+								<td><a href="{{route('inputs.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
 
 							</tr>
 						@empty

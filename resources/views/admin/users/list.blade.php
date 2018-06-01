@@ -22,12 +22,12 @@
 							<td><a href="{{route('users.show', $item->id)}}">{{$item->name}}</a></td>
 							<td>{{$item->email}}</td>
 							<td>@forelse($item->getRoleNames() as $each) {{$each}}<br /> @empty -- @endforelse</td>
-							<td><a href="{{route('users.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
+							<td><a href="{{route('users.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
 							<td> 
 								<form method="POST" action="{{route('users.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form">
 										<input name="_method" type="hidden" value="DELETE"> 
 										@csrf
-										<button class="is-danger button is-inverted"><span class="icon"><i class="fa fa-trash"></i></span> delete</button> 
+										<span class="icon is-danger"><i class="fal fa-trash-alt"></i></span>
 									</form></td>
 
 						</tr>
@@ -41,7 +41,7 @@
 							<td><s><a href="{{route('users.show', $item->id)}}">{{$item->name}}</a></s></td>
 							<td>{{$item->email}}</td>
 							<td> </td>
-							<td><a href="{{route('users.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
+							<td><a href="{{route('users.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
 							<td> <a href="{{url('users/restore', $item->id)}}"> Restore</a> </td>
 
 						</tr>

@@ -21,7 +21,7 @@
 						<tr>
 							<td><a href="{{route('input_groups.show', $item->id)}}">{{$item->input_group_label}}</a></td>
 							{{-- <td>{{$item->input_value}}</td> --}}
-							<td><a href="{{route('input_groups.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
+							<td><a href="{{route('input_groups.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
 
 						</tr>
 					@empty

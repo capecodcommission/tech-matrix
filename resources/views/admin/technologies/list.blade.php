@@ -19,8 +19,8 @@
 						<tr>
 							<td><a href="{{route('technologies.show', $item->id)}}">{{$item->technology_strategy}}</a></td>
 							<td>{{$item->technology_id}}</td>
-							<td><a href="{{route('technologies.edit', $item->id)}}"><i class="fa fa-pencil"></i> Edit </a></td>
-							<td><a href="{{url('technologies/editRelationships', $item->id)}}"><i class="fa fa-pencil"></i> Edit Relationships</a></td>
+							<td><a href="{{route('technologies.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
+							<td><a href="{{url('technologies/editRelationships', $item->id)}}"><i class="fal fa-project-diagram" title="Edit Relationships"></i></a></td>
 
 						</tr>
 					@empty
