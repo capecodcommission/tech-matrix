@@ -7,13 +7,13 @@
 			<h2>Users</h2> 
 			<p><a href="{{route('users.create')}}" class="btn btn-primary">Create new User</a></p>
 			<table class="table">
-				<thead>
+				<thead class="thead-light">
 					<tr>
 						<th>Name</th>
 						<th>Email</th>
 						<th>Role</th>
 						<th>Edit</th>
-						<th>Delete<br />/Restore</th>
+						<th>Delete</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,7 +27,7 @@
 								<form method="POST" action="{{route('users.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form">
 										<input name="_method" type="hidden" value="DELETE"> 
 										@csrf
-										<button><span class="icon is-danger"><i class="fal fa-trash-alt" title="Restore User"></i></span></button>
+										<button class="is-danger btn btn-danger"><span class="icon is-danger"><i class="fal fa-trash-alt" title="Delete User"></i></span></button>
 									</form></td>
 
 						</tr>
@@ -36,7 +36,19 @@
 							<td colspan="5">No Users Exist</td>
 						</tr>
 					@endforelse
+					<thead class="thead-light">
+<tr>	<th colspan="5">Deleted Users</th></tr>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th></th>
+						<th>Edit</th>
+						<th>Restore</th>
+					</tr>
+					</thead>
+					
 					@forelse($deleted as $item)
+
 						<tr>
 							<td><s><a href="{{route('users.show', $item->id)}}">{{$item->name}}</a></s></td>
 							<td>{{$item->email}}</td>

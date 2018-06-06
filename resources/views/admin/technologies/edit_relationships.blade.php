@@ -40,7 +40,18 @@
 					</div>
 					<div class="form-group">
 						<p><strong>Nutrient Percent Reduction</strong></p>
-						
+						@forelse($item->pollutants as $each)	
+							<div class="form-check">
+								<label class="form-check-label" for="pollutant_{{$each->id}}">
+									{{-- <input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="nutrient_reductions[]" id="pollutant_{{$each->id}}"  @if($item->nutrient_reductions->contains($each->id)) checked='checked' @endif> --}}
+								{{$each->pollutant}}
+								</label>
+							</div>
+						@empty
+							No Pollutants Available
+						@endforelse
+
+						nutrient_reductions
 					</div>
 					<div class="form-group">
 						<p><strong>Influent Sources</strong></p>
