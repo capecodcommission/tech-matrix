@@ -39,6 +39,10 @@
 						@endforelse
 					</div>
 					<div class="form-group">
+						<p><strong>Nutrient Percent Reduction</strong></p>
+						
+					</div>
+					<div class="form-group">
 						<p><strong>Influent Sources</strong></p>
 						@forelse($influent_sources as $each)	
 							<div class="form-check">

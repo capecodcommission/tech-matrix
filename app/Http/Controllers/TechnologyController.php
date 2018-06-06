@@ -22,7 +22,7 @@ class TechnologyController extends Controller
 {
     public function index()
     {
-		$list = Technology::all();
+		$list = Technology::all()->sortBy('Technology_ID');
 		return view('admin.technologies.list', compact('list'));
 	}
 
