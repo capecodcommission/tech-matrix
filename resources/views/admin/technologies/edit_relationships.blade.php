@@ -38,7 +38,7 @@
 							No Pollutants Available
 						@endforelse
 					</div>
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<p><strong>Nutrient Percent Reduction</strong></p>
 						@forelse($item->pollutants as $each)	
 						<div class="input-group">
@@ -72,7 +72,7 @@
 						@endforelse
 
 						nutrient_reductions
-					</div>
+					</div> --}}
 					<div class="form-group">
 						<p><strong>Influent Sources</strong></p>
 						@forelse($influent_sources as $each)	
