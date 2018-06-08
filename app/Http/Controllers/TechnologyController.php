@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use DB;
 use App\Models\Technology;
 use App\Models\User;
 use App\Models\TechnologyType;
@@ -8,6 +9,7 @@ use App\Models\SystemDesignConsideration;
 use App\Models\Pollutant;
 use App\Models\InfluentSource;
 use App\Models\InfluentConcentration;
+use App\Models\Input;
 use App\Models\SitingRequirement;
 use App\Models\PermittingAgency;
 use App\Models\UnitMetric;
@@ -80,6 +82,14 @@ class TechnologyController extends Controller
     {
         $item = $technology;
         return view('admin.technologies.show', compact('item'));
+	}
+
+	public function test_formula(Technology $technology)
+	{
+		$item = $technology;
+		$input = Input::where('input_name', 'n_per_years')->first();
+		$formula = DB::table('dbo.lkp_formulas')->select('formula')->first();
+		return view('admin.technologies.test', compact('input', 'formula', 'item'));
 	}
  
     public function edit(Technology $technology)

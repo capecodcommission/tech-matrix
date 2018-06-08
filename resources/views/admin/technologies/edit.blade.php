@@ -136,6 +136,43 @@
 						</div>
 					</div>	
 					<div class="form-group">
+						<label for="n_percent_reduction_low">Nitrogen Percent Reduction Low</label>
+						<div class="input-group mb-3">
+							<input type="number" class="form-control" id="n_percent_reduction_low" name="n_percent_reduction_low" value="{{$item->n_percent_reduction_low}}">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+						</div>
+					</div>		
+					<div class="form-group">
+						<label for="n_percent_reduction_high">Nitrogen Percent Reduction High</label>
+						<div class="input-group mb-3">
+							<input type="number" class="form-control" id="n_percent_reduction_high" name="n_percent_reduction_high" value="{{$item->n_percent_reduction_high}}">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+						</div>
+					</div>	
+					<div class="form-group">
+						<label for="p_percent_reduction_low">Phosphorus Percent Reduction Low</label>
+						<div class="input-group mb-3">
+							<input type="number" class="form-control" id="p_percent_reduction_low" name="p_percent_reduction_low" value="{{$item->p_percent_reduction_low}}">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+						</div>
+					</div>		
+					<div class="form-group">
+						<label for="p_percent_reduction_high">Phosphorus Percent Reduction High</label>
+						<div class="input-group mb-3">
+							<input type="number" class="form-control" id="p_percent_reduction_high" name="p_percent_reduction_high" value="{{$item->p_percent_reduction_high}}">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+						</div>
+					</div>		
+						
+					<div class="form-group">
 						<label for="advantages">Advantages</label>
 						<textarea name="advantages" id="advantages" name="advantages" class="form-control" rows="10">{{$item->advantages}}</textarea>
 					</div>

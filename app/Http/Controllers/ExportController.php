@@ -32,17 +32,7 @@ class ExportController extends Controller
 
 	public function exportAll() 
 	{
-		// $list = Technology::all();
-		// $filePath = 'tech_matrix.xlsx';
-		// $list->downloadExcel(
-		// 	$filePath,
-		// 	$writerType = null,
-		// 	$headings = false
-		// );
-
-		// Excel::store(new TechMatrixExport(), 'tech_matrix.xlsx');
-		// echo asset('storage/tech_matrix.xlsx');
-		// return $list;
+		
 		return Excel::download(new TechMatrixExport, 'tech_matrix.xlsx');
 
 

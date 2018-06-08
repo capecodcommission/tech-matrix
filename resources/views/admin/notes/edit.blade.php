@@ -8,6 +8,8 @@
 			<h2>Edit Note</h2>
 			<form action="{{route('notes.update', $item->id)}}" method="POST">
 					@csrf
+					{!! method_field('PATCH') !!}
+
 				<div class="form-group">
 					<label for="note">Notes</label>
 					<textarea class="form-control" id="note" name="note" rows="10" >{{$item->note}}</textarea>

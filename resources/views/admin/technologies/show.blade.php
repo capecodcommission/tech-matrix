@@ -149,8 +149,11 @@
 					</div>
 				</div>
 			</div>
-			
-            
+			<p>	<strong>Nitrogen Percent Reduction (Low)</strong>: {{$item->n_percent_reduction_low}}%</p>
+ 			<p>	<strong>Nitrogen Percent Reduction (High)</strong>: {{$item->n_percent_reduction_high}}%</p>
+           	<p>	<strong>Phosphorus Percent Reduction (Low)</strong>: {{$item->p_percent_reduction_low}}%</p>
+			<p>	<strong>Phosphorus Percent Reduction (High)</strong>: {{$item->p_percent_reduction_high}}%</p>
+
 			<p>{{$item->image}}</p>
 			<p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p>
 			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
