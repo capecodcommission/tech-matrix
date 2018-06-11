@@ -12,6 +12,7 @@
 						<th>Technology ID</th>
 						<th>Edit</th>
 						<th>Edit Relationships</th>
+						<th>Updated</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -21,11 +22,11 @@
 							<td>{{$item->technology_id}}</td>
 							<td><a href="{{route('technologies.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
 							<td><a href="{{url('technologies/editRelationships', $item->id)}}"><i class="fal fa-project-diagram" title="Edit Relationships"></i></a></td>
-
+							<td>{{$item->updated_at}}</td>
 						</tr>
 					@empty
 						<tr>
-							<td colspan="3">No Technologies Exist</td>
+							<td colspan="5">No Technologies Exist</td>
 						</tr>
 					@endforelse
 				</tbody>

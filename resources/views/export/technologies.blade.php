@@ -44,6 +44,7 @@
 			<th><strong>Piloting Status <br />DEP Approval</strong></th>
 			<th><strong>Pilot Study Findings</strong></th>
 			<th><strong>Public Acceptance</strong></th>
+			<th><strong>Last Updated</strong></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -78,7 +79,7 @@
 						No siting requirements identified.
 					@endforelse
 				</td>
-				<td>@if($item->unit_metric_id != NULL){{$item->unit_metric->unit_metric}}@endif</td>
+				<td>{{$item->unit_metric->unit_metric}}</td>
 				<td>{{$item->current_construction_cost_low}}</td>
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
@@ -117,7 +118,7 @@
 				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
 				<td>{{$item->pilot_study_findings}}</td>
 				<td class="text">{{$item->public_acceptance}}</td>
-				
+				<td>{{$item->updated_at}}</td>
 			</tr>
 		@empty
 			<tr>

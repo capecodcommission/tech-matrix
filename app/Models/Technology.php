@@ -43,9 +43,11 @@ class Technology extends Model
         return $this->belongsToMany('App\Models\SitingRequirement', 'rel_siting_requirements_technologies', 'technology_id', 'siting_requirement_id')->withTimestamps();
 	}
 	
-	public function unit_metrics()
+	public function unit_metric()
 	{
-		return $this->belongsTo('App\Models\UnitMetric');
+		return $this->belongsTo('App\Models\UnitMetric')->withDefault([
+        'unit_metric' => '(N/A)',
+    ]);
 	}
 
 	public function nutrient_reductions()

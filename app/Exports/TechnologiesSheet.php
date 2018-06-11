@@ -24,7 +24,7 @@ class TechnologiesSheet implements FromView, WithEvents
 	public function view(): View
 	{
 		return view('export.technologies', [
-			'list' => Technology::all()
+			'list' => Technology::all()->sortBy('technology_id')
 		]);
 	}
 
@@ -65,7 +65,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				// add formulas to cells
 				
 				$event->sheet->setCellValue('AF5','=K5*0.4536');
-
+				$event->sheet->freezePane('C3');
 
 				// $event->sheet->styleCells(
 				//     'B2:G8',
