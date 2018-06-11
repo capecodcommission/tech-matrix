@@ -141,6 +141,7 @@ class TechnologyController extends Controller
 		$item->fill($data);
 
         $item->update();
+        return redirect('technologies');
       
     }
 	 
