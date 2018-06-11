@@ -11,5 +11,6 @@ class SitingRequirement extends Model
 	use SoftDeletes;
     protected $guarded = ['id'];
     protected $table = 'lkp_siting_requirements';
+	protected $touches = ['technology'];
 
 }

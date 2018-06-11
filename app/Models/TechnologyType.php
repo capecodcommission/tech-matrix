@@ -15,5 +15,7 @@ class TechnologyType extends Model
     public function technologies()
     {
         return $this->hasMany('App\Models\Technology');
-    }
+	}
+		protected $touches = ['technology'];
+
 }

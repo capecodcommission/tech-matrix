@@ -10,6 +10,7 @@ class SystemDesignConsideration extends Model
 {
 	use SoftDeletes;
     protected $table = 'lkp_system_design_considerations';
+	protected $touches = ['technology'];
 
     
 }

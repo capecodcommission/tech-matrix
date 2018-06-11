@@ -12,4 +12,6 @@ class EvaluationMonitoring extends Model
 	use SoftDeletes;
 	protected $guarded = ['id'];
 	protected $table = 'lkp_evaluation_monitoring'; 
+	protected $touches = ['technology'];
+
 }

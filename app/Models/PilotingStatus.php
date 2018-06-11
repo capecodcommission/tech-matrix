@@ -11,4 +11,5 @@ class PilotingStatus extends Model
 	use SoftDeletes;
 	protected $guarded = ['id'];
 	protected $table = 'lkp_piloting_status';
+
 }

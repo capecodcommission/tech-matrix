@@ -11,6 +11,7 @@ class InfluentSource extends Model
 	use SoftDeletes;
     protected $guarded = ['id'];
     protected $table = 'lkp_influent_sources';
+	protected $touches = ['technology'];
 
     
 }

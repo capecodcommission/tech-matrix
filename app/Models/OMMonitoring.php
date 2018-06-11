@@ -11,4 +11,6 @@ class OMMonitoring extends Model
 	use SoftDeletes;
 	protected $guarded = ['id'];
 	protected $table = 'lkp_longterm_o_m_monitoring'; 
+		protected $touches = ['technology'];
+
 }

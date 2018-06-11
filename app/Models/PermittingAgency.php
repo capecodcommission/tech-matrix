@@ -11,5 +11,7 @@ class PermittingAgency extends Model
     use SoftDeletes;
 
     protected $guarded = ['id'];
-    protected $table = 'lkp_permitting_agencies';
+	protected $table = 'lkp_permitting_agencies';
+		protected $touches = ['technology'];
+
 }

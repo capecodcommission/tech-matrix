@@ -12,5 +12,6 @@ class InfluentConcentration extends Model
 
     protected $guarded = ['id'];
     protected $table = 'lkp_influent_concentrations';
+	protected $touches = ['technology'];
 
 }
