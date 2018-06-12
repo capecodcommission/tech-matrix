@@ -27,6 +27,8 @@ Route::resource('input_groups', 'InputGroupController');
 Route::get('notes/restore/{note}', 'NoteController@restore');
 Route::resource('notes', 'NoteController');
 
+Route::resource('formulas', 'FormulaController');
+
 Route::get('users/restore/{user}', 'UserController@restore');
 Route::resource('users', 'UserController');
 

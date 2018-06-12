@@ -92,5 +92,10 @@ class Technology extends Model
 	public function notes()
     {
         return $this->morphToMany('App\Models\Note', 'notable');
-    }
+	}
+	
+	public function formulas()
+	{
+		return $this->belongsToMany('App\Models\Formula', 'rel_formulas_technologies', 'technology_id', 'formula_id')->withTimestamps();
+	}
 }

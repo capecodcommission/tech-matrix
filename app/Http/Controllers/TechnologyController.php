@@ -107,9 +107,9 @@ class TechnologyController extends Controller
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = EvaluationMonitoring::all();
 		$piloting_statuses = PilotingStatus::all();
-		$categories = Category::all();
+		// $categories = Category::all();
        
-		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'categories'));
+		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses'));
     }
 	
     public function editRelationships(Technology $technology)
