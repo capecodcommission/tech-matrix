@@ -67,12 +67,7 @@ class FormulaController extends Controller
 		return redirect('formulas');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Formula  $formula
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Formula $formula)
     {
         //

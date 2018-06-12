@@ -8,10 +8,11 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Technology Strategy</th>
-						<th>Technology ID</th>
-						<th>Edit</th>
-						<th>Edit Relationships</th>
+						<th>Technology<br />Strategy</th>
+						<th>Technology<br />ID</th>
+						<th>Edit<br />Data</th>
+						<th>Edit<br />Relationships</th>
+						<th>Edit<br />Formulas</th>
 						<th>Updated</th>
 					</tr>
 				</thead>
@@ -22,6 +23,7 @@
 							<td>{{$item->technology_id}}</td>
 							<td><a href="{{route('technologies.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
 							<td><a href="{{url('technologies/editRelationships', $item->id)}}"><i class="fal fa-project-diagram" title="Edit Relationships"></i></a></td>
+							<td><a href="{{url('technologies/editFormulas', $item->id)}}"><i class="fal fa-calculator" title="Edit Formulas"></i></a></td>
 							<td>{{$item->updated_at}}</td>
 						</tr>
 					@empty

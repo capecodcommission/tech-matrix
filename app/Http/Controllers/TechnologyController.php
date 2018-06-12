@@ -19,6 +19,7 @@ use App\Models\OMMonitoring;
 use App\Models\PilotingStatus;
 use App\Models\YearGrouping;
 use App\Models\Category;
+use App\Models\Formula;
 
 class TechnologyController extends Controller
 {
@@ -205,6 +206,21 @@ class TechnologyController extends Controller
 		return redirect('technologies');
 	}
 
+	public function editFormulas(Technology $technology)
+	{
+		$item = $technology;
+		$formulas = Formula::all();
+		$fields = $this->get_fields();
+		return view('admin.technologies.edit_formulas', compact('item', 'formulas', 'fields'));
+	}
+
+	public function updateFormulas(Request $request)
+	{
+		$technology = Technology::find($request->id);
+		$technology->formulas()->sync($request->formulas);
+		return redirect('technologies');
+	}
+
 	public function destroy($id)
     {
         $technology = Technology::find($id);
@@ -218,5 +234,34 @@ class TechnologyController extends Controller
 		$technology = Technology::withTrashed()->find($id);
 		$technology->restore();
 		return Redirect::route('technologies.index');
+	}
+
+	public function get_fields()
+	{
+		$field_names = DB::select("
+		SELECT 
+			c.name 'name',
+			t.Name 'type',
+			
+			ISNULL(i.is_primary_key, 0) 'is_primary'
+		FROM    
+			sys.columns c
+		INNER JOIN 
+			sys.types t ON c.user_type_id = t.user_type_id
+		LEFT OUTER JOIN 
+			sys.index_columns ic ON ic.object_id = c.object_id AND ic.column_id = c.column_id
+		LEFT OUTER JOIN 
+			sys.indexes i ON ic.object_id = i.object_id AND ic.index_id = i.index_id
+		WHERE
+			c.object_id = OBJECT_ID('technologies') ");
+		$fields = [];
+		foreach($field_names as $each)
+		{
+			if($each->is_primary < 1 && $each->type != 'varchar' && $each->type != 'tinyint' && $each->type != 'datetime' )
+			{
+				$fields[] = $each->name;
+			}	
+		}
+		return $fields;
 	}
 }

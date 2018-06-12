@@ -20,6 +20,9 @@ Route::get('testing', 'TestController@test');
 // need to add /admin to this URL and make sure people are logged in
 Route::get('technologies/editRelationships/{technology}', 'TechnologyController@editRelationships');
 Route::post('technologies/updateRelationships', 'TechnologyController@updateRelationships');
+Route::get('technologies/editFormulas/{technology}', 'TechnologyController@editFormulas');
+Route::post('technologies/updateFormulas', 'TechnologyController@updateFormulas');
+
 Route::get('technologies/test/{id}', 'TechnologyController@test_formula');
 Route::resource('technologies', 'TechnologyController');
 Route::resource('inputs', 'InputController');
