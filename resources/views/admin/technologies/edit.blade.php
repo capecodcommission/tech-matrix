@@ -38,7 +38,7 @@
 						<select name="unit_metric_id" id="unit_metric_id" class="form-control">
 							<option value="">Choose Unit Metric</option>
 							@forelse($unit_metrics as $unit)
-								<option value="{{$unit->id}}">{{$unit->unit_metric}}</option>
+								<option value="{{$unit->id}}" @if($unit->id == $item->unit_metric_id) selected @endif>{{$unit->unit_metric}}</option>
 							@empty	
 								<option value="">No unit metrics available</option>
 							@endforelse
