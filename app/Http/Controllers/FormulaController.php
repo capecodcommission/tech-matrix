@@ -32,8 +32,9 @@ class FormulaController extends Controller
 		$types = FormulaType::all();
 		$inputs = Input::all();
 		$fields = $this->get_fields();
+		$formulas = Formula::all();
 
-		return view ('admin.formulas.create', compact('types', 'inputs', 'fields'));
+		return view ('admin.formulas.create', compact('types', 'inputs', 'fields', 'formulas'));
     }
 
 
@@ -56,7 +57,8 @@ class FormulaController extends Controller
 		$item = $formula;
 		$inputs = Input::all();
 		$fields = $this->get_fields();
-		return view ('admin.formulas.edit', compact('inputs', 'fields', 'item'));
+		$formulas = Formula::all();
+		return view ('admin.formulas.edit', compact('inputs', 'fields', 'item', 'formulas'));
     }
 
 

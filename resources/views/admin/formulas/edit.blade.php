@@ -5,7 +5,7 @@
 	<div class="row justify-content-center">
 		<div class="col-lg-12">
 			<p><a href="{{route('formulas.index')}}">Back to List</a></p>
-			<h2>Create New Formula</h2>
+			<h2>Edit Formula</h2>
 			<form action="{{route('formulas.update', $item->id)}}" method="POST">
 					@csrf
 					{!! method_field('PATCH') !!}
@@ -22,28 +22,38 @@
 					<small class="form-text text-muted">Click on the "Add" button in the list of possible inputs and field names below to add variables to the formula. You may also type in constants. Please be sure to confirm that the formula is entered correctly (matching parentheses, etc.).</small>
 				  </div>
 				  <div class="row">
-				  <div class="col-lg-6">
+				  <div class="col-lg-4">
 
 					<h3>Input Parameters</h3>
 					<ul>
 						@forelse($inputs as $input)
-							<li>$${{$input->input_name}} <a class="add btn btn-outline-primary btn-sm" data-text="$${{$input->input_name}}">Add</a></li>
+							<li>$${{$input->input_name}} <a class="add btn btn-outline-primary btn-sm" data-text="$${{$input->input_name}}%%">Add</a></li>
 							@empty
 								<li>No Input Parameters Available.</li>
 							@endforelse
 					</ul>
 				</div>
 				
-					<div class="col-lg-6">
-						<h3>Field Names</h3>
+					<div class="col-lg-4">
+						<h3>Fields</h3>
 						<ul>
 							@forelse($fields as $each)
-								<li>#{{$each}} <a class="add btn btn-outline-primary btn-sm" data-text="#{{$each}}">Add</a></li>
+								<li>##{{$each}} <a class="add btn btn-outline-primary btn-sm" data-text="##{{$each}}">Add</a></li>
 								@empty
 									<li>No field names available.</li>
 								@endforelse
 						</ul>
 					</div>
+					<div class="col-lg-4">
+						<h3>Formulas</h3>
+						<ul>
+							@forelse($formulas as $each)
+								<li>{{$each->formula_label}} <a class="add btn btn-outline-primary btn-sm" data-text="!!{{$each->formula_name}}^^">Add</a></li>
+								@empty
+									<li>No Formulas Available.</li>
+								@endforelse
+						</ul>
+					  </div>
 				</div>
 					<div class="col-lg-12">
 						<h3>Formula Description (optional)</h3>

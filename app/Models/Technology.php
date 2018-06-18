@@ -98,4 +98,41 @@ class Technology extends Model
 	{
 		return $this->belongsToMany('App\Models\Formula', 'rel_formulas_technologies', 'technology_id', 'formula_id')->withTimestamps();
 	}
+
+	public function calc_formula($id)
+	{
+		$formula = Formula::find($id);
+		// need to search the formula string for fields, inputs, and formulas
+		$fields = []; // fields are escaped by '##'
+		$inputs = Input::all()->pluck('input_value', 'input_name')->toArray(); // inputs are escaped by '$$'
+		// dd($inputs);
+		// echo $inputs['land_cost'];
+		// return 'end';
+		$formulas = []; // formulas are escaped by '!!'
+		
+		$text = $formula->formula;
+		$text = str_replace(' ', '', $text);
+		$text = str_replace('##', '$this->', $text);
+		$text = str_replace('$$', '$inputs[\'', $text);
+		$text = str_replace('%%', '\']', $text);
+		$text = str_replace('!!', '$this->eval_formula(\'', $text);
+		$text = str_replace('^^', '\')', $text);
+		$result = eval(" return " . $text . ";");
+
+		return $result;
+
+	}
+	public function eval_formula($formula)
+	{
+		$inputs = Input::all()->pluck('input_value', 'input_name')->toArray(); // inputs are escaped by '$$'
+
+		$f = Formula::where('formula_name', $formula)->first();
+		$text = $f->formula;
+		$text = str_replace('##', '$this->', $text);
+		$text = str_replace('$$', '$inputs[\'', $text);
+		$text = str_replace('%%', '\']', $text);
+		$result = eval(" return " . $text . ";");
+		// dd($result);
+		return $result;
+	}
 }

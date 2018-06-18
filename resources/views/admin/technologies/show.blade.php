@@ -211,33 +211,44 @@
 				</ul>						
 			</div>
 			<div class="form-group">
-						<p><strong>System Design Considerations</strong></p>
-						<ul>
-							@forelse($item->system_design_considerations as $each)
-								<li>{{$each->infrastructure_to_consider}}</li>
-							@empty
-								<li>
-									No System Design Considerations Assigned.
-								</li>
-							@endforelse
-						</ul>
-					</div>
-					<div>
-						<p><strong>Time to Improve Estuary Water (Years)</strong>
-						</p>
-						<ul>
-							@forelse($item->time_to_improve_estuary as $each)
-								<li>{{$each->length_of_time}}</li>
-							@empty
-								<li>
-									No Time to Improve Estuary Water range assigned.
-								</li>
-							@endforelse
-						</ul> 
-					</div>
-					<div><p><strong>Pilot Study Findings</strong></p>
-						<div>{!! $item->pilot_study_findings !!}</div>
-					</div>
+				<p><strong>System Design Considerations</strong></p>
+				<ul>
+					@forelse($item->system_design_considerations as $each)
+						<li>{{$each->infrastructure_to_consider}}</li>
+					@empty
+						<li>
+							No System Design Considerations Assigned.
+						</li>
+					@endforelse
+				</ul>
+			</div>
+			<div>
+				<p><strong>Time to Improve Estuary Water (Years)</strong>
+				</p>
+				<ul>
+					@forelse($item->time_to_improve_estuary as $each)
+						<li>{{$each->length_of_time}}</li>
+					@empty
+						<li>
+							No Time to Improve Estuary Water range assigned.
+						</li>
+					@endforelse
+				</ul> 
+			</div>
+			<div><p><strong>Pilot Study Findings</strong></p>
+				<div>{!! $item->pilot_study_findings !!}</div>
+			</div>
+
+			<div>
+				<h3>Formulas</h3>
+				@forelse($item->formulas as $formula)
+					<p><code>{{$formula->formula}}</code></p>
+					<p>{{$item->calc_formula($formula->id)}}</p>
+				@empty
+					No formulas assigned.
+				@endforelse
+			</div>
+
         </div>
     </div>
 </div>
