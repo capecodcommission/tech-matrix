@@ -38,6 +38,17 @@
 							No Pollutants Available
 						@endforelse
 					</div>
+					<div class="form-group">
+						<p><strong>Baseline Concentration Nitrogen</strong></p>
+						<select name="baseline_concentration_n_id" id="baseline_concentration_n_id" class="form-control">
+							<option></option>
+							@forelse($baseline_concentrations as $each)	
+								<option value="{{$each->id}}" @if($each->id == $item->baseline_concentration_nitrogen->id) selected @endif>{{$each->baseline_concentration}}</option>
+							@empty
+								No Baseline Concentrations Available
+							@endforelse
+						</select>
+					</div>
 					{{-- <div class="form-group">
 						<p><strong>Nutrient Percent Reduction</strong></p>
 						@forelse($item->pollutants as $each)	

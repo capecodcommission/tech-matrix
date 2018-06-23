@@ -9,64 +9,64 @@ class Technology extends Model
 {
 	use SoftDeletes;
 	protected $guarded = [
-        'id'
+		'id'
 	];
 
-    protected $table = 'technologies';
-    
-    public function technology_type()
-    {
-        return $this->belongsTo('App\Models\TechnologyType');
-    }
+	protected $table = 'technologies';
+	
+	public function technology_type()
+	{
+		return $this->belongsTo('App\Models\TechnologyType');
+	}
 
-    public function system_design_considerations()
-    {
-        return $this->belongsToMany('App\Models\SystemDesignConsideration', 'rel_system_design_considerations', 'technology_id', 'consideration_id')->withTimestamps();
-    }
+	public function system_design_considerations()
+	{
+		return $this->belongsToMany('App\Models\SystemDesignConsideration', 'rel_system_design_considerations', 'technology_id', 'consideration_id')->withTimestamps();
+	}
 
-    public function pollutants()
-    {
-        return $this->belongsToMany('App\Models\Pollutant', 'rel_baseline_concentrations', 'technology_id', 'pollutant_id')->withPivot('influent_concentration_id')->withTimestamps();
-    }
-    
-    public function influent_sources()
-    {
-        return $this->belongsToMany('App\Models\InfluentSource', 'rel_influent_sources_technologies', 'technology_id', 'influent_id')->withPivot('influent_concentration_id')->withTimestamps();
-    }
+	public function pollutants()
+	{
+		return $this->belongsToMany('App\Models\Pollutant', 'rel_baseline_concentrations', 'technology_id', 'pollutant_id')->withPivot('influent_concentration_id')->withTimestamps();
+	}
+	
+	public function influent_sources()
+	{
+		return $this->belongsToMany('App\Models\InfluentSource', 'rel_influent_sources_technologies', 'technology_id', 'influent_id')->withPivot('influent_concentration_id')->withTimestamps();
+	}
 
-    public function permitting_agencies()
-    {
-        return $this->belongsToMany('App\Models\PermittingAgency', 'rel_permitting_agencies_technologies', 'technology_id', 'agency_id')->withTimestamps();
-    }
-    public function siting_requirements()
-    {
-        return $this->belongsToMany('App\Models\SitingRequirement', 'rel_siting_requirements_technologies', 'technology_id', 'siting_requirement_id')->withTimestamps();
+	public function permitting_agencies()
+	{
+		return $this->belongsToMany('App\Models\PermittingAgency', 'rel_permitting_agencies_technologies', 'technology_id', 'agency_id')->withTimestamps();
+	}
+	public function siting_requirements()
+	{
+		return $this->belongsToMany('App\Models\SitingRequirement', 'rel_siting_requirements_technologies', 'technology_id', 'siting_requirement_id')->withTimestamps();
 	}
 	
 	public function unit_metric()
 	{
 		return $this->belongsTo('App\Models\UnitMetric')->withDefault([
-        'unit_metric' => '(N/A)',
-    ]);
+		'unit_metric' => '(N/A)',
+	]);
 	}
 
 	public function nutrient_reductions()
-    {
-        return $this->belongsToMany('App\Models\Pollutant', 'rel_technology_nutrient_percent_removals', 'technology_id', 'pollutant_id')->withPivot('high_low', 'percent_reduction')->withTimestamps();
-    }
+	{
+		return $this->belongsToMany('App\Models\Pollutant', 'rel_technology_nutrient_percent_removals', 'technology_id', 'pollutant_id')->withPivot('high_low', 'percent_reduction')->withTimestamps();
+	}
 
-    public function ecosystem_services()
-    {
-        return $this->belongsToMany('App\Models\EcosystemService', 'rel_ecosystem_services_technologies', 'technology_id', 'ecosystem_service_id')->withTimestamps();
+	public function ecosystem_services()
+	{
+		return $this->belongsToMany('App\Models\EcosystemService', 'rel_ecosystem_services_technologies', 'technology_id', 'ecosystem_service_id')->withTimestamps();
 	}
 
 	public function evaluation_monitoring()
-    {
-        return $this->belongsToMany('App\Models\EvaluationMonitoring', 'rel_evaluation_monitoring_technologies', 'technology_id', 'evaluation_monitoring_id')->withTimestamps();
+	{
+		return $this->belongsToMany('App\Models\EvaluationMonitoring', 'rel_evaluation_monitoring_technologies', 'technology_id', 'evaluation_monitoring_id')->withTimestamps();
 	}
 	public function longterm_monitoring()
-    {
-        return $this->belongsToMany('App\Models\EvaluationMonitoring', 'rel_longterm_o_m_monitoring_technologies', 'technology_id', 'longterm_o_m_monitoring_id')->withTimestamps();
+	{
+		return $this->belongsToMany('App\Models\EvaluationMonitoring', 'rel_longterm_o_m_monitoring_technologies', 'technology_id', 'longterm_o_m_monitoring_id')->withTimestamps();
 	}
 
 	public function piloting_status()
@@ -90,8 +90,8 @@ class Technology extends Model
 	}
 
 	public function notes()
-    {
-        return $this->morphToMany('App\Models\Note', 'notable');
+	{
+		return $this->morphToMany('App\Models\Note', 'notable');
 	}
 	
 	public function formulas()
@@ -105,19 +105,29 @@ class Technology extends Model
 		// need to search the formula string for fields, inputs, and formulas
 		$fields = []; // fields are escaped by '##'
 		$inputs = Input::all()->pluck('input_value', 'input_name')->toArray(); // inputs are escaped by '$$'
-		// dd($inputs);
-		// echo $inputs['land_cost'];
-		// return 'end';
+
 		$formulas = []; // formulas are escaped by '!!'
 		
 		$text = $formula->formula;
-		$text = str_replace(' ', '', $text);
+		// $text = str_replace(' ', '', $text);
 		$text = str_replace('##', '$this->', $text);
 		$text = str_replace('$$', '$inputs[\'', $text);
 		$text = str_replace('%%', '\']', $text);
 		$text = str_replace('!!', '$this->eval_formula(\'', $text);
 		$text = str_replace('^^', '\')', $text);
-		$result = eval(" return " . $text . ";");
+		
+		if($formula->is_conditional == 0)
+			{
+				$result = eval(" return " . $text . ";");
+			}
+		else
+		{
+				// $test = " if(4>6) { return 20*5; } else { return 10*3; }";
+			$result = eval($text);
+		}
+
+	   
+	   
 
 		return $result;
 

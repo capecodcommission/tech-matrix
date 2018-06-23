@@ -44,7 +44,12 @@
 							@endforelse
 						</select>
 					</div>
-
+				  <div class="form-group">
+				  	<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)<sup>*</sup>
+				  		<input type="number" name="flow_gpd" id="flow_gpd" class="form-control" value="{{$item->flow_gpd}}">
+				  		<small class="text-muted">Leave blank if Not Applicable.</small>
+				  	</label>
+				  </div>
 					<div class="form-group">
 						<label for="technology_description">Technology Description</label>
 						<textarea class="form-control" id="technology_description" name="technology_description" rows="10" >{{$item->technology_description}}</textarea>
@@ -203,7 +208,7 @@
 						<select name="piloting_status_id" id="piloting_status_id" class="form-control">
 							<option></option>
 							@forelse($piloting_statuses as $each)	
-								<option value="{{$each->id}}" @if($each->id == $item->piloting_status_id) selected @endif>{$each->pilot_status}}</option>
+								<option value="{{$each->id}}" @if($each->id == $item->piloting_status_id) selected @endif>{{$each->pilot_status}}</option>
 							@empty
 								No Piloting Statuses Available
 							@endforelse

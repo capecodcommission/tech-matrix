@@ -43,6 +43,12 @@
 					  </select>
 				  </div>
 				  <div class="form-group">
+				  	<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)<sup>*</sup>
+				  		<input type="number" name="flow_gpd" id="flow_gpd" class="form-control">
+				  		<small class="text-muted">Leave blank if Not Applicable.</small>
+				  	</label>
+				  </div>
+				  <div class="form-group">
 					<label for="technology_description">Technology Description</label>
 					<textarea class="form-control" id="technology_description" name="technology_description" rows="10" ></textarea>
 				  </div>

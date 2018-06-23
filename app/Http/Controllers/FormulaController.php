@@ -57,7 +57,7 @@ class FormulaController extends Controller
 		$item = $formula;
 		$inputs = Input::all();
 		$fields = $this->get_fields();
-		$formulas = Formula::all();
+		$formulas = Formula::all()->except($formula->id);
 		return view ('admin.formulas.edit', compact('inputs', 'fields', 'item', 'formulas'));
     }
 

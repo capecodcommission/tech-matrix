@@ -42,18 +42,18 @@
 
 					<div id="costData" class="collapse " aria-labelledby="headingCosts" data-parent="#accordion">
 						<div class="card-body">
-							<p><strong>Current Construction Cost (low)</strong>: {{$item->current_construction_cost_low}}</p>
-							<p><strong>Current Construction Cost (high)</strong>: {{$item->current_construction_cost_high}}</p>
-							<p><strong>Current Construction Cost (avg)</strong>: {{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</p>
-							<p><strong>Current Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor}}</p>
-							<p><strong>Current Project Cost (low)</strong>: {{$item->current_project_cost_low}}</p>
-							<p><strong>Current Project Cost (high)</strong>: {{$item->current_project_cost_high}}</p>
-							<p><strong>Current Annual OM Cost (low)</strong>: {{$item->current_annual_o_m_cost_low}}</p>
-							<p><strong>Current Annual OM Cost (high)</strong>: {{$item->current_annual_o_m_cost_high}}</p>
-							<p><strong>Current Annual OM Cost (avg)</strong>: {{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</p>
+							<p><strong>Current Construction Cost (low)</strong>: {{number_format($item->current_construction_cost_low, 0, '.', ',')}}</p>
+							<p><strong>Current Construction Cost (high)</strong>: {{number_format($item->current_construction_cost_high, 0, '.', ',')}}</p>
+							<p><strong>Current Construction Cost (avg)</strong>: {{number_format(($item->current_construction_cost_high + $item->current_construction_cost_low)/2, 0, '.', ',')}}</p>
+							<p><strong>Current Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor*100}}%</p>
+							<p><strong>Current Project Cost (low)</strong>: {{number_format($item->current_project_cost_low, 0, '.', ',')}}</p>
+							<p><strong>Current Project Cost (high)</strong>: {{number_format($item->current_project_cost_high, 0, '.', ',')}}</p>
+							<p><strong>Current Annual OM Cost (low)</strong>: {{number_format($item->current_annual_o_m_cost_low, 0, '.', ',')}}</p>
+							<p><strong>Current Annual OM Cost (high)</strong>: {{number_format($item->current_annual_o_m_cost_high, 0, '.', ',')}}</p>
+							<p><strong>Current Annual OM Cost (avg)</strong>: {{number_format(($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2, 0, '.', ',')}}</p>
 							<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
 							<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
-							<p><strong>Replacement Cost</strong>: {{$item->replacement_cost}}</p>
+							<p><strong>Replacement Cost</strong>: {{number_format($item->replacement_cost, 0, '.', ',')}}</p>
 						</div>
 					</div>
 				</div>
@@ -149,6 +149,8 @@
 					</div>
 				</div>
 			</div>
+			<p><strong>Unit Metric</strong>: </p>
+			<p><strong>Flow GPD</strong>: {{$item->flow_gpd}}</p>
 			<p>	<strong>Nitrogen Percent Reduction (Low)</strong>: {{$item->n_percent_reduction_low}}%</p>
  			<p>	<strong>Nitrogen Percent Reduction (High)</strong>: {{$item->n_percent_reduction_high}}%</p>
            	<p>	<strong>Phosphorus Percent Reduction (Low)</strong>: {{$item->p_percent_reduction_low}}%</p>
@@ -242,7 +244,7 @@
 			<div>
 				<h3>Formulas</h3>
 				@forelse($item->formulas as $formula)
-					<p><code>{{$formula->formula}}</code></p>
+					<p><strong>{{$formula->formula_label}}</strong> <button type="button" class="btn btn-sm btn-info" data-toggle="popover"  data-placement="bottom"  title="{{$formula->formula_label}}" data-content="<code>{{$formula->formula}}</code>">Show Formula</button></p>
 					<p>{{$item->calc_formula($formula->id)}}</p>
 				@empty
 					No formulas assigned.
@@ -252,4 +254,17 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+	<script>
+$(function () {
+  $('button').popover({
+	container: 'body',
+	trigger: 'focus',
+	html: true,
+	placement: "right" 
+  })
+})
+	</script>
 @endsection
