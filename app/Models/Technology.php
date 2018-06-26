@@ -145,4 +145,14 @@ class Technology extends Model
 		// dd($result);
 		return $result;
 	}
+
+	public function setAdjustmentFactorProjectCostAttribute($value)
+    {
+        $this->attributes['adjustment_factor_project_cost'] = $value/100;
+	}
+	
+	public function getAdjustmentFactorProjectCostAttribute($value)
+    {
+        return $value * 100;
+    }
 }
