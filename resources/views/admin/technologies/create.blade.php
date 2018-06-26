@@ -100,6 +100,15 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="adjustment_factor_project_cost">Adjustment Factor Project Cost (%)</label>
+						<div class="input-group mb-3">							
+							<input type="number" class="form-control" id="adjustment_factor_project_cost" name="adjustment_factor_project_cost" value="">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+						</div>
+					</div>	
+					<div class="form-group">
 						<label for="current_annual_o_m_cost_low">Current Annual OM Cost (Low)</label>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
@@ -116,7 +125,16 @@
 							</div>
 							<input type="number" class="form-control" id="current_annual_o_m_cost_high" name="current_annual_o_m_cost_high" value="">
 						</div>
-					</div>		
+					</div>	
+					<div class="form-group">
+						<label for="adjustment_factor_o_m_cost">Adjustment Factor OM Cost (%)</label>
+						<div class="input-group mb-3">							
+							<input type="number" class="form-control" id="adjustment_factor_o_m_cost" name="adjustment_factor_o_m_cost" value="">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+						</div>
+					</div>							
 					<div class="form-group">
 						<label for="current_annual_o_m_cost_percent_labor">Current Annual OM Cost Percent Labor</label>
 						<div class="input-group mb-3">

@@ -101,6 +101,15 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="adjustment_factor_project_cost">Adjustment Factor Project Cost (%)</label>
+						<div class="input-group mb-3">							
+							<input type="number" class="form-control" id="adjustment_factor_project_cost" name="adjustment_factor_project_cost" value="{{$item->adjustment_factor_project_cost}}">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+						</div>
+					</div>	
+					<div class="form-group">
 						<label for="current_annual_o_m_cost_low">Current Annual OM Cost (Low)</label>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
@@ -116,6 +125,15 @@
 								<span class="input-group-text">$</span>
 							</div>
 							<input type="number" class="form-control" id="current_annual_o_m_cost_high" name="current_annual_o_m_cost_high" value="{{$item->current_annual_o_m_cost_high}}">
+						</div>
+					</div>		
+					<div class="form-group">
+						<label for="adjustment_factor_o_m_cost">Adjustment Factor OM Cost (%)</label>
+						<div class="input-group mb-3">							
+							<input type="number" class="form-control" id="adjustment_factor_o_m_cost" name="adjustment_factor_o_m_cost" value="{{$item->adjustment_factor_o_m_cost}}">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
 						</div>
 					</div>		
 					<div class="form-group">
