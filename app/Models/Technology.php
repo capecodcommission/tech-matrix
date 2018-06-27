@@ -26,7 +26,7 @@ class Technology extends Model
 
 	public function pollutants()
 	{
-		return $this->belongsToMany('App\Models\Pollutant', 'rel_baseline_concentrations', 'technology_id', 'pollutant_id')->withPivot('influent_concentration_id')->withTimestamps();
+		return $this->belongsToMany('App\Models\Pollutant', 'rel_baseline_concentrations', 'technology_id', 'pollutant_id')->withPivot('baseline_concentration_id')->withTimestamps();
 	}
 	
 	public function influent_sources()
