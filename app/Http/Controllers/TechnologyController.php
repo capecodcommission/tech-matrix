@@ -20,6 +20,7 @@ use App\Models\PilotingStatus;
 use App\Models\YearGrouping;
 use App\Models\Category;
 use App\Models\Formula;
+use App\Models\MonitoringCost;
 
 class TechnologyController extends Controller
 {
@@ -127,23 +128,21 @@ class TechnologyController extends Controller
 		$ecosystem_services = EcosystemService::all();
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = EvaluationMonitoring::all();
+		$costs = MonitoringCost::all();
 		$piloting_statuses = PilotingStatus::all();
 		$years = YearGrouping::all();
        
-		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years'));
+		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years', 'costs'));
     }
 	
     public function update(Request $request, $id)
     {
         $data = $request->all();
 		$item = Technology::find($id);
-		// $relationships = $data['relationships'];
-		// unset($data['relationships']);
 		$item->fill($data);
 
         $item->update();
         return redirect('technologies');
-      
     }
 	 
 	public function updateRelationships(Request $request)
@@ -170,7 +169,6 @@ class TechnologyController extends Controller
                 $syncData[$source]['influent_id'] = $source;
                 // $syncData[$source]['influent_concentration_id'] = $request->influent_concentration[$source];
                 $syncData[$source]['influent_concentration_id'] =0;
-
 			}
             
             $item->influent_sources()->sync($syncData);
@@ -193,7 +191,15 @@ class TechnologyController extends Controller
         {
             $item->evaluation_monitoring()->sync($request->evaluation_monitoring);
 		}  
-
+		if($request->evaluation_monitoring_cost_id)
+		{
+			$item->evaluation_monitoring_cost_id = $request->evaluation_monitoring_cost_id;
+		}
+		if($request->longterm_monitoring_cost_id)
+		{
+			$item->longterm_monitoring_cost_id = $request->longterm_monitoring_cost_id;
+		}
+		$item->save();
 		if($request->time_to_improve_estuary)
 		{
 			$item->time_to_improve_estuary()->sync($request->time_to_improve_estuary);

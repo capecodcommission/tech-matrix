@@ -136,6 +136,12 @@
 								</ul>
 							</div> 
 							<div>
+								<p><strong>Estimated Annual Evaluation Monitoring Cost</strong></p>
+								<p>
+									{{$item->evaluation_monitoring_cost->est_annual_cost}}
+								</p>
+							</div> 
+							<div>
 								<p><strong>Longterm Monitoring</strong></p>
 								<ul>
 									@forelse($item->longterm_monitoring as $each)
@@ -145,6 +151,12 @@
 									@endforelse
 								</ul>
 							</div> 
+							<div>
+								<p><strong>Estimated Annual Longterm Monitoring Cost</strong></p>
+								<p>
+									{{$item->longterm_monitoring_cost->est_annual_cost}}
+								</p>
+							</div> 							
 						</div>
 					</div>
 				</div>

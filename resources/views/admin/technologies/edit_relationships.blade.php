@@ -149,6 +149,19 @@
 						@endforelse
 					</div>
 					<div class="form-group">
+						<p><strong>Estimated Annual Evaluation Monitoring Costs</strong></p>
+						@forelse($costs as $cost)
+							<div class="form-check">
+								<label class="form-check-label" for="evaluation_monitoring_cost_{{$cost->id}}">
+									<input type="radio" class="form-check-input" id="evaluation_monitoring_cost_{{$cost->id}}" value="{{$cost->id}}" name="evaluation_monitoriing_cost_id" @if($item->evaluation_monitoring_cost->contains($cost->id)) checked="checked" @endif>
+									{{$cost->est_annual_cost}}
+								</label>
+							</div>
+						@empty
+							No Monitoring Costs available.
+						@endforelse
+					</div>
+					<div class="form-group">
 						<p><strong>Longterm O.M. Monitoring</strong></p>
 						@forelse($longterm_monitoring as $each)	
 							<div class="form-check">
@@ -159,6 +172,19 @@
 							</div>
 						@empty
 							No Longterm OM Monitoring Options Available
+						@endforelse
+					</div>
+					<div class="form-group">
+						<p><strong>Estimated Annual Longterm O&amp;M Monitoring Costs</strong></p>
+						@forelse($costs as $cost)
+							<div class="form-check">
+								<label class="form-check-label" for="longterm_monitoring_cost_{{$cost->id}}">
+									<input type="radio" class="form-check-input" id="longterm_monitoring_cost_{{$cost->id}}" value="{{$cost->id}}" name="longterm_monitoring_cost_id" @if($item->longterm_monitoring_cost->contains($cost->id)) checked="checked" @endif>
+									{{$cost->est_annual_cost}}
+								</label>
+							</div>
+						@empty
+							No Monitoring Costs available.
 						@endforelse
 					</div>
 
