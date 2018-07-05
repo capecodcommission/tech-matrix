@@ -21,7 +21,7 @@ class FormulaController extends Controller
 				OBJECT_NAME(sm.object_id) AS object_name,   
 				o.type,   
 				o.type_desc,   
-				sm.definition
+				CAST(sm.definition AS char(1000)) AS definition
 		-- using the two system tables sys.sql_modules and sys.objects  
 		FROM sys.sql_modules AS sm  
 		JOIN sys.objects AS o ON sm.object_id = o.object_id  
@@ -29,10 +29,12 @@ class FormulaController extends Controller
 		WHERE  RIGHT(o.type_desc, 8) = 'FUNCTION' 
 		ORDER BY o.type ");
 		$list = [];
+		$x = 0;
 		foreach($formulas as $each)
 		{
-			$list[]['name'] = $each->object_name;
-			$list[]['definition'] = $each->definition;
+			$list[$x]['name'] = $each->object_name;
+			$list[$x]['definition'] = $each->definition;
+			$x++;
 		}	
 		
 		dd($list);
