@@ -17,7 +17,7 @@ class FormulaController extends Controller
      */
     public function index()
     {
-		$list = DB::select("SELECT sm.object_id,   
+		$formulas = DB::select("SELECT sm.object_id,   
 				OBJECT_NAME(sm.object_id) AS object_name,   
 				o.type,   
 				o.type_desc,   
@@ -28,6 +28,14 @@ class FormulaController extends Controller
 
 		WHERE  RIGHT(o.type_desc, 8) = 'FUNCTION' 
 		ORDER BY o.type ");
+		$list = [];
+		foreach($formulas as $each)
+		{
+			$list[]['name'] = $each->object_name;
+			$list[]['definition'] = $each->definition;
+		}	
+		
+		dd($list);
 		// $list = Formula::all()->sortBy('formula_type_id');
 		$types = FormulaType::all();
 		return view('admin.formulas.list', compact('list', 'types'));
