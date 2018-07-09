@@ -173,5 +173,15 @@ class Technology extends Model
 	public function getAdjustmentFactorOMCostAttribute($value)
     {
         return $value * 100;
-    }	
+	}	
+	
+	public function setReplacementCostFactorAttribute($value)
+    {
+        $this->attributes['replacement_cost_factor'] = $value/100;
+	}
+	
+	public function getReplacementCostFactorAttribute($value)
+    {
+        return $value * 100;
+	}
 }

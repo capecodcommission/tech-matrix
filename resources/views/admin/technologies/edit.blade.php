@@ -110,6 +110,18 @@
 						</div>
 					</div>	
 					<div class="form-group">
+						<label for="replacement_cost_factor">Replacement Cost Factor (%)</label>
+						<div class="input-group mb-3">							
+							<input type="number" class="form-control" id="replacement_cost_factor" name="replacement_cost_factor" value="{{$item->replacement_cost_factor}}">
+							<div class="input-group-append">
+								<span class="input-group-text">%</span>
+							</div>
+							<small  class="form-text text-muted">
+								The % used to calculate the Replacement Cost. Project Cost Avg is multiplied by this % (e.g. {{$item->current_project_cost_low + $item->current_project_cost_high/2}} * {{$item->adjustment_factor_project_cost}}%)
+							</small>
+						</div>
+					</div>	
+					<div class="form-group">
 						<label for="current_annual_o_m_cost_low">Current Annual OM Cost (Low)</label>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
