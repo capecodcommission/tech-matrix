@@ -25,9 +25,7 @@ class TechnologiesSheet implements FromView, WithEvents
 	public function view(): View
 	{
 		$list = DB::select("
-		select t.id, t.technology_id, t.technology_strategy, 
-		t.current_project_cost_low, t.current_project_cost_high,
-		t.useful_life_years,
+		select t.*,
 		n.n_removed_low, n.n_removed_high, n.n_removed_avg,
 		np.n_kg_removed as n_removed_planning_period,
 		p.p_removed_low, p.p_removed_high, p.p_removed_avg,
