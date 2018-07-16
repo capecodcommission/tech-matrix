@@ -22,7 +22,7 @@ Route::get('technologies/editRelationships/{technology}', 'TechnologyController@
 Route::post('technologies/updateRelationships', 'TechnologyController@updateRelationships');
 Route::get('technologies/editFormulas/{technology}', 'TechnologyController@editFormulas');
 Route::post('technologies/updateFormulas', 'TechnologyController@updateFormulas');
-
+Route::get('technologies/costs', 'TechnologyController@view_costs');
 Route::get('technologies/test/{id}', 'TechnologyController@test_formula');
 Route::resource('technologies', 'TechnologyController');
 Route::resource('inputs', 'InputController');
