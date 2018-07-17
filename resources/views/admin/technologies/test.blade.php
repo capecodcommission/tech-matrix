@@ -11,6 +11,7 @@
 			<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
 			<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
 			<p><strong>Project cost</strong>: {{$item->project_cost_pv}}</p>
+			<p><strong>N Removed</strong>: {{$item->n_removed_low}}</p>
 			@empty
 
 			@endforelse

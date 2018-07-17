@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Technology Matrix v2.0</title>
+	<title>Technology Matrix Costs</title>
 	<meta http-equiv="Content-Type" content="application/vnd.ms-excel; charset=utf-8" /> 
 	<link rel="stylesheet" href="css/xls.css" />
 	<style type="text/css">
@@ -86,7 +86,7 @@
 				<td>{{$item->adj_o_m_cost_high}}</td>
 				<td>{{$item->adj_o_m_cost_avg}}</td>
 				<td>{{$item->useful_life_years}}</td>
-				<td>{{number_format($item->replacement_cost)}}</td>
+				<td>{{$item->replacement_cost}}</td>
 				<td>{{$item->total_replacement_cost}}</td>
 				<td>{{$item->project_cost_pv}}</td>
 				
