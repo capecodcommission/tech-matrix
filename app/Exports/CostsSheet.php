@@ -33,6 +33,9 @@ class CostsSheet implements FromView, WithEvents
 		pc.adj_project_cost_low,
 		pc.adj_project_cost_high,
 		pc.adj_project_cost_avg,
+		omc.adj_o_m_cost_low,
+		omc.adj_o_m_cost_high,
+		omc.adj_o_m_cost_avg,
 		pc.replacement_cost,
 		pc.total_replacement_cost,
 		pc.project_cost_pv
@@ -41,7 +44,8 @@ class CostsSheet implements FromView, WithEvents
 		left outer join P_removed_per_year() p on t.id = p.id
 		left outer join N_Reduction_Per_Planning_Period() np on t.id = np.id
 		left outer join P_Reduction_Per_planning_period() pp on t.id = pp.id
-		left outer join Project_Costs() pc on t.id = pc.id 
+		left outer join Project_Costs() pc on t.id = pc.id
+		left outer join Adjusted_O_M_Cost() omc on t.id = omc.id
 			 ");
 		return view('export.costs', [
 			'list' => $list
