@@ -37,13 +37,13 @@
 			<th><strong>Current Annual OM Cost (avg)</strong></th>
 			<th><strong>Current Annual OM Cost Percent Labor</strong></th>
 			<th><strong>Adjustment Factors <br />Project Cost</strong></th>
-			<th><strong>Adjustment Factors <br />O & M</strong></th>
+			<th><strong>Adjustment Factors <br />O &amp; M</strong></th>
 			<th><strong>Adjusted Project <br />Cost (PV) Low</strong></th>
 			<th><strong>Adjusted Project <br />Cost (PV) High</strong></th>
 			<th><strong>Adjusted Project <br />Cost (PV) Avg</strong></th>
-			<th><strong>Adjusted Annual O&M <br />Cost (PV) Low</strong></th>
-			<th><strong>Adjusted Annual O&M <br />Cost (PV) High</strong></th>
-			<th><strong>Adjusted Annual O&M <br />Cost (PV) Avg</strong></th>
+			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) Low</strong></th>
+			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) High</strong></th>
+			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) Avg</strong></th>
 			<th><strong>Useful Life (Years)</strong></th>
 			<th><strong>Replacement Cost</strong></th>
 			<th><strong>Total Replacement<br />/Upgrade Cost</strong></th>
