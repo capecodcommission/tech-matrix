@@ -23,18 +23,37 @@
 			<th><strong>Potential Permitting Agencies</strong></th>
 			<th><strong>Siting Requirements</strong></th>
 			<th><strong>Unit Metric</strong></th>
-			<th><strong>Current Construction <br />Cost (low)</strong></th>
-			<th><strong>Current Construction<br /> Cost (high)</strong></th>
-			<th><strong>Current Construction<br /> Cost (avg)</strong></th>
+			<th><strong>Nitrogen Removed <br />per Year (kg) Low</strong></th>
+			<th><strong>Nitrogen Removed <br />per Year (kg) High</strong></th>
+			<th><strong>Nitrogen Removed <br />per Year (kg) Avg</strong></th>
+			<th><strong>Nitrogen Removed <br />per Planning Period</strong></th>
+			<th><strong>Phosphorus Removed <br />per Year (kg) Low</strong></th>
+			<th><strong>Phosphorus Removed <br />per Year (kg) High</strong></th>
+			<th><strong>Phosphorus Removed <br />per Year (kg) Avg</strong></th>
+			<th><strong>Phosphorus Removed <br />per Planning Period</strong></th>
+			<th><strong>Current Construction <br />Cost (Low)</strong></th>
+			<th><strong>Current Construction<br /> Cost (High)</strong></th>
+			<th><strong>Current Construction<br /> Cost (Avg)</strong></th>
 			<th><strong>Current Construction Cost Percent Labor</strong></th>
-			<th><strong>Current Project Cost (low)</strong></th>
-			<th><strong>Current Project Cost (high)</strong></th>
+			<th><strong>Current Project Cost (Low)</strong></th>
+			<th><strong>Current Project Cost (High)</strong></th>
+			<th><strong>Current Project Cost (Avg)</strong></th>
 			<th><strong>Current Annual OM Cost (low)</strong></th>
 			<th><strong>Current Annual OM Cost (high)</strong></th>
 			<th><strong>Current Annual OM Cost (avg)</strong></th>
 			<th><strong>Current Annual OM Cost Percent Labor</strong></th>
+			<th><strong>Adjustment Factors <br />Project Cost</strong></th>
+			<th><strong>Adjustment Factors <br />O &amp; M</strong></th>
+			<th><strong>Adjusted Project <br />Cost (PV) Low</strong></th>
+			<th><strong>Adjusted Project <br />Cost (PV) High</strong></th>
+			<th><strong>Adjusted Project <br />Cost (PV) Avg</strong></th>
+			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) Low</strong></th>
+			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) High</strong></th>
+			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) Avg</strong></th>
 			<th><strong>Useful Life (Years)</strong></th>
 			<th><strong>Replacement Cost</strong></th>
+			<th><strong>Total Replacement<br />/Upgrade Cost</strong></th>
+			<th><strong>Project Cost (PV)</strong></th>
 			<th><strong>System Design Considerations</strong></th>
 			<th><strong>Advantages</strong></th>
 			<th><strong>Disadvantages</strong></th>
@@ -80,6 +99,17 @@
 					@endforelse
 				</td>
 				<td>{{$item->unit_metric->unit_metric}}</td>
+				<td>{{$item->n_removed_low}}</td>
+				<td>{{$item->n_removed_high}}</td>
+				<td>{{$item->n_removed_avg}}</td>
+				<td>{{$item->n_removed_planning_period}}</td>
+				<td>{{$item->p_removed_low}}</td>
+				<td>{{$item->p_removed_high}}</td>
+				<td>{{$item->p_removed_avg}}</td>
+				<td>{{$item->p_removed_planning_period}}</td>
+				<td>{{$item->current_project_cost_low}}</td>
+				<td>{{$item->current_project_cost_high}}</td>
+				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
 				<td>{{$item->current_construction_cost_low}}</td>
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
@@ -90,8 +120,18 @@
 				<td>{{$item->current_annual_o_m_cost_high}}</td>
 				<td>{{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</td>
 				<td>{{$item->current_annual_o_m_cost_percent_labor}}</td>
+				<td>{{$item->adjustment_factor_project_cost}}</td>
+				<td>{{$item->adjustment_factor_o_m_cost}}</td>
+				<td>{{$item->adj_project_cost_low}}</td>
+				<td>{{$item->adj_project_cost_high}}</td>
+				<td>{{$item->adj_project_cost_avg}}</td>
+				<td>{{$item->adj_o_m_cost_low}}</td>
+				<td>{{$item->adj_o_m_cost_high}}</td>
+				<td>{{$item->adj_o_m_cost_avg}}</td>
 				<td>{{$item->useful_life_years}}</td>
-				<td>{{number_format($item->replacement_cost)}}</td>
+				<td>{{$item->replacement_cost}}</td>
+				<td>{{$item->total_replacement_cost}}</td>
+				<td>{{$item->project_cost_pv}}</td>
 				<td>@forelse($item->system_design_considerations as $each)
 						{{$each->infrastructure_to_consider}}<br />
 					@empty No system design considerations identified.
