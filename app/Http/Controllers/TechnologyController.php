@@ -293,8 +293,8 @@ class TechnologyController extends Controller
 		left outer join P_Reduction_Per_planning_period() pp on t.id = pp.id
 		left outer join Project_Costs() pc on t.id = pc.id 
 			 ");
-		$list = $list->union($costs);
-		ddd($list);			 
+		$list = $list->merge($costs);
+		dd($list);			 
 			//  dd($list);
 			 return view ('admin.technologies.test', compact('list'));
 	}
