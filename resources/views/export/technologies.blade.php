@@ -149,10 +149,10 @@
 					@empty No system design considerations identified.
 					@endforelse
 				</td>
-				<td class="text">{{ str_replace('<li>', '\n', $item->advantages)}}</td>
+				<td class="text">{{striphtml($item->advantages)}}</td>
 				<td class="text">{{$item->disadvantages}}</td>	
 				<td>@forelse($item->ecosystem_services as $each)
-						* {{$each->ecosystem_service . '\n'}}
+						{{$each->ecosystem_service}}<br />
 					@empty No ecosystem services identified.
 					@endforelse
 				</td>
