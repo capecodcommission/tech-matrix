@@ -273,10 +273,9 @@ class TechnologyController extends Controller
 
 	public function view_costs()
 	{
-		$list = DB::select("
-		select t.id, t.technology_id, t.technology_strategy, 
-		t.current_project_cost_low, t.current_project_cost_high,
-		t.useful_life_years,
+		$list = Technology::all();
+		$costs = DB::select("
+		select t.id,
 		n.n_removed_low, n.n_removed_high, n.n_removed_avg,
 		np.n_kg_removed as n_removed_planning_period,
 		p.p_removed_low, p.p_removed_high, p.p_removed_avg,
@@ -294,6 +293,8 @@ class TechnologyController extends Controller
 		left outer join P_Reduction_Per_planning_period() pp on t.id = pp.id
 		left outer join Project_Costs() pc on t.id = pc.id 
 			 ");
+		$list = $list->union($costs);
+		ddd($list);			 
 			//  dd($list);
 			 return view ('admin.technologies.test', compact('list'));
 	}
