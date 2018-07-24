@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use DB;
 
 class Technology extends Model
 {
@@ -183,5 +184,29 @@ class Technology extends Model
 	public function getReplacementCostFactorAttribute($value)
     {
         return $value * 100;
+	}
+
+	public function calculated()
+	{
+		$costs = DB::select("
+		select t.id,
+		n.n_removed_low, n.n_removed_high, n.n_removed_avg,
+		np.n_kg_removed as n_removed_planning_period,
+		p.p_removed_low, p.p_removed_high, p.p_removed_avg,
+		pp.p_kg_removed as p_removed_planning_period,
+		pc.adj_project_cost_low,
+		pc.adj_project_cost_high,
+		pc.adj_project_cost_avg,
+		pc.replacement_cost,
+		pc.total_replacement_cost,
+		pc.project_cost_pv
+		from technologies t 
+		left outer join N_Removed_Per_Year() n on t.id = n.id
+		left outer join P_removed_per_year() p on t.id = p.id
+		left outer join N_Reduction_Per_Planning_Period() np on t.id = np.id
+		left outer join P_Reduction_Per_planning_period() pp on t.id = pp.id
+		left outer join Project_Costs() pc on t.id = pc.id 
+		where t.id = " . $this->id );
+		return $costs[0];
 	}
 }

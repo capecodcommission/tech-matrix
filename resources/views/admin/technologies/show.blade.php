@@ -135,12 +135,12 @@
 									@endforelse
 								</ul>
 							</div> 
-							<div>
+							{{-- <div>
 								<p><strong>Estimated Annual Evaluation Monitoring Cost</strong></p>
 								<p>
 									{{$item->evaluation_monitoring_cost->est_annual_cost}}
 								</p>
-							</div> 
+							</div>  
 							<div>
 								<p><strong>Longterm Monitoring</strong></p>
 								<ul>
@@ -156,7 +156,7 @@
 								<p>
 									{{$item->longterm_monitoring_cost->est_annual_cost}}
 								</p>
-							</div> 							
+							</div> 		--}}					
 						</div>
 					</div>
 				</div>
@@ -252,8 +252,13 @@
 			<div><p><strong>Pilot Study Findings</strong></p>
 				<div>{!! $item->pilot_study_findings !!}</div>
 			</div>
-
 			<div>
+				<h3>Calculated Values</h3>
+				<p><strong>Phosphorus Removed (low)</strong>: {{ $item->calculated()->p_removed_low }}</p>
+				<p><strong>Phosphorus Removed (high)</strong>: {{ $item->calculated()->p_removed_high }}</p>
+				
+			</div>
+			<!-- <div>
 				<h3>Formulas</h3>
 				@forelse($item->formulas as $formula)
 					<p><strong>{{$formula->formula_label}}</strong> <button type="button" class="btn btn-sm btn-info" data-toggle="popover"  data-placement="bottom"  title="{{$formula->formula_label}}" data-content="<code>{{$formula->formula}}</code>">Show Formula</button></p>
@@ -261,7 +266,7 @@
 				@empty
 					No formulas assigned.
 				@endforelse
-			</div>
+			</div> -->
 
         </div>
     </div>
