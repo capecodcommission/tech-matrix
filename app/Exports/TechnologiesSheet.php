@@ -65,6 +65,12 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('AD')->setWidth(40);
 				$event->sheet->getColumnDimension('AE')->setWidth(40);
 				$event->sheet->getColumnDimension('AF')->setWidth(40);
+				$event->sheet->getColumnDimension('AX')->setWidth(40);
+				$event->sheet->getColumnDimension('AY')->setWidth(40);
+				$event->sheet->getColumnDimension('AZ')->setWidth(40);
+				$event->sheet->getColumnDimension('BA')->setWidth(40);
+				$event->sheet->getColumnDimension('BB')->setWidth(40);
+				$event->sheet->getColumnDimension('BC')->setWidth(40);
 				$event->sheet->styleCells('A1:BH2', ['font' => ['bold'=>true]]);
 				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
