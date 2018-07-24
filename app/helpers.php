@@ -1,6 +1,6 @@
 <?php
 
-	function striphtml($value)
+	function striplist($value)
 	{
 		$value = str_replace('<ul>', '', $value);
 		$value = str_replace('</ul>', '', $value);

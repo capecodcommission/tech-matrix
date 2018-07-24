@@ -37,13 +37,14 @@
 			<th><strong>Phosphorus Removed <br />per Year (kg) High</strong></th>
 			<th><strong>Phosphorus Removed <br />per Year (kg) Avg</strong></th>
 			<th><strong>Phosphorus Removed <br />per Planning Period</strong></th>
+			<th><strong>Current Project Cost (Low)</strong></th>
+			<th><strong>Current Project Cost (High)</strong></th>
+			<th><strong>Current Project Cost (Avg)</strong></th>
 			<th><strong>Current Construction <br />Cost (Low)</strong></th>
 			<th><strong>Current Construction<br /> Cost (High)</strong></th>
 			<th><strong>Current Construction<br /> Cost (Avg)</strong></th>
 			<th><strong>Current Construction Cost Percent Labor</strong></th>
-			<th><strong>Current Project Cost (Low)</strong></th>
-			<th><strong>Current Project Cost (High)</strong></th>
-			<th><strong>Current Project Cost (Avg)</strong></th>
+
 			<th><strong>Current Annual OM Cost (low)</strong></th>
 			<th><strong>Current Annual OM Cost (high)</strong></th>
 			<th><strong>Current Annual OM Cost (avg)</strong></th>
@@ -126,8 +127,6 @@
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
 				<td>{{$item->current_construction_cost_percent_labor}}</td>
-				<td>{{$item->current_project_cost_low}}</td>
-				<td>{{$item->current_project_cost_high}}</td>
 				<td>{{$item->current_annual_o_m_cost_low}}</td>
 				<td>{{$item->current_annual_o_m_cost_high}}</td>
 				<td>{{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</td>
@@ -149,25 +148,29 @@
 					@empty No system design considerations identified.
 					@endforelse
 				</td>
-				<td>@forelse(striphtml($item->advantages) as $each)
-					{{$each}}<br />
+				<td>@forelse(striplist($item->advantages) as $each)
+					* {{$each}}<br />
 					@empty --
 					@endforelse
 				</td>
-				<td class="text">{{$item->disadvantages}}</td>	
+				<td>@forelse(striphtml($item->disadvantages) as $each)
+					* {{$each}}<br />
+					@empty --
+					@endforelse
+				</td>	
 				<td>@forelse($item->ecosystem_services as $each)
 						{{$each->ecosystem_service}}<br />
 					@empty No ecosystem services identified.
 					@endforelse
 				</td>
 				<td class="text">@forelse($item->evaluation_monitoring as $each)
-						* {{$each->monitoring . '\n' }}
+						* {{$each->monitoring}}<br />
 					@empty
 						No Evaluation Monitoring Assigned yet.
 					@endforelse
 				</td>
 				<td class="text">@forelse($item->longterm_monitoring as $each)
-						* {{$each->monitoring }}\r\n
+						* {{$each->monitoring }}<br />
 					@empty
 						No Long Term Monitoring Assigned yet.
 					@endforelse
