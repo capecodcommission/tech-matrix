@@ -24,9 +24,10 @@ class TechnologiesSheet implements FromView, WithEvents
 
 	public function view(): View
 	{
-		
+		$list = Technology::with(['siting_requirements','system_design_considerations', 'permitting_agencies'])->sortBy('technology_id')->get();
+			
 		return view('export.technologies', [
-			'list' => Technology::all()->sortBy('technology_id')
+			'list' => $list
 		]);
 
 			// 'list' => Technology::all()->sortBy('technology_id')
@@ -37,13 +38,15 @@ class TechnologiesSheet implements FromView, WithEvents
 	{
 		return [
 			AfterSheet::class => function(AfterSheet $event) {
+				$event->sheet->getStyle('A2:AY2')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('B3:B78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('R3:R78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('Q3:Q78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('C3:C78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('D3:D78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('E3:I78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('W3:AF78')->getAlignment()->setWrapText(true);
-				$event->sheet->getColumnDimension('A')->setWidth(70);
-				$event->sheet->getColumnDimension('B')->setWidth(90);
+				$event->sheet->getColumnDimension('A')->setWidth(40);
+				$event->sheet->getColumnDimension('B')->setWidth(45);
 				$event->sheet->getColumnDimension('D')->setWidth(90);
 				$event->sheet->getColumnDimension('E')->setWidth(22);
 				$event->sheet->getColumnDimension('F')->setWidth(20);

@@ -23,6 +23,12 @@
 			<th><strong>Potential Permitting Agencies</strong></th>
 			<th><strong>Siting Requirements</strong></th>
 			<th><strong>Unit Metric</strong></th>
+			<th><strong>Nitrogen Percent <br />Reduction (Low)</strong></th>
+			<th><strong>Nitrogen Percent <br />Reduction (High)</strong></th>
+			<th><strong>Nitrogen Percent <br />Reduction (Avg)</strong></th>
+			<th><strong>Phosphorus Percent <br />Reduction (Low)</strong></th>
+			<th><strong>Phosphorus Percent <br />Reduction (High)</strong></th>
+			<th><strong>Phosphorus Percent <br />Reduction (Avg)</strong></th>
 			<th><strong>Nitrogen Removed <br />per Year (kg) Low</strong></th>
 			<th><strong>Nitrogen Removed <br />per Year (kg) High</strong></th>
 			<th><strong>Nitrogen Removed <br />per Year (kg) Avg</strong></th>
@@ -99,14 +105,20 @@
 					@endforelse
 				</td>
 				<td>{{$item->unit_metric->unit_metric}}</td>
-				<td>{{$item->n_removed_low}}</td>
-				<td>{{$item->n_removed_high}}</td>
-				<td>{{$item->n_removed_avg}}</td>
-				<td>{{$item->n_removed_planning_period}}</td>
-				<td>{{$item->p_removed_low}}</td>
-				<td>{{$item->p_removed_high}}</td>
-				<td>{{$item->p_removed_avg}}</td>
-				<td>{{$item->p_removed_planning_period}}</td>
+				<td>{{$item->n_percent_reduction_low}}%</td>
+				<td>{{$item->n_percent_reduction_high}}%</td>
+				<td>{{$item->n_percent_reduction_low + $item->n_percent_reduction_high / 2}}</td> 
+           		<td>{{$item->p_percent_reduction_low}}%</td>
+				<td>{{$item->p_percent_reduction_high}}%</td>
+				<td>{{$item->p_percent_reduction_low + $item->p_percent_reduction_high / 2}}</td>
+				<td>{{$item->costs()->n_removed_low}}</td>
+				<td>{{$item->costs()->n_removed_high}}</td>
+				<td>{{$item->costs()->n_removed_avg}}</td>
+				<td>{{$item->costs()->n_removed_planning_period}}</td>
+				<td>{{$item->costs()->p_removed_low}}</td>
+				<td>{{$item->costs()->p_removed_high}}</td>
+				<td>{{$item->costs()->p_removed_avg}}</td>
+				<td>{{$item->costs()->p_removed_planning_period}}</td>
 				<td>{{$item->current_project_cost_low}}</td>
 				<td>{{$item->current_project_cost_high}}</td>
 				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
