@@ -149,7 +149,11 @@
 					@empty No system design considerations identified.
 					@endforelse
 				</td>
-				<td class="text">{{striphtml($item->advantages)}}</td>
+				<td>@forelse(striphtml($item->advantages) as $each)
+					{{$each}}<br />
+					@empty --
+					@endforelse
+				</td>
 				<td class="text">{{$item->disadvantages}}</td>	
 				<td>@forelse($item->ecosystem_services as $each)
 						{{$each->ecosystem_service}}<br />
