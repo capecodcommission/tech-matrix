@@ -153,7 +153,7 @@
 					@empty --
 					@endforelse
 				</td>
-				<td>@forelse(striphtml($item->disadvantages) as $each)
+				<td>@forelse(striplist($item->disadvantages) as $each)
 					* {{$each}}<br />
 					@empty --
 					@endforelse
