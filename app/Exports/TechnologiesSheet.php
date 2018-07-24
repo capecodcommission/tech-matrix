@@ -45,6 +45,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getStyle('D3:D78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('E3:I78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('W3:AF78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('AV3:BD78')->getAlignment()->setWrapText(true);
 				$event->sheet->getColumnDimension('A')->setWidth(40);
 				$event->sheet->getColumnDimension('B')->setWidth(45);
 				$event->sheet->getColumnDimension('D')->setWidth(90);
