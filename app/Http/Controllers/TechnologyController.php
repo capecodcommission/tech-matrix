@@ -273,7 +273,7 @@ class TechnologyController extends Controller
 
 	public function view_costs()
 	{
-		$list = Technology::all();
+		$list = DB::table('technologies');
 		$costs = DB::select("
 		select t.id,
 		n.n_removed_low, n.n_removed_high, n.n_removed_avg,
@@ -293,6 +293,7 @@ class TechnologyController extends Controller
 		left outer join P_Reduction_Per_planning_period() pp on t.id = pp.id
 		left outer join Project_Costs() pc on t.id = pc.id 
 			 ");
+			 dd($list);
 		$list = $list->merge($costs);
 		dd($list);			 
 			//  dd($list);
