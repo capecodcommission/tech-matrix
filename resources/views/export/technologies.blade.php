@@ -145,10 +145,11 @@
 				<td>{{$item->total_replacement_cost}}</td>
 				<td>{{$item->project_cost_pv}}</td>
 				<td>@forelse($item->system_design_considerations as $each)
-						* {{$each->infrastructure_to_consider . '\n'}}
+						{{$each->infrastructure_to_consider}}<br />
 					@empty No system design considerations identified.
-					@endforelse</td>
-				<td class="text">{{$item->advantages}}</td>
+					@endforelse
+				</td>
+				<td class="text">{{ str_replace('<li>', '\n', $item->advantages)}}</td>
 				<td class="text">{{$item->disadvantages}}</td>	
 				<td>@forelse($item->ecosystem_services as $each)
 						* {{$each->ecosystem_service . '\n'}}
