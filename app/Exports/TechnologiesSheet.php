@@ -55,16 +55,16 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('H')->setWidth(30);
 				$event->sheet->getColumnDimension('I')->setWidth(30);
 				// $event->sheet->getColumnDimension('K')->setWidth(15);
-				$event->sheet->getColumnDimension('W')->setWidth(40);
-				$event->sheet->getColumnDimension('X')->setWidth(60);
-				$event->sheet->getColumnDimension('Y')->setWidth(60);
-				$event->sheet->getColumnDimension('Z')->setWidth(40);
-				$event->sheet->getColumnDimension('AA')->setWidth(40);
-				$event->sheet->getColumnDimension('AB')->setWidth(40);
-				$event->sheet->getColumnDimension('AC')->setWidth(40);
-				$event->sheet->getColumnDimension('AD')->setWidth(40);
-				$event->sheet->getColumnDimension('AE')->setWidth(40);
-				$event->sheet->getColumnDimension('AF')->setWidth(40);
+				// $event->sheet->getColumnDimension('W')->setWidth(40);
+				// $event->sheet->getColumnDimension('X')->setWidth(60);
+				// $event->sheet->getColumnDimension('Y')->setWidth(60);
+				// $event->sheet->getColumnDimension('Z')->setWidth(40);
+				// $event->sheet->getColumnDimension('AA')->setWidth(40);
+				// $event->sheet->getColumnDimension('AB')->setWidth(40);
+				// $event->sheet->getColumnDimension('AC')->setWidth(40);
+				// $event->sheet->getColumnDimension('AD')->setWidth(40);
+				// $event->sheet->getColumnDimension('AE')->setWidth(40);
+				// $event->sheet->getColumnDimension('AF')->setWidth(40);
 				$event->sheet->getColumnDimension('AX')->setWidth(40);
 				$event->sheet->getColumnDimension('AY')->setWidth(40);
 				$event->sheet->getColumnDimension('AZ')->setWidth(40);
@@ -76,6 +76,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
 
+				$event->sheet->mergeCells('K1:P1');
 				// add formulas to cells
 				
 				// $event->sheet->setCellValue('AF5','=K5*0.4536');

@@ -8,10 +8,12 @@
 	</style>
 </head>
 <body>
-<h1>Technologies Matrix</h1>
-
 <table class="users admin table">
 	<thead>
+		<tr>
+			<th colspan = "10"><h1>Technologies Matrix</h1></th>
+			<th>Nutrient Percent Reduction</th>
+		</tr>
 		<tr>
 			<th><strong>Technology Type</strong></th>
 			<th><strong>Technology Strategy</strong></th>
