@@ -53,7 +53,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('G')->setWidth(30);
 				$event->sheet->getColumnDimension('H')->setWidth(30);
 				$event->sheet->getColumnDimension('I')->setWidth(30);
-				$event->sheet->getColumnDimension('K')->setWidth(15);
+				// $event->sheet->getColumnDimension('K')->setWidth(15);
 				$event->sheet->getColumnDimension('W')->setWidth(40);
 				$event->sheet->getColumnDimension('X')->setWidth(60);
 				$event->sheet->getColumnDimension('Y')->setWidth(60);
@@ -64,14 +64,14 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('AD')->setWidth(40);
 				$event->sheet->getColumnDimension('AE')->setWidth(40);
 				$event->sheet->getColumnDimension('AF')->setWidth(40);
-
+				$event->sheet->styleCells('A1:BH2', ['font' => ['bold'=>true]]);
 				$event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				$event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				$event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
 
 				// add formulas to cells
 				
-				$event->sheet->setCellValue('AF5','=K5*0.4536');
+				// $event->sheet->setCellValue('AF5','=K5*0.4536');
 				$event->sheet->freezePane('C3');
 
 				// $event->sheet->styleCells(
