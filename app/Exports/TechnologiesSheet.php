@@ -65,26 +65,15 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('AE')->setWidth(40);
 				$event->sheet->getColumnDimension('AF')->setWidth(40);
 				$event->sheet->styleCells('A1:BH2', ['font' => ['bold'=>true]]);
-				$event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
-				$event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
-				$event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
+				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
+				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
+				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
 
 				// add formulas to cells
 				
 				// $event->sheet->setCellValue('AF5','=K5*0.4536');
 				$event->sheet->freezePane('C3');
 
-				// $event->sheet->styleCells(
-				//     'B2:G8',
-				//     [
-				//         'borders' => [
-				//             'outline' => [
-				//                 'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
-				//                 'color' => ['argb' => 'FFFF0000'],
-				//             ],
-				//         ]
-				//     ]
-				// );
 			},
 		];
 	}
