@@ -12,7 +12,7 @@
 	<thead>
 		<tr>
 			<th colspan = "10"><h1>Technologies Matrix</h1></th>
-			<th>Nutrient Percent Reduction</th>
+			<th>Nutrient Reduction (Percent)</th>
 		</tr>
 		<tr>
 			<th><strong>Technology Type</strong></th>
@@ -25,12 +25,12 @@
 			<th><strong>Potential Permitting Agencies</strong></th>
 			<th><strong>Siting Requirements</strong></th>
 			<th><strong>Unit Metric</strong></th>
-			<th><strong>Nitrogen Percent <br />Reduction (Low)</strong></th>
-			<th><strong>Nitrogen Percent <br />Reduction (High)</strong></th>
-			<th><strong>Nitrogen Percent <br />Reduction (Avg)</strong></th>
-			<th><strong>Phosphorus Percent <br />Reduction (Low)</strong></th>
-			<th><strong>Phosphorus Percent <br />Reduction (High)</strong></th>
-			<th><strong>Phosphorus Percent <br />Reduction (Avg)</strong></th>
+			<th><strong>Nitrogen % <br /> (Low)</strong></th>
+			<th><strong>Nitrogen % <br /> (High)</strong></th>
+			<th><strong>Nitrogen % <br /> (Avg)</strong></th>
+			<th><strong>Phosphorus % <br /> (Low)</strong></th>
+			<th><strong>Phosphorus % <br /> (High)</strong></th>
+			<th><strong>Phosphorus % <br /> (Avg)</strong></th>
 			<th><strong>Nitrogen Removed <br />per Year (kg) Low</strong></th>
 			<th><strong>Nitrogen Removed <br />per Year (kg) High</strong></th>
 			<th><strong>Nitrogen Removed <br />per Year (kg) Avg</strong></th>
