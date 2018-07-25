@@ -13,6 +13,8 @@
 		<tr>
 			<th colspan = "10"><h1>Technologies Matrix</h1></th>
 			<th>Nutrient Reduction (Percent)</th>
+			<th>Nutrient Removed Per Year (kg)</th>
+			<th>Nutrient Removed Per Planning Period (kg)</th>
 		</tr>
 		<tr>
 			<th><strong>Technology Type</strong></th>
@@ -31,13 +33,13 @@
 			<th><strong>Phosphorus % <br /> (Low)</strong></th>
 			<th><strong>Phosphorus % <br /> (High)</strong></th>
 			<th><strong>Phosphorus % <br /> (Avg)</strong></th>
-			<th><strong>Nitrogen Removed <br />per Year (kg) Low</strong></th>
-			<th><strong>Nitrogen Removed <br />per Year (kg) High</strong></th>
-			<th><strong>Nitrogen Removed <br />per Year (kg) Avg</strong></th>
-			<th><strong>Nitrogen Removed <br />per Planning Period</strong></th>
+			<th><strong>Nitrogen Removed <br />(kg) Low</strong></th>
+			<th><strong>Nitrogen Removed <br /> (kg) High</strong></th>
+			<th><strong>Nitrogen Removed <br />(kg) Avg</strong></th>
 			<th><strong>Phosphorus Removed <br />per Year (kg) Low</strong></th>
 			<th><strong>Phosphorus Removed <br />per Year (kg) High</strong></th>
 			<th><strong>Phosphorus Removed <br />per Year (kg) Avg</strong></th>
+			<th><strong>Nitrogen Removed <br />per Planning Period</strong></th>
 			<th><strong>Phosphorus Removed <br />per Planning Period</strong></th>
 			<th><strong>Current Project Cost (Low)</strong></th>
 			<th><strong>Current Project Cost (High)</strong></th>

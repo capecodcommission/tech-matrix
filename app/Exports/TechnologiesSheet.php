@@ -64,7 +64,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getStyle('K1:P2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('CECECECE');
-					$event->sheet->getStyle('Q1:WP2')->getFill()
+					$event->sheet->getStyle('Q1:W2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FFC6E0B4');
 	
@@ -73,11 +73,12 @@ class TechnologiesSheet implements FromView, WithEvents
 				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
 
 				$event->sheet->mergeCells('K1:P1');
-				$event->sheet->mergeCells('Q1:W1');
+				$event->sheet->mergeCells('Q1:U1');
+				$event->sheet->mergeCells('V1:W1');
 				
 				// add formulas to cells
 				// $event->sheet->setCellValue('AF5','=K5*0.4536');
-				
+
 				$event->sheet->freezePane('C3');
 
 			},
