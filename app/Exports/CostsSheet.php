@@ -59,30 +59,30 @@ class CostsSheet implements FromView, WithEvents
 	{
 		return [
 			AfterSheet::class => function(AfterSheet $event) {
-				$event->sheet->getStyle('R3:R78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('Q3:Q78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('C3:C78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('E3:I78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('W3:AF78')->getAlignment()->setWrapText(true);
-				$event->sheet->getColumnDimension('A')->setWidth(70);
-				$event->sheet->getColumnDimension('B')->setWidth(90);
-				$event->sheet->getColumnDimension('D')->setWidth(90);
-				$event->sheet->getColumnDimension('E')->setWidth(22);
-				$event->sheet->getColumnDimension('F')->setWidth(20);
-				$event->sheet->getColumnDimension('G')->setWidth(30);
-				$event->sheet->getColumnDimension('H')->setWidth(30);
-				$event->sheet->getColumnDimension('I')->setWidth(30);
-				$event->sheet->getColumnDimension('K')->setWidth(15);
-				$event->sheet->getColumnDimension('W')->setWidth(40);
-				$event->sheet->getColumnDimension('X')->setWidth(60);
-				$event->sheet->getColumnDimension('Y')->setWidth(60);
-				$event->sheet->getColumnDimension('Z')->setWidth(40);
-				$event->sheet->getColumnDimension('AA')->setWidth(40);
-				$event->sheet->getColumnDimension('AB')->setWidth(40);
-				$event->sheet->getColumnDimension('AC')->setWidth(40);
-				$event->sheet->getColumnDimension('AD')->setWidth(40);
-				$event->sheet->getColumnDimension('AE')->setWidth(40);
-				$event->sheet->getColumnDimension('AF')->setWidth(40);
+				// $event->sheet->getStyle('R3:R78')->getAlignment()->setWrapText(true);
+				// $event->sheet->getStyle('Q3:Q78')->getAlignment()->setWrapText(true);
+				// $event->sheet->getStyle('C3:C78')->getAlignment()->setWrapText(true);
+				// $event->sheet->getStyle('E3:I78')->getAlignment()->setWrapText(true);
+				// $event->sheet->getStyle('W3:AF78')->getAlignment()->setWrapText(true);
+				// $event->sheet->getColumnDimension('A')->setWidth(70);
+				// $event->sheet->getColumnDimension('B')->setWidth(90);
+				// $event->sheet->getColumnDimension('D')->setWidth(90);
+				// $event->sheet->getColumnDimension('E')->setWidth(22);
+				// $event->sheet->getColumnDimension('F')->setWidth(20);
+				// $event->sheet->getColumnDimension('G')->setWidth(30);
+				// $event->sheet->getColumnDimension('H')->setWidth(30);
+				// $event->sheet->getColumnDimension('I')->setWidth(30);
+				// $event->sheet->getColumnDimension('K')->setWidth(15);
+				// $event->sheet->getColumnDimension('W')->setWidth(40);
+				// $event->sheet->getColumnDimension('X')->setWidth(60);
+				// $event->sheet->getColumnDimension('Y')->setWidth(60);
+				// $event->sheet->getColumnDimension('Z')->setWidth(40);
+				// $event->sheet->getColumnDimension('AA')->setWidth(40);
+				// $event->sheet->getColumnDimension('AB')->setWidth(40);
+				// $event->sheet->getColumnDimension('AC')->setWidth(40);
+				// $event->sheet->getColumnDimension('AD')->setWidth(40);
+				// $event->sheet->getColumnDimension('AE')->setWidth(40);
+				// $event->sheet->getColumnDimension('AF')->setWidth(40);
 
 				$event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				$event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
@@ -90,7 +90,7 @@ class CostsSheet implements FromView, WithEvents
 
 				// add formulas to cells
 				
-				$event->sheet->setCellValue('AF5','=K5*0.4536');
+				$event->sheet->setCellValue('E2','=(C2+D2)/2');
 				$event->sheet->freezePane('C3');
 
 				// $event->sheet->styleCells(

@@ -83,7 +83,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				[
 					'borders' => [
 						'left' => [
-							'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
+							'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
 							'color' => ['argb' => 'FF000000'],
 						],
 					]

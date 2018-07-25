@@ -187,7 +187,7 @@
 			</tr>
 		@endforelse
 		
-		<tr><td colspan="4">Exported on : (date)</td></tr>
+		<tr><td colspan="4">Exported on : <?php echo date('M d, Y'); ?></td></tr>
 	</tbody>
 </table>
 </body>
