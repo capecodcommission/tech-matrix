@@ -54,16 +54,16 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('G')->setWidth(30);
 				$event->sheet->getColumnDimension('H')->setWidth(30);
 				$event->sheet->getColumnDimension('I')->setWidth(30);
-				$event->sheet->getColumnDimension('AX')->setWidth(40);
-				$event->sheet->getColumnDimension('AY')->setWidth(40);
-				$event->sheet->getColumnDimension('AZ')->setWidth(40);
-				$event->sheet->getColumnDimension('BA')->setWidth(40);
-				$event->sheet->getColumnDimension('BB')->setWidth(40);
-				$event->sheet->getColumnDimension('BC')->setWidth(40);
+				$event->sheet->getColumnDimension('AX:BC')->setWidth(40);
+				// $event->sheet->getColumnDimension('AY')->setWidth(40);
+				// $event->sheet->getColumnDimension('AZ')->setWidth(40);
+				// $event->sheet->getColumnDimension('BA')->setWidth(40);
+				// $event->sheet->getColumnDimension('BB')->setWidth(40);
+				// $event->sheet->getColumnDimension('BC')->setWidth(40);
 				$event->sheet->styleCells('A1:BH2', ['font' => ['bold'=>true]]);
 				$event->sheet->getStyle('K1:P2')->getFill()
     ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-    ->getStartColor()->setARGB('FFFF0000');
+    ->getStartColor()->setARGB('CECECECE');
 				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
