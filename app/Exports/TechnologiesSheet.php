@@ -66,7 +66,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getStyle('K1:P2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('CECECECE');
-					$event->sheet->getStyle('Q1:W2')->getFill()
+				$event->sheet->getStyle('Q1:X2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FFC6E0B4');
 	
@@ -77,6 +77,18 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->mergeCells('K1:P1');
 				$event->sheet->mergeCells('Q1:V1');
 				$event->sheet->mergeCells('W1:X1');
+
+				$event->sheet->styleCells(
+				'W1:W2',
+				[
+					'borders' => [
+						'left' => [
+							'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
+							'color' => ['argb' => 'FF000000'],
+						],
+					]
+				]
+			);
 				
 				// add formulas to cells
 				// $event->sheet->setCellValue('AF5','=K5*0.4536');

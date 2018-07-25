@@ -3,9 +3,6 @@
 	<title>Technology Matrix v2.0</title>
 	<meta http-equiv="Content-Type" content="application/vnd.ms-excel; charset=utf-8" /> 
 	<link rel="stylesheet" href="css/xls.css" />
-	<style type="text/css">
-		td.text { width: 200px; border-left: 1px solid #f00; }
-	</style>
 </head>
 <body>
 <table class="users admin table">
@@ -16,7 +13,7 @@
 			<th colspan="6">Nutrient Removed Per Year (kg)</th>
 			<th colspan="2">Nutrient Removed Per Planning Period (kg)</th>
 		</tr>
-		<tr>
+		<tr style="border-bottom: 1px solid #000">
 			<th><strong>Technology Type</strong></th>
 			<th><strong>Technology Strategy</strong></th>
 			<th><strong>Technology<br /> ID</strong></th>
@@ -167,13 +164,13 @@
 					@empty No ecosystem services identified.
 					@endforelse
 				</td>
-				<td class="text">@forelse($item->evaluation_monitoring as $each)
+				<td>@forelse($item->evaluation_monitoring as $each)
 						* {{$each->monitoring}}<br />
 					@empty
 						No Evaluation Monitoring Assigned yet.
 					@endforelse
 				</td>
-				<td class="text">@forelse($item->longterm_monitoring as $each)
+				<td>@forelse($item->longterm_monitoring as $each)
 						* {{$each->monitoring }}<br />
 					@empty
 						No Long Term Monitoring Assigned yet.
