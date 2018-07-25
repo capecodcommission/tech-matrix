@@ -12,9 +12,9 @@
 	<thead>
 		<tr>
 			<th colspan = "10"><h1>Technologies Matrix</h1></th>
-			<th>Nutrient Reduction (Percent)</th>
-			<th>Nutrient Removed Per Year (kg)</th>
-			<th>Nutrient Removed Per Planning Period (kg)</th>
+			<th colspan="6">Nutrient Reduction (Percent)</th>
+			<th colspan="6">Nutrient Removed Per Year (kg)</th>
+			<th colspan="2">Nutrient Removed Per Planning Period (kg)</th>
 		</tr>
 		<tr>
 			<th><strong>Technology Type</strong></th>
