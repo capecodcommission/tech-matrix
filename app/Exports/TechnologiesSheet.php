@@ -62,22 +62,22 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('BC')->setWidth(40);
 				$event->sheet->styleCells('A1:BH2', ['font' => ['bold'=>true]]);
 				$event->sheet->getStyle('K1:P2')->getFill()
-    ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-    ->getStartColor()->setARGB('CECECECE');
+					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+					->getStartColor()->setARGB('CECECECE');
+					$event->sheet->getStyle('Q1:WP2')->getFill()
+					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+					->getStartColor()->setARGB('FFC6E0B4');
+	
 				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
-		// Sheet::macro('styleCells', function (Sheet $sheet, string $cellRange, array $style) { $sheet->getDelegate()->getStyle($cellRange)->applyFromArray($style); });]
-		// $event->sheet->cells('K1:P2', function($cells) {
-		// 			$cells->setBackground('#cecece');
-					
 
-		// 		});
 				$event->sheet->mergeCells('K1:P1');
+				$event->sheet->mergeCells('Q1:W1');
 				
 				// add formulas to cells
-				
 				// $event->sheet->setCellValue('AF5','=K5*0.4536');
+				
 				$event->sheet->freezePane('C3');
 
 			},
