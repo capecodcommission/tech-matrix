@@ -12,18 +12,19 @@
 			<th colspan="6">Nutrient Reduction (Percent)</th>
 			<th colspan="6">Nutrient Removed Per Year (kg)</th>
 			<th colspan="2">Nutrient Removed Per Planning Period (kg)</th>
+			<th colspan = "3">Current Project Cost</th>
 		</tr>
 		<tr style="border-bottom: 1px solid #000">
 			<th><strong>Technology Type</strong></th>
 			<th><strong>Technology Strategy</strong></th>
 			<th><strong>Technology<br /> ID</strong></th>
-			<th><strong>Technology Description</strong></th>
 			<th><strong>Influent Sources</strong></th>
 			<th><strong>Influent Concentration</strong></th>
 			<th><strong>Pollutants Treated</strong></th>
 			<th><strong>Potential Permitting Agencies</strong></th>
 			<th><strong>Siting Requirements</strong></th>
 			<th><strong>Unit Metric</strong></th>
+			<th><strong><strong>Flow GPD</strong></strong></th>
 			<th><strong>Nitrogen % <br /> (Low)</strong></th>
 			<th><strong>Nitrogen % <br /> (High)</strong></th>
 			<th><strong>Nitrogen % <br /> (Avg)</strong></th>
@@ -38,14 +39,14 @@
 			<th><strong>Phosphorus Removed <br />per Year (kg) Avg</strong></th>
 			<th><strong>Nitrogen Removed <br />per Planning Period</strong></th>
 			<th><strong>Phosphorus Removed <br />per Planning Period</strong></th>
-			<th><strong>Current Project Cost (Low)</strong></th>
-			<th><strong>Current Project Cost (High)</strong></th>
-			<th><strong>Current Project Cost (Avg)</strong></th>
 			<th><strong>Current Construction <br />Cost (Low)</strong></th>
 			<th><strong>Current Construction<br /> Cost (High)</strong></th>
 			<th><strong>Current Construction<br /> Cost (Avg)</strong></th>
 			<th><strong>Current Construction Cost Percent Labor</strong></th>
-
+			<th><strong>Land Cost</strong></th>
+			<th><strong>Current Project Cost (Low)</strong></th>
+			<th><strong>Current Project Cost (High)</strong></th>
+			<th><strong>Current Project Cost (Avg)</strong></th>
 			<th><strong>Current Annual OM Cost (low)</strong></th>
 			<th><strong>Current Annual OM Cost (high)</strong></th>
 			<th><strong>Current Annual OM Cost (avg)</strong></th>
@@ -70,6 +71,8 @@
 			<th><strong>Longterm Monitoring</strong></th>
 			<th><strong>Piloting Status <br />DEP Approval</strong></th>
 			<th><strong>Pilot Study Findings</strong></th>
+			<th><strong>Notes/References</strong></th>
+			<th><strong>Regulatory Certainty</strong></th>
 			<th><strong>Public Acceptance</strong></th>
 			<th><strong>Last Updated</strong></th>
 		</tr>
@@ -80,7 +83,6 @@
 				<td></td>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
-				<td>{{ $item->technology_description }}</td>
 				<td>@forelse($item->influent_sources as $each)
 						{{$each->influent_source}}<br />
 					@empty
@@ -107,6 +109,7 @@
 					@endforelse
 				</td>
 				<td>{{$item->unit_metric->unit_metric}}</td>
+				<td>{{$item->flow_gpd}}</td>
 				<td>{{$item->n_percent_reduction_low}}%</td>
 				<td>{{$item->n_percent_reduction_high}}%</td>
 				<td>{{$item->n_percent_reduction_low + $item->n_percent_reduction_high / 2}}</td> 
@@ -121,29 +124,30 @@
 				<td>{{$item->calculated()->p_removed_high}}</td>
 				<td>{{$item->calculated()->p_removed_avg}}</td>
 				<td>{{$item->calculated()->p_removed_planning_period}}</td>
-				<td>{{$item->current_project_cost_low}}</td>
-				<td>{{$item->current_project_cost_high}}</td>
-				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
 				<td>{{$item->current_construction_cost_low}}</td>
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
 				<td>{{$item->current_construction_cost_percent_labor}}</td>
+				<td>(Land Cost 250k)</td>
+				<td>{{$item->current_project_cost_low}}</td>
+				<td>{{$item->current_project_cost_high}}</td>
+				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
 				<td>{{$item->current_annual_o_m_cost_low}}</td>
 				<td>{{$item->current_annual_o_m_cost_high}}</td>
 				<td>{{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</td>
 				<td>{{$item->current_annual_o_m_cost_percent_labor}}</td>
 				<td>{{$item->adjustment_factor_project_cost}}</td>
 				<td>{{$item->adjustment_factor_o_m_cost}}</td>
-				<td>{{$item->adj_project_cost_low}}</td>
-				<td>{{$item->adj_project_cost_high}}</td>
-				<td>{{$item->adj_project_cost_avg}}</td>
-				<td>{{$item->adj_o_m_cost_low}}</td>
-				<td>{{$item->adj_o_m_cost_high}}</td>
-				<td>{{$item->adj_o_m_cost_avg}}</td>
+				<td>{{$item->calculated()->adj_project_cost_low}}</td>
+				<td>{{$item->calculated()->adj_project_cost_high}}</td>
+				<td>{{$item->calculated()->adj_project_cost_avg}}</td>
+				<td>{{$item->calculated()->adj_o_m_cost_low}}</td>
+				<td>{{$item->calculated()->adj_o_m_cost_high}}</td>
+				<td>{{$item->calculated()->adj_o_m_cost_avg}}</td>
 				<td>{{$item->useful_life_years}}</td>
-				<td>{{$item->replacement_cost}}</td>
-				<td>{{$item->total_replacement_cost}}</td>
-				<td>{{$item->project_cost_pv}}</td>
+				<td>{{$item->calculated()->replacement_cost}}</td>
+				<td>{{$item->calculated()->total_replacement_cost}}</td>
+				<td>{{$item->calculated()->project_cost_pv}}</td>
 				<td>@forelse($item->system_design_considerations as $each)
 						{{$each->infrastructure_to_consider}}<br />
 					@empty No system design considerations identified.
@@ -178,7 +182,10 @@
 				</td>
 				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
 				<td>{{$item->pilot_study_findings}}</td>
+				<td>{!! $item->references_notes_assumptions !!}</td>
+				<td>{!! $item->regulatory_comments !!}</td>
 				<td class="text">{{$item->public_acceptance}}</td>
+
 				<td>{{$item->updated_at}}</td>
 			</tr>
 		@empty
