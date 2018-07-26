@@ -182,8 +182,8 @@
 				</td>
 				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
 				<td>{{$item->pilot_study_findings}}</td>
-				<td>{!! $item->references_notes_assumptions !!}</td>
-				<td>{!! $item->regulatory_comments !!}</td>
+				<td>{{{$item->references_notes_assumptions}}</td>
+				<td>{{ $item->regulatory_comments}}</td>
 				<td class="text">{{$item->public_acceptance}}</td>
 
 				<td>{{$item->updated_at}}</td>
