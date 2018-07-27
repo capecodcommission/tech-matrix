@@ -63,6 +63,9 @@
 			<th><strong>Replacement Cost</strong></th>
 			<th><strong>Total Replacement<br />/Upgrade Cost</strong></th>
 			<th><strong>Project Cost (PV)</strong></th>
+			<th><strong>Avg Project Cost<br />per KG N Removed</strong></th>
+			<th><strong>Avg O&amp;M Cost<br />per KG N Removed</strong></th>
+			<th><strong>Avg Life Cycle Cost<br />per KG N Removed</strong></th>
 			<th><strong>System Design Considerations</strong></th>
 			<th><strong>Advantages</strong></th>
 			<th><strong>Disadvantages</strong></th>
@@ -148,17 +151,20 @@
 				<td>{{$item->calculated()->replacement_cost}}</td>
 				<td>{{$item->calculated()->total_replacement_cost}}</td>
 				<td>{{$item->calculated()->project_cost_pv}}</td>
+				<td>{{$item->calculated()->cost_per_kg_avg_project_cost_n}}</td>
+				<td>{{$item->calculated()->cost_per_kg_avg_om_cost_n}}</td>
+				<td>{{$item->calculated()->cost_per_kg_avg_lifecycle_cost_n}}</td>
 				<td>@forelse($item->system_design_considerations as $each)
 						{{$each->infrastructure_to_consider}}<br />
 					@empty No system design considerations identified.
 					@endforelse
 				</td>
-				<td>@forelse(striplist($item->advantages) as $each)
+				<td>@forelse(striphtml($item->advantages) as $each)
 					* {{$each}}<br />
 					@empty --
 					@endforelse
 				</td>
-				<td>@forelse(striplist($item->disadvantages) as $each)
+				<td>@forelse(striphtml($item->disadvantages) as $each)
 					* {{$each}}<br />
 					@empty --
 					@endforelse

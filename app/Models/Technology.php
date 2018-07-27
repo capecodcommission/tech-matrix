@@ -189,6 +189,67 @@ class Technology extends Model
 	public function calculated()
 	{
 		$calculated = DB::select("
+			select
+			id,
+			technology_id,
+
+			p_percent_reduction_low,
+			p_percent_reduction_high,
+			baseline_concentration_p,
+			flow_gpd,
+			p_removed_low,
+			p_removed_high,
+			p_removed_avg,
+			p_removed_planning_period,
+
+			n_percent_reduction_low,
+			n_percent_reduction_high,
+			baseline_concentration_n,
+			n_removed_low,
+			n_removed_high,
+			n_removed_avg,
+			n_removed_planning_period,
+
+			current_project_cost_low,
+			current_project_cost_high,
+			adjustment_factor_project_cost,
+			replacement_cost_factor,
+			useful_life_years,
+			n_per_years,
+
+			discount_rate,
+			adj_project_cost_low,
+			adj_project_cost_high,
+			adj_project_cost_avg,
+			replacement_cost,
+			total_replacement_cost,
+			project_cost_pv,
+
+			current_annual_o_m_cost_low,
+			current_annual_o_m_cost_high,
+			adjustment_factor_o_m_cost,
+
+			adj_o_m_cost_low,
+			adj_o_m_cost_high,
+			adj_o_m_cost_avg,
+
+			cost_per_kg_avg_project_cost_n,
+			cost_per_kg_avg_project_cost_p,
+			cost_per_kg_avg_om_cost_n,
+			cost_per_kg_avg_om_cost_p,
+			cost_per_kg_avg_lifecycle_cost_n,
+			cost_per_kg_avg_lifecycle_cost_p
+			
+			from Technology_Calculations() 
+			where id = " . $this->id );
+		return $calculated[0];
+	}
+
+
+	public function calc()
+	{ 
+		/*
+
 			select t.id,
 			t.current_project_cost_low, t.current_project_cost_high,
 			t.useful_life_years,
@@ -212,7 +273,8 @@ class Technology extends Model
 			left outer join P_Reduction_Per_planning_period() pp on t.id = pp.id
 			left outer join Project_Costs() pc on t.id = pc.id
 			left outer join Adjusted_O_M_Cost() omc on t.id = omc.id
-			where t.id = " . $this->id );
-		return $calculated[0];
+
+		*/
+		
 	}
 }
