@@ -18,8 +18,11 @@
 			<th><strong>Technology Type</strong></th>
 			<th><strong>Technology Strategy</strong></th>
 			<th><strong>Technology<br /> ID</strong></th>
+			<th><strong>Technology Description</strong></th>
 			<th><strong>Influent Sources</strong></th>
 			<th><strong>Influent Concentration</strong></th>
+			<th><strong>Baseline <br />Concentration (N)</strong></th>
+			<th><strong>Baseline <br />Concentration (P)</strong></th>
 			<th><strong>Pollutants Treated</strong></th>
 			<th><strong>Potential Permitting Agencies</strong></th>
 			<th><strong>Siting Requirements</strong></th>
@@ -78,8 +81,8 @@
 			<th><strong>Piloting Status <br />DEP Approval</strong></th>
 			<th><strong>Pilot Study Findings</strong></th>
 			<th><strong>Notes/References</strong></th>
-			<th><strong>Regulatory Certainty</strong></th>
-			<th><strong>Public Acceptance</strong></th>
+			{{-- <th><strong>Regulatory Certainty</strong></th>
+			<th><strong>Public Acceptance</strong></th> --}}
 			<th><strong>Last Updated</strong></th>
 		</tr>
 	</thead>
@@ -89,6 +92,7 @@
 				<td></td>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
+				<td>{{$item->technology_description}}</td>
 				<td>@forelse($item->influent_sources as $each)
 						{{$each->influent_source}}<br />
 					@empty
@@ -96,6 +100,8 @@
 					@endforelse
 				</td>
 				<td>(Influent Concentration here)</td>
+				<td>{{$item->baseline_concentration_n}}</td>
+				<td>{{$item->baseline_concentration_p}}</td>
 				<td>@forelse($item->pollutants as $each)
 						{{$each->pollutant}}<br />
 					@empty
@@ -195,8 +201,8 @@
 				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
 				<td>{{$item->pilot_study_findings}}</td>
 				<td>{{ $item->references_notes_assumptions}}</td>
-				<td>{{ $item->regulatory_comments}}</td>
-				<td class="text">{{$item->public_acceptance}}</td>
+				{{-- <td>{{ $item->regulatory_comments}}</td>
+				<td class="text">{{$item->public_acceptance}}</td> --}}
 
 				<td>{{$item->updated_at}}</td>
 			</tr>
