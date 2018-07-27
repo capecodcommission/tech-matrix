@@ -159,12 +159,12 @@
 					@empty No system design considerations identified.
 					@endforelse
 				</td>
-				<td>@forelse(striphtml($item->advantages) as $each)
+				<td>@forelse(striplist($item->advantages) as $each)
 					* {{$each}}<br />
 					@empty --
 					@endforelse
 				</td>
-				<td>@forelse(striphtml($item->disadvantages) as $each)
+				<td>@forelse(striplist($item->disadvantages) as $each)
 					* {{$each}}<br />
 					@empty --
 					@endforelse
