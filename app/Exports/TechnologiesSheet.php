@@ -45,7 +45,8 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getStyle('D3:D78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('E3:I78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('W3:AF78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('AV3:BD78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('AV3:BF78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('BI3:BI78')->getAlignment()->setWrapText(true);
 				$event->sheet->getColumnDimension('A')->setWidth(40);
 				$event->sheet->getColumnDimension('B')->setWidth(45);
 				$event->sheet->getColumnDimension('D')->setWidth(90);
@@ -69,9 +70,12 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getStyle('Q1:X2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FFC6E0B4');
+
+			/* This is for the icon -> it needs a background color since the svg is white 	
 				$event->sheet->getStyle('D3:D77')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FF52a9df');
+			*/
 					
 	
 				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
