@@ -73,8 +73,8 @@
 			<th><strong>Avg O&amp;M Cost<br />per KG P Removed</strong></th>
 			<th><strong>Avg Life Cycle Cost<br />per KG P Removed</strong></th>
 			<th><strong>System Design Considerations</strong></th>
-			{{-- <th><strong>Advantages</strong></th>
-			<th><strong>Disadvantages</strong></th> --}}
+			<th><strong>Advantages</strong></th>
+			<th><strong>Disadvantages</strong></th>
 			<th><strong>Eco Services</strong></th>
 			<th><strong>Evaluation Monitoring</strong></th>
 			<th><strong>Longterm Monitoring</strong></th>
@@ -171,7 +171,7 @@
 					@empty No system design considerations identified.
 					@endforelse
 				</td>
-				{{-- <td>@forelse(striplist($item->advantages) as $each)
+				<td>@forelse(striplist($item->advantages) as $each)
 					* {{$each}}<br />
 					@empty --
 					@endforelse
@@ -180,7 +180,7 @@
 					* {{$each}}<br />
 					@empty --
 					@endforelse
-				</td>	 --}}
+				</td>	
 				<td>@forelse($item->ecosystem_services as $each)
 						{{$each->ecosystem_service}}<br />
 					@empty No ecosystem services identified.
