@@ -19,6 +19,7 @@
 			<th><strong>Technology Strategy</strong></th>
 			<th><strong>Technology<br /> ID</strong></th>
 			<th><strong>Icon</strong></th>
+			<th><strong>Icon File</strong></th>
 			<th><strong>Technology Description</strong></th>
 			<th><strong>Influent Sources</strong></th>
 			<th><strong>Influent Concentration</strong></th>
@@ -93,7 +94,8 @@
 				<td></td>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
-				<td><img src="http://10.10.1.205/cch2o/Matrix/icons/{{$item->icon}}"/></td>
+				<td><img src="http://www.watershedmvp.org/images/SVG/{{$item->icon}}" height="25" width="25" /></td>
+				<td>{{$item->icon}}</td>
 				<td>{{$item->technology_description}}</td>
 				<td>@forelse($item->influent_sources as $each)
 						{{$each->influent_source}}<br />
