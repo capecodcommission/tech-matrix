@@ -88,7 +88,7 @@
 	</thead>
 	<tbody>
 		@forelse($list as $item)
-			<tr>
+			<tr> <?php $item->calc = $item->calculated(); ?>
 				<td></td>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
@@ -128,9 +128,9 @@
            		<td>{{$item->p_percent_reduction_low}}%</td>
 				<td>{{$item->p_percent_reduction_high}}%</td>
 				<td>{{($item->p_percent_reduction_low + $item->p_percent_reduction_high) / 2}}</td>
-				<td>{{$item->calculated()->n_removed_low}}</td>
-				<td>{{$item->calculated()->n_removed_high}}</td>
-				<td>{{$item->calculated()->n_removed_avg}}</td>
+				<td>{{$item->calc->n_removed_low}}</td>
+				<td>{{$item->calc->n_removed_high}}</td>
+				<td>{{$item->calc->n_removed_avg}}</td>
 				<td>{{$item->calculated()->n_removed_planning_period}}</td>
 				<td>{{$item->calculated()->p_removed_low}}</td>
 				<td>{{$item->calculated()->p_removed_high}}</td>
