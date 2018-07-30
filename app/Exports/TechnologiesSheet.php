@@ -69,6 +69,10 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getStyle('Q1:X2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FFC6E0B4');
+				$event->sheet->getStyle('D3:D77')->getFill()
+					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+					->getStartColor()->setARGB('FF52a9df');
+					
 	
 				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
