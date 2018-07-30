@@ -124,10 +124,10 @@
 				<td>{{$item->flow_gpd}}</td>
 				<td>{{$item->n_percent_reduction_low}}%</td>
 				<td>{{$item->n_percent_reduction_high}}%</td>
-				<td>{{$item->n_percent_reduction_low + $item->n_percent_reduction_high / 2}}</td> 
+				<td>{{($item->n_percent_reduction_low + $item->n_percent_reduction_high) / 2}}</td> 
            		<td>{{$item->p_percent_reduction_low}}%</td>
 				<td>{{$item->p_percent_reduction_high}}%</td>
-				<td>{{$item->p_percent_reduction_low + $item->p_percent_reduction_high / 2}}</td>
+				<td>{{($item->p_percent_reduction_low + $item->p_percent_reduction_high) / 2}}</td>
 				<td>{{$item->calculated()->n_removed_low}}</td>
 				<td>{{$item->calculated()->n_removed_high}}</td>
 				<td>{{$item->calculated()->n_removed_avg}}</td>
@@ -140,7 +140,7 @@
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
 				<td>{{$item->current_construction_cost_percent_labor}}</td>
-				<td>(Land Cost 250k)</td>
+				<td>{{$item->calculated()->land_cost}}</td>
 				<td>{{$item->current_project_cost_low}}</td>
 				<td>{{$item->current_project_cost_high}}</td>
 				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
