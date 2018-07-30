@@ -131,16 +131,16 @@
 				<td>{{$item->calc->n_removed_low}}</td>
 				<td>{{$item->calc->n_removed_high}}</td>
 				<td>{{$item->calc->n_removed_avg}}</td>
-				<td>{{$item->calculated()->n_removed_planning_period}}</td>
-				<td>{{$item->calculated()->p_removed_low}}</td>
-				<td>{{$item->calculated()->p_removed_high}}</td>
-				<td>{{$item->calculated()->p_removed_avg}}</td>
-				<td>{{$item->calculated()->p_removed_planning_period}}</td>
+				<td>{{$item->calc->n_removed_planning_period}}</td>
+				<td>{{$item->calc->p_removed_low}}</td>
+				<td>{{$item->calc->p_removed_high}}</td>
+				<td>{{$item->calc->p_removed_avg}}</td>
+				<td>{{$item->calc->p_removed_planning_period}}</td>
 				<td>{{$item->current_construction_cost_low}}</td>
 				<td>{{$item->current_construction_cost_high}}</td>
 				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
 				<td>{{$item->current_construction_cost_percent_labor}}</td>
-				<td>{{$item->calculated()->land_cost}}</td>
+				<td>{{$item->calc->land_cost}}</td>
 				<td>{{$item->current_project_cost_low}}</td>
 				<td>{{$item->current_project_cost_high}}</td>
 				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
@@ -150,22 +150,22 @@
 				<td>{{$item->current_annual_o_m_cost_percent_labor}}</td>
 				<td>{{$item->adjustment_factor_project_cost}}</td>
 				<td>{{$item->adjustment_factor_o_m_cost}}</td>
-				<td>{{$item->calculated()->adj_project_cost_low}}</td>
-				<td>{{$item->calculated()->adj_project_cost_high}}</td>
-				<td>{{$item->calculated()->adj_project_cost_avg}}</td>
-				<td>{{$item->calculated()->adj_o_m_cost_low}}</td>
-				<td>{{$item->calculated()->adj_o_m_cost_high}}</td>
-				<td>{{$item->calculated()->adj_o_m_cost_avg}}</td>
+				<td>{{$item->calc->adj_project_cost_low}}</td>
+				<td>{{$item->calc->adj_project_cost_high}}</td>
+				<td>{{$item->calc->adj_project_cost_avg}}</td>
+				<td>{{$item->calc->adj_o_m_cost_low}}</td>
+				<td>{{$item->calc->adj_o_m_cost_high}}</td>
+				<td>{{$item->calc->adj_o_m_cost_avg}}</td>
 				<td>{{$item->useful_life_years}}</td>
-				<td>{{$item->calculated()->replacement_cost}}</td>
-				<td>{{$item->calculated()->total_replacement_cost}}</td>
-				<td>{{$item->calculated()->project_cost_pv}}</td>
-				<td>{{$item->calculated()->cost_per_kg_avg_project_cost_n}}</td>
-				<td>{{$item->calculated()->cost_per_kg_avg_om_cost_n}}</td>
-				<td>{{$item->calculated()->cost_per_kg_avg_lifecycle_cost_n}}</td>
-				<td>{{$item->calculated()->cost_per_kg_avg_project_cost_p}}</td>
-				<td>{{$item->calculated()->cost_per_kg_avg_om_cost_p}}</td>
-				<td>{{$item->calculated()->cost_per_kg_avg_lifecycle_cost_p}}</td>
+				<td>{{$item->calc->replacement_cost}}</td>
+				<td>{{$item->calc->total_replacement_cost}}</td>
+				<td>{{$item->calc->project_cost_pv}}</td>
+				<td>{{$item->calc->cost_per_kg_avg_project_cost_n}}</td>
+				<td>{{$item->calc->cost_per_kg_avg_om_cost_n}}</td>
+				<td>{{$item->calc->cost_per_kg_avg_lifecycle_cost_n}}</td>
+				<td>{{$item->calc->cost_per_kg_avg_project_cost_p}}</td>
+				<td>{{$item->calc->cost_per_kg_avg_om_cost_p}}</td>
+				<td>{{$item->calc->cost_per_kg_avg_lifecycle_cost_p}}</td>
 				<td>@forelse($item->system_design_considerations as $each)
 						{{$each->infrastructure_to_consider}}<br />
 					@empty No system design considerations identified.
