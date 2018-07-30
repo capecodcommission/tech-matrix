@@ -45,8 +45,8 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getStyle('D3:D78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('E3:I78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('W3:AF78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('AV3:BF78')->getAlignment()->setWrapText(true);
-				$event->sheet->getStyle('BG3:BL78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('AV3:BL78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('BO3:BO78')->getAlignment()->setWrapText(true);
 				$event->sheet->getColumnDimension('A')->setWidth(40);
 				$event->sheet->getColumnDimension('B')->setWidth(45);
 				$event->sheet->getColumnDimension('D')->setWidth(90);
@@ -55,14 +55,22 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('G')->setWidth(20);
 				$event->sheet->getColumnDimension('H')->setWidth(30);
 				$event->sheet->getColumnDimension('I')->setWidth(30);
-				$event->sheet->getColumnDimension('AV')->setWidth(40);
-				$event->sheet->getColumnDimension('AW')->setWidth(40);
-				$event->sheet->getColumnDimension('AX')->setWidth(40);
-				$event->sheet->getColumnDimension('AY')->setWidth(40);
-				$event->sheet->getColumnDimension('AZ')->setWidth(40);
-				$event->sheet->getColumnDimension('BA')->setWidth(40);
-				$event->sheet->getColumnDimension('BB')->setWidth(40);
+				// $event->sheet->getColumnDimension('AV')->setWidth(40);
+				// $event->sheet->getColumnDimension('AW')->setWidth(40);
+				// $event->sheet->getColumnDimension('AX')->setWidth(40);
+				// $event->sheet->getColumnDimension('AY')->setWidth(40);
+				// $event->sheet->getColumnDimension('AZ')->setWidth(40);
+				// $event->sheet->getColumnDimension('BA')->setWidth(40);
+				// $event->sheet->getColumnDimension('BB')->setWidth(40);
+				// $event->sheet->getColumnDimension('BC')->setWidth(40);
 				$event->sheet->getColumnDimension('BC')->setWidth(40);
+				$event->sheet->getColumnDimension('BG')->setWidth(40);
+				$event->sheet->getColumnDimension('BH')->setWidth(40);
+				$event->sheet->getColumnDimension('BI')->setWidth(40);
+				$event->sheet->getColumnDimension('BJ')->setWidth(40);
+				$event->sheet->getColumnDimension('BK')->setWidth(40);
+				$event->sheet->getColumnDimension('BL')->setWidth(40);
+				$event->sheet->getColumnDimension('BO')->setWidth(40);
 				$event->sheet->styleCells('A1:BP2', ['font' => ['bold'=>true]]);
 				$event->sheet->getStyle('K1:P2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
