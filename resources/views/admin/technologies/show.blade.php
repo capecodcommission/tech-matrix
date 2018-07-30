@@ -257,6 +257,8 @@
 				<?php $item->calc = $item->calculated(); ?>
 				<p><strong>Phosphorus Removed (low)</strong>: {{ $item->calc->p_removed_low }}</p>
 				<p><strong>Phosphorus Removed (high)</strong>: {{ $item->calc->p_removed_high }}</p>
+					<p><strong>Phosphorus Removed (low)</strong>: {{ $item->calculated()->p_removed_low }}</p>
+				<p><strong>Phosphorus Removed (high)</strong>: {{ $item->calculated()->p_removed_high }}</p>
 				
 			</div>
 			<!-- <div>
