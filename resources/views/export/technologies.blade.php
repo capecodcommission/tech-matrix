@@ -94,7 +94,7 @@
 				<td></td>
 				<td>{{$item->technology_strategy}}</td>
 				<td>{{$item->technology_id }}</td>
-				<td><img src="http://www.watershedmvp.org/images/SVG/{{$item->icon}}" height="25" width="25" /></td>
+				<td><img src="/images/icons/{{$item->icon}}" height="25" width="25" /></td>
 				<td>{{$item->icon}}</td>
 				<td>{{$item->technology_description}}</td>
 				<td>@forelse($item->influent_sources as $each)

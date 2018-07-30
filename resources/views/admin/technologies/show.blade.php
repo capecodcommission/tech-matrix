@@ -9,7 +9,7 @@
 			<h2>{{$item->technology_strategy}} 
 				<span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span>
 			</h2>
-			
+			<p><img src="/images/icons/{{$item->icon}}" height="25" width="25" /></p>
 			<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
 			<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
 			<div class="accordion" id="accordion">
