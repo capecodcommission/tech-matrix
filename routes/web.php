@@ -18,6 +18,9 @@ Auth::routes();
 
 // Route::get('testing', 'TestController@test');
 // need to add /admin to this URL and make sure people are logged in
+Route::group(['middleware' => ['auth']], function () {
+
+
 Route::get('technologies/editRelationships/{technology}', 'TechnologyController@editRelationships');
 Route::post('technologies/updateRelationships', 'TechnologyController@updateRelationships');
 Route::get('technologies/editFormulas/{technology}', 'TechnologyController@editFormulas');
@@ -37,5 +40,7 @@ Route::get('users/restore/{user}', 'UserController@restore');
 Route::resource('users', 'UserController');
 
 Route::get('export', 'ExportController@exportAll')->name('export');
+});
+
 
 Route::get('/home', 'HomeController@index')->name('home');
