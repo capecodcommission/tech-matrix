@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Models\Technology;
 use App\Http\Resources\Technology as TechnologyResource;
+use App\Http\Resources\TechnologyCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/detail/{id}', function () {
     return new TechnologyResource(Technology::find(1));
+});
+
+Route::get('/explore', function () {
+    return new TechnologyCollection(User::all());
 });
