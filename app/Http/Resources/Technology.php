@@ -16,7 +16,12 @@ class Technology extends JsonResource
     {
         return [
             'id' => $this->technology_id,
-            'name' => $this->technology_strategy,
+			'name' => $this->technology_strategy,
+			'description' => $this->description,
+			'icon' => $this->icon,
+			'image' => $this->image,
+			'advantages' => $this->advantages,
+			'disadvantages' => $this->disadvantages,
             'updated_at' => $this->updated_at,
         ];
     }
