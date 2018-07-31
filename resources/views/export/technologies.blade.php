@@ -82,9 +82,6 @@
 			<th><strong>Longterm Monitoring</strong></th>
 			<th><strong>Piloting Status <br />DEP Approval</strong></th>
 			<th><strong>Pilot Study Findings</strong></th>
-			<th><strong>Notes/References</strong></th>
-			{{-- <th><strong>Regulatory Certainty</strong></th>
-			<th><strong>Public Acceptance</strong></th> --}}
 			<th>Detail Page</th>
 			<th><strong>Last Updated</strong></th>
 		</tr>
@@ -205,11 +202,7 @@
 				</td>
 				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
 				<td>{{$item->pilot_study_findings}}</td>
-				<td><div>{{ $item->references_notes_assumptions }}</div></td>
-				{{-- <td>{{ $item->regulatory_comments}}</td>
-				<td class="text">{{$item->public_acceptance}}</td> --}}
 				<td><a href="{{route('technologies.show', $item->id)}}">View Detail</a></td>
-
 				<td>{{$item->updated_at}}</td>
 			</tr>
 		@empty
