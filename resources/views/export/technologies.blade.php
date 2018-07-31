@@ -85,6 +85,7 @@
 			<th><strong>Notes/References</strong></th>
 			{{-- <th><strong>Regulatory Certainty</strong></th>
 			<th><strong>Public Acceptance</strong></th> --}}
+			<th>Detail Page</th>
 			<th><strong>Last Updated</strong></th>
 		</tr>
 	</thead>
@@ -207,6 +208,7 @@
 				<td>{{ $item->references_notes_assumptions}}</td>
 				{{-- <td>{{ $item->regulatory_comments}}</td>
 				<td class="text">{{$item->public_acceptance}}</td> --}}
+				<td><a href="{{route('technologies.show', $item->id)}}">View Detail</a></td>
 
 				<td>{{$item->updated_at}}</td>
 			</tr>
