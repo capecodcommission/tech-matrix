@@ -16,7 +16,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Sheet::macro('styleCells', function (Sheet $sheet, string $cellRange, array $style) {
             $sheet->getDelegate()->getStyle($cellRange)->applyFromArray($style);
-        });
+		});
+		 Resource::withoutWrapping();
     }
 
     /**
@@ -27,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-    }
+	}
+	
 }
