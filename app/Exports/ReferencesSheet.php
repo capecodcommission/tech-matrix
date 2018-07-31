@@ -39,8 +39,8 @@ class ReferencesSheet implements FromView, WithEvents
 		return [
 			AfterSheet::class => function(AfterSheet $event) {
 				$event->sheet->getStyle('A2:C78')->getAlignment()->setWrapText(true);
-				$event->sheet->getColumnDimension('A')->setWidth(40);
-				$event->sheet->getColumnDimension('C')->setWidth(90);
+				$event->sheet->getColumnDimension('B')->setWidth(40);
+				$event->sheet->getColumnDimension('C')->setWidth(120);
 				$event->sheet->styleCells('A1:C2', ['font' => ['bold'=>true]]);
 			},
 		];

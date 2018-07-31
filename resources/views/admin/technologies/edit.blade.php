@@ -43,6 +43,8 @@
 								<option value="">No unit metrics available</option>
 							@endforelse
 						</select>
+						<label for="metric_input">Metric Input</label>
+						<input type="text" class="form-control" name="metric_input" value="{{$item->metric_input}}">		
 					</div>
 				  <div class="form-group">
 				  	<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)<sup>*</sup>

@@ -29,6 +29,7 @@
 			<th><strong>Potential Permitting Agencies</strong></th>
 			<th><strong>Siting Requirements</strong></th>
 			<th><strong>Unit Metric</strong></th>
+			<th><strong>Metric Input</strong></th>
 			<th><strong><strong>Flow GPD</strong></strong></th>
 			<th><strong>Nitrogen % <br /> (Low)</strong></th>
 			<th><strong>Nitrogen % <br /> (High)</strong></th>
@@ -123,6 +124,7 @@
 					@endforelse
 				</td>
 				<td>{{$item->unit_metric->unit_metric}}</td>
+				<td>{{$item->metric_input}}</td>
 				<td>{{$item->flow_gpd}}</td>
 				<td>{{$item->n_percent_reduction_low}}%</td>
 				<td>{{$item->n_percent_reduction_high}}%</td>
@@ -198,6 +200,12 @@
 						* {{$each->monitoring }}<br />
 					@empty
 						No Long Term Monitoring Assigned yet.
+					@endforelse
+				</td>
+				<td>@forelse($item->time_to_improve_estuary as $each)
+						{{$each->length_of_time}}
+					@empty
+						No Time to Improve Estuary Water range assigned.
 					@endforelse
 				</td>
 				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
