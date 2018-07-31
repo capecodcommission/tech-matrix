@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Models\Technology;
 use App\Http\Resources\Technology as TechnologyResource;
 
 /*
