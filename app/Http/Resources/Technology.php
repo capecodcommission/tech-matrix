@@ -24,7 +24,7 @@ class Technology extends JsonResource
 			'disadvantages' => $this->disadvantages,
 			'references' => $this->references,
 			'useful_life_years' => $this->useful_life_years,
-			'calc' => $this->calculated,
+			'calc' => $this->calculated(),
             'updated_at' => $this->updated_at
         ];
     }
