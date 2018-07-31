@@ -205,7 +205,7 @@
 				</td>
 				<td>@if($item->piloting_status_id != NULL){{$item->piloting_status->pilot_status}}@endif</td>
 				<td>{{$item->pilot_study_findings}}</td>
-				<td>{!! $item->references_notes_assumptions !!}</td>
+				<td><div>{{ $item->references_notes_assumptions }}</div></td>
 				{{-- <td>{{ $item->regulatory_comments}}</td>
 				<td class="text">{{$item->public_acceptance}}</td> --}}
 				<td><a href="{{route('technologies.show', $item->id)}}">View Detail</a></td>
