@@ -12,8 +12,12 @@ class Technology extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function toArray($request)
+   public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->technology_id,
+            'name' => $this->technology_strategy,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }

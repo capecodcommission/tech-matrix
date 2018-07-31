@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/detail/{id}', function () {
-    return new TechnologyResource(Technology::find(1));
+    return new TechnologyResource(Technology::find($id));
 });
 
 Route::get('/explore', function () {
