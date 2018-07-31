@@ -22,7 +22,10 @@ class Technology extends JsonResource
 			'image' => $this->image,
 			'advantages' => $this->advantages,
 			'disadvantages' => $this->disadvantages,
-            'updated_at' => $this->updated_at,
+			'references' => $this->references,
+			'useful_life_years' => $this->useful_life_years,
+			'calc' => $this->calculated,
+            'updated_at' => $this->updated_at
         ];
     }
 }
