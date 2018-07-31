@@ -25,5 +25,5 @@ Route::get('/detail/{id}', function () {
 });
 
 Route::get('/explore', function () {
-    return new TechnologyCollection(User::all());
+    return new TechnologyCollection(Technology::all());
 });
