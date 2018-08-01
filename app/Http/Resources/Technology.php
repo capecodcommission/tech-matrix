@@ -30,8 +30,7 @@ class Technology extends JsonResource
 			'n_percent_reduction_high' => $this->n_percent_reduction_high,
 			'p_percent_reduction_low' => $this->p_percent_reduction_low,
 			'p_percent_reduction_high' => $this->p_percent_reduction_high,
-						
-			
+			'scales' => $this->scales,			
             'updated_at' => $this->updated_at
         ];
     }

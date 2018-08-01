@@ -16,7 +16,7 @@ class TechnologyCollection extends ResourceCollection
     {
         return [
             'data' => $this->collection->transform(function($item) {
-				return $item->only(['id', 'technology_strategy', 'icon']);
+				return $item->only(['id', 'technology_strategy', 'icon', 'scales']);
 			})
         ];
     }
