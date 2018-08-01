@@ -197,4 +197,9 @@ class Technology extends Model
 		return $calculated[0];
 	}
 
+	public function scales()
+	{
+		return $this->belongsToMany('App\Models\Scale', 'rel_scales_technologies', 'technology_id', 'scale_id')->withTimestamps();
+	}
+
 }

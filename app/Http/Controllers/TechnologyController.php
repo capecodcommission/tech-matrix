@@ -21,7 +21,7 @@ use App\Models\YearGrouping;
 use App\Models\Category;
 use App\Models\Formula;
 use App\Models\MonitoringCost;
-
+use App\Models\Scale;
 
 use App\Http\Resources\Technology as TechnologyResource;
 
@@ -47,7 +47,8 @@ class TechnologyController extends Controller
 		$evaluation_monitoring = EvaluationMonitoring::all();
 		$longterm_monitoring = EvaluationMonitoring::all();
 		$categories = Category::all();
-		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'categories'));
+		$scales = Scale::all();
+		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'categories', 'scales'));
     }
 
     public function store(Request $request)
@@ -62,6 +63,10 @@ class TechnologyController extends Controller
 		{
 			$item->permitting_agencies()->sync([$data['permitting_agencies']]);
 		}
+		if($data['scales'])
+		{
+			$item->scales()->sync([$data['scales']]);
+		}		
 		if($data['pollutants'])
 		{
 			$item->pollutants()->sync($data['pollutants']);
@@ -134,8 +139,9 @@ class TechnologyController extends Controller
 		$costs = MonitoringCost::all();
 		$piloting_statuses = PilotingStatus::all();
 		$years = YearGrouping::all();
+		$scales = Scale::all();
        
-		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years', 'costs'));
+		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years', 'costs', 'scales'));
     }
 	
     public function update(Request $request, $id)
@@ -164,7 +170,11 @@ class TechnologyController extends Controller
         if($request->permitting_agencies)
         {
             $item->permitting_agencies()->sync($request->permitting_agencies);
-        }
+		}
+		if($request->scales)
+		{
+			$item->scales()->sync($request->scales);
+		}	
         if($request->influent_sources)
         {
 			foreach($request->influent_sources as $source)

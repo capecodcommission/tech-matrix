@@ -97,6 +97,19 @@
 						@endforelse
 					</div>
 					<div class="form-group">
+						<p><strong>Scale</strong></p>
+						@forelse($scales as $each)
+							<div class="form-check">
+								<label class="form-check-label" for="scales_{{$each->id}}">
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="scales[]" id="scales_{{$each->id}}"  @if($item->scales->contains($each->id)) checked='checked' @endif>
+								{{$each->scale}}
+								</label>
+							</div>
+						@empty
+							No Scales Available
+						@endforelse
+					</div>
+					<div class="form-group">
 						<p><strong>Permitting Agencies</strong></p>
 						@forelse($permitting_agencies as $each)
 							<div class="form-check">
