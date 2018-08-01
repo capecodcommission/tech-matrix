@@ -14,14 +14,15 @@ class TechnologyCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-		$scales = array();
-		foreach($item->scales as $each) 
-		{
-			$scales[] = $each->scale;
-		}
+		
 		return [
             'data' => $this->collection->transform(function($item){
-                return [
+				$scales = array();
+				foreach($item->scales as $each) 
+				{
+					$scales[] = $each->scale;
+				}
+				return [
                     'id' => $item->id,
                     'name' => $item->technology_strategy,
 					'icon' => $item->icon,
