@@ -20,7 +20,7 @@ class TechnologyCollection extends ResourceCollection
                     'id' => $item->id,
                     'name' => $item->technology_strategy,
 					'icon' => $item->icon,
-					'scales' => $item->scales()->only('scale')
+					'scales' => $item->scales->only('scale')
                 ];
             }),
         ];
