@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use \Maatwebsite\Excel\Sheet;
 use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
             $sheet->getDelegate()->getStyle($cellRange)->applyFromArray($style);
 		});
 		 Resource::withoutWrapping();
+		 ResourceCollection::withoutWrapping();
     }
 
     /**
