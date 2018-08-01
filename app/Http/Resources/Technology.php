@@ -25,6 +25,13 @@ class Technology extends JsonResource
 			'references' => $this->references_notes_assumptions,
 			'useful_life_years' => $this->useful_life_years,
 			'calc' => $this->calculated(),
+			'siting_requirements' => $this->siting_requirements,
+			'n_percent_reduction_low' => $this->n_percent_reduction_low,
+			'n_percent_reduction_high' => $this->n_percent_reduction_high,
+			'p_percent_reduction_low' => $this->p_percent_reduction_low,
+			'p_percent_reduction_high' => $this->p_percent_reduction_high,
+						
+			
             'updated_at' => $this->updated_at
         ];
     }

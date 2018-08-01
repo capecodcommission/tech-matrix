@@ -15,7 +15,6 @@ class TechMatrixExport implements WithMultipleSheets
 
         
 			$sheets[] = new TechnologiesSheet();
-			// $sheets[] = new CostsSheet();
 			$sheets[] = new NotesSheet();
 			$sheets[] = new InputsSheet();
 			$sheets[] = new ReferencesSheet();
