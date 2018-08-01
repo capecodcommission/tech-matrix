@@ -15,9 +15,9 @@ class TechnologyCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'data' => $this->collection->only(
-				['id', 'name', 'icon']
-			),
+            'data' => $this->collection->transform(function($item) {
+				return $item->only(['id', 'name', 'icon']);
+			})
         ];
     }
 }
