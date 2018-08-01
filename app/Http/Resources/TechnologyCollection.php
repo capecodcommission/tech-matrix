@@ -14,10 +14,17 @@ class TechnologyCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return [
-            'data' => $this->collection->transform(function($item) {
-				return $item->only(['id', 'technology_strategy', 'icon', 'scales']);
-			})
+		return [
+            'data' => $this->collection->transform(function($item){
+                return [
+                    'id' => $item->id,
+                    'name' => $item->technology_strategy,
+					'icon' => $item->icon,
+					'scales' => $item->scales()->only('scale')
+                ];
+            }),
         ];
+
+        
     }
 }
