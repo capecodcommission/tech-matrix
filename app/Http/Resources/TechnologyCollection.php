@@ -28,8 +28,8 @@ class TechnologyCollection extends ResourceCollection
                     'name' => $item->technology_strategy,
 					'icon' => $item->icon,
 					'scales' => $scales,
-					'n_removed_avg' => $item->calc->n_removed_avg,
-					'p_removed_avg' => $item->calc->p_removed_avg,
+					'n_removed_avg' => round($item->calc->n_removed_avg),
+					'p_removed_avg' => round($item->calc->p_removed_avg),
 					'useful_life_years'	=> $item->useful_life_years
                 ];
             }),
