@@ -17,11 +17,11 @@ class TechnologyCollection extends ResourceCollection
 		
 		return [
             'data' => $this->collection->transform(function($item){
+				$item->calc = $item->calculated();
 				$scales = array();
 				foreach($item->scales as $each) 
 				{
 					$scales[] = $each->scale;
-					$each->calc = $each->calculated();
 				}
 				return [
                     'id' => $item->id,
