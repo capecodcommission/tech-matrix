@@ -21,12 +21,15 @@ class TechnologyCollection extends ResourceCollection
 				foreach($item->scales as $each) 
 				{
 					$scales[] = $each->scale;
+					$each->calc = $each->calculated;
 				}
 				return [
                     'id' => $item->id,
                     'name' => $item->technology_strategy,
 					'icon' => $item->icon,
-					'scales' => $scales
+					'scales' => $scales,
+					'n_removed_avg' => $item->calc->n_removed_avg,
+					'p_removed_avg' => $item->calc->p_removed_avg
                 ];
             }),
         ];
