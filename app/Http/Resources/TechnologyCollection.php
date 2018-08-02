@@ -29,7 +29,8 @@ class TechnologyCollection extends ResourceCollection
 					'icon' => $item->icon,
 					'scales' => $scales,
 					'n_removed_avg' => $item->calc->n_removed_avg,
-					'p_removed_avg' => $item->calc->p_removed_avg
+					'p_removed_avg' => $item->calc->p_removed_avg,
+					'useful_life_years'	=> $item->useful_life_years
                 ];
             }),
         ];
