@@ -21,7 +21,7 @@ class TechnologyCollection extends ResourceCollection
 				foreach($item->scales as $each) 
 				{
 					$scales[] = $each->scale;
-					$each->calc = $each->calculated;
+					$each->calc = $each->calculated();
 				}
 				return [
                     'id' => $item->id,
