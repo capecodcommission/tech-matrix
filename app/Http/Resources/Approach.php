@@ -20,6 +20,12 @@ class Approach extends ResourceCollection
 				$list = array();
 				foreach($item->technologies as $each) 
 				{
+					$each->calc = $each->calculated();
+					$scales = array();
+					foreach($each->scales as $one) 
+					{
+						$scales[] = $one->scale;
+					}
 					$list[$each->id]['id'] = $each->id;
 					$list[$each->id]['name'] = $each->technology_strategy;
                     $list[$each->id]['name'] = $each->technology_strategy;
