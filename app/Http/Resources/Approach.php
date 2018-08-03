@@ -26,14 +26,15 @@ class Approach extends ResourceCollection
 					{
 						$scales[] = $one->scale;
 					}
-					$list[$each->id]['id'] = $each->id;
-					$list[$each->id]['name'] = $each->technology_strategy;
-                    $list[$each->id]['name'] = $each->technology_strategy;
-					$list[$each->id]['icon'] = $each->icon;
-					$list[$each->id]['scales'] = $scales;
-					$list[$each->id]['n_removed_avg'] = round($each->calc->n_removed_avg);
-					$list[$each->id]['p_removed_avg'] = round($each->calc->p_removed_avg);
-					$list[$each->id]['useful_life_years'] = $each->useful_life_years;
+					$list[] = $each;
+					// $list[$each->id]['id'] = $each->id;
+					// $list[$each->id]['name'] = $each->technology_strategy;
+                    // $list[$each->id]['name'] = $each->technology_strategy;
+					// $list[$each->id]['icon'] = $each->icon;
+					// $list[$each->id]['scales'] = $scales;
+					// $list[$each->id]['n_removed_avg'] = round($each->calc->n_removed_avg);
+					// $list[$each->id]['p_removed_avg'] = round($each->calc->p_removed_avg);
+					// $list[$each->id]['useful_life_years'] = $each->useful_life_years;
 				}		
 				return [
                     'id' => $item->id,
