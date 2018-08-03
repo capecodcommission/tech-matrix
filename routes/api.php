@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Models\Technology;
 use App\Http\Resources\Technology as TechnologyResource;
 use App\Http\Resources\TechnologyCollection;
+use App\Models\Approach;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,8 @@ Route::get('/detail/{id}', 'TechnologyController@detail');
 
 Route::get('/explore', function () {
     return new TechnologyCollection(Technology::all());
+});
+
+Route::get('/approach', function () {
+    return new Approach(Approach::all());
 });
