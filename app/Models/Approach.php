@@ -14,4 +14,9 @@ class Approach extends Model
 	];
 
 	protected $table = 'lkp_approaches';
+
+	public function technologies()
+	{
+		return $this->hasMany('App\Models\Technology');
+	}
 }

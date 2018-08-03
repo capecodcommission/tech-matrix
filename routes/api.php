@@ -5,6 +5,8 @@ use App\Models\Technology;
 use App\Http\Resources\Technology as TechnologyResource;
 use App\Http\Resources\TechnologyCollection;
 use App\Models\Approach;
+use App\Http\Resources\Approach as ApproachResource;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +30,5 @@ Route::get('/explore', function () {
 });
 
 Route::get('/approach', function () {
-    return new Approach(Approach::all());
+    return new ApproachResource(Approach::all());
 });
