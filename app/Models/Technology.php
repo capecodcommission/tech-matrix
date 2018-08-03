@@ -20,6 +20,11 @@ class Technology extends Model
 		return $this->belongsTo('App\Models\TechnologyType');
 	}
 
+	public function approach()
+	{
+		return $this->belongsTo('App\Models\Approach');
+	}
+
 	public function system_design_considerations()
 	{
 		return $this->belongsToMany('App\Models\SystemDesignConsideration', 'rel_system_design_considerations', 'technology_id', 'consideration_id')->withTimestamps();

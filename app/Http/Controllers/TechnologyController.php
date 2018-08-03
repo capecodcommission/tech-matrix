@@ -22,6 +22,7 @@ use App\Models\Category;
 use App\Models\Formula;
 use App\Models\MonitoringCost;
 use App\Models\Scale;
+use App\Models\Approach;
 
 use App\Http\Resources\Technology as TechnologyResource;
 
@@ -118,8 +119,9 @@ class TechnologyController extends Controller
 		$longterm_monitoring = EvaluationMonitoring::all();
 		$piloting_statuses = PilotingStatus::all();
 		// $categories = Category::all();
+		$approaches = Approach::all();
        
-		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses'));
+		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'approaches'));
     }
 	
     public function editRelationships(Technology $technology)

@@ -30,6 +30,17 @@
 						</select>
 					</div>
 					<div class="form-group">
+						<label for="approach_id">Technology Approach</label>
+						<select class="form-control" id="approach_id" name="approach_id">
+							<option></option>
+							@forelse($approaches as $approach)
+								<option value="{{$approach->id}}" @if($approach->id == $item->approach_id) selected @endif>{{$approach->approach}}</option>
+							@empty	
+								<option value="">No Approaches available</option>
+							@endforelse
+						</select>
+					</div>
+					<div class="form-group">
 						<label for="technology_system_type"> Technology System Type</label>
 						<input type="text" class="form-control" name="technology_system_type" value="{{$item->technology_system_type}}">					
 					</div>
