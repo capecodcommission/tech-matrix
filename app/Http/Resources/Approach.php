@@ -21,6 +21,7 @@ class Approach extends ResourceCollection
 				foreach($item->technologies as $each) 
 				{
 					$each->calc = $each->calculated();
+					$each->icon = "icons/" . $each->icon;
 					$scales = array();
 					foreach($each->scales as $one) 
 					{
