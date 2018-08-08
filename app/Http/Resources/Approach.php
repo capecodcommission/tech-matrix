@@ -21,7 +21,7 @@ class Approach extends ResourceCollection
 				foreach($item->technologies as $each) 
 				{
 					$each->calc = $each->calculated();
-					$each->icon = "icons/" . $each->icon;
+					$each->icon = "http://www.watershedmvp.org/images/SVG/" . $each->icon;
 					$scales = array();
 					foreach($each->scales as $one) 
 					{
