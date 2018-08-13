@@ -27,7 +27,7 @@ class Technology extends JsonResource
 			'technology_type' => $this->technology_type->technology_type,
 			'approach' => $this->approach->approach,
 			'calc' => $this->calculated(),
-			'siting_requirements' => (sizeof($this->siting_requirements) > 0 ? 'Some' : 'None'),
+			'siting_requirements' => (sizeof($this->siting_requirements) > 0 ? $this->siting_requirements : 'None'),
 			'n_percent_reduction_low' => $this->n_percent_reduction_low,
 			'n_percent_reduction_high' => $this->n_percent_reduction_high,
 			'p_percent_reduction_low' => $this->p_percent_reduction_low,
