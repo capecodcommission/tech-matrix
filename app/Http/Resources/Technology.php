@@ -28,6 +28,7 @@ class Technology extends JsonResource
 			'approach' => $this->approach->approach,
 			'calc' => $this->calculated(),
 			'siting_requirements' => (sizeof($this->siting_requirements) > 0 ? $this->siting_requirements : 'None'),
+			'time_to_imporove' => (sizeof($this->time_to_improve_estuary) > 0 ? $this->time_to_improve_estuary : 'N/A'),
 			'n_percent_reduction_low' => $this->n_percent_reduction_low,
 			'n_percent_reduction_high' => $this->n_percent_reduction_high,
 			'p_percent_reduction_low' => $this->p_percent_reduction_low,
