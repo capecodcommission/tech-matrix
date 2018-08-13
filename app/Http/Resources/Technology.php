@@ -34,8 +34,8 @@ class Technology extends JsonResource
 			'p_percent_reduction_low' => $this->p_percent_reduction_low,
 			'p_percent_reduction_high' => $this->p_percent_reduction_high,
 			'scales' => $this->scales,			
-			'longterm_monitoring_cost' => $this->longterm_monitoring_cost,
-			'evaluation_monitoring_cost' => $this->evaluation_monitoring_cost,
+			'longterm_monitoring_cost' => $this->longterm_monitoring_cost()->first()->est_annual_cost,
+			'evaluation_monitoring_cost' => $this->evaluation_monitoring_cost()->first()->est_annual_cost,
 			'years_of_evaluation_monitoring' => $this->years_of_evaluation_monitoring()->first()->length_of_time,
             'updated_at' => $this->updated_at
         ];
