@@ -36,7 +36,7 @@ class Technology extends JsonResource
 			'scales' => $this->scales,			
 			'longterm_monitoring_cost' => $this->longterm_monitoring_cost,
 			'evaluation_monitoring_cost' => $this->evaluation_monitoring_cost,
-			'years_of_evaluation_monitoring' => $this->years_of_evaluation_monitoring,
+			'years_of_evaluation_monitoring' => $this->years_of_evaluation_monitoring()->first()->length_of_time,
             'updated_at' => $this->updated_at
         ];
     }
