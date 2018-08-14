@@ -91,7 +91,8 @@ class TechnologyController extends Controller
 
     public function show(Technology $technology)
     {
-        $item = $technology;
+		$item = $technology;
+		$item->calc = $item->calculated;
         return view('admin.technologies.show', compact('item'));
 	}
 
