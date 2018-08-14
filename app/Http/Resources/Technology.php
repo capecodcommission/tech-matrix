@@ -37,7 +37,8 @@ class Technology extends JsonResource
 			'longterm_monitoring_cost' => (is_null($this->longterm_monitoring_cost)? 'N/A' : $this->longterm_monitoring_cost()->first()->est_annual_cost),
 			'evaluation_monitoring_cost' => (is_null($this->evaluation_monitoring_cost)? 'N/A' : $this->evaluation_monitoring_cost()->first()->est_annual_cost),
 			'years_of_evaluation_monitoring' => $this->years_of_evaluation_monitoring()->first()->length_of_time,
-            'updated_at' => $this->updated_at
+			'updated_at' => $this->updated_at,
+			'benefits' => $this->ecosystem_services
         ];
     }
 }
