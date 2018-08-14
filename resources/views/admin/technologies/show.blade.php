@@ -43,7 +43,7 @@
 
 					<div id="costData" class="collapse " aria-labelledby="headingCosts" data-parent="#accordion">
 						<div class="card-body">
-							<p><strong>Current Construction Cost (low)</strong>: {{number_format($item->current_construction_cost_low, 0, '.', ',')}}</p>
+							<p><strong>Current Construction Cost (low)</strong>: {{number_format($item->calc->current_construction_cost_low, 0, '.', ',')}}</p>
 							<p><strong>Current Construction Cost (high)</strong>: {{number_format($item->current_construction_cost_high, 0, '.', ',')}}</p>
 							<p><strong>Current Construction Cost (avg)</strong>: {{number_format(($item->current_construction_cost_high + $item->current_construction_cost_low)/2, 0, '.', ',')}}</p>
 							<p><strong>Current Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor*100}}%</p>
