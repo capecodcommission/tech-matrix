@@ -329,7 +329,7 @@
 				<div class="card">
 					<div class="card-header" id="headingOther">
 						<h5 class="mb-0">
-							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#regulatoryData" aria-expanded="false" aria-controls="otherData">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#otherData" aria-expanded="false" aria-controls="otherData">
 								Other Characteristics
 							</button>
 						</h5>
@@ -405,7 +405,7 @@
 					</div>
 				</div>				
 			</div>
-			<p><img src="/images/{{$item->image}}"></p>
+			<p><img src="{{app_url('images/' . {{$item->image)}}"></p>
 
 		</div>
 	</div>
