@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <p><a href="{{route('technologies.index')}}">Back to List</a></p>
+	<div class="row justify-content-center">
+		<div class="col-md-12">
+			<p><a href="{{route('technologies.index')}}">Back to List</a></p>
 			<?php $item->calc = $item->calculated(); ?>
 			
 			<h2>{{$item->technology_strategy}} 
@@ -209,39 +209,39 @@
 					<div class="collapse" id="details"  aria-labelledby="headingDetails" data-parent="#accordion">
 						<div class="card-body">
 								<div class="row">
-						    		<div class="col-lg-12">
-						    			<p><strong>Unit Metric</strong>: {{$item->unit_metric->unit_metric}}</p>
-							    		<p><strong>Useful Life (years)</strong>: 
-							    			{{$item->calc->useful_life_years}}</p>
+									<div class="col-lg-12">
+										<p><strong>Unit Metric</strong>: {{$item->unit_metric->unit_metric}}</p>
+										<p><strong>Useful Life (years)</strong>: 
+											{{$item->calc->useful_life_years}}</p>
 										<p><strong>Flow GPD</strong>: {{$item->flow_gpd}}</p>
-							    	<h5>Nutrient Removal</h5>
-							    	<table class="table col-lg-12 offset-lg-1 table-sm">
-							    		<thead>
-							    			<tr>
-							    				<th></th>
-							    				<th><h5>Nitrogen</h5></th>
-							    				<th><h5>Phosphorus</h5></th>
-							    			</tr>
-							    		</thead>
-							    		<tbody>
-							    			<tr>
-							    				<td>Percent Removal (low-high)</td>
-							    				<td>{{$item->n_percent_reduction_low}}% - {{$item->n_percent_reduction_high}}%</td>
-							    				<td>{{$item->p_percent_reduction_low}}% - {{$item->p_percent_reduction_high}}%</td>
-							    			</tr>
-							    			<tr>
-							    				<td>Per Year</td>
-							    				<td>{{$item->calc->n_removed_avg}}kg</td>
-							    				<td>{{$item->calc->p_removed_avg}}kg</td>
-							    			</tr>
-							    			<tr>
-							    				<td>Per Planning Period</td>
-							    				<td>{{$item->calc->n_removed_planning_period}}kg</td>
-							    				<td>{{$item->calc->p_removed_planning_period}}kg</td>
-							    			</tr>
-							    		</tbody>
-							    	</table>
-							    </div>
+									<h5>Nutrient Removal</h5>
+									<table class="table col-lg-12 offset-lg-1 table-sm">
+										<thead>
+											<tr>
+												<th></th>
+												<th><h5>Nitrogen</h5></th>
+												<th><h5>Phosphorus</h5></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Percent Removal (low-high)</td>
+												<td>{{$item->n_percent_reduction_low}}% - {{$item->n_percent_reduction_high}}%</td>
+												<td>{{$item->p_percent_reduction_low}}% - {{$item->p_percent_reduction_high}}%</td>
+											</tr>
+											<tr>
+												<td>Per Year</td>
+												<td>{{$item->calc->n_removed_avg}}kg</td>
+												<td>{{$item->calc->p_removed_avg}}kg</td>
+											</tr>
+											<tr>
+												<td>Per Planning Period</td>
+												<td>{{$item->calc->n_removed_planning_period}}kg</td>
+												<td>{{$item->calc->p_removed_planning_period}}kg</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 						</div>
 					</div>
 				</div>
@@ -326,102 +326,92 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			
-			
-			<div>
-				<p><strong>EcoSystem Services</strong></p>
-				<ul>
-					@forelse($item->ecosystem_services as $each)
-						<li>{{$each->ecosystem_service}}</li>
-					@empty
-						<li>No Ecosystem Services Assigned.</li>
-					@endforelse
-			</div>
-			<div>
-				<p><strong>Permitting Agencies</strong></p>
-				<ul>
-					@forelse($item->permitting_agencies as $each)
-						<li>{{$each->potential_agency}}</li>
-					@empty	
-						<li>No Permitting Agencies Assigned.</li>
-					@endforelse
-				</ul>
-			</div>
-			<div><p><strong>Siting Requirements</strong></p>
-				<ul>
-					@forelse($item->siting_requirements as $each)
-					<li>{{$each->siting_requirement}}</li>
-					@empty
-						No siting requirements identified.
-					@endforelse
-				</ul>
-			</div>
-			<div>
-				<p><strong>Influent Sources</strong></p>
-				<ul>
-					@forelse($item->influent_sources as $each)
-						<li>{{$each->influent_source}}</li>
-					@empty
-						<li>No Influent Sources Assigned.</li>
-					@endforelse
-				</ul>
-			</div>
-
-			<div>
-				<p><strong>Pollutants Treated</strong></p>
-				<ul>
-					@forelse($item->pollutants as $each)
-						<li>{{$each->pollutant}}</li>
-					@empty
-						<li>No Pollutants Assigned.</li>
-					@endforelse				
-				</ul>						
-			</div>
-			<div class="form-group">
-				<p><strong>System Design Considerations</strong></p>
-				<ul>
-					@forelse($item->system_design_considerations as $each)
-						<li>{{$each->infrastructure_to_consider}}</li>
-					@empty
-						<li>
-							No System Design Considerations Assigned.
-						</li>
-					@endforelse
-				</ul>
-			</div>
-			<div>
-				<p><strong>Time to Improve Estuary Water (Years)</strong>
-				</p>
-				<ul>
-					@forelse($item->time_to_improve_estuary as $each)
-						<li>{{$each->length_of_time}}</li>
-					@empty
-						<li>
-							No Time to Improve Estuary Water range assigned.
-						</li>
-					@endforelse
-				</ul> 
-			</div>
-			<div><p><strong>Pilot Study Findings</strong></p>
-				<div>{!! $item->pilot_study_findings !!}</div>
+				<div class="card">
+					<div class="card-header" id="headingOther">
+						<h5 class="mb-0">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#regulatoryData" aria-expanded="false" aria-controls="otherData">
+								Other Characteristics
+							</button>
+						</h5>
+					</div>
+					<div class="collapse " id="otherData" data-parent="#accordion">
+						<div class="card-body">
+							<div>
+								<p><strong>EcoSystem Services</strong></p>
+								<ul>
+									@forelse($item->ecosystem_services as $each)
+										<li>{{$each->ecosystem_service}}</li>
+									@empty
+										<li>No Ecosystem Services Assigned.</li>
+									@endforelse
+								</ul>
+								<p><strong>Permitting Agencies</strong></p>
+								<ul>
+									@forelse($item->permitting_agencies as $each)
+										<li>{{$each->potential_agency}}</li>
+									@empty	
+										<li>No Permitting Agencies Assigned.</li>
+									@endforelse
+								</ul>
+								<p><strong>Siting Requirements</strong></p>
+								<ul>
+									@forelse($item->siting_requirements as $each)
+									<li>{{$each->siting_requirement}}</li>
+									@empty
+										No siting requirements identified.
+									@endforelse
+								</ul>
+								<p><strong>Influent Sources</strong></p>
+								<ul>
+									@forelse($item->influent_sources as $each)
+										<li>{{$each->influent_source}}</li>
+									@empty
+										<li>No Influent Sources Assigned.</li>
+									@endforelse
+								</ul>
+								<p><strong>Pollutants Treated</strong></p>
+								<ul>
+									@forelse($item->pollutants as $each)
+										<li>{{$each->pollutant}}</li>
+									@empty
+										<li>No Pollutants Assigned.</li>
+									@endforelse				
+								</ul>
+								<p><strong>System Design Considerations</strong></p>
+								<ul>
+									@forelse($item->system_design_considerations as $each)
+										<li>{{$each->infrastructure_to_consider}}</li>
+									@empty
+										<li>
+											No System Design Considerations Assigned.
+										</li>
+									@endforelse
+								</ul>
+								<p><strong>Time to Improve Estuary Water (Years)</strong>
+								</p>
+								<ul>
+									@forelse($item->time_to_improve_estuary as $each)
+										<li>{{$each->length_of_time}}</li>
+									@empty
+										<li>
+											No Time to Improve Estuary Water range assigned.
+										</li>
+									@endforelse
+								</ul> 
+								<p><strong>Pilot Study Findings</strong></p>
+								<div>{!! $item->pilot_study_findings !!}</div>
+							</div>
+						</div>
+					</div>
+				</div>				
 			</div>
 			<p><img src="/images/{{$item->image}}"></p>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
 @endsection
 
 @section('scripts')
-	<script>
-$(function () {
-  $('button').popover({
-	container: 'body',
-	trigger: 'focus',
-	html: true,
-	placement: "right" 
-  })
-})
-	</script>
+
 @endsection
