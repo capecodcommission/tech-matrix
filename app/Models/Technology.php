@@ -17,7 +17,7 @@ class Technology extends Model
 	
 	public function technology_type()
 	{
-		return $this->belongsTo('App\Models\TechnologyType');
+		return $this->belongsTo('App\Models\TechnologyType')->withDefault(['technology_type'=>'N/A']);
 	}
 
 	public function approach()
