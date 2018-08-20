@@ -58,7 +58,7 @@
 							<p><strong>Replacement Cost</strong>: {{number_format($item->replacement_cost, 0, '.', ',')}}</p>
 													    <div class="accordion-content" >
 								<div class="row">
-									<table class="stack large-10 large-offset-1 columns">
+									<table class="stack col-lg-10 large-offset-1 columns">
 										<thead>
 											<tr>
 												<th colspan="2"><h5>Construction Costs</h5></th>
@@ -79,7 +79,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<table class="stack large-10 large-offset-1 columns">
+									<table class="stack col-lg-10 large-offset-1 columns">
 										<thead>
 											<tr>
 												<th colspan="2"><h5>Project Costs</h5></th>
@@ -100,11 +100,11 @@
 											</tr>
 											<tr>
 												<td>Project Cost (PV)</td>
-												<td class="text-right">${{$item->calc->project_cost_pv}}</td>
+												<td class="text-right">${{number_format($item->calc->project_cost_pv, 0, '.', ',')}}</td>
 											</tr>
 										</tbody>
 									</table>
-									<table class="stack large-10 large-offset-1 columns">
+									<table class="stack col-lg-10 large-offset-1 columns">
 										<thead>
 											<tr>
 												<th colspan="2"><h5>Replacement Costs</h5></th>
@@ -113,7 +113,7 @@
 										<tbody>
 											<tr>
 												<td>Replacement Cost</td>
-												<td class="text-right">${{$item->calc->replacement_cost}}</td>
+												<td class="text-right">${{number_format($item->calc->replacement_cost, 0, '.', ',')}}</td>
 											</tr>
 											<tr>
 												<td>Replacement Cost Factor</td>
@@ -121,11 +121,11 @@
 											</tr>
 											<tr>
 												<td>Total Replacement Cost</td>
-												<td class="text-right">${{$item->calc->total_replacement_cost}}</td>
+												<td class="text-right">${{number_format($item->calc->total_replacement_cost, 0, '.', ',')}}</td>
 											</tr>
 										</tbody>
 									</table>
-									<table class="stack large-10 large-offset-1 columns">
+									<table class="stack col-lg-10 large-offset-1 columns">
 										<thead>
 											<tr>
 												<th colspan="2"><h5>Annual OM Costs</h5></th>
@@ -134,19 +134,19 @@
 										<tbody>
 											<tr>
 												<td>Current Annual OM Cost (avg)</td>
-												<td class="text-right">${{$item->calc->current_annual_o_m_cost_low + $item->calc->current_annual_o_m_cost_high/2}}</td>
+												<td class="text-right">${{number_format(($item->calc->current_annual_o_m_cost_low + $item->calc->current_annual_o_m_cost_high/2), 0, '.', ',')}}</td>
 											</tr>
 											<tr>
 												<td>OM Cost Adjustment Factor</td>
-												<td class="text-right">{{$item->calc->adjustment_factor_o_m_cost}}</td>
+												<td class="text-right">{{number_format($item->calc->adjustment_factor_o_m_cost, 0, '.', ',')}}</td>
 											</tr>
 											<tr>
 												<td>Adjusted OM Cost (avg)</td>
-												<td class="text-right">${{$item->calc->adj_o_m_cost_avg}}</td>
+												<td class="text-right">${{number_format($item->calc->adj_o_m_cost_avg, 0, '.', ',')}}</td>
 											</tr>
 										</tbody>
 									</table>
-									<table class="stack large-10 large-offset-1 columns">
+									<table class="stack col-lg-10 large-offset-1 columns">
 										<thead>
 											<tr>
 												<th colspan="2"><h5>Costs per Kg Nitrogen Removed</h5></th>
@@ -155,19 +155,19 @@
 										<tbody>
 											<tr>
 												<td>Project Cost (avg)</td>
-												<td class="text-right">${{$item->calc->cost_per_kg_avg_project_cost_n}}</td>
+												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_project_cost_n, 0, '.', ',')}}</td>
 											</tr>
 											<tr>
 												<td>OM Cost (avg)</td>
-												<td class="text-right">${{$item->calc->cost_per_kg_avg_om_cost_n}}</td>
+												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_om_cost_n, 0, '.', ',')}}</td>
 											</tr>
 											<tr>
 												<td>Lifecycle Cost (avg)</td>
-												<td class="text-right">${{$item->calc->cost_per_kg_avg_lifecycle_cost_n}}</td>
+												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_lifecycle_cost_n, 0, '.', ',')}}</td>
 											</tr>
 										</tbody>
 									</table>
-									<table class="stack large-10  large-offset-1 columns end">
+									<table class="stack col-lg-10  large-offset-1 columns end">
 										<thead>	
 											<tr>
 												<th colspan="2"><h5>Costs per Kg Phosphorus Removed</h5></th>
@@ -176,15 +176,15 @@
 										<tbody>
 											<tr>
 												<td>Project Cost (avg)</td>
-												<td class="text-right">${{$item->calc->cost_per_kg_avg_project_cost_p}}</td>
+												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_project_cost_p, 0, '.', ',')}}</td>
 											</tr>
 											<tr>
 												<td>OM Cost (avg)</td>
-												<td class="text-right">${{$item->calc->cost_per_kg_avg_om_cost_p}}</td>
+												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_om_cost_p, 0, '.', ',')}}</td>
 											</tr>
 											<tr>
 												<td>Lifecycle Cost (avg)</td>
-												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_lifecycle_cost_p, 0)}}</td>
+												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_lifecycle_cost_p, 0, '.', ',')}}</td>
 											</tr>
 										</tbody>
 									</table>
