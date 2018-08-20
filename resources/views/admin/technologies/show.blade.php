@@ -228,12 +228,12 @@
 							    			</tr>
 							    			<tr>
 							    				<td>Per Year</td>
-							    				<td>{{$item->calc->n_removed_avg | round}}kg</td>
-							    				<td>{{$item->calc->p_removed_avg | round}}kg</td>
+							    				<td>{{$item->calc->n_removed_avg}}kg</td>
+							    				<td>{{$item->calc->p_removed_avg}}kg</td>
 							    			</tr>
 							    			<tr>
 							    				<td>Per Planning Period</td>
-							    				<td>{{$item->calc->n_removed_planning_period | round}}kg</td>
+							    				<td>{{$item->calc->n_removed_planning_period}}kg</td>
 							    				<td>{{$item->calc->p_removed_planning_period}}kg</td>
 							    			</tr>
 							    		</tbody>
