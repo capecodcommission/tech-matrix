@@ -43,7 +43,9 @@ class Technology extends JsonResource
 			'benefits' => $this->ecosystem_services,
 			'permitting_agencies' => $this->permitting_agencies,
 			'pilot_status' => (is_null($this->piloting_status)? 'N/A' : $this->piloting_status->pilot_status),
-			'regulatory_comments' => $this->regulatory_comments
+			'regulatory_comments' => $this->regulatory_comments,
+			'system_design_considerations' => $this->system_design_considerations,
+			'unit_metric' => (is_null($this->unit_metric) ? 'N/A' : $this->unit_metric->unit_metric)
         ];
     }
 }

@@ -162,7 +162,7 @@
 					</div>
 				</div>
 			</div>
-			<p><strong>Unit Metric</strong>: </p>
+			<p><strong>Unit Metric</strong>: {{$item->unit_metric->unit_metric}}</p>
 			<p><strong>Flow GPD</strong>: {{$item->flow_gpd}}</p>
 			<p>	<strong>Nitrogen Percent Reduction (Low)</strong>: {{$item->n_percent_reduction_low}}%</p>
  			<p>	<strong>Nitrogen Percent Reduction (High)</strong>: {{$item->n_percent_reduction_high}}%</p>
@@ -172,8 +172,8 @@
 			<p>{{$item->image}}</p>
 			<p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p>
 			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
-			<p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
-			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p>
+			{{-- <p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
+			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p> --}}
 			
 			
 			<div>
