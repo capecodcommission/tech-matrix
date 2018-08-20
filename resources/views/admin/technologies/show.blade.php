@@ -67,11 +67,11 @@
 										<tbody>
 											<tr>
 												<td>Current Construction Cost (avg)</td>
-												<td class="text-right"> ${{technology.current_construction_cost_avg}}</td>
+												<td class="text-right"> ${{$item->current_construction_cost_avg}}</td>
 											</tr>
 											<tr>
 												<td>Construction Cost Percent Labor</td>
-												<td class="text-right">{{technology.current_construction_cost_percent_labor}}%</td>
+												<td class="text-right">{{$item->current_construction_cost_percent_labor}}%</td>
 											</tr>
 											<tr>
 												<td>Land Cost (per acre)</td>
