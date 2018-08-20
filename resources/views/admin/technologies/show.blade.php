@@ -405,7 +405,7 @@
 					</div>
 				</div>				
 			</div>
-			<p><img src="{{app_url('images/' . {{$item->image)}}"></p>
+			<p><img src="{{env('APP_URL')}}/images/{{$item->image}}"></p>
 
 		</div>
 	</div>
