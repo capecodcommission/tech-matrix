@@ -199,18 +199,8 @@
 						No Evaluation Monitoring Assigned yet.
 					@endforelse
 				</td>
-				<td>@forelse($item->evaluation_monitoring_cost as $each)
-						{{$each->est_annual_cost}}<br />
-					@empty
-						No Evaluation Monitoring Costs Assigned yet.
-					@endforelse
-				</td>
-				<td>@forelse($item->years_of_evaluation_monitoring as $each)
-						{{$each->length_of_time}}<br />
-					@empty
-						No Evaluation Monitoring Years Assigned yet.
-					@endforelse
-				</td>								
+				<td>{{$item->evaluation_monitoring_cost->est_annual_cost}}</td>
+				<td>{{$item->years_of_evaluation_monitoring->length_of_time}}</td>								
 				<td>@forelse($item->longterm_monitoring as $each)
 						* {{$each->monitoring }}<br />
 					@empty
