@@ -42,7 +42,7 @@ class Technology extends JsonResource
 			'updated_at' => $this->updated_at,
 			'benefits' => $this->ecosystem_services,
 			'permitting_agencies' => $this->permitting_agencies,
-			'pilot_status' => $this->piloting_status->pilot_status,
+			'pilot_status' => (is_null($this->piloting_status)? 'N/A' : $this->piloting_status->pilot_status),
 			'regulatory_comments' => $this->regulatory_comments
         ];
     }
