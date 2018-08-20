@@ -196,6 +196,53 @@
 					</div>
 				</div>
 				<div class="card">
+					<div class="card-header" id="headingDetails">
+						<h5 class="mb-0">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#details" aria-expanded="false" aria-controls="details">
+								Treatment Details
+							</button>
+						</h5>
+					</div>
+					<div class="collapse" id="details"  aria-labelledby="headingDetails" data-parent="#accordion">
+						<div class="card-body">
+								<div class="row">
+						    		<div class="large-12 columns">
+						    			<p><strong>Unit Metric</strong>: {{$item->unit_metric}}</p>
+							    		<p><strong>Useful Life (years)</strong>: 
+							    			{{$item->calc.useful_life_years}}</p>
+
+							    	<h5>Nutrient Removal</h5>
+							    	<table class="table col-lg-12 offset-lg-1 table-sm">
+							    		<thead>
+							    			<tr>
+							    				<th></th>
+							    				<th><h5>Nitrogen</h5></th>
+							    				<th><h5>Phosphorus</h5></th>
+							    			</tr>
+							    		</thead>
+							    		<tbody>
+							    			<tr>
+							    				<td>Percent Removal (low-high)</td>
+							    				<td>{{$item->n_percent_reduction_low}}% - {{$item->n_percent_reduction_high}}%</td>
+							    				<td>{{$item->p_percent_reduction_low}}% - {{$item->p_percent_reduction_high}}%</td>
+							    			</tr>
+							    			<tr>
+							    				<td>Per Year</td>
+							    				<td>{{$item->calc.n_removed_avg | round}}kg</td>
+							    				<td>{{$item->calc.p_removed_avg | round}}kg</td>
+							    			</tr>
+							    			<tr>
+							    				<td>Per Planning Period</td>
+							    				<td>{{$item->calc.n_removed_planning_period | round}}kg</td>
+							    				<td>{{$item->calc.p_removed_planning_period}}kg</td>
+							    			</tr>
+							    		</tbody>
+							    	</table>
+							    </div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
 					<div class="card-header" id="headingAdvantages">
 						<h5 class="mb-0">
 							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#advData" aria-expanded="false" aria-controls="advData">
