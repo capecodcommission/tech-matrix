@@ -39,7 +39,7 @@ class TechnologiesSheet implements FromView, WithEvents
 	{
 		return [
 			AfterSheet::class => function(AfterSheet $event) {
-				$event->sheet->getStyle('A2:AY2')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('A2:BU2')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('B3:B78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('R3:R78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('Q3:Q78')->getAlignment()->setWrapText(true);

@@ -84,6 +84,7 @@
 			<th><strong>Estimated Years of<br />Evaluation Monitoring Req.</strong></th> 	
 			<th><strong>Longterm Monitoring</strong></th>
 			<th><strong>Est. Annual<br />O.M. Monitoring Costs</strong></th>
+			<th><strong>Time to Improve Estuary Water</strong></th>
 			<th><strong>Piloting Status <br />DEP Approval</strong></th>
 			<th><strong>Pilot Study Findings</strong></th>
 			<th>Detail Page</th>
