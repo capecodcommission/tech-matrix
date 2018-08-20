@@ -12,6 +12,14 @@
 			</h2>
 			<div class="panel">
 				<p><span style="display:inline-block; background-color:#52a9df"><img src="{{config('app.url')}}/icons/{{$item->icon}}" height="45" width="45" /></span></p>
+				<div class="row">
+					@forelse($item->ecosystem_services as $benefit)
+						<p class="col-lg-3 col-sm-3" >
+							<img src="icons/{{$benefit->icon}}" title="{{$benefit->ecosystem_service}}" />
+						</p>
+					@empty N/A
+					@endforelse
+				</div>
 				<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
 				<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
 				<p><strong>Scale</strong>: @forelse($item->scales as $each){{$each->scale}} @empty -- @endforelse</p>
