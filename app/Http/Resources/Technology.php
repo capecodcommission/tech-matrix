@@ -41,7 +41,9 @@ class Technology extends JsonResource
 			'years_of_evaluation_monitoring' => $this->years_of_evaluation_monitoring()->first()->length_of_time,
 			'updated_at' => $this->updated_at,
 			'benefits' => $this->ecosystem_services,
-			'permitting_agencies' => $this->permitting_agencies
+			'permitting_agencies' => $this->permitting_agencies,
+			'pilot_status' => $this->piloting_status->pilot_status,
+			'regulatory_comments' => $this->regulatory_comments
         ];
     }
 }
