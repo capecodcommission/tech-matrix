@@ -3,17 +3,20 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <p><a href="{{route('technologies.index')}}">Back to List</a></p>
 			<?php $item->calc = $item->calculated(); ?>
 			
 			<h2>{{$item->technology_strategy}} 
 				<span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span>
 			</h2>
-			<p><span style="display:inline-block; background-color:#52a9df"><img src="{{config('app.url')}}/icons/{{$item->icon}}" height="45" width="45" /></span></p>
-			<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
-			<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
-			<p><strong>Scale</strong>: @forelse($item->scales as $each){{$each->scale}} @empty -- @endforelse</p>
+			<div class="panel">
+				<p><span style="display:inline-block; background-color:#52a9df"><img src="{{config('app.url')}}/icons/{{$item->icon}}" height="45" width="45" /></span></p>
+				<p><strong>Technology Strategy</strong>: {{$item->technology_strategy}}</p>
+				<p><strong>Technology ID</strong>: {{$item->technology_id}}</p>
+				<p><strong>Scale</strong>: @forelse($item->scales as $each){{$each->scale}} @empty -- @endforelse</p>
+				<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
+			</div>
 			<div class="accordion" id="accordion">
 				<div class="card">
 					<div class="card-header" id="headingDescription">
@@ -206,11 +209,11 @@
 					<div class="collapse" id="details"  aria-labelledby="headingDetails" data-parent="#accordion">
 						<div class="card-body">
 								<div class="row">
-						    		<div class="large-12 columns">
-						    			<p><strong>Unit Metric</strong>: {{$item->unit_metric}}</p>
+						    		<div class="col-lg-12">
+						    			<p><strong>Unit Metric</strong>: {{$item->unit_metric->unit_metric}}</p>
 							    		<p><strong>Useful Life (years)</strong>: 
 							    			{{$item->calc->useful_life_years}}</p>
-
+										<p><strong>Flow GPD</strong>: {{$item->flow_gpd}}</p>
 							    	<h5>Nutrient Removal</h5>
 							    	<table class="table col-lg-12 offset-lg-1 table-sm">
 							    		<thead>
@@ -319,45 +322,11 @@
 										<li>No Evaluation Monitoring Assigned yet.</li>
 									@endforelse
 								</ul>
-							</div> 
-							{{-- <div>
-								<p><strong>Estimated Annual Evaluation Monitoring Cost</strong></p>
-								<p>
-									{{$item->evaluation_monitoring_cost->est_annual_cost}}
-								</p>
-							</div>  
-							<div>
-								<p><strong>Longterm Monitoring</strong></p>
-								<ul>
-									@forelse($item->longterm_monitoring as $each)
-										<li>{{$each->monitoring}}</li>
-									@empty
-										<li>No Long Term Monitoring Assigned yet.</li>
-									@endforelse
-								</ul>
-							</div> 
-							<div>
-								<p><strong>Estimated Annual Longterm Monitoring Cost</strong></p>
-								<p>
-									{{$item->longterm_monitoring_cost->est_annual_cost}}
-								</p>
-							</div> 		--}}					
+							</div> 					
 						</div>
 					</div>
 				</div>
 			</div>
-			<p><strong>Unit Metric</strong>: {{$item->unit_metric->unit_metric}}</p>
-			<p><strong>Flow GPD</strong>: {{$item->flow_gpd}}</p>
-			<p>	<strong>Nitrogen Percent Reduction (Low)</strong>: {{$item->n_percent_reduction_low}}%</p>
- 			<p>	<strong>Nitrogen Percent Reduction (High)</strong>: {{$item->n_percent_reduction_high}}%</p>
-           	<p>	<strong>Phosphorus Percent Reduction (Low)</strong>: {{$item->p_percent_reduction_low}}%</p>
-			<p>	<strong>Phosphorus Percent Reduction (High)</strong>: {{$item->p_percent_reduction_high}}%</p>
-
-			
-			{{-- <p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p> --}}
-			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
-			{{-- <p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
-			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p> --}}
 			
 			
 			<div>
@@ -436,13 +405,6 @@
 			</div>
 			<div><p><strong>Pilot Study Findings</strong></p>
 				<div>{!! $item->pilot_study_findings !!}</div>
-			</div>
-			<div>
-				<h3>Calculated Values</h3>
-				
-				<p><strong>Phosphorus Removed (low)</strong>: {{ $item->calc->n_removed_low }}</p>
-				<p><strong>Phosphorus Removed (high)</strong>: {{ $item->calc->n_removed_high }}</p>
-				
 			</div>
 			<p><img src="/images/{{$item->image}}"></p>
 
