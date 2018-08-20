@@ -77,12 +77,15 @@ class Technology extends Model
 
 	public function evaluation_monitoring_cost()
 	{
-		return $this->belongsTo('App\Models\MonitoringCost');
+		return $this->belongsTo('App\Models\MonitoringCost')->withDefault([
+		'est_annual_cost' => '(N/A)',
+	]);
 	}
 
 	public function longterm_monitoring_cost()
 	{
-		return $this->belongsTo('App\Models\MonitoringCost');
+		return $this->belongsTo('App\Models\MonitoringCost')->withDefault([
+		'est_annual_cost' => '(N/A)']);
 	}
 
 	public function piloting_status()
@@ -97,7 +100,8 @@ class Technology extends Model
 
 	public function years_of_evaluation_monitoring()
 	{
-		return $this->belongsTo('App\Models\YearGrouping');
+		return $this->belongsTo('App\Models\YearGrouping')->withDefault([
+		'length_of_time' => '(N/A)']);
 	}
 
 	public function category()
