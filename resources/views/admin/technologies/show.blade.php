@@ -44,18 +44,15 @@
 
 					<div id="costData" class="collapse " aria-labelledby="headingCosts" data-parent="#accordion">
 						<div class="card-body">
-							
-							<p><strong>Current Project Cost (low)</strong>: {{number_format($item->current_project_cost_low, 0, '.', ',')}}</p>
-							<p><strong>Current Project Cost (high)</strong>: {{number_format($item->current_project_cost_high, 0, '.', ',')}}</p>
-							<p><strong>Current Annual OM Cost (low)</strong>: {{number_format($item->current_annual_o_m_cost_low, 0, '.', ',')}}</p>
-							<p><strong>Current Annual OM Cost (high)</strong>: {{number_format($item->current_annual_o_m_cost_high, 0, '.', ',')}}</p>
-							<p><strong>Current Annual OM Cost (avg)</strong>: {{number_format(($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2, 0, '.', ',')}}</p>
+						
+							<p><strong>Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor}}%</p>
 							<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
+							<p><strong>Land Cost (per acre)</strong>: ${{$item->calc->land_cost}}</p>
 							<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
-							<p><strong>Replacement Cost</strong>: {{number_format($item->replacement_cost, 0, '.', ',')}}</p>
+							
 							<div class="row">
 								<table class="table col-lg-10 offset-lg-1 table-sm">
-									<thead class="thead-dark">
+									<thead>
 										<tr>
 											<th colspan="3"><h5>Construction Costs</h5></th>
 										</tr>
@@ -71,43 +68,41 @@
 											<td>${{number_format($item->current_construction_cost_high, 0, '.', ',')}}</td>
 											<td>${{number_format(($item->current_construction_cost_high + $item->current_construction_cost_low)/2, 0, '.', ',')}}</td>
 										</tr>
-										<tr>
-											<td>Construction Cost Percent Labor</td>
-											<td class="text-right">{{$item->current_construction_cost_percent_labor}}%</td>
-										</tr>
-										<tr>
-											<td>Land Cost (per acre)</td>
-											<td class="text-right">${{$item->calc->land_cost}}</td>
-										</tr>
 									</tbody>
 								</table>
 								<table class="table col-lg-10 offset-lg-1 table-sm">
-									<thead class="thead-dark">
+									<thead>
 										<tr>
-											<th colspan="2"><h5>Project Costs</h5></th>
+											<th colspan="3"><h5>Project Costs</h5></th>
+										</tr>
+										<tr>
+											<th>Low</th>
+											<th>High</th>
+											<th>Avg</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>Current Project Cost (avg)</td>
-											<td class="text-right"> ${{number_format(($item->calc->current_project_cost_low + $item->calc->current_project_cost_high/2), 0, '.', ',')}}</td>
+											<td>${{number_format($item->calc->current_project_cost_low, 0, '.', ',')}}</td>
+											<td>${{number_format($item->calc->current_project_cost_high, 0, '.', ',')}}</td>
+											<td>${{number_format(($item->calc->current_project_cost_low + $item->calc->current_project_cost_high/2), 0, '.', ',')}}</td>
 										</tr>
 										<tr>
-											<td>Project Cost Adjustment Factor</td>
+											<td colspan="2">Project Cost Adjustment Factor</td>
 											<td class="text-right">{{$item->calc->adjustment_factor_project_cost * 100}}%</td>
 										</tr>
 										<tr>
-											<td>Adjusted Project Cost (avg)</td>
+											<td colspan="2">Adjusted Project Cost (avg)</td>
 											<td class="text-right">${{number_format($item->calc->adj_project_cost_avg, 0, '.', ',')}}</td>
 										</tr>
 										<tr>
-											<td>Project Cost (PV)</td>
+											<td colspan="2">Project Cost (PV)</td>
 											<td class="text-right">${{number_format($item->calc->project_cost_pv, 0, '.', ',')}}</td>
 										</tr>
 									</tbody>
 								</table>
 								<table class="table col-lg-10 offset-lg-1 table-sm">
-									<thead class="thead-dark">
+									<thead>
 										<tr>
 											<th colspan="2"><h5>Replacement Costs</h5></th>
 										</tr>
@@ -128,28 +123,34 @@
 									</tbody>
 								</table>
 								<table class="table col-lg-10 offset-lg-1 table-sm">
-									<thead class="thead-dark">
+									<thead>
 										<tr>
-											<th colspan="2"><h5>Annual OM Costs</h5></th>
+											<th colspan="3"><h5>Annual OM Costs</h5></th>
+										</tr>
+										<tr>
+											<th>Low</th>
+											<th>High</th>
+											<th>Avg</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>Current Annual OM Cost (avg)</td>
+											<td>${{number_format($item->calc->current_annual_o_m_cost_low, 0, '.', ',')}}</td>
+											<td>${{number_format($item->calc->current_annual_o_m_cost_high, 0, '.', ',')}}</td>
 											<td class="text-right">${{number_format(($item->calc->current_annual_o_m_cost_low + $item->calc->current_annual_o_m_cost_high/2), 0, '.', ',')}}</td>
 										</tr>
 										<tr>
-											<td>OM Cost Adjustment Factor</td>
+											<td colspan="2">OM Cost Adjustment Factor</td>
 											<td class="text-right">{{number_format($item->calc->adjustment_factor_o_m_cost, 0, '.', ',')}}</td>
 										</tr>
 										<tr>
-											<td>Adjusted OM Cost (avg)</td>
+											<td colspan="2">Adjusted OM Cost (avg)</td>
 											<td class="text-right">${{number_format($item->calc->adj_o_m_cost_avg, 0, '.', ',')}}</td>
 										</tr>
 									</tbody>
 								</table>
 								<table class="table col-lg-10 offset-lg-1 table-sm">
-									<thead class="thead-dark">
+									<thead>
 										<tr>
 											<th colspan="2"><h5>Costs per Kg Nitrogen Removed</h5></th>
 										</tr>
@@ -170,7 +171,7 @@
 									</tbody>
 								</table>
 								<table class="table col-lg-10 offset-lg-1 table-sm">
-									<thead class="thead-dark">	
+									<thead>	
 										<tr>
 											<th colspan="2"><h5>Costs per Kg Phosphorus Removed</h5></th>
 										</tr>
