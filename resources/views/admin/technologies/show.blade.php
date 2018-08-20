@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <p><a href="{{route('technologies.index')}}">Back to List</a></p>
-
+			<?php $item->calc = $item->calculated(); ?>
+			
 			<h2>{{$item->technology_strategy}} 
 				<span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span>
 			</h2>
@@ -55,6 +56,140 @@
 							<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
 							<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
 							<p><strong>Replacement Cost</strong>: {{number_format($item->replacement_cost, 0, '.', ',')}}</p>
+													    <div class="accordion-content" >
+								<div class="row">
+									<table class="stack large-10 large-offset-1 columns">
+										<thead>
+											<tr>
+												<th colspan="2"><h5>Construction Costs</h5></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Current Construction Cost (avg)</td>
+												<td class="text-right"> ${{technology.current_construction_cost_avg}}</td>
+											</tr>
+											<tr>
+												<td>Construction Cost Percent Labor</td>
+												<td class="text-right">{{technology.current_construction_cost_percent_labor}}%</td>
+											</tr>
+											<tr>
+												<td>Land Cost (per acre)</td>
+												<td class="text-right">${{$item->calc->land_cost}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="stack large-10 large-offset-1 columns">
+										<thead>
+											<tr>
+												<th colspan="2"><h5>Project Costs</h5></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Current Project Cost (avg)</td>
+												<td class="text-right"> ${{$item->calc->current_project_cost_low + $item->calc->current_project_cost_high/2}}</td>
+											</tr>
+											<tr>
+												<td>Project Cost Adjustment Factor</td>
+												<td class="text-right">{{$item->calc->adjustment_factor_project_cost * 100}}%</td>
+											</tr>
+											<tr>
+												<td>Adjusted Project Cost (avg)</td>
+												<td class="text-right">${{$item->calc->adj_project_cost_avg}}</td>
+											</tr>
+											<tr>
+												<td>Project Cost (PV)</td>
+												<td class="text-right">${{$item->calc->project_cost_pv}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="stack large-10 large-offset-1 columns">
+										<thead>
+											<tr>
+												<th colspan="2"><h5>Replacement Costs</h5></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Replacement Cost</td>
+												<td class="text-right">${{$item->calc->replacement_cost}}</td>
+											</tr>
+											<tr>
+												<td>Replacement Cost Factor</td>
+												<td class="text-right">{{$item->calc->replacement_cost_factor}}%</td>
+											</tr>
+											<tr>
+												<td>Total Replacement Cost</td>
+												<td class="text-right">${{$item->calc->total_replacement_cost}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="stack large-10 large-offset-1 columns">
+										<thead>
+											<tr>
+												<th colspan="2"><h5>Annual OM Costs</h5></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Current Annual OM Cost (avg)</td>
+												<td class="text-right">${{$item->calc->current_annual_o_m_cost_low + $item->calc->current_annual_o_m_cost_high/2}}</td>
+											</tr>
+											<tr>
+												<td>OM Cost Adjustment Factor</td>
+												<td class="text-right">{{$item->calc->adjustment_factor_o_m_cost}}</td>
+											</tr>
+											<tr>
+												<td>Adjusted OM Cost (avg)</td>
+												<td class="text-right">${{$item->calc->adj_o_m_cost_avg}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="stack large-10 large-offset-1 columns">
+										<thead>
+											<tr>
+												<th colspan="2"><h5>Costs per Kg Nitrogen Removed</h5></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Project Cost (avg)</td>
+												<td class="text-right">${{$item->calc->cost_per_kg_avg_project_cost_n}}</td>
+											</tr>
+											<tr>
+												<td>OM Cost (avg)</td>
+												<td class="text-right">${{$item->calc->cost_per_kg_avg_om_cost_n}}</td>
+											</tr>
+											<tr>
+												<td>Lifecycle Cost (avg)</td>
+												<td class="text-right">${{$item->calc->cost_per_kg_avg_lifecycle_cost_n}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="stack large-10  large-offset-1 columns end">
+										<thead>	
+											<tr>
+												<th colspan="2"><h5>Costs per Kg Phosphorus Removed</h5></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Project Cost (avg)</td>
+												<td class="text-right">${{$item->calc->cost_per_kg_avg_project_cost_p}}</td>
+											</tr>
+											<tr>
+												<td>OM Cost (avg)</td>
+												<td class="text-right">${{$item->calc->cost_per_kg_avg_om_cost_p}}</td>
+											</tr>
+											<tr>
+												<td>Lifecycle Cost (avg)</td>
+												<td class="text-right">${{number_format($item->calc->cost_per_kg_avg_lifecycle_cost_p, 0)}}</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							
 						</div>
 					</div>
 				</div>
@@ -169,8 +304,8 @@
            	<p>	<strong>Phosphorus Percent Reduction (Low)</strong>: {{$item->p_percent_reduction_low}}%</p>
 			<p>	<strong>Phosphorus Percent Reduction (High)</strong>: {{$item->p_percent_reduction_high}}%</p>
 
-			<p>{{$item->image}}</p>
-			<p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p>
+			
+			{{-- <p><strong>Display in Tech Matrix</strong>: {{$item->show_on_Matrix}}</p> --}}
 			<p><strong>Technology System Type</strong>: {{$item->technology_system_type}}</p>
 			{{-- <p><strong>Display in wMVP</strong>: {{$item->show_in_wMVP}}</p>
 			<p><strong>Type of Cost Spread</strong>: {{$item->type_of_cost_spread}}</p> --}}
@@ -255,20 +390,12 @@
 			</div>
 			<div>
 				<h3>Calculated Values</h3>
-				<?php $item->calc = $item->calculated(); ?>
+				
 				<p><strong>Phosphorus Removed (low)</strong>: {{ $item->calc->n_removed_low }}</p>
 				<p><strong>Phosphorus Removed (high)</strong>: {{ $item->calc->n_removed_high }}</p>
 				
 			</div>
-			<!-- <div>
-				<h3>Formulas</h3>
-				@forelse($item->formulas as $formula)
-					<p><strong>{{$formula->formula_label}}</strong> <button type="button" class="btn btn-sm btn-info" data-toggle="popover"  data-placement="bottom"  title="{{$formula->formula_label}}" data-content="<code>{{$formula->formula}}</code>">Show Formula</button></p>
-					<p>{{$item->calc_formula($formula->id)}}</p>
-				@empty
-					No formulas assigned.
-				@endforelse
-			</div> -->
+			<p><img src="/images/{{$item->image}}"></p>
 
         </div>
     </div>
