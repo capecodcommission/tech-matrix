@@ -209,7 +209,7 @@
 						    		<div class="large-12 columns">
 						    			<p><strong>Unit Metric</strong>: {{$item->unit_metric}}</p>
 							    		<p><strong>Useful Life (years)</strong>: 
-							    			{{$item->calc.useful_life_years}}</p>
+							    			{{$item->calc->useful_life_years}}</p>
 
 							    	<h5>Nutrient Removal</h5>
 							    	<table class="table col-lg-12 offset-lg-1 table-sm">
@@ -228,13 +228,13 @@
 							    			</tr>
 							    			<tr>
 							    				<td>Per Year</td>
-							    				<td>{{$item->calc.n_removed_avg | round}}kg</td>
-							    				<td>{{$item->calc.p_removed_avg | round}}kg</td>
+							    				<td>{{$item->calc->n_removed_avg | round}}kg</td>
+							    				<td>{{$item->calc->p_removed_avg | round}}kg</td>
 							    			</tr>
 							    			<tr>
 							    				<td>Per Planning Period</td>
-							    				<td>{{$item->calc.n_removed_planning_period | round}}kg</td>
-							    				<td>{{$item->calc.p_removed_planning_period}}kg</td>
+							    				<td>{{$item->calc->n_removed_planning_period | round}}kg</td>
+							    				<td>{{$item->calc->p_removed_planning_period}}kg</td>
 							    			</tr>
 							    		</tbody>
 							    	</table>
