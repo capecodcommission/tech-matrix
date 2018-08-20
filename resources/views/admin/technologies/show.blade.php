@@ -15,7 +15,7 @@
 				<div class="row">
 					@forelse($item->ecosystem_services as $benefit)
 						<p class="col-lg-3 col-sm-3" >
-							<img src="icons/{{$benefit->icon}}" title="{{$benefit->ecosystem_service}}" />
+							<img src="http://10.10.1.205/cch2o/Matrix/icons/{{$benefit->icon}}" title="{{$benefit->ecosystem_service}}" />
 						</p>
 					@empty N/A
 					@endforelse

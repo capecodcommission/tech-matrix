@@ -107,7 +107,7 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-
+	'editor' => 'vscode',
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

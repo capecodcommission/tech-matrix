@@ -80,7 +80,10 @@
 			<th><strong>Disadvantages</strong></th>
 			<th><strong>Eco Services</strong></th>
 			<th><strong>Evaluation Monitoring</strong></th>
+			<th><strong>Est. Annual<br />Evaluation Monitoring Costs</strong></th>
+			<th><strong>Estimated Years of<br />Evaluation Monitoring Req.</strong></th> 	
 			<th><strong>Longterm Monitoring</strong></th>
+			<th><strong>Est. Annual<br />O.M. Monitoring Costs</strong></th>
 			<th><strong>Piloting Status <br />DEP Approval</strong></th>
 			<th><strong>Pilot Study Findings</strong></th>
 			<th>Detail Page</th>
@@ -196,12 +199,25 @@
 						No Evaluation Monitoring Assigned yet.
 					@endforelse
 				</td>
+				<td>@forelse($item->evaluation_monitoring_cost as $each)
+						{{$each->est_annual_cost}}<br />
+					@empty
+						No Evaluation Monitoring Costs Assigned yet.
+					@endforelse
+				</td>
+				<td>@forelse($item->years_of_evaluation_monitoring as $each)
+						{{$each->length_of_time}}<br />
+					@empty
+						No Evaluation Monitoring Years Assigned yet.
+					@endforelse
+				</td>								
 				<td>@forelse($item->longterm_monitoring as $each)
 						* {{$each->monitoring }}<br />
 					@empty
 						No Long Term Monitoring Assigned yet.
 					@endforelse
 				</td>
+				<td>{{$item->longterm_monitoring_cost->est_annual_cost}}</td>					
 				<td>@forelse($item->time_to_improve_estuary as $each)
 						{{$each->length_of_time}}
 					@empty
