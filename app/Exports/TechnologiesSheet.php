@@ -72,7 +72,7 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('BK')->setWidth(40);
 				$event->sheet->getColumnDimension('BL')->setWidth(40);
 				$event->sheet->getColumnDimension('BO')->setWidth(90);
-				$event->sheet->styleCells('A1:BP2', ['font' => ['bold'=>true]]);
+				$event->sheet->styleCells('A1:BU2', ['font' => ['bold'=>true]]);
 				$event->sheet->getStyle('K1:P2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('CECECECE');

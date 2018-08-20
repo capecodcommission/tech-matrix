@@ -15,80 +15,80 @@
 			<th colspan = "3">Current Project Cost</th>
 		</tr>
 		<tr style="border-bottom: 1px solid #000">
-			<th><strong>Technology Type</strong></th>
-			<th><strong>Technology Strategy</strong></th>
-			<th><strong>Technology<br /> ID</strong></th>
-			{{-- <th><strong>Icon</strong></th> --}}
-			<th><strong>Icon File</strong></th>
-			<th><strong>Technology Description</strong></th>
-			<th><strong>Influent Sources</strong></th>
-			<th><strong>Influent Concentration</strong></th>
-			<th><strong>Baseline <br />Concentration (N)</strong></th>
-			<th><strong>Baseline <br />Concentration (P)</strong></th>
-			<th><strong>Pollutants Treated</strong></th>
-			<th><strong>Potential Permitting Agencies</strong></th>
-			<th><strong>Siting Requirements</strong></th>
-			<th><strong>Unit Metric</strong></th>
-			<th><strong>Metric Input</strong></th>
-			<th><strong><strong>Flow GPD</strong></strong></th>
-			<th><strong>Nitrogen % <br /> (Low)</strong></th>
-			<th><strong>Nitrogen % <br /> (High)</strong></th>
-			<th><strong>Nitrogen % <br /> (Avg)</strong></th>
-			<th><strong>Phosphorus % <br /> (Low)</strong></th>
-			<th><strong>Phosphorus % <br /> (High)</strong></th>
-			<th><strong>Phosphorus % <br /> (Avg)</strong></th>
-			<th><strong>Nitrogen Removed <br />(kg) Low</strong></th>
-			<th><strong>Nitrogen Removed <br /> (kg) High</strong></th>
-			<th><strong>Nitrogen Removed <br />(kg) Avg</strong></th>
-			<th><strong>Phosphorus Removed <br />per Year (kg) Low</strong></th>
-			<th><strong>Phosphorus Removed <br />per Year (kg) High</strong></th>
-			<th><strong>Phosphorus Removed <br />per Year (kg) Avg</strong></th>
-			<th><strong>Nitrogen Removed <br />per Planning Period</strong></th>
-			<th><strong>Phosphorus Removed <br />per Planning Period</strong></th>
-			<th><strong>Current Construction <br />Cost (Low)</strong></th>
-			<th><strong>Current Construction<br /> Cost (High)</strong></th>
-			<th><strong>Current Construction<br /> Cost (Avg)</strong></th>
-			<th><strong>Current Construction Cost Percent Labor</strong></th>
-			<th><strong>Land Cost</strong></th>
-			<th><strong>Current Project Cost (Low)</strong></th>
-			<th><strong>Current Project Cost (High)</strong></th>
-			<th><strong>Current Project Cost (Avg)</strong></th>
-			<th><strong>Current Annual OM Cost (low)</strong></th>
-			<th><strong>Current Annual OM Cost (high)</strong></th>
-			<th><strong>Current Annual OM Cost (avg)</strong></th>
-			<th><strong>Current Annual OM Cost Percent Labor</strong></th>
-			<th><strong>Adjustment Factors <br />Project Cost</strong></th>
-			<th><strong>Adjustment Factors <br />O &amp; M</strong></th>
-			<th><strong>Adjusted Project <br />Cost (PV) Low</strong></th>
-			<th><strong>Adjusted Project <br />Cost (PV) High</strong></th>
-			<th><strong>Adjusted Project <br />Cost (PV) Avg</strong></th>
-			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) Low</strong></th>
-			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) High</strong></th>
-			<th><strong>Adjusted Annual O&amp;M <br />Cost (PV) Avg</strong></th>
-			<th><strong>Useful Life (Years)</strong></th>
-			<th><strong>Replacement Cost</strong></th>
-			<th><strong>Total Replacement<br />/Upgrade Cost</strong></th>
-			<th><strong>Project Cost (PV)</strong></th>
-			<th><strong>Avg Project Cost<br />per KG N Removed</strong></th>
-			<th><strong>Avg O&amp;M Cost<br />per KG N Removed</strong></th>
-			<th><strong>Avg Life Cycle Cost<br />per KG N Removed</strong></th>
-			<th><strong>Avg Project Cost<br />per KG P Removed</strong></th>
-			<th><strong>Avg O&amp;M Cost<br />per KG P Removed</strong></th>
-			<th><strong>Avg Life Cycle Cost<br />per KG P Removed</strong></th>
-			<th><strong>System Design Considerations</strong></th>
-			<th><strong>Advantages</strong></th>
-			<th><strong>Disadvantages</strong></th>
-			<th><strong>Eco Services</strong></th>
-			<th><strong>Evaluation Monitoring</strong></th>
-			<th><strong>Est. Annual<br />Evaluation Monitoring Costs</strong></th>
-			<th><strong>Estimated Years of<br />Evaluation Monitoring Req.</strong></th> 	
-			<th><strong>Longterm Monitoring</strong></th>
-			<th><strong>Est. Annual<br />O.M. Monitoring Costs</strong></th>
-			<th><strong>Time to Improve Estuary Water</strong></th>
-			<th><strong>Piloting Status <br />DEP Approval</strong></th>
-			<th><strong>Pilot Study Findings</strong></th>
+			<th>Technology Type</th>
+			<th>Technology Strategy</th>
+			<th>Technology<br /> ID</th>
+			{{-- <th>Icon</th> --}}
+			<th>Icon File</th>
+			<th>Technology Description</th>
+			<th>Influent Sources</th>
+			<th>Influent Concentration</th>
+			<th>Baseline <br />Concentration (N)</th>
+			<th>Baseline <br />Concentration (P)</th>
+			<th>Pollutants Treated</th>
+			<th>Potential Permitting Agencies</th>
+			<th>Siting Requirements</th>
+			<th>Unit Metric</th>
+			<th>Metric Input</th>
+			<th>Flow GPD</th>
+			<th>Nitrogen % <br /> (Low)</th>
+			<th>Nitrogen % <br /> (High)</th>
+			<th>Nitrogen % <br /> (Avg)</th>
+			<th>Phosphorus % <br /> (Low)</th>
+			<th>Phosphorus % <br /> (High)</th>
+			<th>Phosphorus % <br /> (Avg)</th>
+			<th>Nitrogen Removed <br />(kg) Low</th>
+			<th>Nitrogen Removed <br /> (kg) High</th>
+			<th>Nitrogen Removed <br />(kg) Avg</th>
+			<th>Phosphorus Removed <br />per Year (kg) Low</th>
+			<th>Phosphorus Removed <br />per Year (kg) High</th>
+			<th>Phosphorus Removed <br />per Year (kg) Avg</th>
+			<th>Nitrogen Removed <br />per Planning Period</th>
+			<th>Phosphorus Removed <br />per Planning Period</th>
+			<th>Current Construction <br />Cost (Low)</th>
+			<th>Current Construction<br /> Cost (High)</th>
+			<th>Current Construction<br /> Cost (Avg)</th>
+			<th>Current Construction Cost Percent Labor</th>
+			<th>Land Cost</th>
+			<th>Current Project Cost (Low)</th>
+			<th>Current Project Cost (High)</th>
+			<th>Current Project Cost (Avg)</th>
+			<th>Current Annual OM Cost (low)</th>
+			<th>Current Annual OM Cost (high)</th>
+			<th>Current Annual OM Cost (avg)</th>
+			<th>Current Annual OM Cost Percent Labor</th>
+			<th>Adjustment Factors <br />Project Cost</th>
+			<th>Adjustment Factors <br />O &amp; M</th>
+			<th>Adjusted Project <br />Cost (PV) Low</th>
+			<th>Adjusted Project <br />Cost (PV) High</th>
+			<th>Adjusted Project <br />Cost (PV) Avg</th>
+			<th>Adjusted Annual O&amp;M <br />Cost (PV) Low</th>
+			<th>Adjusted Annual O&amp;M <br />Cost (PV) High</th>
+			<th>Adjusted Annual O&amp;M <br />Cost (PV) Avg</th>
+			<th>Useful Life (Years)</th>
+			<th>Replacement Cost</th>
+			<th>Total Replacement<br />/Upgrade Cost</th>
+			<th>Project Cost (PV)</th>
+			<th>Avg Project Cost<br />per KG N Removed</th>
+			<th>Avg O&amp;M Cost<br />per KG N Removed</th>
+			<th>Avg Life Cycle Cost<br />per KG N Removed</th>
+			<th>Avg Project Cost<br />per KG P Removed</th>
+			<th>Avg O&amp;M Cost<br />per KG P Removed</th>
+			<th>Avg Life Cycle Cost<br />per KG P Removed</th>
+			<th>System Design Considerations</th>
+			<th>Advantages</th>
+			<th>Disadvantages</th>
+			<th>Eco Services</th>
+			<th>Evaluation Monitoring</th>
+			<th>Est. Annual<br />Evaluation Monitoring Costs</th>
+			<th>Estimated Years of<br />Evaluation Monitoring Req.</th> 	
+			<th>Longterm Monitoring</th>
+			<th>Est. Annual<br />O.M. Monitoring Costs</th>
+			<th>Time to Improve Estuary Water</th>
+			<th>Piloting Status <br />DEP Approval</th>
+			<th>Pilot Study Findings</th>
 			<th>Detail Page</th>
-			<th><strong>Last Updated</strong></th>
+			<th>Last Updated</th>
 		</tr>
 	</thead>
 	<tbody>
