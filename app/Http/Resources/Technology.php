@@ -19,7 +19,7 @@ class Technology extends JsonResource
 			'name' => $this->technology_strategy,
 			'description' => $this->technology_description,
 			'icon' => $this->icon,
-			'image' => "images/" . $this->image,
+			'image' => $this->image,
 			'advantages' => $this->advantages,
 			'disadvantages' => $this->disadvantages,
 			'references' => $this->references_notes_assumptions,
