@@ -27,6 +27,8 @@ class Technology extends JsonResource
 			'technology_type' => $this->technology_type->technology_type,
 			'approach' => $this->approach->approach,
 			'calc' => $this->calculated(),
+			'current_construction_cost_avg' => (($this->current_construction_cost_high + $this->current_construction_cost_low)/2),
+			'current_construction_cost_percent_labor' => $this->current_construction_cost_percent_labor*100,
 			'siting_requirements' => (sizeof($this->siting_requirements) > 0 ? $this->siting_requirements : 'None'),
 			'time_to_improve' => (sizeof($this->time_to_improve_estuary) > 0 ? $this->time_to_improve_estuary : 'N/A'),
 			'n_percent_reduction_low' => $this->n_percent_reduction_low,
