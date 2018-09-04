@@ -51,7 +51,8 @@ class Technology extends JsonResource
 			'system_design_considerations' => $this->system_design_considerations,
 			'unit_metric' => (is_null($this->unit_metric) ? 'N/A' : $this->unit_metric->unit_metric),
 			'pollutants_treated' => (is_null($this->pollutants)? 'N/A' : $this->pollutants),
-			'influent_sources' => (is_null($this->influent_sources)? 'N/A' : $this->influent_sources)
+			'influent_sources' => (is_null($this->influent_sources)? 'N/A' : $this->influent_sources),
+			'influent_concentrations' => (is_null($this->influent_concentrations) ? 'N/A' : $this->influent_concentrations)
         ];
     }
 }
