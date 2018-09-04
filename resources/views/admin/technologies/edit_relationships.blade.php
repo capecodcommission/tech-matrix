@@ -90,9 +90,8 @@
 							<div class="form-check">
 								<label class="form-check-label" for="influent_sources_{{$each->id}}">
 									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"
-									@if(in_array($each->id, $item->influent_sources->pluck('influent_source_id')->all()))
+									@if($item->influent_sources->contains($each->id))
 							checked="checked"
-						@end
 						@endif
 									> {{$each->influent_source}}
 								</label>
@@ -118,7 +117,7 @@
 						@forelse($scales as $each)
 							<div class="form-check">
 								<label class="form-check-label" for="scales_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="scales[]" id="scales_{{$each->id}}" >
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="scales[]" id="scales_{{$each->id}}" @if($item->scales->contains($each->id)) checked="checked" @endif>
 								{{$each->scale}}
 								</label>
 							</div>
@@ -170,7 +169,7 @@
 						@forelse($years as $time)
 							<div class="form-check">
 								<label class="form-check-label" for="years_of_evaluation_monitoring_{{$time->id}}">
-									<input type="radio" class="form-check-input" id="years_of_evaluation_monitoring_{{$time->id}}" value="{{$time->id}}" name="years_of_evaluation_monitoring" >
+									<input type="radio" class="form-check-input" id="years_of_evaluation_monitoring_{{$time->id}}" value="{{$time->id}}" name="years_of_evaluation_monitoring" @if($item->years_of_evaluation_monitoring->id == $time->id) checked="checked" @endif>
 									{{$time->length_of_time}}
 								</label>
 							</div>
