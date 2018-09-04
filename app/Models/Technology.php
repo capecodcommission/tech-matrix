@@ -40,6 +40,11 @@ class Technology extends Model
 		return $this->belongsToMany('App\Models\InfluentSource', 'rel_influent_sources_technologies', 'technology_id', 'influent_id')->withPivot('influent_concentration_id')->withTimestamps();
 	}
 
+	public function influent_concentrations()
+	{
+		return $this->belongsToMany('App\Models\InfluentConcentration', 'rel_influent_concentrations_technologies', 'technology_id', 'influent_concentration_id')->withTimestamps();
+	}
+
 	public function permitting_agencies()
 	{
 		return $this->belongsToMany('App\Models\PermittingAgency', 'rel_permitting_agencies_technologies', 'technology_id', 'agency_id')->withTimestamps();

@@ -188,6 +188,10 @@ class TechnologyController extends Controller
 			}
             
             $item->influent_sources()->sync($syncData);
+		}
+		if($request->influent_concentrations)
+        {            
+            $item->influent_concentrations()->sync($request->influent_concentrations);
         }
         if($request->siting_requirements)
         {
