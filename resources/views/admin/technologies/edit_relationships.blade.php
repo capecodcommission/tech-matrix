@@ -89,7 +89,7 @@
 						@forelse($influent_sources as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="influent_sources_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"  > {{$each->influent_source}}
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"  @if($item->influent_sources->contains($each->id)) checked='checked' @endif> {{$each->influent_source}}
 								</label>
 							</div>
 						@empty
@@ -113,7 +113,7 @@
 						@forelse($scales as $each)
 							<div class="form-check">
 								<label class="form-check-label" for="scales_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="scales[]" id="scales_{{$each->id}}"  @if($item->scales->contains($each->id)) checked='checked' @endif>
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="scales[]" id="scales_{{$each->id}}" >
 								{{$each->scale}}
 								</label>
 							</div>
