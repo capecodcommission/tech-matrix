@@ -16,7 +16,7 @@
 						@forelse($considerations as $each)
 							<div class="form-check">
 								<label class="form-check-label" for="consideration_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="considerations[]" id="consideration_{{$each->id}}"  @if($item->system_design_considerations->has($each->id)) checked='checked' @endif>
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="considerations[]" id="consideration_{{$each->id}}"  @if($item->system_design_considerations()->contains($each->id)) checked='checked' @endif>
 									{{$each->infrastructure_to_consider}}
 								</label>
 							</div>
@@ -30,7 +30,7 @@
 						@forelse($pollutants as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="pollutant_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="pollutants[]" id="pollutant_{{$each->id}}"  @if($item->pollutants->has($each->id)) checked='checked' @endif>
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="pollutants[]" id="pollutant_{{$each->id}}"  @if($item->pollutants()->contains($each->id)) checked='checked' @endif>
 								{{$each->pollutant}}
 								</label>
 							</div>
@@ -89,7 +89,12 @@
 						@forelse($influent_sources as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="influent_sources_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"  @if($item->influent_sources->has($each->id)) checked='checked' @endif> {{$each->influent_source}}
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"
+									@if(in_array($each->id, $item->influent_sources->pluck('influent_source_id')->all()))
+							checked="checked"
+						@end
+						@endif
+									> {{$each->influent_source}}
 								</label>
 							</div>
 						@empty
@@ -126,7 +131,7 @@
 						@forelse($permitting_agencies as $each)
 							<div class="form-check">
 								<label class="form-check-label" for="permitting_agencies_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="permitting_agencies[]" id="permitting_agencies_{{$each->id}}"  @if($item->permitting_agencies->has($each->id)) checked='checked' @endif>
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="permitting_agencies[]" id="permitting_agencies_{{$each->id}}"  @if($item->permitting_agencies()->contains($each->id)) checked='checked' @endif>
 								{{$each->potential_agency}}
 								</label>
 							</div>
@@ -139,7 +144,7 @@
 						@forelse($ecosystem_services as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="ecosystem_service_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="ecosystem_services[]" id="ecosystem_service_{{$each->id}}"  @if($item->ecosystem_services->has($each->id)) checked='checked' @endif>
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="ecosystem_services[]" id="ecosystem_service_{{$each->id}}"  @if($item->ecosystem_services()->contains($each->id)) checked='checked' @endif>
 								{{$each->ecosystem_service}}
 								</label>
 							</div>
@@ -152,7 +157,7 @@
 						@forelse($evaluation_monitoring as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="evaluation_monitoring_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="evaluation_monitoring[]" id="evaluation_monitoring_{{$each->id}}"  @if($item->evaluation_monitoring->has($each->id)) checked='checked' @endif>
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="evaluation_monitoring[]" id="evaluation_monitoring_{{$each->id}}"  @if($item->evaluation_monitoring()->contains($each->id)) checked='checked' @endif>
 								{{$each->monitoring}}
 								</label>
 							</div>
@@ -165,7 +170,7 @@
 						@forelse($years as $time)
 							<div class="form-check">
 								<label class="form-check-label" for="years_of_evaluation_monitoring_{{$time->id}}">
-									<input type="radio" class="form-check-input" id="years_of_evaluation_monitoring_{{$time->id}}" value="{{$time->id}}" name="years_of_evaluation_monitoring" @if($item->years_of_evaluation_monitoring->has($time->id)) checked="checked" @endif>
+									<input type="radio" class="form-check-input" id="years_of_evaluation_monitoring_{{$time->id}}" value="{{$time->id}}" name="years_of_evaluation_monitoring" @if($item->years_of_evaluation_monitoring()->contains($time->id)) checked="checked" @endif>
 									{{$time->length_of_time}}
 								</label>
 							</div>
@@ -191,7 +196,7 @@
 						@forelse($longterm_monitoring as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="longterm_monitoring_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="longterm_monitoring[]" id="longterm_monitoring_{{$each->id}}"  @if($item->longterm_monitoring->has($each->id)) checked='checked' @endif>
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="longterm_monitoring[]" id="longterm_monitoring_{{$each->id}}"  @if($item->longterm_monitoring()->contains($each->id)) checked='checked' @endif>
 								{{$each->monitoring}}
 								</label>
 							</div>
@@ -218,7 +223,7 @@
 						@forelse($years as $time)
 							<div class="form-check">
 								<label class="form-check-label" for="time_to_improve_estuary_{{$time->id}}">
-									<input type="radio" class="form-check-input" id="time_to_improve_estuary_{{$time->id}}" value="{{$time->id}}" name="time_to_improve_estuary" @if($item->time_to_improve_estuary->has($time->id)) checked="checked" @endif>
+									<input type="radio" class="form-check-input" id="time_to_improve_estuary_{{$time->id}}" value="{{$time->id}}" name="time_to_improve_estuary" @if($item->time_to_improve_estuary()->contains($time->id)) checked="checked" @endif>
 									{{$time->length_of_time}}
 								</label>
 							</div>
@@ -231,7 +236,7 @@
 						@forelse($siting_requirements as $each)
 							<div class="form-check">
 								<label class="form-check-label" for="siting_requirements_{{$each->id}}">
-									<input type="checkbox" class="form-check-input" id="siting_requirements_{{$each->id}}" value="{{$each->id}}" name="siting_requirements[]" @if($item->siting_requirements->has($each->id)) checked="checked" @endif>
+									<input type="checkbox" class="form-check-input" id="siting_requirements_{{$each->id}}" value="{{$each->id}}" name="siting_requirements[]" @if($item->siting_requirements()->contains($each->id)) checked="checked" @endif>
 									{{$each->siting_requirement}}
 								</label>
 							</div>
