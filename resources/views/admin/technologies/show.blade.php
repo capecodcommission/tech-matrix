@@ -4,9 +4,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
-			<p><a href="{{route('technologies.index')}}">Back to List</a></p>
-			<?php $item->calc = $item->calculated(); ?>
-			
+			<p><a href="{{route('technologies.index')}}">Back to List</a></p>			
 			<h2>{{$item->technology_strategy}} 
 				<span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span>
 			</h2>
