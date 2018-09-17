@@ -222,7 +222,7 @@ class TechnologyController extends Controller
 		}
 		if($request->years_of_evaluation_monitoring_id)
 		{
-			$item->years_of_evaluation_monitoring()->sync($request->years_of_evaluation_monitoring_id);
+			$item->years_of_evaluation_monitoring_id = $request->years_of_evaluation_monitoring_id;
 		}
 		$item->save();
 		if($request->time_to_improve_estuary)
