@@ -47,7 +47,12 @@ class UserController extends Controller
 	{
 		$user = User::find($id);
 		$data = $request->all();
-		$user->fill($data);
+		$user->name = $data['name'];
+		$user->email = $data['email'];
+		if ($data['update_password']) {
+			$user->password = bcrypt($data['update_password']);
+		}
+		
 		$user->save();
 		$user->syncRoles($data['roles']);
 		return redirect('users');

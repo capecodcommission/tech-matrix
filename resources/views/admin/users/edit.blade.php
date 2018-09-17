@@ -19,6 +19,10 @@
 						<input type="email" class="form-control" id="email" name="email" value="{{$user->email}}">
 					  </div>
 					  <div class="form-group">
+						  <label for="update_password">Update Password</label>
+						  <input type="password" id="update_password" name="update_password">
+					  </div>
+					  <div class="form-group">
 						<p><strong>User Roles</strong></p>
 						@forelse($roles as $each)
 							<div class="form-check">
