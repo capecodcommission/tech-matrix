@@ -105,7 +105,7 @@ class Technology extends Model
 
 	public function years_of_evaluation_monitoring()
 	{
-		return $this->belongsTo('App\Models\YearGrouping', 'evaluation_monitoring_years_id')->withTimestamps();
+		return $this->belongsTo('App\Models\YearGrouping', 'evaluation_monitoring_years_id');
 	}
 
 	public function category()
