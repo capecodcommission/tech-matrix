@@ -182,7 +182,7 @@
 						@forelse($costs as $cost)
 							<div class="form-check">
 								<label class="form-check-label" for="evaluation_monitoring_cost_{{$cost->id}}">
-									<input type="radio" class="form-check-input" id="evaluation_monitoring_cost_{{$cost->id}}" value="{{$cost->id}}" name="evaluation_monitoriing_cost_id" @if($item->evaluation_monitoring_cost_id == $cost->id) checked="checked" @endif>
+									<input type="radio" class="form-check-input" id="evaluation_monitoring_cost_{{$cost->id}}" value="{{$cost->id}}" name="evaluation_monitoring_cost_id" @if($item->evaluation_monitoring_cost_id == $cost->id) checked="checked" @endif>
 									{{$cost->est_annual_cost}}
 								</label>
 							</div>
