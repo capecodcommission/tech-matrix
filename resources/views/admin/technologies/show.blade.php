@@ -223,7 +223,7 @@
 									<h5>Nutrients Treated</h5>
 						    			<ul>
 											@foreach ($item->pollutants as $item)
-												<li>{{$item->polluntant}}</li>
+												<li>{{$item->pollutant}}</li>
 											@endforeach
 						    			</ul>
 									<table class="table col-lg-12 table-sm">
