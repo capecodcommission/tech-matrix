@@ -14,7 +14,7 @@ class Pollutant extends Model
 
     public function technologies()
     {
-        return $this->belongsToMany('App\Models\Technology', 'rel_baseline_concentrations', 'pollutant_id', 'technology_id', 'id');
+        return $this->belongsToMany('App\Models\Technology', 'rel_pollutants_technologies', 'pollutant_id', 'technology_id', 'id');
 	}
 		protected $touches = ['technology'];
 
