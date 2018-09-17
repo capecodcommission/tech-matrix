@@ -187,58 +187,72 @@
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="baseline_concentration_n">Baseline Concentration Nitrogen</label>
-								
 								<div class="input-group mb-3">
 									<input type="text" class="form-control" id="baseline_concentration_n" name="baseline_concentration_n" value="{{$item->baseline_concentration_n}}">
-									<div class="input-group-append">mg/L</div>
+									<div class="input-group-append"><span class="input-group-text">mg/L</span></div>
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="baseline_concentration_p">Baseline Concentration Phosphorus</label>
-							<div class="input-group mb-3">
-								<input type="text" class="form-control" id="baseline_concentration_p" name="baseline_concentration_p" value="{{$item->baseline_concentration_p}}">
-								<div class="input-group-append">mg/L</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="baseline_concentration_p">Baseline Concentration Phosphorus</label>
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" id="baseline_concentration_p" name="baseline_concentration_p" value="{{$item->baseline_concentration_p}}">
+									<div class="input-group-append"><span class="input-group-text">mg/L</span></div>
+								</div>
 							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="n_percent_reduction_low">Nitrogen Percent Reduction Low</label>
+								<div class="input-group mb-3">
+									<input type="number" class="form-control" id="n_percent_reduction_low" name="n_percent_reduction_low" value="{{$item->n_percent_reduction_low}}">
+									<div class="input-group-append">
+										<span class="input-group-text">%</span>
+									</div>
+								</div>
+							</div>	
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="n_percent_reduction_high">Nitrogen Percent Reduction High</label>
+								<div class="input-group mb-3">
+									<input type="number" class="form-control" id="n_percent_reduction_high" name="n_percent_reduction_high" value="{{$item->n_percent_reduction_high}}">
+									<div class="input-group-append">
+										<span class="input-group-text">%</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="p_percent_reduction_low">Phosphorus Percent Reduction Low</label>
+								<div class="input-group mb-3">
+									<input type="number" class="form-control" id="p_percent_reduction_low" name="p_percent_reduction_low" value="{{$item->p_percent_reduction_low}}">
+									<div class="input-group-append">
+										<span class="input-group-text">%</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="p_percent_reduction_high">Phosphorus Percent Reduction High</label>
+								<div class="input-group mb-3">
+									<input type="number" class="form-control" id="p_percent_reduction_high" name="p_percent_reduction_high" value="{{$item->p_percent_reduction_high}}">
+									<div class="input-group-append">
+										<span class="input-group-text">%</span>
+									</div>
+								</div>
+							</div>	
 						</div>
 					</div>
 					
-					<div class="form-group">
-						<label for="n_percent_reduction_low">Nitrogen Percent Reduction Low</label>
-						<div class="input-group mb-3">
-							<input type="number" class="form-control" id="n_percent_reduction_low" name="n_percent_reduction_low" value="{{$item->n_percent_reduction_low}}">
-							<div class="input-group-append">
-								<span class="input-group-text">%</span>
-							</div>
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="n_percent_reduction_high">Nitrogen Percent Reduction High</label>
-						<div class="input-group mb-3">
-							<input type="number" class="form-control" id="n_percent_reduction_high" name="n_percent_reduction_high" value="{{$item->n_percent_reduction_high}}">
-							<div class="input-group-append">
-								<span class="input-group-text">%</span>
-							</div>
-						</div>
-					</div>	
-					<div class="form-group">
-						<label for="p_percent_reduction_low">Phosphorus Percent Reduction Low</label>
-						<div class="input-group mb-3">
-							<input type="number" class="form-control" id="p_percent_reduction_low" name="p_percent_reduction_low" value="{{$item->p_percent_reduction_low}}">
-							<div class="input-group-append">
-								<span class="input-group-text">%</span>
-							</div>
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="p_percent_reduction_high">Phosphorus Percent Reduction High</label>
-						<div class="input-group mb-3">
-							<input type="number" class="form-control" id="p_percent_reduction_high" name="p_percent_reduction_high" value="{{$item->p_percent_reduction_high}}">
-							<div class="input-group-append">
-								<span class="input-group-text">%</span>
-							</div>
-						</div>
-					</div>		
+						
+						
+							
+	
 						
 					<div class="form-group">
 						<label for="advantages">Advantages</label>
