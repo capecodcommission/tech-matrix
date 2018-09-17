@@ -233,6 +233,11 @@
 										</thead>
 										<tbody>
 											<tr>
+												<td>Baseline Concentration (mg/L)</td>
+												<td>{{$item->baseline_concentration_n}}</td>
+												<td>{{$item->baseline_concentration_p}}</td>
+											</tr>
+											<tr>
 												<td>Percent Removal (low-high)</td>
 												<td>{{$item->n_percent_reduction_low}}% - {{$item->n_percent_reduction_high}}%</td>
 												<td>{{$item->p_percent_reduction_low}}% - {{$item->p_percent_reduction_high}}%</td>

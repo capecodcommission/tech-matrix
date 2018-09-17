@@ -52,7 +52,10 @@ class Technology extends JsonResource
 			'unit_metric' => (is_null($this->unit_metric) ? 'N/A' : $this->unit_metric->unit_metric),
 			'pollutants_treated' => (is_null($this->pollutants)? 'N/A' : $this->pollutants),
 			'influent_sources' => (is_null($this->influent_sources)? 'N/A' : $this->influent_sources),
-			'influent_concentrations' => (is_null($this->influent_concentrations) ? 'N/A' : $this->influent_concentrations)
+			'influent_concentrations' => (is_null($this->influent_concentrations) ? 'N/A' : $this->influent_concentrations),
+			'baseline_concentration_n' => (is_null($this->baseline_concentration_n) ? 'N/A' : $this->baseline_concentration_n),
+			'baseline_concentration_p' => (is_null($this->baseline_concentration_p) ? 'N/A' : $this->baseline_concentration_p),
+			'flow_gpd' => (is_null($this->flow_gpd) ? 'N/A' : $this->flow_gpd)
         ];
     }
 }

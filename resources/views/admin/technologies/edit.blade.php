@@ -183,6 +183,26 @@
 							<input type="number" class="form-control" id="replacement_cost" name="replacement_cost" value="{{$item->replacement_cost}}">
 						</div>
 					</div>	
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="baseline_concentration_n">Baseline Concentration Nitrogen</label>
+								
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" id="baseline_concentration_n" name="baseline_concentration_n" value="{{$item->baseline_concentration_n}}">
+									<div class="input-group-append">mg/L</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="baseline_concentration_p">Baseline Concentration Phosphorus</label>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="baseline_concentration_p" name="baseline_concentration_p" value="{{$item->baseline_concentration_p}}">
+								<div class="input-group-append">mg/L</div>
+							</div>
+						</div>
+					</div>
+					
 					<div class="form-group">
 						<label for="n_percent_reduction_low">Nitrogen Percent Reduction Low</label>
 						<div class="input-group mb-3">
