@@ -222,8 +222,8 @@
 										<p><strong>Useful Life (years)</strong>: 
 											{{$item->calc->useful_life_years}}</p>
 										<p><strong>Flow GPD</strong>: {{$item->flow_gpd}}</p>
-									<h5>Nutrient Removal</h5>
-									<table class="table col-lg-12 offset-lg-1 table-sm">
+									<h5>Nutrients Treated</h5>
+									<table class="table col-lg-12 table-sm">
 										<thead>
 											<tr>
 												<th></th>
@@ -233,9 +233,9 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>Baseline Concentration (mg/L)</td>
-												<td>{{$item->baseline_concentration_n}}</td>
-												<td>{{$item->baseline_concentration_p}}</td>
+												<td>Baseline Concentration</td>
+												<td>{{$item->baseline_concentration_n}}mg/L</td>
+												<td>{{$item->baseline_concentration_p}}mg/L</td>
 											</tr>
 											<tr>
 												<td>Percent Removal (low-high)</td>
@@ -243,12 +243,12 @@
 												<td>{{$item->p_percent_reduction_low}}% - {{$item->p_percent_reduction_high}}%</td>
 											</tr>
 											<tr>
-												<td>Per Year</td>
+												<td>Nutrient Removed Per Year (Avg)</td>
 												<td>{{$item->calc->n_removed_avg}}kg</td>
 												<td>{{$item->calc->p_removed_avg}}kg</td>
 											</tr>
 											<tr>
-												<td>Per Planning Period</td>
+												<td>Nutrient Removed Per Planning Period< (Avg)/td>
 												<td>{{$item->calc->n_removed_planning_period}}kg</td>
 												<td>{{$item->calc->p_removed_planning_period}}kg</td>
 											</tr>
