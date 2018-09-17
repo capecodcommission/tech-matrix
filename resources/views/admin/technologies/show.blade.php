@@ -245,7 +245,7 @@
 												<td>{{$item->n_percent_reduction_low}}% - {{$item->n_percent_reduction_high}}%</td>
 												<td>{{$item->p_percent_reduction_low}}% - {{$item->p_percent_reduction_high}}%</td>
 											</tr>
-											<tr>
+											{{-- <tr>
 												<td>Nutrient Removed Per Year (Avg)</td>
 												<td>{{$item->calc->n_removed_avg}}kg</td>
 												<td>{{$item->calc->p_removed_avg}}kg</td>
@@ -254,7 +254,7 @@
 												<td>Nutrient Removed Per Planning Period< (Avg)/td>
 												<td>{{$item->calc->n_removed_planning_period}}kg</td>
 												<td>{{$item->calc->p_removed_planning_period}}kg</td>
-											</tr>
+											</tr> --}}
 										</tbody>
 									</table>
 								</div>
