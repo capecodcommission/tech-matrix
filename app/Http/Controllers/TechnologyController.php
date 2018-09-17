@@ -220,16 +220,17 @@ class TechnologyController extends Controller
 		{
 			$item->longterm_monitoring_cost_id = $request->longterm_monitoring_cost_id;
 		}
+		if($request->years_of_evaluation_monitoring_id)
+		{
+			$item->years_of_evaluation_monitoring_id = $request->years_of_evaluation_monitoring_id;
+		}
 		$item->save();
 		if($request->time_to_improve_estuary)
 		{
 			$item->time_to_improve_estuary()->sync($request->time_to_improve_estuary);
 		}
 		
-		if($request->years_of_evaluation_monitoring)
-		{
-			$item->years_of_evaluation_monitoring()->sync($request->years_of_evaluation_monitoring);
-		}
+
 		return redirect('technologies');
 	}
 

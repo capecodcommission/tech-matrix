@@ -339,7 +339,7 @@
 									@forelse($item->longterm_monitoring as $each)
 										<li>{{$each->monitoring}}</li>
 									@empty
-										No Evaluation Monitoring Assigned yet.
+										No Longterm OM Monitoring Assigned yet.
 									@endforelse
 								</ul>
 								<p><strong>Estimated Annual Longterm Monitoring Cost</strong>: {{$item->longterm_monitoring_cost->est_annual_cost}}</p>

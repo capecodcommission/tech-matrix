@@ -169,7 +169,7 @@
 						@forelse($years as $time)
 							<div class="form-check">
 								<label class="form-check-label" for="years_of_evaluation_monitoring_{{$time->id}}">
-									<input type="radio" class="form-check-input" id="years_of_evaluation_monitoring_{{$time->id}}" value="{{$time->id}}" name="years_of_evaluation_monitoring" @if($item->years_of_evaluation_monitoring->id == $time->id) checked="checked" @endif>
+									<input type="radio" class="form-check-input" id="years_of_evaluation_monitoring_{{$time->id}}" value="{{$time->id}}" name="years_of_evaluation_monitoring_id" @if($item->years_of_evaluation_monitoring->id == $time->id) checked="checked" @endif>
 									{{$time->length_of_time}}
 								</label>
 							</div>
