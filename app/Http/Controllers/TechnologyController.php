@@ -93,7 +93,7 @@ class TechnologyController extends Controller
     {
 		$item = $technology;
 		$item->calc = $item->calculated();
-		// dd($item->calc);
+		dd($item);
         return view('admin.technologies.show', compact('item'));
 	}
 
