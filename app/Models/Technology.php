@@ -105,7 +105,7 @@ class Technology extends Model
 
 	public function years_of_evaluation_monitoring()
 	{
-		return $this->belongsTo('App\Models\YearGrouping')->withDefault([
+		return $this->belongsToMany('App\Models\YearGrouping')->withDefault([
 		'length_of_time' => '(N/A)']);
 	}
 
