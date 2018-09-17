@@ -221,11 +221,6 @@
 											{{$item->calc->useful_life_years}}</p>
 										<p><strong>Flow GPD</strong>: {{$item->flow_gpd}}</p>
 									<h5>Nutrients Treated</h5>
-						    			<ul>
-											@foreach ($item->pollutants as $item)
-												<li>{{$item->pollutant}}</li>
-											@endforeach
-						    			</ul>
 									<table class="table col-lg-12 table-sm">
 										<thead>
 											<tr>
