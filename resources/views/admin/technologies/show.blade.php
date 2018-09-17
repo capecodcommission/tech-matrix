@@ -333,6 +333,16 @@
 										No Evaluation Monitoring Assigned yet.
 									@endforelse
 								</ul>
+								<p><strong>Estimated Annual Evaluation Monitoring Cost</strong>: {{$this->evaluation_monitoring_cost->est_annual_cost}}</p>
+								<p><strong>Longterm OM Monitoring</strong></p>
+								<ul>
+									@forelse($item->longterm_monitoring as $each)
+										<li>{{$each->monitoring}}</li>
+									@empty
+										No Evaluation Monitoring Assigned yet.
+									@endforelse
+								</ul>
+								<p><strong>Estimated Annual Longterm Monitoring Cost</strong>: {{$this->longterm_monitoring_cost->est_annual_cost}}</p>
 							</div> 					
 						</div>
 					</div>
