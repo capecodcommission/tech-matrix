@@ -5,6 +5,7 @@ use DB;
 use App\Models\Technology;
 use App\Models\User;
 use App\Models\TechnologyType;
+use App\Models\TreatmentType;
 use App\Models\SystemDesignConsideration;
 use App\Models\Consideration;
 use App\Models\Pollutant;
@@ -38,6 +39,7 @@ class TechnologyController extends Controller
     public function create()
     {
 		$types = TechnologyType::all();
+		$treatment_types = TreatmentType::all();
 		$considerations = SystemDesignConsideration::all();
 		$pollutants = Pollutant::all();
 		$influent_sources = InfluentSource::all();
@@ -50,7 +52,7 @@ class TechnologyController extends Controller
 		$longterm_monitoring = EvaluationMonitoring::all();
 		$categories = Category::all();
 		$scales = Scale::all();
-		return view('admin.technologies.create', compact('types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'categories', 'scales'));
+		return view('admin.technologies.create', compact('types', 'treatment_types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'categories', 'scales'));
     }
 
     public function store(Request $request)
@@ -110,6 +112,7 @@ class TechnologyController extends Controller
     {
 		$item = $technology;
 		$types = TechnologyType::all();
+		$treatment_types = TreatmentType::all();
 		$considerations = SystemDesignConsideration::all();
 		$pollutants = Pollutant::all();
 		$influent_sources = InfluentSource::all();
@@ -124,7 +127,7 @@ class TechnologyController extends Controller
 		// $categories = Category::all();
 		$approaches = Approach::all();
        
-		return view('admin.technologies.edit', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'approaches'));
+		return view('admin.technologies.edit', compact('item', 'types', 'treatment_types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'approaches'));
     }
 	
     public function editRelationships(Technology $technology)

@@ -25,6 +25,7 @@ class Technology extends JsonResource
 			'references' => $this->references_notes_assumptions,
 			'useful_life_years' => $this->useful_life_years,
 			'technology_type' => $this->technology_type->technology_type,
+			'treatment_type' => $this->treatment_type->treatment_type,
 			'approach' => (is_null($this->approach)? '' : $this->approach->approach),
 			'calc' => $this->calculated(),
 			'current_construction_cost_avg' => (($this->current_construction_cost_high + $this->current_construction_cost_low)/2),

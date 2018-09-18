@@ -30,6 +30,17 @@
 						</select>
 					</div>
 					<div class="form-group">
+						<label for="treatment_type_id">Treatment Type</label>
+						<select class="form-control" id="treatment_type_id" name="treatment_type_id">
+							<option></option>
+							@forelse($treatment_types as $type)
+								<option value="{{$type->id}}" @if($type->id == $item->treatment_type_id) selected @endif>{{$type->treatment_type}}</option>
+							@empty	
+								<option value="">No Treatment Types available</option>
+							@endforelse
+						</select>
+					</div>
+					<div class="form-group">
 						<label for="approach_id">Technology Approach</label>
 						<select class="form-control" id="approach_id" name="approach_id">
 							<option></option>

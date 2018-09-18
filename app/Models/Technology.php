@@ -19,7 +19,10 @@ class Technology extends Model
 	{
 		return $this->belongsTo('App\Models\TechnologyType')->withDefault(['technology_type'=>'N/A']);
 	}
-
+	public function treatment_type()
+	{
+		return $this->belongsTo('App\Models\TreatmentType')->withDefault(['treatment_type'=>'N/A']);
+	}
 	public function approach()
 	{
 		return $this->belongsTo('App\Models\Approach');
