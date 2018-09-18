@@ -76,6 +76,7 @@
 			<th>Avg O&amp;M Cost<br />per KG P Removed</th>
 			<th>Avg Life Cycle Cost<br />per KG P Removed</th>
 			<th>System Design Considerations</th>
+			<th>Infrastructure Considerations</th>
 			<th>Advantages</th>
 			<th>Disadvantages</th>
 			<th>Eco Services</th>
@@ -174,9 +175,14 @@
 				<td>{{$item->calc->cost_per_kg_avg_project_cost_p}}</td>
 				<td>{{$item->calc->cost_per_kg_avg_om_cost_p}}</td>
 				<td>{{$item->calc->cost_per_kg_avg_lifecycle_cost_p}}</td>
+				<td>@forelse($item->considerations as $each)
+						{{$each->consideration}}<br />
+					@empty No system design considerations identified.
+					@endforelse
+				</td>
 				<td>@forelse($item->system_design_considerations as $each)
 						{{$each->infrastructure_to_consider}}<br />
-					@empty No system design considerations identified.
+					@empty No infrastructure considerations identified.
 					@endforelse
 				</td>
 				<td>@forelse(striplist($item->advantages) as $each)
