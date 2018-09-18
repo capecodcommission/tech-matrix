@@ -6,6 +6,7 @@ use App\Models\Technology;
 use App\Models\User;
 use App\Models\TechnologyType;
 use App\Models\SystemDesignConsideration;
+use App\Models\Consideration;
 use App\Models\Pollutant;
 use App\Models\InfluentSource;
 use App\Models\InfluentConcentration;
