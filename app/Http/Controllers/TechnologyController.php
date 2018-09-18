@@ -130,7 +130,8 @@ class TechnologyController extends Controller
     {
 		$item = $technology;
 		$types = TechnologyType::all();
-		$considerations = SystemDesignConsideration::all();
+		$design_considerations = SystemDesignConsideration::all();
+		$considerations = Consideration::all();
 		$pollutants = Pollutant::all();
 		$influent_sources = InfluentSource::all();
 		$influent_concentrations = InfluentConcentration::all();
@@ -145,7 +146,7 @@ class TechnologyController extends Controller
 		$years = YearGrouping::all();
 		$scales = Scale::all();
        
-		return view('admin.technologies.edit_relationships', compact('item', 'types', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years', 'costs', 'scales'));
+		return view('admin.technologies.edit_relationships', compact('item', 'types', 'design_considerations', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years', 'costs', 'scales'));
     }
 	
     public function update(Request $request, $id)
@@ -169,7 +170,11 @@ class TechnologyController extends Controller
         }
         if($request->considerations)
         {
-            $item->system_design_considerations()->sync($request->considerations);
+            $item->considerations()->sync($request->considerations);
+		}
+		if($request->design_considerations)
+        {
+            $item->system_design_considerations()->sync($request->design_considerations);
         }
         if($request->permitting_agencies)
         {

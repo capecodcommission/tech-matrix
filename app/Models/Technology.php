@@ -49,6 +49,12 @@ class Technology extends Model
 	{
 		return $this->belongsToMany('App\Models\PermittingAgency', 'rel_permitting_agencies_technologies', 'technology_id', 'agency_id')->withTimestamps();
 	}
+
+	public function considerations()
+	{
+		return $this->belongsToMany('App\Models\Consideration', 'rel_considerations_technologies', 'technology_id', 'consideration_id')->withTimestamps();
+	}
+
 	public function siting_requirements()
 	{
 		return $this->belongsToMany('App\Models\SitingRequirement', 'rel_siting_requirements_technologies', 'technology_id', 'siting_requirement_id')->withTimestamps();

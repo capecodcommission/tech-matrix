@@ -12,11 +12,11 @@
 					<input type="hidden" id="id" name="id" value="{{$item->id}}">
 
 					<div class="form-group">
-						<p><strong>System Design Considerations</strong></p>
-						@forelse($considerations as $each)
+						<p><strong>Infrastructure to Consider</strong></p>
+						@forelse($design_considerations as $each)
 							<div class="form-check">
-								<label class="form-check-label" for="consideration_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="considerations[]" id="consideration_{{$each->id}}"  @if($item->system_design_considerations->contains($each->id)) checked='checked' @endif>
+								<label class="form-check-label" for="design_consideration_{{$each->id}}">
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="design_considerations[]" id="design_consideration_{{$each->id}}"  @if($item->system_design_considerations->contains($each->id)) checked='checked' @endif>
 									{{$each->infrastructure_to_consider}}
 								</label>
 							</div>
@@ -24,7 +24,19 @@
 							No System Design Considerations Available
 						@endforelse
 					</div>
-					
+					<div class="form-group">
+						<p><strong>System Design Considerations</strong></p>
+						@forelse($considerations as $each)
+							<div class="form-check">
+								<label class="form-check-label" for="consideration_{{$each->id}}">
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="considerations[]" id="consideration_{{$each->id}}"  @if($item->considerations->contains($each->id)) checked='checked' @endif>
+									{{$each->consideration}}
+								</label>
+							</div>
+						@empty
+							No System Design Considerations Available
+						@endforelse
+					</div>
 					<div class="form-group">
 						<p><strong>Pollutants Treated</strong></p>
 						@forelse($pollutants as $each)	
@@ -38,52 +50,7 @@
 							No Pollutants Available
 						@endforelse
 					</div>
-					{{-- <div class="form-group">
-						<p><strong>Baseline Concentration Nitrogen</strong></p>
-						<select name="baseline_concentration_n_id" id="baseline_concentration_n_id" class="form-control">
-							<option></option>
-							@forelse($influent_concentrations as $each)	
-								<option value="{{$each->id}}" @if($each->id == $item->baseline_concentration_nitrogen->id) selected @endif>{{$each->baseline_concentration}}</option>
-							@empty
-								No Baseline Concentrations Available
-							@endforelse
-						</select>
-					</div> --}}
-					{{-- <div class="form-group">
-						<p><strong>Nutrient Percent Reduction</strong></p>
-						@forelse($item->pollutants as $each)	
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">
-									<label class="form-check-label" for="pollutant_{{$each->id}}">
-										{{$each->pollutant}} (Low)
-									</label>
-								</div>
-							</div>
-							<input type="number" class="form-control" aria-label="Text input with radio button">
-							<div class="input-group-append">
-									<span class="input-group-text">%</span>
-								</div>
-						</div>
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">
-									<label class="form-check-label" for="pollutant_{{$each->id}}">
-										{{$each->pollutant}} (High)
-									</label>	
-								</div>
-							</div>
-							<input type="number" class="form-control" aria-label="Text input with radio button">
-							<div class="input-group-append">
-									<span class="input-group-text">%</span>
-								</div>
-						</div>
-						@empty
-							No Pollutants Available
-						@endforelse
-
-						nutrient_reductions
-					</div> --}}
+					
 					<div class="form-group">
 						<p><strong>Influent Sources</strong></p>
 						@forelse($influent_sources as $each)	
