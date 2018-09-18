@@ -25,7 +25,7 @@ class TechnologiesSheet implements FromView, WithEvents
 
 	public function view(): View
 	{
-		$list = Technology::with(['siting_requirements','system_design_considerations', 'considerations', 'time_to_improve_estuary', 'permitting_agencies'])->get()->sortBy('technology_id');
+		$list = Technology::with(['siting_requirements','system_design_considerations', 'considerations', 'time_to_improve_estuary', 'permitting_agencies', 'years_of_evaluation_monitoring'])->get()->sortBy('technology_id');
 			
 		return view('export.technologies', [
 			'list' => $list
