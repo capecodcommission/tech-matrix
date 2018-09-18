@@ -398,10 +398,20 @@
 										<li>No Pollutants Assigned.</li>
 									@endforelse				
 								</ul>
-								<p><strong>System Design Considerations</strong></p>
+								<p><strong>Infrastructure to  Consider</strong></p>
 								<ul>
 									@forelse($item->system_design_considerations as $each)
 										<li>{{$each->infrastructure_to_consider}}</li>
+									@empty
+										<li>
+											No Infrastructure Considerations Assigned.
+										</li>
+									@endforelse
+								</ul>
+								<p><strong>System Design Considerations</strong></p>
+								<ul>
+									@forelse($item->considerations as $each)
+										<li>{{$each->consideration}}</li>
 									@empty
 										<li>
 											No System Design Considerations Assigned.
