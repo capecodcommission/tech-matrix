@@ -38,7 +38,7 @@ Route::resource('formulas', 'FormulaController');
 
 Route::get('users/restore/{user}', 'UserController@restore');
 Route::get('account', 'UserController@edit_profile')->name('account');
-Route::post('update_profile', 'UserController@update_profile');
+Route::post('update_profile', 'UserController@update_profile')->name('update_profile');
 Route::resource('users', 'UserController');
 
 Route::get('export', 'ExportController@exportAll')->name('export');
