@@ -6,7 +6,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-8">
 				<h2>Edit Account</h2>
-				<form action="{{route('users.update_profile')}}" method="POST">
+				<form action="{{route('update_profile')}}" method="POST">
 					@csrf
 					{!! method_field('PATCH') !!}
 					<div class="form-group">
