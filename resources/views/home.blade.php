@@ -14,8 +14,17 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                </div>
+                    
+                <div class="title m-b-md">
+                    Tech Matrix v2.0
+				</div>
+				<div>
+					<ul>
+						<li><a href="{{route('technologies.index')}}">View Technologies</a></li>
+						<li><a href="{{route('export')}}" target="_blank">Export the Tech Matrix</a></li>
+					</ul>
+				</div>
+				
             </div>
         </div>
     </div>
