@@ -88,10 +88,10 @@
 						</div>
 						<div class="col-lg-4">
 							<div class="form-group">
-								<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)
+								<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)</label>
 									<input type="number" name="flow_gpd" id="flow_gpd" class="form-control" value="{{$item->flow_gpd}}">
 									{{-- <small class="text-muted">Leave blank if Not Applicable.</small> --}}
-								</label>
+								
 							</div>
 						</div>
 					</div>
@@ -159,23 +159,19 @@
 							</div>
 						</div>
 						<div class="col-lg-4">
-
+							<div class="form-group">
+								<label for="adjustment_factor_project_cost">Adjustment Factor Project Cost (%)</label>
+								<div class="input-group mb-3">							
+									<input type="number" class="form-control" id="adjustment_factor_project_cost" name="adjustment_factor_project_cost" value="{{$item->adjustment_factor_project_cost}}">
+									<div class="input-group-append">
+										<span class="input-group-text">%</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					
-					
-					
-					
-					
-					<div class="form-group">
-						<label for="adjustment_factor_project_cost">Adjustment Factor Project Cost (%)</label>
-						<div class="input-group mb-3">							
-							<input type="number" class="form-control" id="adjustment_factor_project_cost" name="adjustment_factor_project_cost" value="{{$item->adjustment_factor_project_cost}}">
-							<div class="input-group-append">
-								<span class="input-group-text">%</span>
-							</div>
-						</div>
-					</div>	
+						
 					<div class="form-group">
 						<label for="replacement_cost_factor">Replacement Cost Factor (%)</label>
 						<div class="input-group mb-3">							
@@ -188,42 +184,53 @@
 							</small>
 						</div>
 					</div>	
-					<div class="form-group">
-						<label for="current_annual_o_m_cost_low">Current Annual OM Cost (Low)</label>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text">$</span>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="current_annual_o_m_cost_low">Current Annual OM Cost (Low)</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">$</span>
+									</div>
+									<input type="number" class="form-control" id="current_annual_o_m_cost_low" name="current_annual_o_m_cost_low" value="{{$item->current_annual_o_m_cost_low}}">
+								</div>
 							</div>
-							<input type="number" class="form-control" id="current_annual_o_m_cost_low" name="current_annual_o_m_cost_low" value="{{$item->current_annual_o_m_cost_low}}">
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="current_annual_o_m_cost_high">Current Annual OM Cost (High)</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">$</span>
+									</div>
+									<input type="number" class="form-control" id="current_annual_o_m_cost_high" name="current_annual_o_m_cost_high" value="{{$item->current_annual_o_m_cost_high}}">
+								</div>
+							</div>	
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="adjustment_factor_o_m_cost">Adjustment Factor OM Cost (%)</label>
+								<div class="input-group mb-3">							
+									<input type="number" class="form-control" id="adjustment_factor_o_m_cost" name="adjustment_factor_o_m_cost" value="{{$item->adjustment_factor_o_m_cost}}">
+									<div class="input-group-append">
+										<span class="input-group-text">%</span>
+									</div>
+								</div>
+							</div>	
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="current_annual_o_m_cost_percent_labor">Current Annual OM Cost Percent Labor</label>
+								<div class="input-group mb-3">
+									<input type="number" class="form-control" id="current_annual_o_m_cost_percent_labor" name="current_annual_o_m_cost_percent_labor" value="{{$item->current_annual_o_m_cost_percent_labor}}">
+									<div class="input-group-append">
+										<span class="input-group-text">%</span>
+									</div>
+								</div>
+							</div>	
 						</div>
 					</div>	
-					<div class="form-group">
-						<label for="current_annual_o_m_cost_high">Current Annual OM Cost (High)</label>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text">$</span>
-							</div>
-							<input type="number" class="form-control" id="current_annual_o_m_cost_high" name="current_annual_o_m_cost_high" value="{{$item->current_annual_o_m_cost_high}}">
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="adjustment_factor_o_m_cost">Adjustment Factor OM Cost (%)</label>
-						<div class="input-group mb-3">							
-							<input type="number" class="form-control" id="adjustment_factor_o_m_cost" name="adjustment_factor_o_m_cost" value="{{$item->adjustment_factor_o_m_cost}}">
-							<div class="input-group-append">
-								<span class="input-group-text">%</span>
-							</div>
-						</div>
-					</div>		
-					<div class="form-group">
-						<label for="current_annual_o_m_cost_percent_labor">Current Annual OM Cost Percent Labor</label>
-						<div class="input-group mb-3">
-							<input type="number" class="form-control" id="current_annual_o_m_cost_percent_labor" name="current_annual_o_m_cost_percent_labor" value="{{$item->current_annual_o_m_cost_percent_labor}}">
-							<div class="input-group-append">
-								<span class="input-group-text">%</span>
-							</div>
-						</div>
-					</div>					
+									
 					<div class="form-group">
 						<label for="useful_life_years">Useful Life (Years)</label>
 						<input type="number" class="form-control" id="useful_life_years" name="useful_life_years" value="{{$item->useful_life_years}}">
@@ -340,7 +347,7 @@
 						</div>
 						<div class="col-lg-4">
 							<div class="form-group">
-								<p><strong>Piloting Status</strong></p>
+								<label for="piloting_status_id">Piloting Status</label>
 								<select name="piloting_status_id" id="piloting_status_id" class="form-control">
 									<option></option>
 									@forelse($piloting_statuses as $each)	
