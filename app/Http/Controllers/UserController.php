@@ -73,10 +73,10 @@ class UserController extends Controller
 		if ($data['update_password']) {
 			$user->password = bcrypt($data['update_password']);
 		}
-		
+		// dd($user);
 		$user->save();
 		
-		return redirect('home');
+		return redirect('/home');
 	}
 	public function destroy(User $user)
 	{
