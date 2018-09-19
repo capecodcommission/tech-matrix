@@ -48,7 +48,22 @@ class UserController extends Controller
 		$user = Auth::user();
 		return view('admin.users.edit_profile', compact('user'));
 	}
-	public function update(Request $request)
+	public function update(Request $request, $id)
+	{
+		$user = User::find($id);
+		$data = $request->all();
+		$user->name = $data['name'];
+		$user->email = $data['email'];
+		if ($data['update_password']) {
+			$user->password = bcrypt($data['update_password']);
+		}
+		
+		$user->save();
+		$user->syncRoles($data['roles']);
+		return redirect('users');
+	}
+
+	public function update_profile(Request $request)
 	{
 		$user = Auth::user();
 		$data = $request->all();
@@ -62,7 +77,6 @@ class UserController extends Controller
 		
 		return redirect('home');
 	}
-
 	public function destroy(User $user)
 	{
 		$user->delete();
