@@ -8,7 +8,7 @@
 				<h2>Edit Account</h2>
 				<form action="{{route('update_profile')}}" method="POST">
 					@csrf
-					{!! method_field('PATCH') !!}
+					{{-- {!! method_field('PATCH') !!} --}}
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" class="form-control" id="name" name="name" value="{{$user->name}}">
