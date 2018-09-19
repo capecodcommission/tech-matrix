@@ -10,9 +10,11 @@
 					<tr>
 						<th>Technology<br />Strategy</th>
 						<th>Technology<br />ID</th>
+						@role('admin|tech editor|text editor')
 						<th>Edit<br />Data</th>
 						<th>Edit<br />Relationships</th>
 						<th>Edit<br />Formulas</th>
+						@endrole
 						<th>Updated</th>
 					</tr>
 				</thead>
@@ -21,9 +23,11 @@
 						<tr>
 							<td><a href="{{route('technologies.show', $item->id)}}">{{$item->technology_strategy}}</a></td>
 							<td>{{$item->technology_id}}</td>
-							<td><a href="{{route('technologies.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
-							<td><a href="{{url('technologies/editRelationships', $item->id)}}"><i class="fal fa-project-diagram" title="Edit Relationships"></i></a></td>
-							<td><a href="{{url('technologies/editFormulas', $item->id)}}"><i class="fal fa-calculator" title="Edit Formulas"></i></a></td>
+							@role('admin|tech editor|text editor')
+								<td><a href="{{route('technologies.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
+								<td><a href="{{url('technologies/editRelationships', $item->id)}}"><i class="fal fa-project-diagram" title="Edit Relationships"></i></a></td>
+							@else
+							@endrole
 							<td>{{$item->updated_at}}</td>
 						</tr>
 					@empty
