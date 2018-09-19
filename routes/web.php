@@ -37,7 +37,7 @@ Route::resource('notes', 'NoteController');
 Route::resource('formulas', 'FormulaController');
 
 Route::get('users/restore/{user}', 'UserController@restore');
-Route::get('account', 'UserController@edit_profile');
+Route::get('account', 'UserController@edit_profile')->name('account');
 Route::resource('users', 'UserController');
 
 Route::get('export', 'ExportController@exportAll')->name('export');
