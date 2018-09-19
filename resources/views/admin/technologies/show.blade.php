@@ -6,7 +6,9 @@
 		<div class="col-md-12">
 			<p><a href="{{route('technologies.index')}}">Back to List</a></p>			
 			<h2>{{$item->technology_strategy}} 
+			@role('admin|tech editor|text editor')
 				<span class="subtitle">(<a href="{{route('technologies.edit', $item->id)}}">Edit</a>)</span>
+			@endrole
 			</h2>
 			<div class="panel">
 				<p><span style="display:inline-block; background-color:#52a9df"><img src="{{config('app.url')}}/icons/{{$item->icon}}" height="45" width="45" /></span></p>

@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 			<h2>Inputs / Settings</h2>
-			<p><a href="{{route('inputs.create')}}" class="btn btn-primary">Create new input</a></p>
+			@role('admin|tech editor|text editor')
+				<p><a href="{{route('inputs.create')}}" class="btn btn-primary">Create new input</a></p>
+			@endrole
 			<table class="table">
 				<tbody>
 					@forelse($groups as $group)
@@ -23,7 +25,7 @@
 					
 						@forelse($group->inputs as $item)
 							<tr>
-								<td><a href="{{route('inputs.show', $item->id)}}">{{$item->input_label}}</a></td>
+								<td>{{$item->input_label}}</td>
 								<td>{{$item->input_value}}</td>
 								@role('admin|tech editor|text editor')
 								<td><a href="{{route('inputs.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>

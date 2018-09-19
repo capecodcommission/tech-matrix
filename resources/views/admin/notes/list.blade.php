@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12">
-			<h2>Notes</h2> (<a href="{{route('notes.create')}}">Create new Note</a>)
+			<h2>Notes</h2> @role('admin|tech editor|text editor')(<a href="{{route('notes.create')}}">Create new Note</a>)@endrole
 			<table class="table">
 				<thead>
 					<tr>
@@ -13,8 +13,8 @@
 						<th>Last Updated</th>
 						@role('admin|tech editor|text editor')
 							<th>Edit</th>
+							<th>Delete/Restore</th>
 						@endrole
-						<th>Delete/Restore</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -24,8 +24,9 @@
 								<td>{{$item->id}}</td>
 								<td><s>{{$item->note}}</s></td>
 								<td>Del: {{$item->deleted_at}}</td>
-								<td>--</td>
 								@role('admin|tech editor|text editor')
+								<td>--</td>
+								
 								<td>
 									<a href="{{url('notes/restore', $item->id)}}"> Restore</a>
 								</td>
