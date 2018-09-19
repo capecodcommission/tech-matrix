@@ -10,70 +10,93 @@
 				<form action="{{route('technologies.update', $item->id)}}" method="POST">
 					@csrf
 					{!! method_field('PATCH') !!}
-					<div class="form-group">
-						<label for="technology_strategy">Technology Strategy</label>
-						<input type="text" class="form-control" id="technology_strategy" name="technology_strategy" value="{{$item->technology_strategy}}">
+					<div class="row">
+						<div class="col-lg-9">
+							<div class="form-group">
+								<label for="technology_strategy">Technology Strategy</label>
+								<input type="text" class="form-control" id="technology_strategy" name="technology_strategy" value="{{$item->technology_strategy}}">
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="form-group">
+								<label for="technology_id">Technology ID</label>
+								<input type="text" class="form-control" id="technology_id" name="technology_id" value="{{$item->technology_id}}">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="technology_type_id">Technology Type</label>
+								<select class="form-control" id="technology_type_id" name="technology_type_id">
+									<option></option>
+									@forelse($types as $type)
+										<option value="{{$type->id}}" @if($type->id == $item->technology_type_id) selected @endif>{{$type->technology_type}}</option>
+									@empty	
+										<option value="">No Types available</option>
+									@endforelse
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="treatment_type_id">Treatment Type</label>
+								<select class="form-control" id="treatment_type_id" name="treatment_type_id">
+									<option></option>
+									@forelse($treatment_types as $type)
+										<option value="{{$type->id}}" @if($type->id == $item->treatment_type_id) selected @endif>{{$type->treatment_type}}</option>
+									@empty	
+										<option value="">No Treatment Types available</option>
+									@endforelse
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="approach_id">Technology Approach</label>
+								<select class="form-control" id="approach_id" name="approach_id">
+									<option></option>
+									@forelse($approaches as $approach)
+										<option value="{{$approach->id}}" @if($approach->id == $item->approach_id) selected @endif>{{$approach->approach}}</option>
+									@empty	
+										<option value="">No Approaches available</option>
+									@endforelse
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="technology_system_type"> Technology System Type</label>
+								<input type="text" class="form-control" name="technology_system_type" value="{{$item->technology_system_type}}">					
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="unit_metric_id">Unit Metric</label>
+								<select name="unit_metric_id" id="unit_metric_id" class="form-control">
+									<option value="">Choose Unit Metric</option>
+									@forelse($unit_metrics as $unit)
+										<option value="{{$unit->id}}" @if($unit->id == $item->unit_metric_id) selected @endif>{{$unit->unit_metric}}</option>
+									@empty	
+										<option value="">No unit metrics available</option>
+									@endforelse
+								</select>
+									
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<label for="metric_input">Metric Input</label>
+								<input type="text" class="form-control" name="metric_input" value="{{$item->metric_input}}">	
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)<sup>*</sup>
+									<input type="number" name="flow_gpd" id="flow_gpd" class="form-control" value="{{$item->flow_gpd}}">
+									<small class="text-muted">Leave blank if Not Applicable.</small>
+								</label>
+							</div>
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="technology_id">Technology ID</label>
-						<input type="text" class="form-control" id="technology_id" name="technology_id" value="{{$item->technology_id}}">
-					</div>
-					<div class="form-group">
-						<label for="technology_type_id">Technology Type</label>
-						<select class="form-control" id="technology_type_id" name="technology_type_id">
-							<option></option>
-							@forelse($types as $type)
-								<option value="{{$type->id}}" @if($type->id == $item->technology_type_id) selected @endif>{{$type->technology_type}}</option>
-							@empty	
-								<option value="">No Types available</option>
-							@endforelse
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="treatment_type_id">Treatment Type</label>
-						<select class="form-control" id="treatment_type_id" name="treatment_type_id">
-							<option></option>
-							@forelse($treatment_types as $type)
-								<option value="{{$type->id}}" @if($type->id == $item->treatment_type_id) selected @endif>{{$type->treatment_type}}</option>
-							@empty	
-								<option value="">No Treatment Types available</option>
-							@endforelse
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="approach_id">Technology Approach</label>
-						<select class="form-control" id="approach_id" name="approach_id">
-							<option></option>
-							@forelse($approaches as $approach)
-								<option value="{{$approach->id}}" @if($approach->id == $item->approach_id) selected @endif>{{$approach->approach}}</option>
-							@empty	
-								<option value="">No Approaches available</option>
-							@endforelse
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="technology_system_type"> Technology System Type</label>
-						<input type="text" class="form-control" name="technology_system_type" value="{{$item->technology_system_type}}">					
-					</div>
-					<div class="form-group">
-						<label for="unit_metric_id">Unit Metric</label>
-						<select name="unit_metric_id" id="unit_metric_id" class="form-control">
-							<option value="">Choose Unit Metric</option>
-							@forelse($unit_metrics as $unit)
-								<option value="{{$unit->id}}" @if($unit->id == $item->unit_metric_id) selected @endif>{{$unit->unit_metric}}</option>
-							@empty	
-								<option value="">No unit metrics available</option>
-							@endforelse
-						</select>
-						<label for="metric_input">Metric Input</label>
-						<input type="text" class="form-control" name="metric_input" value="{{$item->metric_input}}">		
-					</div>
-				  <div class="form-group">
-				  	<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)<sup>*</sup>
-				  		<input type="number" name="flow_gpd" id="flow_gpd" class="form-control" value="{{$item->flow_gpd}}">
-				  		<small class="text-muted">Leave blank if Not Applicable.</small>
-				  	</label>
-				  </div>
+					
+				  
 					<div class="form-group">
 						<label for="technology_description">Technology Description</label>
 						<textarea class="form-control" id="technology_description" name="technology_description" rows="10" >{{$item->technology_description}}</textarea>
