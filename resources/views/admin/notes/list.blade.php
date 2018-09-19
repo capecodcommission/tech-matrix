@@ -11,7 +11,9 @@
 						<th>Note ID</th>
 						<th>Note</th>
 						<th>Last Updated</th>
-						<th>Edit</th>
+						@role('admin|tech editor|text editor')
+							<th>Edit</th>
+						@endrole
 						<th>Delete/Restore</th>
 					</tr>
 				</thead>
@@ -23,13 +25,16 @@
 								<td><s>{{$item->note}}</s></td>
 								<td>Del: {{$item->deleted_at}}</td>
 								<td>--</td>
+								@role('admin|tech editor|text editor')
 								<td>
 									<a href="{{url('notes/restore', $item->id)}}"> Restore</a>
 								</td>
+								@endrole
 							@else
 								<td><a href="{{route('notes.show', $item->id)}}">{{$item->id}}</a></td>
 								<td>{{$item->note}}</td>
 								<td>{{$item->updated_at}}</td>
+								@role('admin|tech editor|text editor')
 								<td><a href="{{route('notes.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
 								<td>
 									<form method="POST" action="{{route('notes.destroy', $item->id)}}" accept-charset="UTF-8" class="delete_form">
@@ -37,6 +42,8 @@
 										@csrf
 										<span class="icon is-danger"><i class="fal fa-trash-alt"></i></span> 
 									</form>
+								</td>
+								@endrole
 							@endif
 
 						</tr>

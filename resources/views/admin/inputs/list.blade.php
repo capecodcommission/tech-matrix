@@ -16,15 +16,18 @@
 						<tr>
 							<th>Input Label</th>
 							<th>Input Value</th>
-							<th>Edit</th>							
+							@role('admin|tech editor|text editor')
+							<th>Edit</th>	
+							@endrole						
 						</tr>
 					
 						@forelse($group->inputs as $item)
 							<tr>
 								<td><a href="{{route('inputs.show', $item->id)}}">{{$item->input_label}}</a></td>
 								<td>{{$item->input_value}}</td>
+								@role('admin|tech editor|text editor')
 								<td><a href="{{route('inputs.edit', $item->id)}}"><i class="fal fa-edit"></i> </a></td>
-
+								@endrole
 							</tr>
 						@empty
 							<tr>
