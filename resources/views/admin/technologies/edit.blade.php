@@ -84,13 +84,13 @@
 						</div>
 						<div class="col-lg-4">
 							<label for="metric_input">Metric Input</label>
-								<input type="text" class="form-control" name="metric_input" value="{{$item->metric_input}}">	
+							<input type="text" class="form-control" name="metric_input" value="{{$item->metric_input}}">	
 						</div>
 						<div class="col-lg-4">
 							<div class="form-group">
-								<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)<sup>*</sup>
+								<label title="Average Daily Flow, Gallons Per Day" for="flow_gpd">Flow (GPD)
 									<input type="number" name="flow_gpd" id="flow_gpd" class="form-control" value="{{$item->flow_gpd}}">
-									<small class="text-muted">Leave blank if Not Applicable.</small>
+									{{-- <small class="text-muted">Leave blank if Not Applicable.</small> --}}
 								</label>
 							</div>
 						</div>
@@ -101,52 +101,72 @@
 						<label for="technology_description">Technology Description</label>
 						<textarea class="form-control" id="technology_description" name="technology_description" rows="10" >{{$item->technology_description}}</textarea>
 					</div>
-					<div class="form-group">
-						<label for="current_construction_cost_low">Current Construction Cost (Low)</label>
-						<div class="input-group mb-3">	
-							<div class="input-group-prepend">
-								<span class="input-group-text">$</span>
-							</div>
-							<input type="number" class="form-control" id="current_construction_cost_low" name="current_construction_cost_low" value="{{$item->current_construction_cost_low}}">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="current_construction_cost_high">Current Construction Cost (High)</label>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text">$</span>
-							</div>
-							<input type="number" class="form-control" id="current_construction_cost_high" name="current_construction_cost_high" value="{{$item->current_construction_cost_high}}">
-						</div>
-					</div>	
-					<div class="form-group">
-						<label for="current_construction_cost_percent_labor">Current Construction Cost Percent Labor</label>
-						<div class="input-group mb-3">
-								
-							<input type="number" class="form-control" id="current_construction_cost_percent_labor" name="current_construction_cost_percent_labor" value="{{$item->current_construction_cost_percent_labor}}">
-							<div class="input-group-append">
-									<span class="input-group-text">%</span>
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="current_construction_cost_low">Current Construction Cost (Low)</label>
+								<div class="input-group mb-3">	
+									<div class="input-group-prepend">
+										<span class="input-group-text">$</span>
+									</div>
+									<input type="number" class="form-control" id="current_construction_cost_low" name="current_construction_cost_low" value="{{$item->current_construction_cost_low}}">
 								</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="current_project_cost_low">Current Project Cost (Low)</label>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text">$</span>
 							</div>
-							<input type="text" class="form-control" id="current_project_cost_low" name="current_project_cost_low" value="{{$item->current_project_cost_low}}">
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="current_project_cost_high">Current Project Cost (High)</label>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text">$</span>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="current_construction_cost_high">Current Construction Cost (High)</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">$</span>
+									</div>
+									<input type="number" class="form-control" id="current_construction_cost_high" name="current_construction_cost_high" value="{{$item->current_construction_cost_high}}">
+								</div>
+							</div>	
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="current_construction_cost_percent_labor">Current Construction Cost Percent Labor</label>
+								<div class="input-group mb-3">
+										
+									<input type="number" class="form-control" id="current_construction_cost_percent_labor" name="current_construction_cost_percent_labor" value="{{$item->current_construction_cost_percent_labor}}">
+									<div class="input-group-append">
+											<span class="input-group-text">%</span>
+										</div>
+								</div>
 							</div>
-							<input type="number" class="form-control" id="current_project_cost_high" name="current_project_cost_high" value="{{$item->current_project_cost_high}}">
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="current_project_cost_low">Current Project Cost (Low)</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">$</span>
+									</div>
+									<input type="text" class="form-control" id="current_project_cost_low" name="current_project_cost_low" value="{{$item->current_project_cost_low}}">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="current_project_cost_high">Current Project Cost (High)</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">$</span>
+									</div>
+									<input type="number" class="form-control" id="current_project_cost_high" name="current_project_cost_high" value="{{$item->current_project_cost_high}}">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+
 						</div>
 					</div>
+					
+					
+					
+					
+					
 					<div class="form-group">
 						<label for="adjustment_factor_project_cost">Adjustment Factor Project Cost (%)</label>
 						<div class="input-group mb-3">							
@@ -217,6 +237,7 @@
 							<input type="number" class="form-control" id="replacement_cost" name="replacement_cost" value="{{$item->replacement_cost}}">
 						</div>
 					</div>	
+
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
@@ -296,35 +317,42 @@
 						<label for="disadvantages">Disadvantages</label>
 						<textarea name="disadvantages" id="disadvantages" name="disadvantages" class="form-control" rows="10">{{$item->disadvantages}}</textarea>
 					</div>
-					
-					<div class="form-group">
-						<label for="show_in_wmvp">Show in wMVP</label>
-						<select class="form-control" id="show_in_wmvp" name="show_in_wmvp">
-							<option value="0" @if($item->show_in_wmvp == 0) selected @endif>Do Not Show in wMVP</option>
-							<option value="1" @if($item->show_in_wmvp == 1) selected @endif>Show in wMVP (1)</option>
-							<option value="2" @if($item->show_in_wmvp == 2) selected @endif>Show in wMVP (2)</option>
-						</select>
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="show_in_wmvp">Show in wMVP</label>
+								<select class="form-control" id="show_in_wmvp" name="show_in_wmvp">
+									<option value="0" @if($item->show_in_wmvp == 0) selected @endif>Do Not Show in wMVP</option>
+									<option value="1" @if($item->show_in_wmvp == 1) selected @endif>Show in wMVP (1)</option>
+									<option value="2" @if($item->show_in_wmvp == 2) selected @endif>Show in wMVP (2)</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="show_on_Matrix">Show in Tech Matrix</label>
+								<select class="form-control" id="show_on_Matrix" name="show_on_Matrix">
+									<option value="">Should this field be displayed in Tech Matrix?</option>
+									<option value="0" @if($item->show_on_Matrix == 0) selected @endif>Do Not Show in Tech Matrix</option>
+									<option value="1" @if($item->show_on_Matrix == 1) selected @endif>Show in Tech Matrix</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<p><strong>Piloting Status</strong></p>
+								<select name="piloting_status_id" id="piloting_status_id" class="form-control">
+									<option></option>
+									@forelse($piloting_statuses as $each)	
+										<option value="{{$each->id}}" @if($each->id == $item->piloting_status_id) selected @endif>{{$each->pilot_status}}</option>
+									@empty
+										No Piloting Statuses Available
+									@endforelse
+								</select>
+							</div>	
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="show_on_Matrix">Show in Tech Matrix</label>
-						<select class="form-control" id="show_on_Matrix" name="show_on_Matrix">
-							<option value="">Should this field be displayed in Tech Matrix?</option>
-							<option value="0" @if($item->show_on_Matrix == 0) selected @endif>Do Not Show in Tech Matrix</option>
-							<option value="1" @if($item->show_on_Matrix == 1) selected @endif>Show in Tech Matrix</option>
-						</select>
-					</div>
 					
-					<div class="form-group">
-						<p><strong>Piloting Status</strong></p>
-						<select name="piloting_status_id" id="piloting_status_id" class="form-control">
-							<option></option>
-							@forelse($piloting_statuses as $each)	
-								<option value="{{$each->id}}" @if($each->id == $item->piloting_status_id) selected @endif>{{$each->pilot_status}}</option>
-							@empty
-								No Piloting Statuses Available
-							@endforelse
-						</select>
-					</div>		
 					<div class="form-group">
 						<label for="pilot_study_findings">Pilot Study Findings</label>
 						<textarea name="pilot_study_findings" id="pilot_study_findings" name="pilot_study_findings" class="form-control" rows="10">{{$item->pilot_study_findings}}</textarea>
