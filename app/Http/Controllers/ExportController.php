@@ -32,11 +32,7 @@ class ExportController extends Controller
 
 	public function exportAll() 
 	{
-		$file = Excel::download(new TechMatrixExport, 'tech_matrix.xlsx');
-		$file->setActiveSheetIndex(0);
-		return $file;
-
-
+		return (new TechMatrixExport)->setActiveSheetIndex(0)->download('tech_matrix.xlsx');
 	}
 	
 	public function export()

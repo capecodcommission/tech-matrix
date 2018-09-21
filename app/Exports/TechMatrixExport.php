@@ -8,9 +8,11 @@ use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 class TechMatrixExport implements WithMultipleSheets
 {
 
-
+	use Exportable;
+	
 	public function sheets(): array
     {
+		
         $sheets = [];
 
         
