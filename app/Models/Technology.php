@@ -66,7 +66,7 @@ class Technology extends Model
 	public function unit_metric()
 	{
 		return $this->belongsTo('App\Models\UnitMetric')->withDefault([
-		'unit_metric' => '(N/A)',
+		'unit_metric' => 'N/A',
 	]);
 	}
 
@@ -92,14 +92,14 @@ class Technology extends Model
 	public function evaluation_monitoring_cost()
 	{
 		return $this->belongsTo('App\Models\MonitoringCost')->withDefault([
-		'est_annual_cost' => '(N/A)',
+		'est_annual_cost' => 'N/A',
 	]);
 	}
 
 	public function longterm_monitoring_cost()
 	{
 		return $this->belongsTo('App\Models\MonitoringCost')->withDefault([
-		'est_annual_cost' => '(N/A)']);
+		'est_annual_cost' => 'N/A']);
 	}
 
 	public function piloting_status()
