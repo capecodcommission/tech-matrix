@@ -385,7 +385,7 @@
 		
 		
 				<p>{{$item->image}}</p>
-				<p>{{$item->type_of_cost_spread}}</p>
+				
 			</div>
 		</div>
 	</div>
