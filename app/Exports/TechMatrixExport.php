@@ -19,7 +19,7 @@ class TechMatrixExport implements WithMultipleSheets
 			$sheets[] = new InputsSheet();
 			$sheets[] = new ReferencesSheet();
 
-
+			$sheets->setActiveSheetIndex(0);
         return $sheets;
     }
 
