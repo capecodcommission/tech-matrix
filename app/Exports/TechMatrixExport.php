@@ -3,11 +3,14 @@
 namespace App\Exports;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
+use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Concerns\RegistersEventListeners;
+use Maatwebsite\Excel\Events\BeforeExport;
+use Maatwebsite\Excel\Events\BeforeWriting;
 
-
-class TechMatrixExport implements WithMultipleSheets
+class TechMatrixExport implements WithMultipleSheets, WithEvents
 {
-	use Exportable;
+  use Exportable, RegistersEventListeners;
 
 	public function registerEvents(): array
 	{
