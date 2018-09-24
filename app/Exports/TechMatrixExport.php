@@ -13,11 +13,11 @@ class TechMatrixExport implements WithMultipleSheets
 	{
 		return [
 		// Handle by a closure.
-		// BeforeExport::class => function(BeforeExport $event) {
-		// 	$event->writer->getProperties()->setCreator('You')->setTitle("Title");
-		// },
+		BeforeExport::class => function(BeforeExport $event) {
+			$event->writer->getProperties()->setCreator('Cape Cod Commission')->setTitle("Tech Matrix");
+		},
 		BeforeWriting::class => function(BeforeWriting $event) {
-			$event->writer->setActiveSheetIndex(0);
+			$event->writer->setActiveSheetIndex(2);
 		},
 		];
 	}
