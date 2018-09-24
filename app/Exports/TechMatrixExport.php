@@ -20,7 +20,7 @@ class TechMatrixExport implements WithMultipleSheets, WithEvents
 			$event->writer->getProperties()->setCreator('Cape Cod Commission')->setTitle("Tech Matrix");
 		},
 		BeforeWriting::class => function(BeforeWriting $event) {
-			$event->writer->setActiveSheetIndex(2);
+			$event->writer->setActiveSheetIndex(0);
 		},
 		];
 	}
