@@ -26,13 +26,13 @@ use App\Exports\TechMatrixExport;
 class ExportController extends Controller
 {
 	public function __construct(\Maatwebsite\Excel\Excel $excel)
-{
-    $this->excel = $excel;
-}
+	{
+		$this->excel = $excel;
+	}
 
 	public function exportAll() 
 	{
-		return (new TechMatrixExport)->setActiveSheetIndex(0)->download('tech_matrix.xlsx');
+		return (new TechMatrixExport)->download('tech_matrix.xlsx');
 	}
 	
 	public function export()
