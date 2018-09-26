@@ -343,8 +343,10 @@
 								<label for="show_in_wmvp">Show in wMVP</label>
 								<select class="form-control" id="show_in_wmvp" name="show_in_wmvp">
 									<option value="0" @if($item->show_in_wmvp == 0) selected @endif>Do Not Show in wMVP</option>
-									<option value="1" @if($item->show_in_wmvp == 1) selected @endif>Show in wMVP (1)</option>
-									<option value="2" @if($item->show_in_wmvp == 2) selected @endif>Show in wMVP (2)</option>
+									<option value="1" @if($item->show_in_wmvp == 1) selected @endif>Show in wMVP (use unit metric)</option>
+									<option value="2" @if($item->show_in_wmvp == 2) selected @endif>Show in wMVP (use polygon)</option>
+									<option value="3" @if($item->show_in_wmvp == 3) selected @endif>Show in wMVP (use both unit metric and polygon)</option>
+									<option value="4" @if($item->show_in_wmvp == 4) selected @endif>Show in wMVP (use neither unit metric or polygon)</option>
 								</select>
 							</div>
 						</div>
