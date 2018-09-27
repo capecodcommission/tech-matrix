@@ -24,7 +24,7 @@ class Technology extends JsonResource
 			{
 				$item->icon = "off_" . $item->icon;
 			}
-		};
+		});
         return [
             'id' => $this->technology_id,
 			'name' => $this->technology_strategy,
