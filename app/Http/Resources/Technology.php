@@ -57,7 +57,7 @@ class Technology extends JsonResource
 			'evaluation_monitoring' => (is_null($this->evaluation_monitoring)? 'N/A' : $this->evaluation_monitoring),
 			'longterm_monitoring' => (is_null($this->longterm_monitoring)? 'N/A' : $this->longterm_monitoring),
 			'updated_at' => $this->updated_at,
-			'benefits' => $this->benefits_list,
+			'benefits' => $benefits_list,
 			'permitting_agencies' => $this->permitting_agencies,
 			'pilot_status' => (is_null($this->piloting_status)? 'N/A' : $this->piloting_status->pilot_status),
 			'regulatory_comments' => $this->regulatory_comments,
