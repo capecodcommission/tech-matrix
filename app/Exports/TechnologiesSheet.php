@@ -86,7 +86,8 @@ class TechnologiesSheet implements FromView, WithEvents
 				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
-
+				$event->sheet->getStyle('AO3:AO78')->getNumberFormat()->setFormatCode('#%');
+				$event->sheet->getStyle('AG3:AG78')->getNumberFormat()->setFormatCode('#%');
 				$event->sheet->mergeCells('P1:U1');
 				$event->sheet->mergeCells('V1:AA1');
 				$event->sheet->mergeCells('AB1:AC1');
