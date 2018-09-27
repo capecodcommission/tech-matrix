@@ -146,7 +146,9 @@ class TechnologyController extends Controller
 			return substr($value->influent_concentration, -1, 1) == 'P';
 		});
 		$other_influent_concentrations = $influent_concentrations->filter(function ($value, $key) {
-			return (substr($value->influent_concentration, -1, 1) != 'P') && substr($value, -1, 1) != 'N';
+			return (
+				(substr($value->influent_concentration, -1, 1) != 'P') && 
+				(substr($value->influent_concentration, -1, 1) != 'N'));
 		});
 		$siting_requirements = SitingRequirement::all();
 		$permitting_agencies = PermittingAgency::all();

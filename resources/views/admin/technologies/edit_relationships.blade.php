@@ -95,6 +95,8 @@
 						@empty
 							No Influent Concentrations for Nitrogen Available
 						@endforelse
+					</div>
+					<div class="form-group">
 						<p><strong>Influent Concentrations Phosphorus</strong></p>
 						@forelse($p_influent_concentrations as $each)	
 							<div class="form-check">
@@ -109,6 +111,8 @@
 						@empty
 							No Influent Concentrations for Phosphorus Available
 						@endforelse
+					</div>
+					<div class="form-group">
 							<p><strong>Influent Concentrations (Other)</strong></p>
 							@forelse($other_influent_concentrations as $each)	
 							<div class="form-check">
