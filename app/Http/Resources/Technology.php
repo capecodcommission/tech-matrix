@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\EcosystemService;
 
 class Technology extends JsonResource
 {
@@ -14,7 +15,7 @@ class Technology extends JsonResource
      */
    public function toArray($request)
     {
-		$benefits_list = App\Models\EcosystemService::all();
+		$benefits_list = EcosystemService::all();
 		$benefits_list->each(function ($item, $key) {
 			if($this->ecosystem_services->contains($item->id))
 			{
