@@ -107,7 +107,12 @@
 						No Influent Sources Identified.
 					@endforelse
 				</td>
-				<td>(Influent Concentration here)</td>
+				<td>@forelse($item->influent_concentrations as $each)
+						{{$each->influent_concentration}}<br />
+					@empty
+						--
+					@endforelse
+				</td>
 				<td>{{$item->baseline_concentration_n}}</td>
 				<td>{{$item->baseline_concentration_p}}</td>
 				<td>@forelse($item->pollutants as $each)
