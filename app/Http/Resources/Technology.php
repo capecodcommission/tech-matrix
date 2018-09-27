@@ -14,6 +14,17 @@ class Technology extends JsonResource
      */
    public function toArray($request)
     {
+		$benefits_list = App\Models\EcosystemService::all();
+		$benefits_list->each(function ($item, $key) {
+			if($this->ecosystem_services->contains($item->id))
+			{
+				
+			}
+			else
+			{
+				$item->icon = "off_" . $item->icon;
+			}
+		};
         return [
             'id' => $this->technology_id,
 			'name' => $this->technology_strategy,
@@ -45,7 +56,7 @@ class Technology extends JsonResource
 			'evaluation_monitoring' => (is_null($this->evaluation_monitoring)? 'N/A' : $this->evaluation_monitoring),
 			'longterm_monitoring' => (is_null($this->longterm_monitoring)? 'N/A' : $this->longterm_monitoring),
 			'updated_at' => $this->updated_at,
-			'benefits' => $this->ecosystem_services,
+			'benefits' => $this->benefits_list,
 			'permitting_agencies' => $this->permitting_agencies,
 			'pilot_status' => (is_null($this->piloting_status)? 'N/A' : $this->piloting_status->pilot_status),
 			'regulatory_comments' => $this->regulatory_comments,
