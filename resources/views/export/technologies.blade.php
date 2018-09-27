@@ -8,7 +8,7 @@
 <table class="users admin table">
 	<thead>
 		<tr>
-			<th colspan = "10"><h1>Technologies Matrix</h1></th>
+			<th colspan = "15"><h1>Technologies Matrix</h1></th>
 			<th colspan="6">Nutrient Reduction (Percent)</th>
 			<th colspan="6">Nutrient Removed Per Year (kg)</th>
 			<th colspan="2">Nutrient Removed Per Planning Period (kg)</th>
