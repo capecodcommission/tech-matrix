@@ -81,7 +81,7 @@
 						@endforelse
 					</div>
 					<div class="form-group">
-						<p><strong>Influent Concentrations</strong></p>
+						<p><strong>Influent Concentrations Nitrogen</strong></p>
 						@forelse($n_influent_concentrations as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="influent_concentrations_{{$each->id}}">
@@ -93,8 +93,9 @@
 								</label>
 							</div>
 						@empty
-							No Influent Concentrations Available
+							No Influent Concentrations for Nitrogen Available
 						@endforelse
+						<p><strong>Influent Concentrations Phosphorus</strong></p>
 						@forelse($p_influent_concentrations as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="influent_concentrations_{{$each->id}}">
@@ -106,9 +107,10 @@
 								</label>
 							</div>
 						@empty
-							No Influent Concentrations Available
+							No Influent Concentrations for Phosphorus Available
 						@endforelse
-						@forelse($other_influent_concentrations as $each)	
+							<p><strong>Influent Concentrations (Other)</strong></p>
+							@forelse($other_influent_concentrations as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="influent_concentrations_{{$each->id}}">
 									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_concentrations[]" id="influent_concentrations_{{$each->id}}" 
@@ -119,7 +121,7 @@
 								</label>
 							</div>
 						@empty
-							No Influent Concentrations Available
+							No Other Influent Concentrations Available
 						@endforelse
 					</div>
 					<div class="form-group">
