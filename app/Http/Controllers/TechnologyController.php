@@ -139,6 +139,15 @@ class TechnologyController extends Controller
 		$pollutants = Pollutant::all();
 		$influent_sources = InfluentSource::all();
 		$influent_concentrations = InfluentConcentration::all();
+		$n_influent_concentrations = $influent_concentrations->filter(function ($value, $key) {
+			return substr($value, -1, 1) == 'N';
+		});
+		$p_influent_concentrations = $influent_concentrations->filter(function ($value, $key) {
+			return substr($value, -1, 1) == 'P';
+		});
+		$other_influent_concentrations = $influent_concentrations->filter(function ($value, $key) {
+			return (substr($value, -1, 1) != 'P') && substr($value, -1, 1) != 'N';
+		});
 		$siting_requirements = SitingRequirement::all();
 		$permitting_agencies = PermittingAgency::all();
         $unit_metrics = UnitMetric::all();
@@ -150,7 +159,7 @@ class TechnologyController extends Controller
 		$years = YearGrouping::all();
 		$scales = Scale::all();
        
-		return view('admin.technologies.edit_relationships', compact('item', 'types', 'design_considerations', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years', 'costs', 'scales'));
+		return view('admin.technologies.edit_relationships', compact('item', 'types', 'design_considerations', 'considerations', 'pollutants', 'influent_sources', 'siting_requirements', 'permitting_agencies', 'other_influent_concentrations', 'n_influent_concentrations', 'p_influent_concentrations', 'unit_metrics', 'ecosystem_services', 'evaluation_monitoring', 'longterm_monitoring', 'piloting_statuses', 'years', 'costs', 'scales'));
     }
 	
     public function update(Request $request, $id)
