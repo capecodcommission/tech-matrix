@@ -140,15 +140,14 @@ class TechnologyController extends Controller
 		$influent_sources = InfluentSource::all();
 		$influent_concentrations = InfluentConcentration::all();
 		$n_influent_concentrations = $influent_concentrations->filter(function ($value, $key) {
-			return substr($value, -1, 1) == 'N';
+			return substr($value->influent_concentration, -1, 1) == 'N';
 		});
 		$p_influent_concentrations = $influent_concentrations->filter(function ($value, $key) {
-			return substr($value, -1, 1) == 'P';
+			return substr($value->influent_concentration, -1, 1) == 'P';
 		});
 		$other_influent_concentrations = $influent_concentrations->filter(function ($value, $key) {
-			return (substr($value, -1, 1) != 'P') && substr($value, -1, 1) != 'N';
+			return (substr($value->influent_concentration, -1, 1) != 'P') && substr($value, -1, 1) != 'N';
 		});
-		dd($n_influent_concentrations);
 		$siting_requirements = SitingRequirement::all();
 		$permitting_agencies = PermittingAgency::all();
         $unit_metrics = UnitMetric::all();
