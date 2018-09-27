@@ -71,8 +71,8 @@
 								<label class="form-check-label" for="influent_sources_{{$each->id}}">
 									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_sources[]" id="influent_sources_{{$each->id}}"
 									@if($item->influent_sources->contains($each->id))
-							checked="checked"
-						@endif
+										checked="checked"
+									@endif
 									> {{$each->influent_source}}
 								</label>
 							</div>
@@ -85,7 +85,11 @@
 						@forelse($influent_concentrations as $each)	
 							<div class="form-check">
 								<label class="form-check-label" for="influent_concentrations_{{$each->id}}">
-									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_concentrations[]" id="influent_concentrations_{{$each->id}}" > {{$each->influent_concentration}}
+									<input class="form-check-input form-control-lg" type="checkbox" value="{{$each->id}}" name="influent_concentrations[]" id="influent_concentrations_{{$each->id}}" 
+									@if($item->influent_concentrations->contains($each->id))
+										checked="checked"
+									@endif 
+									> {{$each->influent_concentration}}
 								</label>
 							</div>
 						@empty
