@@ -73,10 +73,10 @@ class TechnologiesSheet implements FromView, WithEvents
 				$event->sheet->getColumnDimension('BL')->setWidth(40);
 				$event->sheet->getColumnDimension('BO')->setWidth(90);
 				$event->sheet->styleCells('A1:BU2', ['font' => ['bold'=>true]]);
-				$event->sheet->getStyle('K1:P2')->getFill()
+				$event->sheet->getStyle('P1:U2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('CECECECE');
-				$event->sheet->getStyle('Q1:X2')->getFill()
+				$event->sheet->getStyle('V1:AA2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FFC6E0B4');
 
@@ -91,12 +91,12 @@ class TechnologiesSheet implements FromView, WithEvents
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
 
-				$event->sheet->mergeCells('K1:P1');
-				$event->sheet->mergeCells('Q1:V1');
-				$event->sheet->mergeCells('W1:X1');
+				$event->sheet->mergeCells('P1:U1');
+				$event->sheet->mergeCells('V1:AA1');
+				$event->sheet->mergeCells('AB1:AC1');
 
 				$event->sheet->styleCells(
-				'W1:W2',
+				'AD1:AD2',
 				[
 					'borders' => [
 						'left' => [
