@@ -100,7 +100,7 @@
 				<td>{{$item->technology_id }}</td>
 				{{-- <td><span style="display:inline-block; background-color:aqua"><img src="{{config('app.url')}}/icons/{{$item->icon}}" height="25" width="25" /></span></td> --}}
 				<td>{{$item->icon}}</td>
-				<td>{{$item->technology_description}}</td>
+				<td>{{striphtml($item->technology_description)}}</td>
 				<td>@forelse($item->influent_sources as $each)
 						{{$each->influent_source}}<br />
 					@empty
