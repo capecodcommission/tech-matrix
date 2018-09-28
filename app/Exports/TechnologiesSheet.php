@@ -116,7 +116,7 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getColumnDimension('BQ')->setWidth(15);
 				$event->sheet->getColumnDimension('BR')->setWidth(15);
 				$event->sheet->getColumnDimension('BU')->setWidth(10);
-				$event->sheet->styleCells('A1:BU2', ['font' => ['bold'=>true]]);
+				$event->sheet->styleCells('A1:BV2', ['font' => ['bold'=>true]]);
 				$event->sheet->getStyle('P1:U2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('CECECECE');
@@ -129,13 +129,6 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FF52a9df');
 			*/
-					
-	
-				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
-				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
-				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
-				// $event->sheet->getStyle('AO3:AO78')->getNumberFormat()->setFormatCode('#%');
-				// $event->sheet->getStyle('AG3:AG78')->getNumberFormat()->setFormatCode('#%');
 				$event->sheet->mergeCells('P1:U1');
 				$event->sheet->mergeCells('V1:AA1');
 				$event->sheet->mergeCells('AB1:AC1');
