@@ -2,25 +2,25 @@
 
 namespace App\Exports;
 
-use Maatwebsite\Excel\Concerns\FromCollection;
-use Illuminate\Contracts\View\View;
-use Maatwebsite\Excel\Concerns\FromView;
-use PhpOffice\PhpSpreadsheet\Shared\Date;
-use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
-use Maatwebsite\Excel\Concerns\WithColumnFormatting;
-use Maatwebsite\Excel\Concerns\WithMapping;
-
 use App\Models\Technology;
-use Maatwebsite\Excel\Concerns\WithEvents;
-
-use Maatwebsite\Excel\Events\AfterSheet;
-use PhpOffice\PhpSpreadsheet\Helper\Html;
-use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Illuminate\Contracts\View\View;
 use DB;
 
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\WithColumnFormatting;
+use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Events\AfterSheet;
+
+use PhpOffice\PhpSpreadsheet\Shared\Date;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
+use PhpOffice\PhpSpreadsheet\Helper\Html;
 
 
-class TechnologiesSheet implements FromView, WithColumnFormatting, ShouldAutoSize, WithEvents
+
+
+class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 {
 
 	public function view(): View
@@ -37,7 +37,6 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, ShouldAutoSiz
  public function columnFormats(): array
     {
         return [
-            // 'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
 			'O' => NumberFormat::FORMAT_NUMBER,
 			'P' => NumberFormat::FORMAT_PERCENTAGE,
 			'Q' => NumberFormat::FORMAT_PERCENTAGE,
@@ -70,7 +69,9 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, ShouldAutoSiz
 			'BD' => NumberFormat::FORMAT_CURRENCY_USD,	
 			'BE' => NumberFormat::FORMAT_CURRENCY_USD,	
 			'BF' => NumberFormat::FORMAT_CURRENCY_USD,	
-			'BG' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BG' => NumberFormat::FORMAT_CURRENCY_USD,	           
+			'BV' => NumberFormat::FORMAT_DATE_DDMMYYYY,
+
         ];
     }
 
