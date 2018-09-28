@@ -3,7 +3,7 @@
 	function striphtml($value)
 	{
 			$value = str_replace('</p>\n<p>', '<br /><br />', $value);
-			$value = str_replace('<p>', '<br />', $value);
+			$value = str_replace('<p>', '\n\n', $value);
 			$value = str_replace('</p>', '', $value);		
 		// $value[0] = '';
 		return $value;
