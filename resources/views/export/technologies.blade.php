@@ -135,32 +135,32 @@
 				</td>
 				<td>{{$item->unit_metric->unit_metric}}</td>
 				<td>{{$item->metric_input}}</td>
-				<td>{{$item->flow_gpd}}</td>
-				<td>{{$item->n_percent_reduction_low}}%</td>
-				<td>{{$item->n_percent_reduction_high}}%</td>
-				<td>{{($item->n_percent_reduction_low + $item->n_percent_reduction_high) / 2}}</td> 
-           		<td>{{$item->p_percent_reduction_low}}%</td>
-				<td>{{$item->p_percent_reduction_high}}%</td>
-				<td>{{($item->p_percent_reduction_low + $item->p_percent_reduction_high) / 2}}</td>
-				<td>{{$item->calc->n_removed_low}}</td>
-				<td>{{$item->calc->n_removed_high}}</td>
-				<td>{{$item->calc->n_removed_avg}}</td>
-				<td>{{$item->calc->n_removed_planning_period}}</td>
-				<td>{{$item->calc->p_removed_low}}</td>
-				<td>{{$item->calc->p_removed_high}}</td>
-				<td>{{$item->calc->p_removed_avg}}</td>
-				<td>{{$item->calc->p_removed_planning_period}}</td>
-				<td>{{$item->current_construction_cost_low}}</td>
-				<td>{{$item->current_construction_cost_high}}</td>
-				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
-				<td>{{$item->current_construction_cost_percent_labor/100}}</td>
+				<td>{{round($item->flow_gpd)}}</td>
+				<td>{{round($item->n_percent_reduction_low)}}%</td>
+				<td>{{round($item->n_percent_reduction_high)}}%</td>
+				<td>{{round(($item->n_percent_reduction_low + $item->n_percent_reduction_high) / 2)}}</td> 
+           		<td>{{round($item->p_percent_reduction_low)}}%</td>
+				<td>{{round($item->p_percent_reduction_high)}}%</td>
+				<td>{{round(($item->p_percent_reduction_low + $item->p_percent_reduction_high) / 2)}}</td>
+				<td>{{round($item->calc->n_removed_low)}}</td>
+				<td>{{round($item->calc->n_removed_high)}}</td>
+				<td>{{round($item->calc->n_removed_avg)}}</td>
+				<td>{{round($item->calc->n_removed_planning_period)}}</td>
+				<td>{{round($item->calc->p_removed_low)}}</td>
+				<td>{{round($item->calc->p_removed_high)}}</td>
+				<td>{{round($item->calc->p_removed_avg)}}</td>
+				<td>{{round($item->calc->p_removed_planning_period)}}</td>
+				<td>{{number_format($item->current_construction_cost_low)}}</td>
+				<td>{{number_format($item->current_construction_cost_high)}}</td>
+				<td>{{number_format(($item->current_construction_cost_high + $item->current_construction_cost_low)/2)}}</td>
+				<td>{{round($item->current_construction_cost_percent_labor/100)}}</td>
 				<td>{{$item->calc->land_cost}}</td>
-				<td>{{$item->current_project_cost_low}}</td>
-				<td>{{$item->current_project_cost_high}}</td>
-				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
-				<td>{{$item->current_annual_o_m_cost_low}}</td>
-				<td>{{$item->current_annual_o_m_cost_high}}</td>
-				<td>{{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</td>
+				<td>${{number_format($item->current_project_cost_low)}}</td>
+				<td>${{$item->current_project_cost_high}}</td>
+				<td>${{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
+				<td>${{$item->current_annual_o_m_cost_low}}</td>
+				<td>${{$item->current_annual_o_m_cost_high}}</td>
+				<td>${{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</td>
 				<td>{{$item->current_annual_o_m_cost_percent_labor/100}}</td>
 				<td>{{$item->adjustment_factor_project_cost}}</td>
 				<td>{{$item->adjustment_factor_o_m_cost}}</td>
