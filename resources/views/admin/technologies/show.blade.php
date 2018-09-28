@@ -239,18 +239,20 @@
 											</tr>
 											<tr>
 												<td>Percent Removal (low-high)</td>
-												<td>{{$item->n_percent_reduction_low}}% - {{$item->n_percent_reduction_high}}%</td>
-												<td>{{$item->p_percent_reduction_low}}% - {{$item->p_percent_reduction_high}}%</td>
+												<td>{{number_format($item->n_percent_reduction_low, 0)}}% - 
+													{{number_format($item->n_percent_reduction_high, 0)}}%</td>
+												<td>{{number_format($item->p_percent_reduction_low, 0)}}% - 
+													{{number_format($item->p_percent_reduction_high, 0)}}%</td>
 											</tr>
 											<tr>
 												<td>Nutrient Removed Per Year (Avg)</td>
-												<td>{{$item->calc->n_removed_avg}}kg</td>
-												<td>{{$item->calc->p_removed_avg}}kg</td>
+												<td>{{number_format($item->calc->n_removed_avg, 0)}}kg</td>
+												<td>{{number_format($item->calc->p_removed_avg, 0)}}kg</td>
 											</tr>
 											<tr>
 												<td>Nutrient Removed Per Planning Period< (Avg)/td>
-												<td>{{$item->calc->n_removed_planning_period}}kg</td>
-												<td>{{$item->calc->p_removed_planning_period}}kg</td>
+												<td>{{number_format($item->calc->n_removed_planning_period, 0)}}kg</td>
+												<td>{{number_format($item->calc->p_removed_planning_period, 0)}}kg</td>
 											</tr>
 										</tbody>
 									</table>
