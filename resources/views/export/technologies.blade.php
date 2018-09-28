@@ -17,9 +17,7 @@
 			<th colspan = "3">Current Project Cost</th>
 			<th colspan = "4">Current Annual OM Cost</th>
 			<th colspan="8">Adjusted Costs</th>
-			<th></th>
-			<th></th>
-			<th></th>
+			<th colspan="4">Replacement/Upgrade</th>
 			<th colspan="6">Cost Per kg Nutrient Removed</th>
 		</tr>
 		<tr style="border-bottom: 1px solid #000">
@@ -70,9 +68,9 @@
 			<th>Adjusted Project <br />Cost (PV) Low</th>
 			<th>Adjusted Project <br />Cost (PV) High</th>
 			<th>Adjusted Project <br />Cost (PV) Avg</th>
-			<th>Adjusted Annual O&amp;M <br />Cost (PV) Low</th>
-			<th>Adjusted Annual O&amp;M <br />Cost (PV) High</th>
-			<th>Adjusted Annual O&amp;M <br />Cost (PV) Avg</th>
+			<th>Adj Annual O&amp;M <br />Cost (PV) Low</th>
+			<th>Adj Annual O&amp;M <br />Cost (PV) High</th>
+			<th>Adj Annual O&amp;M <br />Cost (PV) Avg</th>
 			<th>Useful Life (Years)</th>
 			<th>Replacement Cost</th>
 			<th>Total Replacement<br />/Upgrade Cost</th>
