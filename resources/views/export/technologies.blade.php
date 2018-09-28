@@ -40,10 +40,10 @@
 			<th>Nitrogen Removed <br />(kg) Low</th>
 			<th>Nitrogen Removed <br /> (kg) High</th>
 			<th>Nitrogen Removed <br />(kg) Avg</th>
-			<th>Phosphorus Removed <br />per Year (kg) Low</th>
-			<th>Phosphorus Removed <br />per Year (kg) High</th>
-			<th>Phosphorus Removed <br />per Year (kg) Avg</th>
 			<th>Nitrogen Removed <br />per Planning Period</th>
+			<th>Phosphorus Removed <br />(kg) Low</th>
+			<th>Phosphorus Removed <br />(kg) High</th>
+			<th>Phosphorus Removed <br />(kg) Avg</th>
 			<th>Phosphorus Removed <br />per Planning Period</th>
 			<th>Current Construction <br />Cost (Low)</th>
 			<th>Current Construction<br /> Cost (High)</th>
