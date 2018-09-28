@@ -40,11 +40,11 @@
 			<th>Nitrogen Removed <br />(kg) Low</th>
 			<th>Nitrogen Removed <br /> (kg) High</th>
 			<th>Nitrogen Removed <br />(kg) Avg</th>
-			<th>Nitrogen Removed <br />per Planning Period</th>
 			<th>Phosphorus Removed <br />(kg) Low</th>
 			<th>Phosphorus Removed <br />(kg) High</th>
 			<th>Phosphorus Removed <br />(kg) Avg</th>
-			<th>Phosphorus Removed <br />per Planning Period</th>
+			<th>N Removed per<br />Planning Period</th>
+			<th>P Removed per<br />Planning Period</th>
 			<th>Current Construction <br />Cost (Low)</th>
 			<th>Current Construction<br /> Cost (High)</th>
 			<th>Current Construction<br /> Cost (Avg)</th>
@@ -145,10 +145,10 @@
 				<td>{{round($item->calc->n_removed_low)}}</td>
 				<td>{{round($item->calc->n_removed_high)}}</td>
 				<td>{{round($item->calc->n_removed_avg)}}</td>
-				<td>{{round($item->calc->n_removed_planning_period)}}</td>
 				<td>{{round($item->calc->p_removed_low)}}</td>
 				<td>{{round($item->calc->p_removed_high)}}</td>
 				<td>{{round($item->calc->p_removed_avg)}}</td>
+				<td>{{round($item->calc->n_removed_planning_period)}}</td>
 				<td>{{round($item->calc->p_removed_planning_period)}}</td>
 				<td>{{number_format($item->current_construction_cost_low, 0)}}</td>
 				<td>{{number_format($item->current_construction_cost_high, 0)}}</td>
@@ -156,7 +156,7 @@
 				<td>{{round($item->current_construction_cost_percent_labor/100)}}</td>
 				<td>${{number_format($item->calc->land_cost, 0)}}</td>
 				<td>${{number_format($item->current_project_cost_low, 0)}}</td>
-				<td>${{number_format($item->current_project_cost_high, 0)}}</td>
+				<td>{{$item->current_project_cost_high}}</td>
 				<td>${{number_format(($item->current_project_cost_high + $item->current_project_cost_low) / 2, 0)}}</td>
 				<td>${{number_format($item->current_annual_o_m_cost_low, 0)}}</td>
 				<td>${{number_format($item->current_annual_o_m_cost_high, 0)}}</td>

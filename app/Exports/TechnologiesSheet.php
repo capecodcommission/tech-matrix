@@ -34,6 +34,14 @@ class TechnologiesSheet implements FromView, WithEvents
 			// 'list' => Technology::all()->sortBy('technology_id')
 	}
 
+ public function columnFormats(): array
+    {
+        return [
+            // 'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
+            'AJ' => NumberFormat::FORMAT_CURRENCY_EUR_SIMPLE,
+        ];
+    }
+
 
 	public function registerEvents(): array
 	{
