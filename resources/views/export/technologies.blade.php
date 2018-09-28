@@ -13,7 +13,14 @@
 			<th colspan="6">Nutrient Removed Per Year (kg)</th>
 			<th colspan="2">Nutrient Removed Per Planning Period (kg)</th>
 			<th colspan="4">Current Construction Cost</th>
+			<th></th>
 			<th colspan = "3">Current Project Cost</th>
+			<th colspan = "4">Current Annual OM Cost</th>
+			<th colspan="8">Adjusted Costs</th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th colspan="6">Cost Per kg Nutrient Removed</th>
 		</tr>
 		<tr style="border-bottom: 1px solid #000">
 			<th>Technology Type</th>
