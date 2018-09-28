@@ -45,10 +45,32 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 			'S' => NumberFormat::FORMAT_PERCENTAGE,
 			'T' => NumberFormat::FORMAT_PERCENTAGE,
 			'U' => NumberFormat::FORMAT_PERCENTAGE,
-			'AO' => NumberFormat::FORMAT_PERCENTAGE,
+			'AD' => NumberFormat::FORMAT_CURRENCY_USD,
+			'AE' => NumberFormat::FORMAT_CURRENCY_USD,
 			'AG' => NumberFormat::FORMAT_PERCENTAGE,
+			'AH' => NumberFormat::FORMAT_CURRENCY_USD,
+			'AI' => NumberFormat::FORMAT_CURRENCY_USD,
 			'AJ' => NumberFormat::FORMAT_CURRENCY_USD,
-			'AK' => NumberFormat::FORMAT_CURRENCY_USD,			
+			'AK' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AL' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AM' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AN' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AO' => NumberFormat::FORMAT_PERCENTAGE,
+			'AR' => NumberFormat::FORMAT_CURRENCY_USD,			
+			'AS' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AT' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AU' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AV' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AW' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AY' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'AZ' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BA' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BB' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BC' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BD' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BE' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BF' => NumberFormat::FORMAT_CURRENCY_USD,	
+			'BG' => NumberFormat::FORMAT_CURRENCY_USD,	
         ];
     }
 
@@ -80,7 +102,7 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getColumnDimension('J')->setWidth(10);
 				$event->sheet->getColumnDimension('K')->setWidth(30);
 				$event->sheet->getColumnDimension('L')->setWidth(30);
-				$event->sheet->getColumnDimension('BG')->setWidth(40);
+				$event->sheet->getColumnDimension('BG')->setWidth(16);
 				$event->sheet->getColumnDimension('BH')->setWidth(40);
 				$event->sheet->getColumnDimension('BI')->setWidth(40);
 				$event->sheet->getColumnDimension('BJ')->setWidth(40);
