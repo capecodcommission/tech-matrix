@@ -12,6 +12,7 @@
 			<th colspan="6">Nutrient Reduction (Percent)</th>
 			<th colspan="6">Nutrient Removed Per Year (kg)</th>
 			<th colspan="2">Nutrient Removed Per Planning Period (kg)</th>
+			<th colspan="4">Current Construction Cost</th>
 			<th colspan = "3">Current Project Cost</th>
 		</tr>
 		<tr style="border-bottom: 1px solid #000">
@@ -48,7 +49,7 @@
 			<th>Current Construction <br />Cost (Low)</th>
 			<th>Current Construction<br /> Cost (High)</th>
 			<th>Current Construction<br /> Cost (Avg)</th>
-			<th>Current Construction Cost Percent Labor</th>
+			<th>Current Construction<br />Cost % Labor</th>
 			<th>Land Cost</th>
 			<th>Current Project Cost (Low)</th>
 			<th>Current Project Cost (High)</th>
@@ -56,7 +57,7 @@
 			<th>Current Annual OM Cost (low)</th>
 			<th>Current Annual OM Cost (high)</th>
 			<th>Current Annual OM Cost (avg)</th>
-			<th>Current Annual OM Cost Percent Labor</th>
+			<th>Current Annual OM <br />Cost % Labor</th>
 			<th>Adjustment Factors <br />Project Cost</th>
 			<th>Adjustment Factors <br />O &amp; M</th>
 			<th>Adjusted Project <br />Cost (PV) Low</th>
@@ -150,9 +151,9 @@
 				<td>{{round($item->calc->p_removed_avg)}}</td>
 				<td>{{round($item->calc->n_removed_planning_period)}}</td>
 				<td>{{round($item->calc->p_removed_planning_period)}}</td>
-				<td>{{number_format($item->current_construction_cost_low, 0)}}</td>
-				<td>{{number_format($item->current_construction_cost_high, 0)}}</td>
-				<td>{{number_format(($item->current_construction_cost_high + $item->current_construction_cost_low)/2, 0)}}</td>
+				<td>{{$item->current_construction_cost_low}}</td>
+				<td>{{$item->current_construction_cost_high}}</td>
+				<td>{{($item->current_construction_cost_high + $item->current_construction_cost_low)/2}}</td>
 				<td>{{round($item->current_construction_cost_percent_labor/100)}}</td>
 				<td>{{$item->calc->land_cost}}</td>
 				<td>{{$item->current_project_cost_low}}</td>

@@ -46,6 +46,7 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 			'U' => NumberFormat::FORMAT_PERCENTAGE,
 			'AD' => NumberFormat::FORMAT_CURRENCY_USD,
 			'AE' => NumberFormat::FORMAT_CURRENCY_USD,
+			'AF' => NumberFormat::FORMAT_CURRENCY_USD,
 			'AG' => NumberFormat::FORMAT_PERCENTAGE,
 			'AH' => NumberFormat::FORMAT_CURRENCY_USD,
 			'AI' => NumberFormat::FORMAT_CURRENCY_USD,
@@ -103,6 +104,9 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getColumnDimension('J')->setWidth(10);
 				$event->sheet->getColumnDimension('K')->setWidth(30);
 				$event->sheet->getColumnDimension('L')->setWidth(30);
+				$event->sheet->getColumnDimension('AY')->setWidth(20);
+				$event->sheet->getColumnDimension('AZ')->setWidth(20);
+				$event->sheet->getColumnDimension('BA')->setWidth(20);
 				$event->sheet->getColumnDimension('BG')->setWidth(16);
 				$event->sheet->getColumnDimension('BH')->setWidth(40);
 				$event->sheet->getColumnDimension('BI')->setWidth(40);
