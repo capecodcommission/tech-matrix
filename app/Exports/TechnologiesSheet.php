@@ -38,7 +38,8 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
     {
         return [
             // 'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
-            'AJ' => NumberFormat::FORMAT_CURRENCY_EUR_SIMPLE,
+			'AJ' => NumberFormat::FORMAT_CURRENCY_USD_SIMPLE,
+			'AK' => NumberFormat::FORMAT_CURRENCY_USD,
         ];
     }
 

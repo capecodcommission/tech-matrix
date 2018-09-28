@@ -157,7 +157,7 @@
 				<td>${{number_format($item->calc->land_cost, 0)}}</td>
 				<td>${{number_format($item->current_project_cost_low, 0)}}</td>
 				<td>{{$item->current_project_cost_high}}</td>
-				<td>${{number_format(($item->current_project_cost_high + $item->current_project_cost_low) / 2, 0)}}</td>
+				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
 				<td>${{number_format($item->current_annual_o_m_cost_low, 0)}}</td>
 				<td>${{number_format($item->current_annual_o_m_cost_high, 0)}}</td>
 				<td>${{number_format(($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2, 0)}}</td>
