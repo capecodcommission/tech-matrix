@@ -15,12 +15,12 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 
 use Maatwebsite\Excel\Events\AfterSheet;
 use PhpOffice\PhpSpreadsheet\Helper\Html;
-// use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use DB;
 
 
 
-class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
+class TechnologiesSheet implements FromView, WithColumnFormatting, ShouldAutoSize, WithEvents
 {
 
 	public function view(): View
