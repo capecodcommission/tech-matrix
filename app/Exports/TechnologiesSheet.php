@@ -144,16 +144,49 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 
 				$event->sheet->styleCells(
 				'AD1:AD2',
-				[
-					'borders' => [
-						'left' => [
-							'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
-							'color' => ['argb' => 'FF000000'],
-						],
+					[
+						'borders' => [
+							'left' => [
+								'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+								'color' => ['argb' => 'FF000000'],
+							],
+						]
 					]
-				]
-			);
-				
+				);
+				$event->sheet->styleCells(
+					'AL1:AL78',
+					[
+						'borders' => [
+							'left' => [
+								'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+								'color' => ['argb' => 'FF000000'],
+							],
+						]
+					]
+				);
+			
+				$event->sheet->styleCells(
+					'AP1:AP78',
+					[
+						'borders' => [
+							'left' => [
+								'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+								'color' => ['argb' => 'FF000000'],
+							],
+						]
+					]
+				);
+				$event->sheet->styleCells(
+					'BB1:BB78',
+					[
+						'borders' => [
+							'left' => [
+								'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+								'color' => ['argb' => 'FF000000'],
+							],
+						]
+					]
+				);
 				// add formulas to cells
 				// $event->sheet->setCellValue('AF5','=K5*0.4536');
 
