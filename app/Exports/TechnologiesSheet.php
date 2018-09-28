@@ -127,12 +127,15 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getStyle('V1:AA2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FFC6E0B4');
-				$event->sheet->getStyle('AX1:AZ2')->getFill()
+				$event->sheet->getStyle('AX1:BA2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setARGB('FFC6E0B4');
 				$event->sheet->getStyle('AI1:AK2')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
 					->getStartColor()->setRGB('FFFF00');
+				$event->sheet->getStyle('BB1:BG2')->getFill()
+					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+					->getStartColor()->setRGB('CECECE');
 			/* This is for the icon -> it needs a background color since the svg is white 	
 				$event->sheet->getStyle('D3:D77')->getFill()
 					->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
