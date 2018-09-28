@@ -159,7 +159,7 @@
 				<td>{{$item->current_project_cost_high}}</td>
 				<td>{{($item->current_project_cost_high + $item->current_project_cost_low) / 2}}</td>
 				<td>{{$item->current_annual_o_m_cost_low}}</td>
-				<td>{{($item->current_annual_o_m_cost_high}}</td>
+				<td>{{$item->current_annual_o_m_cost_high}}</td>
 				<td>{{($item->current_annual_o_m_cost_high + $item->current_annual_o_m_cost_low)/2}}</td>
 				<td>{{$item->current_annual_o_m_cost_percent_labor/100}}</td>
 				<td>{{$item->adjustment_factor_project_cost}}</td>
