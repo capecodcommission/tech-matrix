@@ -20,7 +20,7 @@ use DB;
 
 
 
-class TechnologiesSheet implements FromView, WithEvents
+class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 {
 
 	public function view(): View
