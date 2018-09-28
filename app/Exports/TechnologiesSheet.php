@@ -38,7 +38,7 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
     {
         return [
             // 'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
-			'O' => NumberFormat::FORMAT_NUMBER_COMMA_SEPARATED1,
+			'O' => NumberFormat::FORMAT_NUMBER,
 			'P' => NumberFormat::FORMAT_PERCENTAGE,
 			'Q' => NumberFormat::FORMAT_PERCENTAGE,
 			'R' => NumberFormat::FORMAT_PERCENTAGE,
@@ -77,6 +77,7 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getColumnDimension('E')->setWidth(60);
 				$event->sheet->getColumnDimension('F')->setWidth(20);
 				$event->sheet->getColumnDimension('G')->setWidth(20);
+				$event->sheet->getColumnDimension('J')->setWidth(10);
 				$event->sheet->getColumnDimension('K')->setWidth(30);
 				$event->sheet->getColumnDimension('L')->setWidth(30);
 				$event->sheet->getColumnDimension('BG')->setWidth(40);

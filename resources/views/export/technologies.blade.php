@@ -136,11 +136,11 @@
 				<td>{{$item->unit_metric->unit_metric}}</td>
 				<td>{{$item->metric_input}}</td>
 				<td>{{round($item->flow_gpd)}}</td>
-				<td>{{round($item->n_percent_reduction_low)}}%</td>
-				<td>{{round($item->n_percent_reduction_high)}}%</td>
+				<td>{{round($item->n_percent_reduction_low)}}</td>
+				<td>{{round($item->n_percent_reduction_high)}}</td>
 				<td>{{round(($item->n_percent_reduction_low + $item->n_percent_reduction_high) / 2)}}</td> 
-           		<td>{{round($item->p_percent_reduction_low)}}%</td>
-				<td>{{round($item->p_percent_reduction_high)}}%</td>
+           		<td>{{round($item->p_percent_reduction_low)}}</td>
+				<td>{{round($item->p_percent_reduction_high)}}</td>
 				<td>{{round(($item->p_percent_reduction_low + $item->p_percent_reduction_high) / 2)}}</td>
 				<td>{{round($item->calc->n_removed_low)}}</td>
 				<td>{{round($item->calc->n_removed_high)}}</td>
