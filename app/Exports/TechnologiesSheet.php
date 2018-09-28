@@ -38,8 +38,17 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
     {
         return [
             // 'B' => NumberFormat::FORMAT_DATE_DDMMYYYY,
-			'AJ' => NumberFormat::FORMAT_CURRENCY_USD_SIMPLE,
-			'AK' => NumberFormat::FORMAT_CURRENCY_USD,
+			'O' => NumberFormat::FORMAT_NUMBER_COMMA_SEPARATED1,
+			'P' => NumberFormat::FORMAT_PERCENTAGE,
+			'Q' => NumberFormat::FORMAT_PERCENTAGE,
+			'R' => NumberFormat::FORMAT_PERCENTAGE,
+			'S' => NumberFormat::FORMAT_PERCENTAGE,
+			'T' => NumberFormat::FORMAT_PERCENTAGE,
+			'U' => NumberFormat::FORMAT_PERCENTAGE,
+			'AO' => NumberFormat::FORMAT_PERCENTAGE,
+			'AG' => NumberFormat::FORMAT_PERCENTAGE,
+			'AJ' => NumberFormat::FORMAT_CURRENCY_USD,
+			'AK' => NumberFormat::FORMAT_CURRENCY_USD,			
         ];
     }
 
@@ -50,6 +59,9 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 			AfterSheet::class => function(AfterSheet $event) {
 				$event->sheet->getStyle('A2:BU2')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('B3:B78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('J3:J78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('K3:K78')->getAlignment()->setWrapText(true);
+				$event->sheet->getStyle('L3:L78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('R3:R78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('Q3:Q78')->getAlignment()->setWrapText(true);
 				$event->sheet->getStyle('D3:D78')->getAlignment()->setWrapText(true);
@@ -60,10 +72,13 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 				$event->sheet->getStyle('BP3:BP78')->getAlignment()->setWrapText(true);
 				$event->sheet->getColumnDimension('A')->setWidth(40);
 				$event->sheet->getColumnDimension('B')->setWidth(45);
+				$event->sheet->getColumnDimension('C')->setWidth(11);
 				$event->sheet->getColumnDimension('D')->setWidth(30);
 				$event->sheet->getColumnDimension('E')->setWidth(60);
 				$event->sheet->getColumnDimension('F')->setWidth(20);
 				$event->sheet->getColumnDimension('G')->setWidth(20);
+				$event->sheet->getColumnDimension('K')->setWidth(30);
+				$event->sheet->getColumnDimension('L')->setWidth(30);
 				$event->sheet->getColumnDimension('BG')->setWidth(40);
 				$event->sheet->getColumnDimension('BH')->setWidth(40);
 				$event->sheet->getColumnDimension('BI')->setWidth(40);
@@ -95,8 +110,8 @@ class TechnologiesSheet implements FromView, WithColumnFormatting, WithEvents
 				// $event->sheet->getStyle('O3:S78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('K3:M78')->getNumberFormat()->setFormatCode('$#,##0');
 				// $event->sheet->getStyle('V3:V78')->getNumberFormat()->setFormatCode('$#,##0');
-				$event->sheet->getStyle('AO3:AO78')->getNumberFormat()->setFormatCode('#%');
-				$event->sheet->getStyle('AG3:AG78')->getNumberFormat()->setFormatCode('#%');
+				// $event->sheet->getStyle('AO3:AO78')->getNumberFormat()->setFormatCode('#%');
+				// $event->sheet->getStyle('AG3:AG78')->getNumberFormat()->setFormatCode('#%');
 				$event->sheet->mergeCells('P1:U1');
 				$event->sheet->mergeCells('V1:AA1');
 				$event->sheet->mergeCells('AB1:AC1');
