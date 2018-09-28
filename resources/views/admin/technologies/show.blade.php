@@ -57,7 +57,7 @@
 						<div class="card-body">
 						
 							<p><strong>Construction Cost Percent Labor</strong>: {{$item->current_construction_cost_percent_labor}}%</p>
-							<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}</p>
+							<p><strong>Current Annual OM Cost Percent Labor</strong>: {{$item->current_annual_o_m_cost_percent_labor}}%</p>
 							<p><strong>Land Cost (per acre)</strong>: ${{$item->calc->land_cost}}</p>
 							<p><strong>Useful Life (Years)</strong>: {{$item->useful_life_years}}</p>
 							
