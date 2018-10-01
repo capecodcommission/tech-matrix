@@ -3,6 +3,8 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Support\Facades\Log;
+
 
 class Approach extends ResourceCollection
 {
@@ -27,6 +29,7 @@ class Approach extends ResourceCollection
 					{
 						$scales[] = $one->scale;
 					}
+					Log::info($each->show_on_matrix);
 					if($each->show_on_matrix > 0)
 					{
 						$list[] = $each;
