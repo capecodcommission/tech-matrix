@@ -27,7 +27,11 @@ class Approach extends ResourceCollection
 					{
 						$scales[] = $one->scale;
 					}
-					$list[] = $each;
+					if($each->show_on_matrix > 0)
+					{
+						$list[] = $each;
+					}
+					
 					// $list[$each->id]['id'] = $each->id;
 					// $list[$each->id]['name'] = $each->technology_strategy;
                     // $list[$each->id]['name'] = $each->technology_strategy;
