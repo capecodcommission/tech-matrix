@@ -29,8 +29,8 @@ class Approach extends ResourceCollection
 					{
 						$scales[] = $one->scale;
 					}
-					Log::info($each->show_on_matrix);
-					if($each->show_on_matrix > 0)
+					// Log::info($each->show_on_Matrix);
+					if($each->show_on_Matrix > 0)
 					{
 						$list[] = $each;
 					}
