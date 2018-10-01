@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Log;
 use App\Models\Technology;
 use App\Models\User;
 use App\Models\TechnologyType;
@@ -166,10 +167,11 @@ class TechnologyController extends Controller
 	
     public function update(Request $request, $id)
     {
-        $data = $request->all();
+		$data = $request->all();
+		Log::info($data['baseline_concentration_p']);
 		$item = Technology::find($id);
 		$item->fill($data);
-
+		Log::info($item->baseline_concentration_p);
         $item->update();
         return redirect('technologies');
     }
