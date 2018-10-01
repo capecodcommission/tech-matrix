@@ -14,9 +14,14 @@ class TechnologyCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-		
+		$matrix = $this->collection->filter(function($value, $key) {
+			if ($value['show_on_matrix'] > 0) {
+				return true;
+			}
+		});
 		return [
-            'data' => $this->collection->transform(function($item){
+			'data' => $matrix->transform(function($item) {
+			// $this->collection->transform(function($item){
 				$item->calc = $item->calculated();
 				$scales = array();
 				foreach($item->scales as $each) 
