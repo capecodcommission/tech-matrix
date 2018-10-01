@@ -23,16 +23,21 @@ class TechnologyCollection extends ResourceCollection
 				{
 					$scales[] = $each->scale;
 				}
-				return [
-                    'id' => $item->id,
-                    'name' => $item->technology_strategy,
-					'icon' => $item->icon,
-					'scales' => $scales,
-					'n_removed_avg' => round($item->calc->n_removed_avg),
-					'p_removed_avg' => round($item->calc->p_removed_avg),
-					'useful_life_years'	=> $item->useful_life_years
-                ];
-            }),
+				if($item->show_on_matrix > 0)
+				{
+					return [
+						'id' => $item->id,
+						'name' => $item->technology_strategy,
+						'icon' => $item->icon,
+						'scales' => $scales,
+						'n_percent_reduction_low' => $item->n_percent_reduction_low,
+						'n_percent_reduction_high' => $item->n_percent_reduction_high,
+						'p_percent_reduction_low' => $item->p_percent_reduction_low,
+						'p_percent_reduction_high' => $item->p_percent_reduction_high,
+						'useful_life_years'	=> $item->useful_life_years
+					];
+				}
+			}),
         ];
 
         
