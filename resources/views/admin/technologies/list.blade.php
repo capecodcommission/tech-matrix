@@ -13,7 +13,7 @@
 						@role('admin|tech editor|text editor')
 						<th>Edit<br />Data</th>
 						<th>Edit<br />Relationships</th>
-						<th>Edit<br />Formulas</th>
+						{{-- <th>Edit<br />Formulas</th> --}}
 						@endrole
 						<th>Updated</th>
 					</tr>
